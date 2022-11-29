@@ -1,0 +1,9 @@
+ManaCost (19)
+Type (Monster)
+Name (281Test Card)
+TargetTypes (Monster)
+DamagePoints (5)
+Attack (<(EnemyCard(Health),EnemyCard(Damage)),Sum(OnCard(DamagePoints),EnemyCard(Health)),OnCard(DamagePoints))
+Heal (true,)
+Health ()
+
