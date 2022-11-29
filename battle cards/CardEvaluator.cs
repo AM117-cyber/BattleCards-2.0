@@ -64,72 +64,103 @@ public class CreateCard
     }
 }
 
-public class Interpreter
-{
-    public static string[] SeparateTernaryExpression(string expressionAsString)
-    {
-        expressionAsString = expressionAsString.TrimEnd(')').TrimStart('(');//sabemos que la expresion es ternaria,por lo tanto, usamos SeparateTernaryExpression
-        Enum.GetValues(typeof(Operators));
-        for (int i = 1; i < expressionAsString.Length; i++)
-        {
-
-        }
-    }
-    public static Expression BuildExpression(string expressionAsString, Card onCard, Card enemyCard)//aqui llega el string con parentesis en extremos
-    {
-        
-        switch (expressionAsString[0])
-        {
-            case '<':
-                return new LowerThanOperatorExpression();
-            default:
-                break;
-        }
-        return new TrueExpression();
-    }
-}
     public abstract class Expression
     {
         public abstract double Evaluate();
     }
 
-    public class TernaryExpression : Expression
+public class TernaryExpression : Expression
+{
+    public Expression Condition { get; set; }
+    public Expression IfTrue { get; set; }
+    public Expression Else { get; set; }
+    
+    public TernaryExpression(string ternaryExpression)
     {
-        public bool BooleanExpr{ get; set; }
-        public Expression IfTrue { get; set; }
-        public Expression Else { get; set; }
-
-        public TernaryExpression(string[] ternaryExpression, Card onCard, Card enemyCard)
-        {
-        
-        if (Interpreter.BuildExpression(ternaryExpression[0],onCard, enemyCard).Evaluate() == 1)
-        {
-            case "true":
-                this.BooleanExpr = true;
-                break;
-            case "false":
-                this.BooleanExpr = false;//crear una expresion de cada tipo posible y construirla por el switch, una vez construida ya sabe cual es su Evaluate
-                break;
-
-            default:
-                this.BooleanExpr = SeparatedExpressions[0].Evaluate()==1? true:false;//el evaluate de booleanexpressions devuelve 1 si son verdaderas 
-                break;
-        }
-        this.IfTrue = SeparatedExpressions[1]; 
-        this.Else = SeparatedExpressions[2];
-
-        }
+        string[] SeparatedExpressions = Interpreter.SepareTernaryExpression(ternaryExpression,3);
+        this.Condition = Interpreter.BuildExpression(SeparatedExpressions[0]);
+        this.IfTrue = Interpreter.BuildExpression(SeparatedExpressions[1]);
+        this.Else = Interpreter.BuildExpression(SeparatedExpressions[2]);
+    }
 
     public override double Evaluate()
-    {   
-        if (BooleanExpr)
+    {
+        if (Condition.Evaluate())
         {
-            return this.IfTrue.Evaluate();
+            return IfTrue.Evaluate();
         }
-        return this.Else.Evaluate();
+        return Else.Evaluate();
     }
 }
 
+public class Interpreter
+{
+    public static Expression BuildExpression(string expressionToBuild)
+    {
+        switch (expressionToBuild[0])
+        {
+            case '>':
+                return new HigherOperatorExpression();// le pasas expressionToBuild quitando >(  y ) y separando en MI y MD
+        default:
+                break;
+        }
+    }
+
+    public static string[] SepareTernaryExpression(string ternaryExpression, int elementsInExpression)
+    {
+
+        int endOfCondition = GetEndOfExpression(0, ternaryExpression);
+        //quitamos parentesis de extremos
+
+        int endOfIfTrue = GetEndOfExpression(endOfCondition + 1, ternaryExpression);
+        string[] answer = new string[elementsInExpression];
+        if (elementsInExpression == 3)
+        {
+            answer[3] = ternaryExpression;//copiar por las posiciones
+        }
+        return answer;
+
+
+    }
+
+    public static int GetEndOfExpression(int start, string ternaryExpression)
+    {
+        int count = 1;
+        int endOfExpression = 0;
+        start = GetParenthesiStart(start, ternaryExpression);
+
+        while (count != 0)
+        {
+            for (int i = start; i < ternaryExpression.Length; i++)//empieza en 2 porque al ser expr ternaria el primer operador es >,<,! o =, luego viene el primer parentesis
+            {
+                if (ternaryExpression[i] == '(')
+                {
+                    count++;
+                    break;
+                }
+                if (ternaryExpression[i] == ')')
+                {
+                    count--;
+                    endOfExpression = i;
+                }
+
+            }
+        }
+        return endOfExpression;
+    }
+    public static int GetParenthesiStart(int start, string ternaryExpression)
+    {
+        for (int i = start; i < ternaryExpression.Length; i++)
+        {
+            if (ternaryExpression[i] == '(')
+            {
+                return i;
+            }
+        }
+        throw new Exception("The expression isn't properly written.");
+    }
+
+}
 
 public abstract class BinaryExpression : Expression
 {
@@ -138,8 +169,8 @@ public abstract class BinaryExpression : Expression
 
     public BinaryExpression(string left, string right)
     {
-        this.Left = BuildExpression(left);
-        this.Right = BuildExpression(right);
+        this.Left = Interpreter.BuildExpression(left);
+        this.Right = Interpreter.BuildExpression(right);
     }
 
     public override double Evaluate()
