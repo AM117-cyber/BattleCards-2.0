@@ -1,6 +1,6 @@
-namespace BattleCards.Cards
+/*namespace BattleCards.Cards
 public abstract class ToolCard: Card
 {
    
     
-}
+}*/

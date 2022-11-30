@@ -1,0 +1,1 @@
+ManaCost (4) Type (Monster) Name (ExampleCard) TargetTypes (MonsterCard) DamagePoints (50) Attack (<(OnCard(Damage),EnemyCard(Damage)),OnCard(Damage),(105)) Heal ((true),Add(OnCard(Damage),(50)),()) Deffend ((true),Add(OnCard(Damage),(5)),()) HealthPoints (150)

@@ -23,7 +23,6 @@ public enum BasicCardProperties
  {
     ManaCost,
     Type,
-    Owner,
     Name,
     TargetTypes,
     DamagePoints,

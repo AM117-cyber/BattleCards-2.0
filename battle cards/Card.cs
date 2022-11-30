@@ -17,13 +17,13 @@ public abstract class Card
     
     public Card(string[] basicProperties)
     {
-        this.ManaCost = Double.Parse(basicProperties[1]);
+        this.ManaCost = Double.Parse(basicProperties[0]);
         this.Owner = null;
-        this.Name = basicProperties[5];
-        this.DamagePoints = Double.Parse(basicProperties[9]);
-        this.Attack = new TernaryExpression(basicProperties[11]);
-        this.Heal = new TernaryExpression(basicProperties[13]);
-        this.Deffend =  new TernaryExpression(basicProperties[15]);
+        this.Name = basicProperties[2];
+        this.DamagePoints = Double.Parse(basicProperties[4]);
+        this.Attack = new TernaryExpression(basicProperties[5]);//llega la expresion sin () en extremos, despues de Trim
+        this.Heal = new TernaryExpression(basicProperties[6]);
+        this.Deffend =  new TernaryExpression(basicProperties[7]);
     }
     
 }

@@ -4,34 +4,29 @@ using System.Threading;
 using static Utils.Utils;
 using System.Data;
 using System.ComponentModel;
+using System.Reflection.Metadata.Ecma335;
 
 namespace BattleCards;
 
 public class CreateCard
 {
-
-
-    public static string textOfCard = "";
-    // lo crearia y luego lo leo o eso se hace a la misma vez?
-
-    //assuming you have properties of cards already set
-
-    public void CardCreator(string[] text)//text viene de aplicarle Split('') a string inicial
+    public static Card CardCreator(string[] text)//text viene de aplicarle Split('') a string inicial
     {
         string[] propertiesToSet = new string[Enum.GetNames(typeof(BasicCardProperties)).Length];
-        for (int i = 1; i < propertiesToSet.Length; i += 2)
+        int j = 0;
+        for (int i = 1; i < text.Length-2; i += 2)
         {
-            propertiesToSet[i].TrimStart('(').TrimEnd(')');
+            propertiesToSet[j++] = text[i].Remove(text[i].Length-1,1).Remove(0,1);
         }
 
-        switch (text[3])
+        switch (propertiesToSet[1])
         {
             case "Monster":
-                new MonsterCard(propertiesToSet, Int32.Parse(text[text.Length - 1]));
-                break;
+                return new MonsterCard(propertiesToSet, Int32.Parse(text[text.Length - 1].Remove(text[text.Length - 1].Length-1,1).Remove(0,1)));
+                
             case "Spell":
-                new SpellCard(propertiesToSet, Int32.Parse(text[text.Length - 1]));
-                break;
+                return new SpellCard(propertiesToSet, Int32.Parse(text[text.Length - 1].Remove(text[text.Length - 1].Length-1,1).Remove(0,1)));
+                
 
 
             default:
@@ -40,23 +35,18 @@ public class CreateCard
         }
     }
 
-    public void CardActionReceiver(Card card1, Card card2, string action)
+    public static void CardActionReceiver(Card card1, Card card2, string action)
     {
-        double answer = 0;
         //paso 1 evaluar la expresion booleana
         //paso 2 si es true evaluar la 2da si es false la tercera
         //paso 3 enviar double obtenido a metodo con el nombre
         switch (action)
         {
             case "Attack":
-                var attack = new TernaryExpression(card1.Attack, card1, card2);
-                answer = attack.Evaluate(); //metodo que evalua una terna, dentro de el se evalua booleana y se ve el if para la 2da o tercera, llama a otro que procesa parentesis. 
-                Actions.Actions.Attack(card2, answer);
+                Actions.Actions.Attack(card1,card2 as MonsterCard, card1.Attack.Evaluate(card1, card2));
                 break;
             case "Heal":
-                var heal = new TernaryExpression(card1.Heal, card1, card2);
-                answer = heal.Evaluate();
-                Actions.Actions.Heal(card2, answer);
+                Actions.Actions.Heal(card1,card2 as MonsterCard, card1.Heal.Evaluate(card2, card1));
                 break;
             default:
                 throw new Exception("The action chosen was not correct.");
@@ -66,7 +56,7 @@ public class CreateCard
 
     public abstract class Expression
     {
-        public abstract double Evaluate();
+        public abstract double Evaluate(Card onCard, Card enemyCard);
     }
 
 public class TernaryExpression : Expression
@@ -82,14 +72,15 @@ public class TernaryExpression : Expression
         this.IfTrue = Interpreter.BuildExpression(SeparatedExpressions[1]);
         this.Else = Interpreter.BuildExpression(SeparatedExpressions[2]);
     }
-
-    public override double Evaluate()
+    
+  
+    public override double Evaluate(Card onCard, Card enemyCard)
     {
-        if (Condition.Evaluate())
+        if (Condition.Evaluate(onCard, enemyCard) ==1)
         {
-            return IfTrue.Evaluate();
+            return IfTrue.Evaluate( onCard, enemyCard);
         }
-        return Else.Evaluate();
+        return Else.Evaluate(onCard, enemyCard);
     }
 }
 
@@ -97,12 +88,92 @@ public class Interpreter
 {
     public static Expression BuildExpression(string expressionToBuild)
     {
+        
+        string[] leftAndRight = new string[3];
         switch (expressionToBuild[0])
         {
             case '>':
-                return new HigherOperatorExpression();// le pasas expressionToBuild quitando >(  y ) y separando en MI y MD
-        default:
-                break;
+                
+                leftAndRight = SepareTernaryExpression(expressionToBuild.Remove(0,2).Remove(expressionToBuild.Length-1), 2);
+                return new HigherThanOperatorExpression(leftAndRight[0], leftAndRight[1]);// le pasas expressionToBuild quitando >(  y ) y separando en MI y MD
+            case '<':
+                
+                leftAndRight = SepareTernaryExpression(expressionToBuild.Remove(expressionToBuild.Length-1).Remove(0,2), 2);
+                return new LowerThanOperatorExpression(leftAndRight[0], leftAndRight[1]);
+            case '=':
+                
+                leftAndRight = SepareTernaryExpression(expressionToBuild.Remove(expressionToBuild.Length-1).Remove(0,2), 2);
+                return new EqualityOperatorExpression(leftAndRight[0], leftAndRight[1]);
+            case '!':
+                
+                leftAndRight = SepareTernaryExpression(expressionToBuild.Remove(expressionToBuild.Length-1).Remove(0,2), 2);
+                return new DifferentOperatorExpression(leftAndRight[0], leftAndRight[1]);
+            case '(':
+            if (expressionToBuild[1]=='t')
+            {
+                return new TrueExpression();
+            }
+            if (expressionToBuild[1]=='f')
+            {
+                return new FalseExpression();
+            }
+              double constantValue = 0;
+                if (double.TryParse(expressionToBuild.TrimStart('(').TrimEnd(')'),out constantValue))
+                {
+                    return new Constant(constantValue);
+                }
+                if (expressionToBuild == "()")
+                {
+                    return new Constant(0);
+                }
+                throw new Exception("The expression typed isn't correct.");
+            case 'A':
+                //revisar que pasa con true al principio
+                leftAndRight = SepareTernaryExpression(expressionToBuild.Remove(expressionToBuild.Length-1).Remove(0,4), 2);
+                return new Add(leftAndRight[0], leftAndRight[1]);
+            case 'S':
+                
+                leftAndRight = SepareTernaryExpression(expressionToBuild.Remove(expressionToBuild.Length-1).Remove(0,10), 2);
+                return new Substract(leftAndRight[0], leftAndRight[1]);
+            case 'M':
+
+                
+                leftAndRight = SepareTernaryExpression(expressionToBuild.Remove(expressionToBuild.Length-1).Remove(0,9), 2);
+                return new Multiply(leftAndRight[0], leftAndRight[1]);
+            case 'D':
+
+                
+                leftAndRight = SepareTernaryExpression(expressionToBuild.Remove(expressionToBuild.Length-1).Remove(0,7), 2);
+                return new Divide(leftAndRight[0], leftAndRight[1]);
+            case 'P':
+
+                
+                leftAndRight = SepareTernaryExpression(expressionToBuild.Remove(expressionToBuild.Length-1).Remove(0,4), 2);
+                return new Pow(leftAndRight[0], leftAndRight[1]);
+            case 'R':
+
+                
+                leftAndRight = SepareTernaryExpression(expressionToBuild.Remove(expressionToBuild.Length-1).Remove(0,5), 2);
+                return new Root(leftAndRight[0], leftAndRight[1]);
+            case 'O':
+                if (expressionToBuild[2]=='C')
+                {
+                    
+                    return new OnCard(expressionToBuild.Remove(expressionToBuild.Length-1).Remove(0,7));
+                }
+                
+                return new OnPlayer(expressionToBuild.Remove(expressionToBuild.Length-1).Remove(0,9));
+            case 'E':
+                if (expressionToBuild[5] == 'C')
+                {
+                    
+                    return new EnemyCard(expressionToBuild.Remove(expressionToBuild.Length-1).Remove(0,10));
+                }
+                
+                return new EnemyPlayer(expressionToBuild.Remove(expressionToBuild.Length-1).Remove(0,11));
+            default:
+                throw new Exception("The expression typed isn't correct.");
+                
         }
     }
 
@@ -112,12 +183,15 @@ public class Interpreter
         int endOfCondition = GetEndOfExpression(0, ternaryExpression);
         //quitamos parentesis de extremos
 
-        int endOfIfTrue = GetEndOfExpression(endOfCondition + 1, ternaryExpression);
+        int endOfIfTrue = GetEndOfExpression(endOfCondition + 2, ternaryExpression);
         string[] answer = new string[elementsInExpression];
         if (elementsInExpression == 3)
         {
-            answer[3] = ternaryExpression;//copiar por las posiciones
+            answer[2] = GetString(ternaryExpression, endOfIfTrue+2, ternaryExpression.Length-1);
         }
+        answer[1] = GetString(ternaryExpression, endOfCondition + 2, endOfIfTrue);
+        answer[0] = GetString(ternaryExpression, 0, endOfCondition);
+       
         return answer;
 
 
@@ -129,23 +203,26 @@ public class Interpreter
         int endOfExpression = 0;
         start = GetParenthesiStart(start, ternaryExpression);
 
-        while (count != 0)
-        {
-            for (int i = start; i < ternaryExpression.Length; i++)//empieza en 2 porque al ser expr ternaria el primer operador es >,<,! o =, luego viene el primer parentesis
+        
+            for (int i = start+1; i < ternaryExpression.Length; i++)//empieza en 2 porque al ser expr ternaria el primer operador es >,<,! o =, luego viene el primer parentesis
             {
-                if (ternaryExpression[i] == '(')
+                if (count == 0)
                 {
-                    count++;
-                    break;
+                    return endOfExpression;
                 }
-                if (ternaryExpression[i] == ')')
-                {
-                    count--;
-                    endOfExpression = i;
-                }
+                
+                    if (ternaryExpression[i] == '(')
+                    {
+                        count++;
+                    }
+                    
+                    if (ternaryExpression[i] == ')')
+                    {
+                        count--;
+                     endOfExpression = i;
+                    }
 
             }
-        }
         return endOfExpression;
     }
     public static int GetParenthesiStart(int start, string ternaryExpression)
@@ -160,6 +237,15 @@ public class Interpreter
         throw new Exception("The expression isn't properly written.");
     }
 
+    public static string GetString(string ternaryExpression, int start, int end)
+    {
+        string expression = string.Empty;
+        for (int i = start; i <= end; i++)
+        {
+            expression += ternaryExpression[i];
+        }
+        return expression;  
+    }
 }
 
 public abstract class BinaryExpression : Expression
@@ -173,10 +259,10 @@ public abstract class BinaryExpression : Expression
         this.Right = Interpreter.BuildExpression(right);
     }
 
-    public override double Evaluate()
+    public override double Evaluate(Card onCard, Card enemyCard)
     {
-        double leftValue = this.Left.Evaluate();
-        double rightValue = this.Right.Evaluate();
+        double leftValue = this.Left.Evaluate(onCard, enemyCard);
+        double rightValue = this.Right.Evaluate(onCard, enemyCard);
 
         return this.Evaluate(leftValue, rightValue);
     }
@@ -197,9 +283,9 @@ public class LowerThanOperatorExpression : BinaryExpression
     }
 }
 
-public class HigherOperatorExpression : BinaryExpression
+public class HigherThanOperatorExpression : BinaryExpression
 {
-    public HigherOperatorExpression(string left, string right) : base(left, right)
+    public HigherThanOperatorExpression(string left, string right) : base(left, right)
     {
 
     }
@@ -222,10 +308,22 @@ public class EqualityOperatorExpression : BinaryExpression
         return leftValue == rightValue ? 1 : 0;
     }
 }
+public class DifferentOperatorExpression : BinaryExpression
+{
+    public DifferentOperatorExpression(string left, string right) : base(left, right)
+    {
+
+    }
+
+    public override double Evaluate(double leftValue, double rightValue)
+    {
+        return leftValue != rightValue ? 1 : 0;
+    }
+}
 
 public class TrueExpression : Expression
 {
-    public override double Evaluate()
+    public override double Evaluate(Card onCard, Card enemyCard)
     {
         return 1;
     }
@@ -233,15 +331,15 @@ public class TrueExpression : Expression
 
 public class FalseExpression : Expression
 {
-    public override double Evaluate()
+    public override double Evaluate(Card onCard, Card enemyCard)
     {
         return 0;
     }
 }
 
-public class Sum : BinaryExpression
+public class Add : BinaryExpression
 {
-    public Sum(string left, string right) : base(left, right)
+    public Add(string left, string right) : base(left, right)
     {
 
     }
@@ -318,69 +416,122 @@ public class Root : BinaryExpression
     }
 }
 
-public class OnCardOrEnemyCard:Expression
+public class OnCard:Expression
 {
-    public Card CurrentCard { get; set; }
     public string Property { get; set; }
-   public OnCardOrEnemyCard(Card currentCard, string property)
+   public OnCard(string property)
     {
-        this.CurrentCard = currentCard;
         this.Property = property;
     }
-    public override double Evaluate()
+    public override double Evaluate(Card onCard, Card enemyCard)
     {
         switch (this.Property)
         {
             case "Damage":
-                return this.CurrentCard.DamagePoints;
+                return onCard.DamagePoints;
             case "Health":
-                if (this.CurrentCard.Type != CardType.Monster)
+                if (onCard.Type != CardType.Monster)
                 {
                     throw new Exception("This type of card doesn't have a Health value.Only monsters have health.");
                 }
-                return (this.CurrentCard as MonsterCard).HealthPoints;
+                return (onCard as MonsterCard).HealthPoints;
             case "ManaCost":
-                return this.CurrentCard.ManaCost;
+                return onCard.ManaCost;
             case "LifeTime":
-                if (this.CurrentCard.Type != CardType.Spell)
+                if (onCard.Type != CardType.Spell)
                 {
                     throw new Exception("This type of card doesn't have a Lifetime value.Only SpellCards have a lifetime.");
                 }
-                return (this.CurrentCard as SpellCard).LifeTime;
+                return (onCard as SpellCard).LifeTime;
             default:
                 throw new Exception("The property chosen in incorrect.");
         }
-
     }
 }
 
-public class OnPlayerOrEnemyPlayer : Expression
+public class EnemyCard : Expression
 {
-    public Card OnCard { get; set; }   
+    public string Property { get; set; }
+    public EnemyCard(string property)
+    {
+        this.Property = property;
+    }
+    public override double Evaluate(Card onCard, Card enemyCard)
+    {
+        switch (this.Property)
+        {
+            case "Damage":
+                return enemyCard.DamagePoints;
+            case "Health":
+                if (enemyCard.Type != CardType.Monster)
+                {
+                    throw new Exception("This type of card doesn't have a Health value.Only monsters have health.");
+                }
+                return (enemyCard as MonsterCard).HealthPoints;
+            case "ManaCost":
+                return enemyCard.ManaCost;
+            case "LifeTime":
+                if (enemyCard.Type != CardType.Spell)
+                {
+                    throw new Exception("This type of card doesn't have a Lifetime value.Only SpellCards have a lifetime.");
+                }
+                return (enemyCard as SpellCard).LifeTime;
+            default:
+                throw new Exception("The property chosen in incorrect.");
+        }
+    }
+}
+
+public class OnPlayer : Expression
+{
     public string Property { get; set; }
 
-    public OnPlayerOrEnemyPlayer(Card onCard, string property)
+    public OnPlayer(string property)
     {
-        this.OnCard = onCard;
         this.Property = property;
     }
 
-    public override double Evaluate()
+    public override double Evaluate(Card onCard, Card enemyCard)
     {
         switch (this.Property)
         {
             case "Health":
-                return this.OnCard.Owner.Health;
+                return onCard.Owner.Health;
             case "Mana":
-                return this.OnCard.Owner.Mana;
+                return onCard.Owner.Mana;
 
             default:
                 throw new Exception("This isn't a player's property");
-             
+
         }
     }
+}
+public class EnemyPlayer : Expression
+{
+    public string Property { get; set; }
 
-    public class Constant: Expression
+    public EnemyPlayer(string property)
+    {
+        this.Property = property;
+    }
+
+    public override double Evaluate(Card onCard, Card enemyCard)
+    {
+        switch (this.Property)
+        {
+            case "Health":
+                return enemyCard.Owner.Health;
+            case "Mana":
+                return enemyCard.Owner.Mana;
+
+            default:
+                throw new Exception("This isn't a player's property");
+
+        }
+    }
+}
+
+public class Constant: Expression
     {
         public double Value;   
 
@@ -388,283 +539,9 @@ public class OnPlayerOrEnemyPlayer : Expression
         {
             this.Value = value; //puede ser Double.Parse(value).
         }
-        public override double Evaluate()
+        public override double Evaluate(Card onCard, Card enemyCard)
         {
             return this.Value;
         }
     }
-}
 
-
-
-/*if (EvaluateBoolExp(booleanPartOfAttack))
-{
-
-}
-
-public bool EvaluateBoolExp(string booleanPartOfAttack)
-{
-    switch (booleanPartOfAttack[0])// seleccionando entre tipos 
-    {
-        case '<':
-            return lessComparator(booleanPartOfAttack.Remove(0, 0)).Evaluate;
-
-        case '>':
-            return moreComparator(booleanPartOfAttack.Remove(0, 0)).Evaluate;
-
-        case '=':
-            return equalityComparer(booleanPartOfAttack.Remove(0, 0)).Evaluate;
-
-        case '!':
-            return differetComparer(booleanPartOfAttack.Remove(0, 0)).Evaluate;
-
-        default:
-            throw new Exception("El primer elemento de terna debe ser una expresion booleana.");  
-    }
-}
-public abstract class Expression
-{
-
-    public abstract double EvaluateExpression(string expression);
-
-}
-public abstract class UnaryExpression : Expression
-{
-    protected readonly Expression inner;
-
-    public UnaryExpression(Expression inner)
-    {
-        this.inner = inner;
-    }
-
-    public override double Evaluate()
-    {
-        return this.Evaluate(this.inner.Evaluate());
-    }
-
-    protected abstract double Evaluate(double inner);
-}
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*public abstract class BinaryExpression : Expression
-{
-     Expression left;
-     Expression right;
-
-    public BinaryExpression(Expression left, Expression right)
-    {
-        this.left = left;
-        this.right = right;
-    }
-
-    public override double Evaluate()
-    {
-        double leftValue = this.left.Evaluate();
-        double rightValue = this.right.Evaluate();
-
-        return this.Evaluate(leftValue, rightValue);
-    }
-
-    protected abstract double Evaluate(double left, double right);
-}
-
-public class Add : BinaryExpression
-{
-    public Add(Expression left, Expression right) : base(left, right)
-    {
-
-    }
-
-    protected override double Evaluate(double left, double right)
-    {
-        return left + right;
-    }
-
-    public override string ToString()
-    {
-        return $"({left.ToString()}) + ({right.ToString()})";
-    }
-}
-
-public class Subtract : BinaryExpression
-{
-    public Subtract(Expression left, Expression right) : base(left, right)
-    {
-
-    }
-
-    protected override double Evaluate(double left, double right)
-    {
-        return left - right;
-    }
-
-    public override string ToString()
-    {
-        return $"({left.ToString()}) - ({right.ToString()})";
-    }
-}
-
-public class Multiply : BinaryExpression
-{
-    public Multiply(Expression left, Expression right) : base(left, right)
-    {
-
-    }
-
-    protected override double Evaluate(double left, double right)
-    {
-        return left * right;
-    }
-
-    public override string ToString()
-    {
-        return $"({left.ToString()}) * ({right.ToString()})";
-    }
-}
-
-public class Divide : BinaryExpression
-{
-    public Divide(Expression left, Expression right) : base(left, right)
-    {
-
-    }
-
-    protected override double Evaluate(double left, double right)
-    {
-        return left / right;
-    }
-
-    public override string ToString()
-    {
-
-        return $"({left.ToString()}) / ({right.ToString()})";
-    }
-}
-
-public class Pow : BinaryExpression
-{
-    public Pow(Expression left, Expression right) : base(left, right)
-    {
-
-    }
-
-    protected override double Evaluate(double left, double right)
-    {
-        return Math.Pow(left, right);
-    }
-
-    public override string ToString()
-    {
-        return $"({left.ToString()}) ^ ({right.ToString()})";
-    }
-}
-
-public abstract class UnaryExpression : Expression
-{
-    protected readonly Expression inner;
-
-    public UnaryExpression(Expression inner)
-    {
-        this.inner = inner;
-    }
-
-    public override double Evaluate()
-    {
-        return this.Evaluate(this.inner.Evaluate());
-    }
-
-    protected abstract double Evaluate(double inner);
-}
-
-public class Exp : UnaryExpression
-{
-    public Exp(Expression inner) : base(inner)
-    {
-
-    }
-
-    protected override double Evaluate(double inner)
-    {
-        return Math.Exp(inner);
-    }
-
-    public override string ToString()
-    {
-        return $"e^({inner.ToString()})";
-    }
-}
-
-public class Sin : UnaryExpression
-{
-    public Sin(Expression inner) : base(inner)
-    {
-
-    }
-
-    protected override double Evaluate(double inner)
-    {
-        return Math.Sin(inner);
-    }
-
-    public override string ToString()
-    {
-        return $"sin({inner.ToString()})";
-    }
-}
-
-public class Cos : UnaryExpression
-{
-    public Cos(Expression inner) : base(inner)
-    {
-
-    }
-
-    protected override double Evaluate(double inner)
-    {
-        return Math.Cos(inner);
-    }
-
-    public override string ToString()
-    {
-        return $"cos({inner.ToString()})";
-    }
-}
-
-public class Constant : Expression
-{
-    double value;
-
-    public Constant(double value)
-    {
-        this.value = value;
-    }
-
-    public override string ToString()
-    {
-        return value.ToString();
-    }
-
-    public override double Evaluate()
-    {
-        return this.value;
-    }
-}*/
