@@ -29,19 +29,22 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.mana_player2 = new System.Windows.Forms.Label();
-            this.hp_player2 = new System.Windows.Forms.Label();
+            this.virtual_player_play_button = new System.Windows.Forms.Button();
+            this.mana_of_Player2 = new System.Windows.Forms.Label();
+            this.hp_of_Player2 = new System.Windows.Forms.Label();
             this.label207 = new System.Windows.Forms.Label();
             this.label208 = new System.Windows.Forms.Label();
-            this.mana_player1 = new System.Windows.Forms.Label();
-            this.hp_player1 = new System.Windows.Forms.Label();
+            this.mana_of_Player1 = new System.Windows.Forms.Label();
+            this.hp_of_Player1 = new System.Windows.Forms.Label();
             this.label202 = new System.Windows.Forms.Label();
             this.label201 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
+            this.direct_attack_button = new System.Windows.Forms.Button();
+            this.invoke_button = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.attack_button = new System.Windows.Forms.Button();
-            this.panel19 = new System.Windows.Forms.Panel();
+            this.card_P1_C5 = new System.Windows.Forms.Panel();
             this.cost_P1_C5 = new System.Windows.Forms.Label();
             this.label152 = new System.Windows.Forms.Label();
             this.hp_P1_C5 = new System.Windows.Forms.Label();
@@ -52,7 +55,7 @@
             this.label158 = new System.Windows.Forms.Label();
             this.type_P1_C5 = new System.Windows.Forms.Label();
             this.label160 = new System.Windows.Forms.Label();
-            this.panel20 = new System.Windows.Forms.Panel();
+            this.card_P1_C4 = new System.Windows.Forms.Panel();
             this.cost_P1_C4 = new System.Windows.Forms.Label();
             this.label162 = new System.Windows.Forms.Label();
             this.hp_P1_C4 = new System.Windows.Forms.Label();
@@ -63,7 +66,7 @@
             this.label168 = new System.Windows.Forms.Label();
             this.type_P1_C4 = new System.Windows.Forms.Label();
             this.label170 = new System.Windows.Forms.Label();
-            this.panel21 = new System.Windows.Forms.Panel();
+            this.card_P1_C3 = new System.Windows.Forms.Panel();
             this.cost_P1_C3 = new System.Windows.Forms.Label();
             this.label172 = new System.Windows.Forms.Label();
             this.hp_P1_C3 = new System.Windows.Forms.Label();
@@ -74,7 +77,7 @@
             this.label178 = new System.Windows.Forms.Label();
             this.type_P1_C3 = new System.Windows.Forms.Label();
             this.label180 = new System.Windows.Forms.Label();
-            this.panel22 = new System.Windows.Forms.Panel();
+            this.card_P1_C2 = new System.Windows.Forms.Panel();
             this.cost_P1_C2 = new System.Windows.Forms.Label();
             this.label182 = new System.Windows.Forms.Label();
             this.hp_P1_C2 = new System.Windows.Forms.Label();
@@ -85,7 +88,7 @@
             this.label188 = new System.Windows.Forms.Label();
             this.type_P1_C2 = new System.Windows.Forms.Label();
             this.label190 = new System.Windows.Forms.Label();
-            this.panel23 = new System.Windows.Forms.Panel();
+            this.card_P1_C1 = new System.Windows.Forms.Panel();
             this.cost_P1_C1 = new System.Windows.Forms.Label();
             this.label192 = new System.Windows.Forms.Label();
             this.hp_P1_C1 = new System.Windows.Forms.Label();
@@ -96,7 +99,7 @@
             this.label198 = new System.Windows.Forms.Label();
             this.type_P1_C1 = new System.Windows.Forms.Label();
             this.label200 = new System.Windows.Forms.Label();
-            this.panel18 = new System.Windows.Forms.Panel();
+            this.card_P2_C5 = new System.Windows.Forms.Panel();
             this.cost_P2_C5 = new System.Windows.Forms.Label();
             this.label142 = new System.Windows.Forms.Label();
             this.hp_P2_C5 = new System.Windows.Forms.Label();
@@ -107,7 +110,7 @@
             this.label148 = new System.Windows.Forms.Label();
             this.type_P2_C5 = new System.Windows.Forms.Label();
             this.label150 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
+            this.card_P2_C4 = new System.Windows.Forms.Panel();
             this.cost_P2_C4 = new System.Windows.Forms.Label();
             this.label132 = new System.Windows.Forms.Label();
             this.hp_P2_C4 = new System.Windows.Forms.Label();
@@ -118,7 +121,7 @@
             this.label138 = new System.Windows.Forms.Label();
             this.type_P2_C4 = new System.Windows.Forms.Label();
             this.label140 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
+            this.card_P2_C3 = new System.Windows.Forms.Panel();
             this.cost_P2_C3 = new System.Windows.Forms.Label();
             this.label122 = new System.Windows.Forms.Label();
             this.hp_P2_C3 = new System.Windows.Forms.Label();
@@ -129,7 +132,7 @@
             this.label128 = new System.Windows.Forms.Label();
             this.type_P2_C3 = new System.Windows.Forms.Label();
             this.label130 = new System.Windows.Forms.Label();
-            this.panel15 = new System.Windows.Forms.Panel();
+            this.card_P2_C2 = new System.Windows.Forms.Panel();
             this.cost_P2_C2 = new System.Windows.Forms.Label();
             this.label112 = new System.Windows.Forms.Label();
             this.hp_P2_C2 = new System.Windows.Forms.Label();
@@ -140,7 +143,7 @@
             this.label118 = new System.Windows.Forms.Label();
             this.type_P2_C2 = new System.Windows.Forms.Label();
             this.label120 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
+            this.card_P2_H5 = new System.Windows.Forms.Panel();
             this.cost_P2_H5 = new System.Windows.Forms.Label();
             this.label102 = new System.Windows.Forms.Label();
             this.hp_P2_H5 = new System.Windows.Forms.Label();
@@ -151,7 +154,7 @@
             this.label108 = new System.Windows.Forms.Label();
             this.type_P2_H5 = new System.Windows.Forms.Label();
             this.label110 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
+            this.card_P2_H4 = new System.Windows.Forms.Panel();
             this.cost_P2_H4 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
             this.hp_P2_H4 = new System.Windows.Forms.Label();
@@ -162,7 +165,7 @@
             this.label98 = new System.Windows.Forms.Label();
             this.type_P2_H4 = new System.Windows.Forms.Label();
             this.label100 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
+            this.card_P2_H3 = new System.Windows.Forms.Panel();
             this.cost_P2_H3 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
             this.hp_P2_H3 = new System.Windows.Forms.Label();
@@ -173,7 +176,7 @@
             this.label88 = new System.Windows.Forms.Label();
             this.type_P2_H3 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.card_P2_H2 = new System.Windows.Forms.Panel();
             this.cost_P2_H2 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
             this.hp_P2_H2 = new System.Windows.Forms.Label();
@@ -184,7 +187,7 @@
             this.label78 = new System.Windows.Forms.Label();
             this.type_P2_H2 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.card_P2_H1 = new System.Windows.Forms.Panel();
             this.cost_P2_H1 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.hp_P2_H1 = new System.Windows.Forms.Label();
@@ -195,7 +198,7 @@
             this.label68 = new System.Windows.Forms.Label();
             this.type_P2_H1 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.card_P1_H5 = new System.Windows.Forms.Panel();
             this.cost_P1_H5 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.hp_P1_H5 = new System.Windows.Forms.Label();
@@ -206,7 +209,7 @@
             this.label58 = new System.Windows.Forms.Label();
             this.type_P1_H5 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.card_P1_H4 = new System.Windows.Forms.Panel();
             this.cost_P1_H4 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.hp_P1_H4 = new System.Windows.Forms.Label();
@@ -217,7 +220,7 @@
             this.label48 = new System.Windows.Forms.Label();
             this.type_P1_H4 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.card_P1_H3 = new System.Windows.Forms.Panel();
             this.cost_P1_H3 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.hp_P1_H3 = new System.Windows.Forms.Label();
@@ -228,7 +231,7 @@
             this.label38 = new System.Windows.Forms.Label();
             this.type_P1_H3 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.card_P1_H2 = new System.Windows.Forms.Panel();
             this.cost_P1_H2 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.hp_P1_H2 = new System.Windows.Forms.Label();
@@ -239,7 +242,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.type_P1_H2 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.card_P1_H1 = new System.Windows.Forms.Panel();
             this.cost_P1_H1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.hp_P1_H1 = new System.Windows.Forms.Label();
@@ -250,7 +253,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.type_P1_H1 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.card_P2_C1 = new System.Windows.Forms.Panel();
             this.cost_P2_C1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.hp_P2_C1 = new System.Windows.Forms.Label();
@@ -266,59 +269,60 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel1.SuspendLayout();
             this.panel24.SuspendLayout();
-            this.panel19.SuspendLayout();
-            this.panel20.SuspendLayout();
-            this.panel21.SuspendLayout();
-            this.panel22.SuspendLayout();
-            this.panel23.SuspendLayout();
-            this.panel18.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel16.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.card_P1_C5.SuspendLayout();
+            this.card_P1_C4.SuspendLayout();
+            this.card_P1_C3.SuspendLayout();
+            this.card_P1_C2.SuspendLayout();
+            this.card_P1_C1.SuspendLayout();
+            this.card_P2_C5.SuspendLayout();
+            this.card_P2_C4.SuspendLayout();
+            this.card_P2_C3.SuspendLayout();
+            this.card_P2_C2.SuspendLayout();
+            this.card_P2_H5.SuspendLayout();
+            this.card_P2_H4.SuspendLayout();
+            this.card_P2_H3.SuspendLayout();
+            this.card_P2_H2.SuspendLayout();
+            this.card_P2_H1.SuspendLayout();
+            this.card_P1_H5.SuspendLayout();
+            this.card_P1_H4.SuspendLayout();
+            this.card_P1_H3.SuspendLayout();
+            this.card_P1_H2.SuspendLayout();
+            this.card_P1_H1.SuspendLayout();
+            this.card_P2_C1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.mana_player2);
-            this.panel1.Controls.Add(this.hp_player2);
+            this.panel1.Controls.Add(this.virtual_player_play_button);
+            this.panel1.Controls.Add(this.mana_of_Player2);
+            this.panel1.Controls.Add(this.hp_of_Player2);
             this.panel1.Controls.Add(this.label207);
             this.panel1.Controls.Add(this.label208);
-            this.panel1.Controls.Add(this.mana_player1);
-            this.panel1.Controls.Add(this.hp_player1);
+            this.panel1.Controls.Add(this.mana_of_Player1);
+            this.panel1.Controls.Add(this.hp_of_Player1);
             this.panel1.Controls.Add(this.label202);
             this.panel1.Controls.Add(this.label201);
             this.panel1.Controls.Add(this.panel24);
-            this.panel1.Controls.Add(this.panel19);
-            this.panel1.Controls.Add(this.panel20);
-            this.panel1.Controls.Add(this.panel21);
-            this.panel1.Controls.Add(this.panel22);
-            this.panel1.Controls.Add(this.panel23);
-            this.panel1.Controls.Add(this.panel18);
-            this.panel1.Controls.Add(this.panel17);
-            this.panel1.Controls.Add(this.panel16);
-            this.panel1.Controls.Add(this.panel15);
-            this.panel1.Controls.Add(this.panel14);
-            this.panel1.Controls.Add(this.panel13);
-            this.panel1.Controls.Add(this.panel12);
-            this.panel1.Controls.Add(this.panel11);
-            this.panel1.Controls.Add(this.panel10);
-            this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.panel8);
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.card_P1_C5);
+            this.panel1.Controls.Add(this.card_P1_C4);
+            this.panel1.Controls.Add(this.card_P1_C3);
+            this.panel1.Controls.Add(this.card_P1_C2);
+            this.panel1.Controls.Add(this.card_P1_C1);
+            this.panel1.Controls.Add(this.card_P2_C5);
+            this.panel1.Controls.Add(this.card_P2_C4);
+            this.panel1.Controls.Add(this.card_P2_C3);
+            this.panel1.Controls.Add(this.card_P2_C2);
+            this.panel1.Controls.Add(this.card_P2_H5);
+            this.panel1.Controls.Add(this.card_P2_H4);
+            this.panel1.Controls.Add(this.card_P2_H3);
+            this.panel1.Controls.Add(this.card_P2_H2);
+            this.panel1.Controls.Add(this.card_P2_H1);
+            this.panel1.Controls.Add(this.card_P1_H5);
+            this.panel1.Controls.Add(this.card_P1_H4);
+            this.panel1.Controls.Add(this.card_P1_H3);
+            this.panel1.Controls.Add(this.card_P1_H2);
+            this.panel1.Controls.Add(this.card_P1_H1);
+            this.panel1.Controls.Add(this.card_P2_C1);
             this.panel1.Controls.Add(this.deck_player2);
             this.panel1.Controls.Add(this.deck_player1);
             this.panel1.Location = new System.Drawing.Point(24, 24);
@@ -327,23 +331,33 @@
             this.panel1.Size = new System.Drawing.Size(1540, 1091);
             this.panel1.TabIndex = 0;
             // 
-            // mana_player2
+            // virtual_player_play_button
             // 
-            this.mana_player2.AutoSize = true;
-            this.mana_player2.Location = new System.Drawing.Point(1209, 114);
-            this.mana_player2.Name = "mana_player2";
-            this.mana_player2.Size = new System.Drawing.Size(79, 25);
-            this.mana_player2.TabIndex = 25;
-            this.mana_player2.Text = "label205";
+            this.virtual_player_play_button.Location = new System.Drawing.Point(54, 515);
+            this.virtual_player_play_button.Name = "virtual_player_play_button";
+            this.virtual_player_play_button.Size = new System.Drawing.Size(167, 34);
+            this.virtual_player_play_button.TabIndex = 26;
+            this.virtual_player_play_button.Text = "Virtual Player Play";
+            this.virtual_player_play_button.UseVisualStyleBackColor = true;
+            this.virtual_player_play_button.Click += new System.EventHandler(this.virtual_player_play_Click);
             // 
-            // hp_player2
+            // mana_of_Player2
             // 
-            this.hp_player2.AutoSize = true;
-            this.hp_player2.Location = new System.Drawing.Point(946, 114);
-            this.hp_player2.Name = "hp_player2";
-            this.hp_player2.Size = new System.Drawing.Size(79, 25);
-            this.hp_player2.TabIndex = 24;
-            this.hp_player2.Text = "label206";
+            this.mana_of_Player2.AutoSize = true;
+            this.mana_of_Player2.Location = new System.Drawing.Point(1209, 114);
+            this.mana_of_Player2.Name = "mana_of_Player2";
+            this.mana_of_Player2.Size = new System.Drawing.Size(79, 25);
+            this.mana_of_Player2.TabIndex = 25;
+            this.mana_of_Player2.Text = "label205";
+            // 
+            // hp_of_Player2
+            // 
+            this.hp_of_Player2.AutoSize = true;
+            this.hp_of_Player2.Location = new System.Drawing.Point(946, 114);
+            this.hp_of_Player2.Name = "hp_of_Player2";
+            this.hp_of_Player2.Size = new System.Drawing.Size(79, 25);
+            this.hp_of_Player2.TabIndex = 24;
+            this.hp_of_Player2.Text = "label206";
             // 
             // label207
             // 
@@ -364,23 +378,23 @@
             this.label208.Text = "HP:";
             this.label208.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // mana_player1
+            // mana_of_Player1
             // 
-            this.mana_player1.AutoSize = true;
-            this.mana_player1.Location = new System.Drawing.Point(1193, 1016);
-            this.mana_player1.Name = "mana_player1";
-            this.mana_player1.Size = new System.Drawing.Size(79, 25);
-            this.mana_player1.TabIndex = 21;
-            this.mana_player1.Text = "label204";
+            this.mana_of_Player1.AutoSize = true;
+            this.mana_of_Player1.Location = new System.Drawing.Point(1193, 1016);
+            this.mana_of_Player1.Name = "mana_of_Player1";
+            this.mana_of_Player1.Size = new System.Drawing.Size(79, 25);
+            this.mana_of_Player1.TabIndex = 21;
+            this.mana_of_Player1.Text = "label204";
             // 
-            // hp_player1
+            // hp_of_Player1
             // 
-            this.hp_player1.AutoSize = true;
-            this.hp_player1.Location = new System.Drawing.Point(930, 1016);
-            this.hp_player1.Name = "hp_player1";
-            this.hp_player1.Size = new System.Drawing.Size(79, 25);
-            this.hp_player1.TabIndex = 20;
-            this.hp_player1.Text = "label203";
+            this.hp_of_Player1.AutoSize = true;
+            this.hp_of_Player1.Location = new System.Drawing.Point(930, 1016);
+            this.hp_of_Player1.Name = "hp_of_Player1";
+            this.hp_of_Player1.Size = new System.Drawing.Size(79, 25);
+            this.hp_of_Player1.TabIndex = 20;
+            this.hp_of_Player1.Text = "label203";
             // 
             // label202
             // 
@@ -404,6 +418,8 @@
             // panel24
             // 
             this.panel24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel24.Controls.Add(this.direct_attack_button);
+            this.panel24.Controls.Add(this.invoke_button);
             this.panel24.Controls.Add(this.button4);
             this.panel24.Controls.Add(this.button2);
             this.panel24.Controls.Add(this.attack_button);
@@ -412,6 +428,27 @@
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(138, 471);
             this.panel24.TabIndex = 17;
+            // 
+            // direct_attack_button
+            // 
+            this.direct_attack_button.Location = new System.Drawing.Point(3, 12);
+            this.direct_attack_button.Name = "direct_attack_button";
+            this.direct_attack_button.Size = new System.Drawing.Size(130, 34);
+            this.direct_attack_button.TabIndex = 5;
+            this.direct_attack_button.Text = "Direct Attack";
+            this.direct_attack_button.UseVisualStyleBackColor = true;
+            this.direct_attack_button.Click += new System.EventHandler(this.direct_attack_button_Click);
+            // 
+            // invoke_button
+            // 
+            this.invoke_button.Location = new System.Drawing.Point(30, 214);
+            this.invoke_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.invoke_button.Name = "invoke_button";
+            this.invoke_button.Size = new System.Drawing.Size(84, 46);
+            this.invoke_button.TabIndex = 4;
+            this.invoke_button.Text = "Invoke";
+            this.invoke_button.UseVisualStyleBackColor = true;
+            this.invoke_button.Click += new System.EventHandler(this.invoke_button_Click);
             // 
             // button4
             // 
@@ -422,7 +459,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "End Turn";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.end_turn_button_Click);
             // 
             // button2
             // 
@@ -445,24 +482,25 @@
             this.attack_button.UseVisualStyleBackColor = true;
             this.attack_button.Click += new System.EventHandler(this.attack_button_Click);
             // 
-            // panel19
+            // card_P1_C5
             // 
-            this.panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel19.Controls.Add(this.cost_P1_C5);
-            this.panel19.Controls.Add(this.label152);
-            this.panel19.Controls.Add(this.hp_P1_C5);
-            this.panel19.Controls.Add(this.label154);
-            this.panel19.Controls.Add(this.name_P1_C5);
-            this.panel19.Controls.Add(this.label156);
-            this.panel19.Controls.Add(this.damage_P1_C5);
-            this.panel19.Controls.Add(this.label158);
-            this.panel19.Controls.Add(this.type_P1_C5);
-            this.panel19.Controls.Add(this.label160);
-            this.panel19.Location = new System.Drawing.Point(1002, 552);
-            this.panel19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(144, 218);
-            this.panel19.TabIndex = 13;
+            this.card_P1_C5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_C5.Controls.Add(this.cost_P1_C5);
+            this.card_P1_C5.Controls.Add(this.label152);
+            this.card_P1_C5.Controls.Add(this.hp_P1_C5);
+            this.card_P1_C5.Controls.Add(this.label154);
+            this.card_P1_C5.Controls.Add(this.name_P1_C5);
+            this.card_P1_C5.Controls.Add(this.label156);
+            this.card_P1_C5.Controls.Add(this.damage_P1_C5);
+            this.card_P1_C5.Controls.Add(this.label158);
+            this.card_P1_C5.Controls.Add(this.type_P1_C5);
+            this.card_P1_C5.Controls.Add(this.label160);
+            this.card_P1_C5.Location = new System.Drawing.Point(1002, 552);
+            this.card_P1_C5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P1_C5.Name = "card_P1_C5";
+            this.card_P1_C5.Size = new System.Drawing.Size(144, 218);
+            this.card_P1_C5.TabIndex = 13;
+            this.card_P1_C5.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P1_C5
             // 
@@ -559,24 +597,25 @@
             this.label160.UseMnemonic = false;
             this.label160.Visible = false;
             // 
-            // panel20
+            // card_P1_C4
             // 
-            this.panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel20.Controls.Add(this.cost_P1_C4);
-            this.panel20.Controls.Add(this.label162);
-            this.panel20.Controls.Add(this.hp_P1_C4);
-            this.panel20.Controls.Add(this.label164);
-            this.panel20.Controls.Add(this.name_P1_C4);
-            this.panel20.Controls.Add(this.label166);
-            this.panel20.Controls.Add(this.damage_P1_C4);
-            this.panel20.Controls.Add(this.label168);
-            this.panel20.Controls.Add(this.type_P1_C4);
-            this.panel20.Controls.Add(this.label170);
-            this.panel20.Location = new System.Drawing.Point(840, 552);
-            this.panel20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(144, 218);
-            this.panel20.TabIndex = 14;
+            this.card_P1_C4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_C4.Controls.Add(this.cost_P1_C4);
+            this.card_P1_C4.Controls.Add(this.label162);
+            this.card_P1_C4.Controls.Add(this.hp_P1_C4);
+            this.card_P1_C4.Controls.Add(this.label164);
+            this.card_P1_C4.Controls.Add(this.name_P1_C4);
+            this.card_P1_C4.Controls.Add(this.label166);
+            this.card_P1_C4.Controls.Add(this.damage_P1_C4);
+            this.card_P1_C4.Controls.Add(this.label168);
+            this.card_P1_C4.Controls.Add(this.type_P1_C4);
+            this.card_P1_C4.Controls.Add(this.label170);
+            this.card_P1_C4.Location = new System.Drawing.Point(840, 552);
+            this.card_P1_C4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P1_C4.Name = "card_P1_C4";
+            this.card_P1_C4.Size = new System.Drawing.Size(144, 218);
+            this.card_P1_C4.TabIndex = 14;
+            this.card_P1_C4.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P1_C4
             // 
@@ -673,24 +712,25 @@
             this.label170.UseMnemonic = false;
             this.label170.Visible = false;
             // 
-            // panel21
+            // card_P1_C3
             // 
-            this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel21.Controls.Add(this.cost_P1_C3);
-            this.panel21.Controls.Add(this.label172);
-            this.panel21.Controls.Add(this.hp_P1_C3);
-            this.panel21.Controls.Add(this.label174);
-            this.panel21.Controls.Add(this.name_P1_C3);
-            this.panel21.Controls.Add(this.label176);
-            this.panel21.Controls.Add(this.damage_P1_C3);
-            this.panel21.Controls.Add(this.label178);
-            this.panel21.Controls.Add(this.type_P1_C3);
-            this.panel21.Controls.Add(this.label180);
-            this.panel21.Location = new System.Drawing.Point(676, 552);
-            this.panel21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(144, 218);
-            this.panel21.TabIndex = 15;
+            this.card_P1_C3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_C3.Controls.Add(this.cost_P1_C3);
+            this.card_P1_C3.Controls.Add(this.label172);
+            this.card_P1_C3.Controls.Add(this.hp_P1_C3);
+            this.card_P1_C3.Controls.Add(this.label174);
+            this.card_P1_C3.Controls.Add(this.name_P1_C3);
+            this.card_P1_C3.Controls.Add(this.label176);
+            this.card_P1_C3.Controls.Add(this.damage_P1_C3);
+            this.card_P1_C3.Controls.Add(this.label178);
+            this.card_P1_C3.Controls.Add(this.type_P1_C3);
+            this.card_P1_C3.Controls.Add(this.label180);
+            this.card_P1_C3.Location = new System.Drawing.Point(676, 552);
+            this.card_P1_C3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P1_C3.Name = "card_P1_C3";
+            this.card_P1_C3.Size = new System.Drawing.Size(144, 218);
+            this.card_P1_C3.TabIndex = 15;
+            this.card_P1_C3.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P1_C3
             // 
@@ -787,24 +827,26 @@
             this.label180.UseMnemonic = false;
             this.label180.Visible = false;
             // 
-            // panel22
+            // card_P1_C2
             // 
-            this.panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel22.Controls.Add(this.cost_P1_C2);
-            this.panel22.Controls.Add(this.label182);
-            this.panel22.Controls.Add(this.hp_P1_C2);
-            this.panel22.Controls.Add(this.label184);
-            this.panel22.Controls.Add(this.name_P1_C2);
-            this.panel22.Controls.Add(this.label186);
-            this.panel22.Controls.Add(this.damage_P1_C2);
-            this.panel22.Controls.Add(this.label188);
-            this.panel22.Controls.Add(this.type_P1_C2);
-            this.panel22.Controls.Add(this.label190);
-            this.panel22.Location = new System.Drawing.Point(512, 552);
-            this.panel22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(144, 218);
-            this.panel22.TabIndex = 16;
+            this.card_P1_C2.AccessibleDescription = "";
+            this.card_P1_C2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_C2.Controls.Add(this.cost_P1_C2);
+            this.card_P1_C2.Controls.Add(this.label182);
+            this.card_P1_C2.Controls.Add(this.hp_P1_C2);
+            this.card_P1_C2.Controls.Add(this.label184);
+            this.card_P1_C2.Controls.Add(this.name_P1_C2);
+            this.card_P1_C2.Controls.Add(this.label186);
+            this.card_P1_C2.Controls.Add(this.damage_P1_C2);
+            this.card_P1_C2.Controls.Add(this.label188);
+            this.card_P1_C2.Controls.Add(this.type_P1_C2);
+            this.card_P1_C2.Controls.Add(this.label190);
+            this.card_P1_C2.Location = new System.Drawing.Point(512, 552);
+            this.card_P1_C2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P1_C2.Name = "card_P1_C2";
+            this.card_P1_C2.Size = new System.Drawing.Size(144, 218);
+            this.card_P1_C2.TabIndex = 16;
+            this.card_P1_C2.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P1_C2
             // 
@@ -901,24 +943,25 @@
             this.label190.UseMnemonic = false;
             this.label190.Visible = false;
             // 
-            // panel23
+            // card_P1_C1
             // 
-            this.panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel23.Controls.Add(this.cost_P1_C1);
-            this.panel23.Controls.Add(this.label192);
-            this.panel23.Controls.Add(this.hp_P1_C1);
-            this.panel23.Controls.Add(this.label194);
-            this.panel23.Controls.Add(this.name_P1_C1);
-            this.panel23.Controls.Add(this.label196);
-            this.panel23.Controls.Add(this.damage_P1_C1);
-            this.panel23.Controls.Add(this.label198);
-            this.panel23.Controls.Add(this.type_P1_C1);
-            this.panel23.Controls.Add(this.label200);
-            this.panel23.Location = new System.Drawing.Point(349, 552);
-            this.panel23.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(144, 218);
-            this.panel23.TabIndex = 12;
+            this.card_P1_C1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_C1.Controls.Add(this.cost_P1_C1);
+            this.card_P1_C1.Controls.Add(this.label192);
+            this.card_P1_C1.Controls.Add(this.hp_P1_C1);
+            this.card_P1_C1.Controls.Add(this.label194);
+            this.card_P1_C1.Controls.Add(this.name_P1_C1);
+            this.card_P1_C1.Controls.Add(this.label196);
+            this.card_P1_C1.Controls.Add(this.damage_P1_C1);
+            this.card_P1_C1.Controls.Add(this.label198);
+            this.card_P1_C1.Controls.Add(this.type_P1_C1);
+            this.card_P1_C1.Controls.Add(this.label200);
+            this.card_P1_C1.Location = new System.Drawing.Point(349, 552);
+            this.card_P1_C1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P1_C1.Name = "card_P1_C1";
+            this.card_P1_C1.Size = new System.Drawing.Size(144, 218);
+            this.card_P1_C1.TabIndex = 12;
+            this.card_P1_C1.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P1_C1
             // 
@@ -1015,24 +1058,25 @@
             this.label200.UseMnemonic = false;
             this.label200.Visible = false;
             // 
-            // panel18
+            // card_P2_C5
             // 
-            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel18.Controls.Add(this.cost_P2_C5);
-            this.panel18.Controls.Add(this.label142);
-            this.panel18.Controls.Add(this.hp_P2_C5);
-            this.panel18.Controls.Add(this.label144);
-            this.panel18.Controls.Add(this.name_P2_C5);
-            this.panel18.Controls.Add(this.label146);
-            this.panel18.Controls.Add(this.damage_P2_C5);
-            this.panel18.Controls.Add(this.label148);
-            this.panel18.Controls.Add(this.type_P2_C5);
-            this.panel18.Controls.Add(this.label150);
-            this.panel18.Location = new System.Drawing.Point(1002, 300);
-            this.panel18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(144, 218);
-            this.panel18.TabIndex = 11;
+            this.card_P2_C5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_C5.Controls.Add(this.cost_P2_C5);
+            this.card_P2_C5.Controls.Add(this.label142);
+            this.card_P2_C5.Controls.Add(this.hp_P2_C5);
+            this.card_P2_C5.Controls.Add(this.label144);
+            this.card_P2_C5.Controls.Add(this.name_P2_C5);
+            this.card_P2_C5.Controls.Add(this.label146);
+            this.card_P2_C5.Controls.Add(this.damage_P2_C5);
+            this.card_P2_C5.Controls.Add(this.label148);
+            this.card_P2_C5.Controls.Add(this.type_P2_C5);
+            this.card_P2_C5.Controls.Add(this.label150);
+            this.card_P2_C5.Location = new System.Drawing.Point(1002, 300);
+            this.card_P2_C5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P2_C5.Name = "card_P2_C5";
+            this.card_P2_C5.Size = new System.Drawing.Size(144, 218);
+            this.card_P2_C5.TabIndex = 11;
+            this.card_P2_C5.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P2_C5
             // 
@@ -1129,24 +1173,25 @@
             this.label150.UseMnemonic = false;
             this.label150.Visible = false;
             // 
-            // panel17
+            // card_P2_C4
             // 
-            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel17.Controls.Add(this.cost_P2_C4);
-            this.panel17.Controls.Add(this.label132);
-            this.panel17.Controls.Add(this.hp_P2_C4);
-            this.panel17.Controls.Add(this.label134);
-            this.panel17.Controls.Add(this.name_P2_C4);
-            this.panel17.Controls.Add(this.label136);
-            this.panel17.Controls.Add(this.damage_P2_C4);
-            this.panel17.Controls.Add(this.label138);
-            this.panel17.Controls.Add(this.type_P2_C4);
-            this.panel17.Controls.Add(this.label140);
-            this.panel17.Location = new System.Drawing.Point(840, 300);
-            this.panel17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(144, 218);
-            this.panel17.TabIndex = 11;
+            this.card_P2_C4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_C4.Controls.Add(this.cost_P2_C4);
+            this.card_P2_C4.Controls.Add(this.label132);
+            this.card_P2_C4.Controls.Add(this.hp_P2_C4);
+            this.card_P2_C4.Controls.Add(this.label134);
+            this.card_P2_C4.Controls.Add(this.name_P2_C4);
+            this.card_P2_C4.Controls.Add(this.label136);
+            this.card_P2_C4.Controls.Add(this.damage_P2_C4);
+            this.card_P2_C4.Controls.Add(this.label138);
+            this.card_P2_C4.Controls.Add(this.type_P2_C4);
+            this.card_P2_C4.Controls.Add(this.label140);
+            this.card_P2_C4.Location = new System.Drawing.Point(840, 300);
+            this.card_P2_C4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P2_C4.Name = "card_P2_C4";
+            this.card_P2_C4.Size = new System.Drawing.Size(144, 218);
+            this.card_P2_C4.TabIndex = 11;
+            this.card_P2_C4.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P2_C4
             // 
@@ -1243,24 +1288,25 @@
             this.label140.UseMnemonic = false;
             this.label140.Visible = false;
             // 
-            // panel16
+            // card_P2_C3
             // 
-            this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel16.Controls.Add(this.cost_P2_C3);
-            this.panel16.Controls.Add(this.label122);
-            this.panel16.Controls.Add(this.hp_P2_C3);
-            this.panel16.Controls.Add(this.label124);
-            this.panel16.Controls.Add(this.name_P2_C3);
-            this.panel16.Controls.Add(this.label126);
-            this.panel16.Controls.Add(this.damage_P2_C3);
-            this.panel16.Controls.Add(this.label128);
-            this.panel16.Controls.Add(this.type_P2_C3);
-            this.panel16.Controls.Add(this.label130);
-            this.panel16.Location = new System.Drawing.Point(676, 300);
-            this.panel16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(144, 218);
-            this.panel16.TabIndex = 11;
+            this.card_P2_C3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_C3.Controls.Add(this.cost_P2_C3);
+            this.card_P2_C3.Controls.Add(this.label122);
+            this.card_P2_C3.Controls.Add(this.hp_P2_C3);
+            this.card_P2_C3.Controls.Add(this.label124);
+            this.card_P2_C3.Controls.Add(this.name_P2_C3);
+            this.card_P2_C3.Controls.Add(this.label126);
+            this.card_P2_C3.Controls.Add(this.damage_P2_C3);
+            this.card_P2_C3.Controls.Add(this.label128);
+            this.card_P2_C3.Controls.Add(this.type_P2_C3);
+            this.card_P2_C3.Controls.Add(this.label130);
+            this.card_P2_C3.Location = new System.Drawing.Point(676, 300);
+            this.card_P2_C3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P2_C3.Name = "card_P2_C3";
+            this.card_P2_C3.Size = new System.Drawing.Size(144, 218);
+            this.card_P2_C3.TabIndex = 11;
+            this.card_P2_C3.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P2_C3
             // 
@@ -1357,24 +1403,25 @@
             this.label130.UseMnemonic = false;
             this.label130.Visible = false;
             // 
-            // panel15
+            // card_P2_C2
             // 
-            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel15.Controls.Add(this.cost_P2_C2);
-            this.panel15.Controls.Add(this.label112);
-            this.panel15.Controls.Add(this.hp_P2_C2);
-            this.panel15.Controls.Add(this.label114);
-            this.panel15.Controls.Add(this.name_P2_C2);
-            this.panel15.Controls.Add(this.label116);
-            this.panel15.Controls.Add(this.damage_P2_C2);
-            this.panel15.Controls.Add(this.label118);
-            this.panel15.Controls.Add(this.type_P2_C2);
-            this.panel15.Controls.Add(this.label120);
-            this.panel15.Location = new System.Drawing.Point(512, 300);
-            this.panel15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(144, 218);
-            this.panel15.TabIndex = 11;
+            this.card_P2_C2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_C2.Controls.Add(this.cost_P2_C2);
+            this.card_P2_C2.Controls.Add(this.label112);
+            this.card_P2_C2.Controls.Add(this.hp_P2_C2);
+            this.card_P2_C2.Controls.Add(this.label114);
+            this.card_P2_C2.Controls.Add(this.name_P2_C2);
+            this.card_P2_C2.Controls.Add(this.label116);
+            this.card_P2_C2.Controls.Add(this.damage_P2_C2);
+            this.card_P2_C2.Controls.Add(this.label118);
+            this.card_P2_C2.Controls.Add(this.type_P2_C2);
+            this.card_P2_C2.Controls.Add(this.label120);
+            this.card_P2_C2.Location = new System.Drawing.Point(512, 300);
+            this.card_P2_C2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P2_C2.Name = "card_P2_C2";
+            this.card_P2_C2.Size = new System.Drawing.Size(144, 218);
+            this.card_P2_C2.TabIndex = 11;
+            this.card_P2_C2.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P2_C2
             // 
@@ -1471,24 +1518,25 @@
             this.label120.UseMnemonic = false;
             this.label120.Visible = false;
             // 
-            // panel14
+            // card_P2_H5
             // 
-            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel14.Controls.Add(this.cost_P2_H5);
-            this.panel14.Controls.Add(this.label102);
-            this.panel14.Controls.Add(this.hp_P2_H5);
-            this.panel14.Controls.Add(this.label104);
-            this.panel14.Controls.Add(this.name_P2_H5);
-            this.panel14.Controls.Add(this.label106);
-            this.panel14.Controls.Add(this.damage_P2_H5);
-            this.panel14.Controls.Add(this.label108);
-            this.panel14.Controls.Add(this.type_P2_H5);
-            this.panel14.Controls.Add(this.label110);
-            this.panel14.Location = new System.Drawing.Point(676, 20);
-            this.panel14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(144, 218);
-            this.panel14.TabIndex = 11;
+            this.card_P2_H5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_H5.Controls.Add(this.cost_P2_H5);
+            this.card_P2_H5.Controls.Add(this.label102);
+            this.card_P2_H5.Controls.Add(this.hp_P2_H5);
+            this.card_P2_H5.Controls.Add(this.label104);
+            this.card_P2_H5.Controls.Add(this.name_P2_H5);
+            this.card_P2_H5.Controls.Add(this.label106);
+            this.card_P2_H5.Controls.Add(this.damage_P2_H5);
+            this.card_P2_H5.Controls.Add(this.label108);
+            this.card_P2_H5.Controls.Add(this.type_P2_H5);
+            this.card_P2_H5.Controls.Add(this.label110);
+            this.card_P2_H5.Location = new System.Drawing.Point(676, 20);
+            this.card_P2_H5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P2_H5.Name = "card_P2_H5";
+            this.card_P2_H5.Size = new System.Drawing.Size(144, 218);
+            this.card_P2_H5.TabIndex = 11;
+            this.card_P2_H5.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P2_H5
             // 
@@ -1575,24 +1623,25 @@
             this.label110.Text = "Type:";
             this.label110.UseMnemonic = false;
             // 
-            // panel13
+            // card_P2_H4
             // 
-            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel13.Controls.Add(this.cost_P2_H4);
-            this.panel13.Controls.Add(this.label92);
-            this.panel13.Controls.Add(this.hp_P2_H4);
-            this.panel13.Controls.Add(this.label94);
-            this.panel13.Controls.Add(this.name_P2_H4);
-            this.panel13.Controls.Add(this.label96);
-            this.panel13.Controls.Add(this.damage_P2_H4);
-            this.panel13.Controls.Add(this.label98);
-            this.panel13.Controls.Add(this.type_P2_H4);
-            this.panel13.Controls.Add(this.label100);
-            this.panel13.Location = new System.Drawing.Point(512, 20);
-            this.panel13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(144, 218);
-            this.panel13.TabIndex = 11;
+            this.card_P2_H4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_H4.Controls.Add(this.cost_P2_H4);
+            this.card_P2_H4.Controls.Add(this.label92);
+            this.card_P2_H4.Controls.Add(this.hp_P2_H4);
+            this.card_P2_H4.Controls.Add(this.label94);
+            this.card_P2_H4.Controls.Add(this.name_P2_H4);
+            this.card_P2_H4.Controls.Add(this.label96);
+            this.card_P2_H4.Controls.Add(this.damage_P2_H4);
+            this.card_P2_H4.Controls.Add(this.label98);
+            this.card_P2_H4.Controls.Add(this.type_P2_H4);
+            this.card_P2_H4.Controls.Add(this.label100);
+            this.card_P2_H4.Location = new System.Drawing.Point(512, 20);
+            this.card_P2_H4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P2_H4.Name = "card_P2_H4";
+            this.card_P2_H4.Size = new System.Drawing.Size(144, 218);
+            this.card_P2_H4.TabIndex = 11;
+            this.card_P2_H4.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P2_H4
             // 
@@ -1679,24 +1728,25 @@
             this.label100.Text = "Type:";
             this.label100.UseMnemonic = false;
             // 
-            // panel12
+            // card_P2_H3
             // 
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Controls.Add(this.cost_P2_H3);
-            this.panel12.Controls.Add(this.label82);
-            this.panel12.Controls.Add(this.hp_P2_H3);
-            this.panel12.Controls.Add(this.label84);
-            this.panel12.Controls.Add(this.name_P2_H3);
-            this.panel12.Controls.Add(this.label86);
-            this.panel12.Controls.Add(this.damage_P2_H3);
-            this.panel12.Controls.Add(this.label88);
-            this.panel12.Controls.Add(this.type_P2_H3);
-            this.panel12.Controls.Add(this.label90);
-            this.panel12.Location = new System.Drawing.Point(349, 20);
-            this.panel12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(144, 218);
-            this.panel12.TabIndex = 11;
+            this.card_P2_H3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_H3.Controls.Add(this.cost_P2_H3);
+            this.card_P2_H3.Controls.Add(this.label82);
+            this.card_P2_H3.Controls.Add(this.hp_P2_H3);
+            this.card_P2_H3.Controls.Add(this.label84);
+            this.card_P2_H3.Controls.Add(this.name_P2_H3);
+            this.card_P2_H3.Controls.Add(this.label86);
+            this.card_P2_H3.Controls.Add(this.damage_P2_H3);
+            this.card_P2_H3.Controls.Add(this.label88);
+            this.card_P2_H3.Controls.Add(this.type_P2_H3);
+            this.card_P2_H3.Controls.Add(this.label90);
+            this.card_P2_H3.Location = new System.Drawing.Point(349, 20);
+            this.card_P2_H3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P2_H3.Name = "card_P2_H3";
+            this.card_P2_H3.Size = new System.Drawing.Size(144, 218);
+            this.card_P2_H3.TabIndex = 11;
+            this.card_P2_H3.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P2_H3
             // 
@@ -1783,24 +1833,25 @@
             this.label90.Text = "Type:";
             this.label90.UseMnemonic = false;
             // 
-            // panel11
+            // card_P2_H2
             // 
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Controls.Add(this.cost_P2_H2);
-            this.panel11.Controls.Add(this.label72);
-            this.panel11.Controls.Add(this.hp_P2_H2);
-            this.panel11.Controls.Add(this.label74);
-            this.panel11.Controls.Add(this.name_P2_H2);
-            this.panel11.Controls.Add(this.label76);
-            this.panel11.Controls.Add(this.damage_P2_H2);
-            this.panel11.Controls.Add(this.label78);
-            this.panel11.Controls.Add(this.type_P2_H2);
-            this.panel11.Controls.Add(this.label80);
-            this.panel11.Location = new System.Drawing.Point(187, 20);
-            this.panel11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(144, 218);
-            this.panel11.TabIndex = 11;
+            this.card_P2_H2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_H2.Controls.Add(this.cost_P2_H2);
+            this.card_P2_H2.Controls.Add(this.label72);
+            this.card_P2_H2.Controls.Add(this.hp_P2_H2);
+            this.card_P2_H2.Controls.Add(this.label74);
+            this.card_P2_H2.Controls.Add(this.name_P2_H2);
+            this.card_P2_H2.Controls.Add(this.label76);
+            this.card_P2_H2.Controls.Add(this.damage_P2_H2);
+            this.card_P2_H2.Controls.Add(this.label78);
+            this.card_P2_H2.Controls.Add(this.type_P2_H2);
+            this.card_P2_H2.Controls.Add(this.label80);
+            this.card_P2_H2.Location = new System.Drawing.Point(187, 20);
+            this.card_P2_H2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P2_H2.Name = "card_P2_H2";
+            this.card_P2_H2.Size = new System.Drawing.Size(144, 218);
+            this.card_P2_H2.TabIndex = 11;
+            this.card_P2_H2.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P2_H2
             // 
@@ -1887,24 +1938,25 @@
             this.label80.Text = "Type:";
             this.label80.UseMnemonic = false;
             // 
-            // panel10
+            // card_P2_H1
             // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.cost_P2_H1);
-            this.panel10.Controls.Add(this.label62);
-            this.panel10.Controls.Add(this.hp_P2_H1);
-            this.panel10.Controls.Add(this.label64);
-            this.panel10.Controls.Add(this.name_P2_H1);
-            this.panel10.Controls.Add(this.label66);
-            this.panel10.Controls.Add(this.damage_P2_H1);
-            this.panel10.Controls.Add(this.label68);
-            this.panel10.Controls.Add(this.type_P2_H1);
-            this.panel10.Controls.Add(this.label70);
-            this.panel10.Location = new System.Drawing.Point(26, 20);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(144, 218);
-            this.panel10.TabIndex = 11;
+            this.card_P2_H1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_H1.Controls.Add(this.cost_P2_H1);
+            this.card_P2_H1.Controls.Add(this.label62);
+            this.card_P2_H1.Controls.Add(this.hp_P2_H1);
+            this.card_P2_H1.Controls.Add(this.label64);
+            this.card_P2_H1.Controls.Add(this.name_P2_H1);
+            this.card_P2_H1.Controls.Add(this.label66);
+            this.card_P2_H1.Controls.Add(this.damage_P2_H1);
+            this.card_P2_H1.Controls.Add(this.label68);
+            this.card_P2_H1.Controls.Add(this.type_P2_H1);
+            this.card_P2_H1.Controls.Add(this.label70);
+            this.card_P2_H1.Location = new System.Drawing.Point(26, 20);
+            this.card_P2_H1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P2_H1.Name = "card_P2_H1";
+            this.card_P2_H1.Size = new System.Drawing.Size(144, 218);
+            this.card_P2_H1.TabIndex = 11;
+            this.card_P2_H1.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P2_H1
             // 
@@ -1991,24 +2043,25 @@
             this.label70.Text = "Type:";
             this.label70.UseMnemonic = false;
             // 
-            // panel9
+            // card_P1_H5
             // 
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Controls.Add(this.cost_P1_H5);
-            this.panel9.Controls.Add(this.label52);
-            this.panel9.Controls.Add(this.hp_P1_H5);
-            this.panel9.Controls.Add(this.label54);
-            this.panel9.Controls.Add(this.name_P1_H5);
-            this.panel9.Controls.Add(this.label56);
-            this.panel9.Controls.Add(this.damage_P1_H5);
-            this.panel9.Controls.Add(this.label58);
-            this.panel9.Controls.Add(this.type_P1_H5);
-            this.panel9.Controls.Add(this.label60);
-            this.panel9.Location = new System.Drawing.Point(676, 850);
-            this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(144, 218);
-            this.panel9.TabIndex = 11;
+            this.card_P1_H5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_H5.Controls.Add(this.cost_P1_H5);
+            this.card_P1_H5.Controls.Add(this.label52);
+            this.card_P1_H5.Controls.Add(this.hp_P1_H5);
+            this.card_P1_H5.Controls.Add(this.label54);
+            this.card_P1_H5.Controls.Add(this.name_P1_H5);
+            this.card_P1_H5.Controls.Add(this.label56);
+            this.card_P1_H5.Controls.Add(this.damage_P1_H5);
+            this.card_P1_H5.Controls.Add(this.label58);
+            this.card_P1_H5.Controls.Add(this.type_P1_H5);
+            this.card_P1_H5.Controls.Add(this.label60);
+            this.card_P1_H5.Location = new System.Drawing.Point(676, 850);
+            this.card_P1_H5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P1_H5.Name = "card_P1_H5";
+            this.card_P1_H5.Size = new System.Drawing.Size(144, 218);
+            this.card_P1_H5.TabIndex = 11;
+            this.card_P1_H5.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P1_H5
             // 
@@ -2095,24 +2148,25 @@
             this.label60.Text = "Type:";
             this.label60.UseMnemonic = false;
             // 
-            // panel8
+            // card_P1_H4
             // 
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.cost_P1_H4);
-            this.panel8.Controls.Add(this.label42);
-            this.panel8.Controls.Add(this.hp_P1_H4);
-            this.panel8.Controls.Add(this.label44);
-            this.panel8.Controls.Add(this.name_P1_H4);
-            this.panel8.Controls.Add(this.label46);
-            this.panel8.Controls.Add(this.damage_P1_H4);
-            this.panel8.Controls.Add(this.label48);
-            this.panel8.Controls.Add(this.type_P1_H4);
-            this.panel8.Controls.Add(this.label50);
-            this.panel8.Location = new System.Drawing.Point(512, 850);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(144, 218);
-            this.panel8.TabIndex = 11;
+            this.card_P1_H4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_H4.Controls.Add(this.cost_P1_H4);
+            this.card_P1_H4.Controls.Add(this.label42);
+            this.card_P1_H4.Controls.Add(this.hp_P1_H4);
+            this.card_P1_H4.Controls.Add(this.label44);
+            this.card_P1_H4.Controls.Add(this.name_P1_H4);
+            this.card_P1_H4.Controls.Add(this.label46);
+            this.card_P1_H4.Controls.Add(this.damage_P1_H4);
+            this.card_P1_H4.Controls.Add(this.label48);
+            this.card_P1_H4.Controls.Add(this.type_P1_H4);
+            this.card_P1_H4.Controls.Add(this.label50);
+            this.card_P1_H4.Location = new System.Drawing.Point(512, 850);
+            this.card_P1_H4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P1_H4.Name = "card_P1_H4";
+            this.card_P1_H4.Size = new System.Drawing.Size(144, 218);
+            this.card_P1_H4.TabIndex = 11;
+            this.card_P1_H4.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P1_H4
             // 
@@ -2199,24 +2253,25 @@
             this.label50.Text = "Type:";
             this.label50.UseMnemonic = false;
             // 
-            // panel7
+            // card_P1_H3
             // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.cost_P1_H3);
-            this.panel7.Controls.Add(this.label32);
-            this.panel7.Controls.Add(this.hp_P1_H3);
-            this.panel7.Controls.Add(this.label34);
-            this.panel7.Controls.Add(this.name_P1_H3);
-            this.panel7.Controls.Add(this.label36);
-            this.panel7.Controls.Add(this.damage_P1_H3);
-            this.panel7.Controls.Add(this.label38);
-            this.panel7.Controls.Add(this.type_P1_H3);
-            this.panel7.Controls.Add(this.label40);
-            this.panel7.Location = new System.Drawing.Point(349, 850);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(144, 218);
-            this.panel7.TabIndex = 11;
+            this.card_P1_H3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_H3.Controls.Add(this.cost_P1_H3);
+            this.card_P1_H3.Controls.Add(this.label32);
+            this.card_P1_H3.Controls.Add(this.hp_P1_H3);
+            this.card_P1_H3.Controls.Add(this.label34);
+            this.card_P1_H3.Controls.Add(this.name_P1_H3);
+            this.card_P1_H3.Controls.Add(this.label36);
+            this.card_P1_H3.Controls.Add(this.damage_P1_H3);
+            this.card_P1_H3.Controls.Add(this.label38);
+            this.card_P1_H3.Controls.Add(this.type_P1_H3);
+            this.card_P1_H3.Controls.Add(this.label40);
+            this.card_P1_H3.Location = new System.Drawing.Point(349, 850);
+            this.card_P1_H3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P1_H3.Name = "card_P1_H3";
+            this.card_P1_H3.Size = new System.Drawing.Size(144, 218);
+            this.card_P1_H3.TabIndex = 11;
+            this.card_P1_H3.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P1_H3
             // 
@@ -2303,24 +2358,25 @@
             this.label40.Text = "Type:";
             this.label40.UseMnemonic = false;
             // 
-            // panel6
+            // card_P1_H2
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.cost_P1_H2);
-            this.panel6.Controls.Add(this.label22);
-            this.panel6.Controls.Add(this.hp_P1_H2);
-            this.panel6.Controls.Add(this.label24);
-            this.panel6.Controls.Add(this.name_P1_H2);
-            this.panel6.Controls.Add(this.label26);
-            this.panel6.Controls.Add(this.damage_P1_H2);
-            this.panel6.Controls.Add(this.label28);
-            this.panel6.Controls.Add(this.type_P1_H2);
-            this.panel6.Controls.Add(this.label30);
-            this.panel6.Location = new System.Drawing.Point(187, 850);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(144, 218);
-            this.panel6.TabIndex = 11;
+            this.card_P1_H2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_H2.Controls.Add(this.cost_P1_H2);
+            this.card_P1_H2.Controls.Add(this.label22);
+            this.card_P1_H2.Controls.Add(this.hp_P1_H2);
+            this.card_P1_H2.Controls.Add(this.label24);
+            this.card_P1_H2.Controls.Add(this.name_P1_H2);
+            this.card_P1_H2.Controls.Add(this.label26);
+            this.card_P1_H2.Controls.Add(this.damage_P1_H2);
+            this.card_P1_H2.Controls.Add(this.label28);
+            this.card_P1_H2.Controls.Add(this.type_P1_H2);
+            this.card_P1_H2.Controls.Add(this.label30);
+            this.card_P1_H2.Location = new System.Drawing.Point(187, 850);
+            this.card_P1_H2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P1_H2.Name = "card_P1_H2";
+            this.card_P1_H2.Size = new System.Drawing.Size(144, 218);
+            this.card_P1_H2.TabIndex = 11;
+            this.card_P1_H2.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P1_H2
             // 
@@ -2407,24 +2463,25 @@
             this.label30.Text = "Type:";
             this.label30.UseMnemonic = false;
             // 
-            // panel5
+            // card_P1_H1
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.cost_P1_H1);
-            this.panel5.Controls.Add(this.label12);
-            this.panel5.Controls.Add(this.hp_P1_H1);
-            this.panel5.Controls.Add(this.label14);
-            this.panel5.Controls.Add(this.name_P1_H1);
-            this.panel5.Controls.Add(this.label16);
-            this.panel5.Controls.Add(this.damage_P1_H1);
-            this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.type_P1_H1);
-            this.panel5.Controls.Add(this.label20);
-            this.panel5.Location = new System.Drawing.Point(26, 850);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(144, 218);
-            this.panel5.TabIndex = 11;
+            this.card_P1_H1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_H1.Controls.Add(this.cost_P1_H1);
+            this.card_P1_H1.Controls.Add(this.label12);
+            this.card_P1_H1.Controls.Add(this.hp_P1_H1);
+            this.card_P1_H1.Controls.Add(this.label14);
+            this.card_P1_H1.Controls.Add(this.name_P1_H1);
+            this.card_P1_H1.Controls.Add(this.label16);
+            this.card_P1_H1.Controls.Add(this.damage_P1_H1);
+            this.card_P1_H1.Controls.Add(this.label18);
+            this.card_P1_H1.Controls.Add(this.type_P1_H1);
+            this.card_P1_H1.Controls.Add(this.label20);
+            this.card_P1_H1.Location = new System.Drawing.Point(26, 850);
+            this.card_P1_H1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P1_H1.Name = "card_P1_H1";
+            this.card_P1_H1.Size = new System.Drawing.Size(144, 218);
+            this.card_P1_H1.TabIndex = 11;
+            this.card_P1_H1.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P1_H1
             // 
@@ -2511,24 +2568,25 @@
             this.label20.Text = "Type:";
             this.label20.UseMnemonic = false;
             // 
-            // panel4
+            // card_P2_C1
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.cost_P2_C1);
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.hp_P2_C1);
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.name_P2_C1);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.damage_P2_C1);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.type_P2_C1);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Location = new System.Drawing.Point(349, 300);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(144, 218);
-            this.panel4.TabIndex = 1;
+            this.card_P2_C1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_C1.Controls.Add(this.cost_P2_C1);
+            this.card_P2_C1.Controls.Add(this.label10);
+            this.card_P2_C1.Controls.Add(this.hp_P2_C1);
+            this.card_P2_C1.Controls.Add(this.label8);
+            this.card_P2_C1.Controls.Add(this.name_P2_C1);
+            this.card_P2_C1.Controls.Add(this.label6);
+            this.card_P2_C1.Controls.Add(this.damage_P2_C1);
+            this.card_P2_C1.Controls.Add(this.label4);
+            this.card_P2_C1.Controls.Add(this.type_P2_C1);
+            this.card_P2_C1.Controls.Add(this.label1);
+            this.card_P2_C1.Location = new System.Drawing.Point(349, 300);
+            this.card_P2_C1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.card_P2_C1.Name = "card_P2_C1";
+            this.card_P2_C1.Size = new System.Drawing.Size(144, 218);
+            this.card_P2_C1.TabIndex = 1;
+            this.card_P2_C1.Click += new System.EventHandler(this.ProcessCardClick);
             // 
             // cost_P2_C1
             // 
@@ -2633,6 +2691,7 @@
             this.deck_player2.Name = "deck_player2";
             this.deck_player2.Size = new System.Drawing.Size(138, 207);
             this.deck_player2.TabIndex = 1;
+            this.deck_player2.Click += new System.EventHandler(this.deck2_Click);
             // 
             // deck_player1
             // 
@@ -2642,6 +2701,7 @@
             this.deck_player1.Name = "deck_player1";
             this.deck_player1.Size = new System.Drawing.Size(138, 218);
             this.deck_player1.TabIndex = 0;
+            this.deck_player1.Click += new System.EventHandler(this.deck1_Click);
             // 
             // Board
             // 
@@ -2657,26 +2717,26 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel24.ResumeLayout(false);
-            this.panel19.ResumeLayout(false);
-            this.panel20.ResumeLayout(false);
-            this.panel21.ResumeLayout(false);
-            this.panel22.ResumeLayout(false);
-            this.panel23.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            this.card_P1_C5.ResumeLayout(false);
+            this.card_P1_C4.ResumeLayout(false);
+            this.card_P1_C3.ResumeLayout(false);
+            this.card_P1_C2.ResumeLayout(false);
+            this.card_P1_C1.ResumeLayout(false);
+            this.card_P2_C5.ResumeLayout(false);
+            this.card_P2_C4.ResumeLayout(false);
+            this.card_P2_C3.ResumeLayout(false);
+            this.card_P2_C2.ResumeLayout(false);
+            this.card_P2_H5.ResumeLayout(false);
+            this.card_P2_H4.ResumeLayout(false);
+            this.card_P2_H3.ResumeLayout(false);
+            this.card_P2_H2.ResumeLayout(false);
+            this.card_P2_H1.ResumeLayout(false);
+            this.card_P1_H5.ResumeLayout(false);
+            this.card_P1_H4.ResumeLayout(false);
+            this.card_P1_H3.ResumeLayout(false);
+            this.card_P1_H2.ResumeLayout(false);
+            this.card_P1_H1.ResumeLayout(false);
+            this.card_P2_C1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2685,7 +2745,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel card_P1_C5;
         private System.Windows.Forms.Label cost_P1_C5;
         private System.Windows.Forms.Label label152;
         private System.Windows.Forms.Label hp_P1_C5;
@@ -2696,7 +2756,7 @@
         private System.Windows.Forms.Label label158;
         private System.Windows.Forms.Label type_P1_C5;
         private System.Windows.Forms.Label label160;
-        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Panel card_P1_C4;
         private System.Windows.Forms.Label cost_P1_C4;
         private System.Windows.Forms.Label label162;
         private System.Windows.Forms.Label hp_P1_C4;
@@ -2707,7 +2767,7 @@
         private System.Windows.Forms.Label label168;
         private System.Windows.Forms.Label type_P1_C4;
         private System.Windows.Forms.Label label170;
-        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Panel card_P1_C3;
         private System.Windows.Forms.Label cost_P1_C3;
         private System.Windows.Forms.Label label172;
         private System.Windows.Forms.Label hp_P1_C3;
@@ -2718,7 +2778,7 @@
         private System.Windows.Forms.Label label178;
         private System.Windows.Forms.Label type_P1_C3;
         private System.Windows.Forms.Label label180;
-        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Panel card_P1_C2;
         private System.Windows.Forms.Label cost_P1_C2;
         private System.Windows.Forms.Label label182;
         private System.Windows.Forms.Label hp_P1_C2;
@@ -2729,7 +2789,7 @@
         private System.Windows.Forms.Label label188;
         private System.Windows.Forms.Label type_P1_C2;
         private System.Windows.Forms.Label label190;
-        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Panel card_P1_C1;
         private System.Windows.Forms.Label cost_P1_C1;
         private System.Windows.Forms.Label label192;
         private System.Windows.Forms.Label hp_P1_C1;
@@ -2740,7 +2800,7 @@
         private System.Windows.Forms.Label label198;
         private System.Windows.Forms.Label type_P1_C1;
         private System.Windows.Forms.Label label200;
-        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Panel card_P2_C5;
         private System.Windows.Forms.Label cost_P2_C5;
         private System.Windows.Forms.Label label142;
         private System.Windows.Forms.Label hp_P2_C5;
@@ -2751,7 +2811,7 @@
         private System.Windows.Forms.Label label148;
         private System.Windows.Forms.Label type_P2_C5;
         private System.Windows.Forms.Label label150;
-        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Panel card_P2_C4;
         private System.Windows.Forms.Label cost_P2_C4;
         private System.Windows.Forms.Label label132;
         private System.Windows.Forms.Label hp_P2_C4;
@@ -2762,7 +2822,7 @@
         private System.Windows.Forms.Label label138;
         private System.Windows.Forms.Label type_P2_C4;
         private System.Windows.Forms.Label label140;
-        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel card_P2_C3;
         private System.Windows.Forms.Label cost_P2_C3;
         private System.Windows.Forms.Label label122;
         private System.Windows.Forms.Label hp_P2_C3;
@@ -2773,7 +2833,7 @@
         private System.Windows.Forms.Label label128;
         private System.Windows.Forms.Label type_P2_C3;
         private System.Windows.Forms.Label label130;
-        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel card_P2_C2;
         private System.Windows.Forms.Label cost_P2_C2;
         private System.Windows.Forms.Label label112;
         private System.Windows.Forms.Label hp_P2_C2;
@@ -2784,7 +2844,7 @@
         private System.Windows.Forms.Label label118;
         private System.Windows.Forms.Label type_P2_C2;
         private System.Windows.Forms.Label label120;
-        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel card_P2_H5;
         private System.Windows.Forms.Label cost_P2_H5;
         private System.Windows.Forms.Label label102;
         private System.Windows.Forms.Label hp_P2_H5;
@@ -2795,7 +2855,7 @@
         private System.Windows.Forms.Label label108;
         private System.Windows.Forms.Label type_P2_H5;
         private System.Windows.Forms.Label label110;
-        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel card_P2_H4;
         private System.Windows.Forms.Label cost_P2_H4;
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.Label hp_P2_H4;
@@ -2806,7 +2866,7 @@
         private System.Windows.Forms.Label label98;
         private System.Windows.Forms.Label type_P2_H4;
         private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel card_P2_H3;
         private System.Windows.Forms.Label cost_P2_H3;
         private System.Windows.Forms.Label label82;
         private System.Windows.Forms.Label hp_P2_H3;
@@ -2817,7 +2877,7 @@
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.Label type_P2_H3;
         private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel card_P2_H2;
         private System.Windows.Forms.Label cost_P2_H2;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.Label hp_P2_H2;
@@ -2828,7 +2888,7 @@
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.Label type_P2_H2;
         private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel card_P2_H1;
         private System.Windows.Forms.Label cost_P2_H1;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label hp_P2_H1;
@@ -2839,7 +2899,7 @@
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label type_P2_H1;
         private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel card_P1_H5;
         private System.Windows.Forms.Label cost_P1_H5;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label hp_P1_H5;
@@ -2850,7 +2910,7 @@
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label type_P1_H5;
         private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel card_P1_H4;
         private System.Windows.Forms.Label cost_P1_H4;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label hp_P1_H4;
@@ -2861,7 +2921,7 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label type_P1_H4;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel card_P1_H3;
         private System.Windows.Forms.Label cost_P1_H3;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label hp_P1_H3;
@@ -2872,7 +2932,7 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label type_P1_H3;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel card_P1_H2;
         private System.Windows.Forms.Label cost_P1_H2;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label hp_P1_H2;
@@ -2883,7 +2943,7 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label type_P1_H2;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel card_P1_H1;
         private System.Windows.Forms.Label cost_P1_H1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label hp_P1_H1;
@@ -2894,7 +2954,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label type_P1_H1;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel card_P2_C1;
         private System.Windows.Forms.Label cost_P2_C1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label hp_P2_C1;
@@ -2907,18 +2967,21 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel deck_player2;
         private System.Windows.Forms.Panel deck_player1;
-        private System.Windows.Forms.Label mana_player2;
-        private System.Windows.Forms.Label hp_player2;
+        private System.Windows.Forms.Label mana_of_Player2;
+        private System.Windows.Forms.Label hp_of_Player2;
         private System.Windows.Forms.Label label207;
         private System.Windows.Forms.Label label208;
-        private System.Windows.Forms.Label mana_player1;
-        private System.Windows.Forms.Label hp_player1;
+        private System.Windows.Forms.Label mana_of_Player1;
+        private System.Windows.Forms.Label hp_of_Player1;
         private System.Windows.Forms.Label label202;
         private System.Windows.Forms.Label label201;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button attack_button;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private Button invoke_button;
+        private Button direct_attack_button;
+        private Button virtual_player_play_button;
     }
 }
 

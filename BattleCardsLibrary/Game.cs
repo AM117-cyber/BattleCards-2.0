@@ -1,53 +1,192 @@
 using BattleCards.Cards;
+using static Utils.Utils;
+using static BattleCards.ExecuteActions.ExecuteAction;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
+using System.Security.Principal;
 
 namespace BattleCards;
 public class Game //Asumir que la informacion me va a entrar po alguna via, tu solo vas a trabajar con ella.Olvidate de por donde entre.
 {
+    public static bool InterfaceUpdated { get; set; }
     public static List<Card> AllCardsCreated = GetAllCardsList();
     public List<Card> Board { get; set; }
-    public bool EndGame = false;
-    public Player Player1 { get; set; }
-    public Player Player2 { get; set; }
-    private Utils.Utils.Phase CurrentPhase { get; set; }
+    public static bool EndGame = false;
+    public static int CurrentPlayer { get; set; }//it is declared when Game State is first updated
+    public  static Player Player1 { get; set; }
+    public  static Player Player2 { get; set; }
+    public static Phase CurrentPhase { get; private set; }
+    //when you create a card first input is type and second is name
 
-
-    public Game(UIPlayer player1, UIPlayer player2)
+      public Game(UIPlayer player1, UIPlayer player2)
     {
+        
         if (GetFirstPlayerByDice(player1, player2) == player1)
         {
-            this.Player1 = CreateAPlayerInstance(player1);//player1 starts the game
-            this.Player2 = CreateAPlayerInstance(player2);
+            Player1 = CreateAPlayerInstance(player1,1);//player1 starts the game
+            Player2 = CreateAPlayerInstance(player2, 2);
+            CurrentPlayer = 1;
         }
         else
-        {
-            this.Player1 = CreateAPlayerInstance(player2);//player1 starts the game
-            this.Player2 = CreateAPlayerInstance(player1);
+        {  
+           Player1 = CreateAPlayerInstance(player2,1);//player2 starts the game
+           Player2 = CreateAPlayerInstance(player1,2);
+            CurrentPlayer = 2;
         }
+            
 
         //Initialize the game. First each player shuffles their deck and then draws 5 cards
 
-        Player1.Draw(5);
-        Player2.Draw(5);
+        //change!!!!!
+        Player1.Draw(1);
+        Player2.Draw(1);
+        InterfaceUpdated = true;
         //Here starts the game
 
-        this.CurrentPhase = Utils.Utils.Phase.MainPhase;
-        while (!EndGame)
+        CurrentPhase = Phase.MainPhase;
+       
+
+
+
+       
+    }
+    public static void Turn(Player player)
+    {
+        if (player.Type == PlayerType.Human)
         {
-            Turn(Player1);
-            if (EndGame) break;
-            Turn(Player2);
+            while (CurrentPlayer == player.Number)
+            {
+
+            }
+            if (GameIsOver())
+            {
+                EndGame = true;
+            }
+            return;
+        }
+        else
+        {
+            while (CurrentPlayer == player.Number)//
+            {
+                player.Play();
+            }
+            
+        }
+    }
+    public static void CheckAndChangePhaseAndCurrentPlayer()
+    {
+        if (CurrentPhase == Phase.MainPhase)
+        {
+            CurrentPhase = Phase.BattlePhase;
+        }
+        else
+        {
+            CurrentPhase = Phase.MainPhase;
+            ChangePlayer();
+            if ((GetCurrentPlayer().Mana + 5) < 20)
+            {
+                GetCurrentPlayer().Mana += 5;
+                return;
+            }
+            GetCurrentPlayer().Mana = 20;
+
+            
+        }
+    }
+    public static void ChangePlayer()
+    {
+        CurrentPlayer = (CurrentPlayer == 1 ? 2 : 1);
+    }
+    
+    public static Player GetCurrentPlayer()
+    {
+        if (CurrentPlayer == 1)
+        {
+            return Player1;
+        }
+        return Player2;
+    }
+    public static void CardActionReceiver(ActionsByPlayer action, Card card1, Card card2, int numberOfDeck)
+    {
+        //solo puede hacer draw el currentplayer si es humano
+       switch (action)
+        {
+            case ActionsByPlayer.DrawFromDeck:
+                //solo puedes sacar si es tu turno
+                if (CurrentPhase == Phase.MainPhase && numberOfDeck == CurrentPlayer)
+                {
+                    if (GetCurrentPlayer().Mana >= 1 && GetCurrentPlayer().Hand.Count < 5 && GetCurrentPlayer().Deck.Count>=1) GetCurrentPlayer().Draw(1);
+                    return;
+                }
+                
+                break;
+            case ActionsByPlayer.InvokeCard:
+                //si la fase es correcta, la carta no es null, el jugador que ejecuta la accion es el del turno que se juega, tiene al menos un espacio en su board y suficiente mana
+                if (CurrentPhase == Phase.MainPhase && card1 != null && card1.Owner.Number == CurrentPlayer && card1.Owner.CardsOnBoard.Count < 5 && card1.Owner.Mana >= card1.ManaCost)
+                {
+                    card1.Owner.InvokeCard(card1); 
+                   
+                }
+                
+                break;
+            case ActionsByPlayer.TurnIsOver:
+                if (CurrentPhase == Phase.MainPhase)
+                {
+                    CurrentPhase = Phase.BattlePhase;
+                }
+                else
+                {
+                    CurrentPhase = Phase.MainPhase;
+                }
+                break;
+            case ActionsByPlayer.Attack:
+                //fase debe ser batalla, cartas no pueden ser nulas,la carta debe pertenecer al jugador cuyo turno se juega y la victima debe ser un monstruo. 
+                if (CurrentPhase == Phase.BattlePhase && card1 != null && card2 != null && card2.Type == CardType.Monster && card1.Owner.Number == CurrentPlayer)//la interfaz es quien comprueba que sea humano
+                {
+                    Attack(card1, card2 as MonsterCard, card1.Attack.Evaluate(card1, card2));
+                    if (GameIsOver())
+                    {
+                        EndGame = true;
+                    }
+                }
+                break;
+            case ActionsByPlayer.Heal:
+                if (CurrentPhase == Phase.BattlePhase && card1 != null && card2 != null && card2.Type == CardType.Monster && card1.Owner.Number == CurrentPlayer)
+                {
+                    Heal(card1, card2 as MonsterCard, card1.Heal.Evaluate(card1, card2));
+                }
+                break;
+            case ActionsByPlayer.DirectAttack:
+                if (CurrentPhase == Phase.BattlePhase && card1 != null && card1.Owner.Number == CurrentPlayer)
+                {
+                    if (GetCurrentPlayer() == Player1)
+                    {
+                        Player2.Health -= NoMonstersOnBoard(Player2) ? card1.Damage : 0;
+                        
+                    }
+                    else
+                    {
+                        Player1.Health -= NoMonstersOnBoard(Player1) ? card1.Damage : 0;
+                    }
+                    if (GameIsOver())
+                    {
+                        EndGame = true;
+                    }
+
+                }
+                
+                break;
+            default:
+                break;
         }
 
-
-
-
     }
+   
 
-    public void Turn(Player player1)
+    public void Turn1(Player player)
     {
+        player.Play();//show dialog saying player.Name + "'s turn"
 
         // List<SpellCard> SpellsOnBoard = GetSpellCardsOnBoard(board);
         // foreach (var card in SpellsOnBoard)
@@ -63,17 +202,21 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
         //     }
         // }
 
-        MainPhase(player1);
-        BattlePhase(player1, player2);
+        // MainPhase(player1);
+        //BattlePhase(player1, player2);
         //metodo para comprobar que no se acabo el juego
+        while (CurrentPlayer == player.Number)
+        {
+
+        }
         if (GameIsOver())
         {
-            this.EndGame = true;
+            EndGame = true;
         }
         return;
     }
 
-    public bool GameIsOver()
+    public static bool GameIsOver()
     {
             if (Player1.Health <= 0)
             {
@@ -111,15 +254,15 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
             return player1;
     }
    
-    public static Player CreateAPlayerInstance(UIPlayer player)
+    public Player CreateAPlayerInstance(UIPlayer player,int number)
     {
         if (player.PlayerType == PlayerType.Human)
         {
-            return new HumanPlayer(player.Name, GenerateRandomDeck(AllCardsCreated, 50));
+            return new HumanPlayer(player.Name, GenerateRandomDeck(AllCardsCreated, 2),number);//50
         }
         else
         {
-            return new AIPlayer(player.Name, GenerateRandomDeck(AllCardsCreated, 50));
+            return new AIPlayer(player.Name, GenerateRandomDeck(AllCardsCreated, 2), number);
         }
     }
     public static List<Card> GetAllCardsList()
@@ -129,8 +272,14 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
 
         foreach (var indivpath in path)
         {
-            string[] text = File.ReadAllText(indivpath).Split(' ');
-            answer.Add(CreateCard.CardCreator(text));
+            string[] text = File.ReadAllText(indivpath).Split("\r\n");
+            string processedTextAsString = string.Empty;
+            foreach (var item in text)
+            {
+                processedTextAsString += ": " + item;
+            }
+            string[] textToCreateCard = processedTextAsString.Remove(0, 2).Split(": ");
+            answer.Add(CreateCard.CardCreator(textToCreateCard));
 
         }
         return answer;
@@ -149,6 +298,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
             int k = r.Next(AllCardsCreated.Count);
             if (mask[k]) continue;
             deck.Add(AllCardsCreated[k]);
+            AllCardsCreated.Remove(AllCardsCreated[k]);
             mask[k] = true;
             current++;
         }
@@ -201,7 +351,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
 
         return names;
     }
-    */
+    
 
        public static void Summon(Player player, Card card, int pos)
     {
@@ -223,7 +373,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
             }
             else throw new Exception("Ya existe una unidad en esa casilla");
         }
-
+    */
         /*if (card is ToolCard)
         {
 
@@ -233,9 +383,9 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
             Activate(card, player);
         }*/
 
-    }
+    
 
-    public static void Activate(Card card, Player player)
+    /*public static void Activate(Card card, Player player)
     {
         if (card is MonsterCard)
         {
@@ -245,13 +395,13 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
         else player.Mana -= card.ManaCost;
         //card.Effect();
     }
-
+    */
 
     
 
 
 
-    public void MainPhase(Player player)
+   /* public void MainPhase(Player player)
     {
         bool end = false;
         while (!end)
@@ -326,6 +476,6 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
                     break;
             }
         }
-    }
+    }*/
 
 //Hacer el metodo discard

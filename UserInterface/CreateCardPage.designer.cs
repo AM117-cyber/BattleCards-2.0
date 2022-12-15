@@ -30,25 +30,31 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NameValue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.DamageValue = new System.Windows.Forms.TextBox();
+            this.HealthPointsValue = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.monster_rb = new System.Windows.Forms.RadioButton();
+            this.monster_card_rb = new System.Windows.Forms.RadioButton();
             this.spell_card_rb = new System.Windows.Forms.RadioButton();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.attack_exp = new System.Windows.Forms.TextBox();
+            this.ManaCostValue = new System.Windows.Forms.TextBox();
+            this.AttackValue = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.HealValue = new System.Windows.Forms.TextBox();
+            this.DefendValue = new System.Windows.Forms.TextBox();
             this.previous_bt = new System.Windows.Forms.Button();
             this.next_bt = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.LifeTimeValue = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ArmourValue = new System.Windows.Forms.TextBox();
+            this.HealingPowersValue = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,18 +77,18 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Name:";
             // 
-            // textBox1
+            // NameValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(178, 219);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 31);
-            this.textBox1.TabIndex = 2;
+            this.NameValue.Location = new System.Drawing.Point(178, 219);
+            this.NameValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NameValue.Name = "NameValue";
+            this.NameValue.Size = new System.Drawing.Size(134, 31);
+            this.NameValue.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 376);
+            this.label3.Location = new System.Drawing.Point(28, 341);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 25);
             this.label3.TabIndex = 3;
@@ -91,7 +97,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 531);
+            this.label4.Location = new System.Drawing.Point(19, 524);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 25);
             this.label4.TabIndex = 5;
@@ -100,78 +106,76 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 640);
+            this.label5.Location = new System.Drawing.Point(19, 745);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 25);
             this.label5.TabIndex = 6;
             this.label5.Text = "Health Points:";
             // 
-            // textBox2
+            // DamageValue
             // 
-            this.textBox2.Location = new System.Drawing.Point(178, 528);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(134, 31);
-            this.textBox2.TabIndex = 7;
+            this.DamageValue.Location = new System.Drawing.Point(178, 518);
+            this.DamageValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DamageValue.Name = "DamageValue";
+            this.DamageValue.Size = new System.Drawing.Size(134, 31);
+            this.DamageValue.TabIndex = 7;
             // 
-            // textBox3
+            // HealthPointsValue
             // 
-            this.textBox3.Location = new System.Drawing.Point(178, 636);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(134, 31);
-            this.textBox3.TabIndex = 8;
+            this.HealthPointsValue.Location = new System.Drawing.Point(178, 739);
+            this.HealthPointsValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.HealthPointsValue.Name = "HealthPointsValue";
+            this.HealthPointsValue.Size = new System.Drawing.Size(134, 31);
+            this.HealthPointsValue.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 739);
+            this.label6.Location = new System.Drawing.Point(19, 813);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 25);
             this.label6.TabIndex = 11;
             this.label6.Text = "Mana Cost:";
             // 
-            // monster_rb
+            // monster_card_rb
             // 
-            this.monster_rb.AutoSize = true;
-            this.monster_rb.Location = new System.Drawing.Point(178, 357);
-            this.monster_rb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.monster_rb.Name = "monster_rb";
-            this.monster_rb.Size = new System.Drawing.Size(103, 29);
-            this.monster_rb.TabIndex = 16;
-            this.monster_rb.TabStop = true;
-            this.monster_rb.Text = "Monster";
-            this.monster_rb.UseVisualStyleBackColor = true;
-            this.monster_rb.CheckedChanged += new System.EventHandler(this.monster_rb_CheckedChanged);
+            this.monster_card_rb.AutoSize = true;
+            this.monster_card_rb.Location = new System.Drawing.Point(178, 322);
+            this.monster_card_rb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.monster_card_rb.Name = "monster_card_rb";
+            this.monster_card_rb.Size = new System.Drawing.Size(145, 29);
+            this.monster_card_rb.TabIndex = 16;
+            this.monster_card_rb.Text = "Monster Card";
+            this.monster_card_rb.UseVisualStyleBackColor = true;
+            this.monster_card_rb.CheckedChanged += new System.EventHandler(this.monster_card_rb_CheckedChanged);
             // 
             // spell_card_rb
             // 
             this.spell_card_rb.AutoSize = true;
-            this.spell_card_rb.Location = new System.Drawing.Point(179, 406);
+            this.spell_card_rb.Location = new System.Drawing.Point(178, 359);
             this.spell_card_rb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.spell_card_rb.Name = "spell_card_rb";
             this.spell_card_rb.Size = new System.Drawing.Size(117, 29);
             this.spell_card_rb.TabIndex = 17;
-            this.spell_card_rb.TabStop = true;
             this.spell_card_rb.Text = "Spell Card";
             this.spell_card_rb.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // ManaCostValue
             // 
-            this.textBox4.Location = new System.Drawing.Point(179, 735);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(134, 31);
-            this.textBox4.TabIndex = 18;
+            this.ManaCostValue.Location = new System.Drawing.Point(178, 813);
+            this.ManaCostValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ManaCostValue.Name = "ManaCostValue";
+            this.ManaCostValue.Size = new System.Drawing.Size(134, 31);
+            this.ManaCostValue.TabIndex = 18;
             // 
-            // attack_exp
+            // AttackValue
             // 
-            this.attack_exp.Location = new System.Drawing.Point(436, 181);
-            this.attack_exp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.attack_exp.Multiline = true;
-            this.attack_exp.Name = "attack_exp";
-            this.attack_exp.Size = new System.Drawing.Size(684, 135);
-            this.attack_exp.TabIndex = 19;
+            this.AttackValue.Location = new System.Drawing.Point(436, 181);
+            this.AttackValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AttackValue.Multiline = true;
+            this.AttackValue.Name = "AttackValue";
+            this.AttackValue.Size = new System.Drawing.Size(684, 135);
+            this.AttackValue.TabIndex = 19;
             // 
             // label8
             // 
@@ -200,23 +204,23 @@
             this.label10.TabIndex = 22;
             this.label10.Text = "Defend Expression";
             // 
-            // textBox6
+            // HealValue
             // 
-            this.textBox6.Location = new System.Drawing.Point(436, 405);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(684, 154);
-            this.textBox6.TabIndex = 23;
+            this.HealValue.Location = new System.Drawing.Point(436, 405);
+            this.HealValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.HealValue.Multiline = true;
+            this.HealValue.Name = "HealValue";
+            this.HealValue.Size = new System.Drawing.Size(684, 154);
+            this.HealValue.TabIndex = 23;
             // 
-            // textBox7
+            // DefendValue
             // 
-            this.textBox7.Location = new System.Drawing.Point(436, 652);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(684, 154);
-            this.textBox7.TabIndex = 24;
+            this.DefendValue.Location = new System.Drawing.Point(436, 652);
+            this.DefendValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DefendValue.Multiline = true;
+            this.DefendValue.Name = "DefendValue";
+            this.DefendValue.Size = new System.Drawing.Size(684, 154);
+            this.DefendValue.TabIndex = 24;
             // 
             // previous_bt
             // 
@@ -244,24 +248,30 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.LifeTimeValue);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.ArmourValue);
+            this.panel1.Controls.Add(this.HealingPowersValue);
             this.panel1.Controls.Add(this.next_bt);
             this.panel1.Controls.Add(this.previous_bt);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.DefendValue);
+            this.panel1.Controls.Add(this.HealValue);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.attack_exp);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.AttackValue);
+            this.panel1.Controls.Add(this.ManaCostValue);
             this.panel1.Controls.Add(this.spell_card_rb);
-            this.panel1.Controls.Add(this.monster_rb);
+            this.panel1.Controls.Add(this.monster_card_rb);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.HealthPointsValue);
+            this.panel1.Controls.Add(this.DamageValue);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.NameValue);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(13, 15);
@@ -270,6 +280,57 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1139, 940);
             this.panel1.TabIndex = 27;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(24, 452);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(81, 25);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "LifeTime:";
+            // 
+            // LifeTimeValue
+            // 
+            this.LifeTimeValue.Location = new System.Drawing.Point(178, 446);
+            this.LifeTimeValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LifeTimeValue.Name = "LifeTimeValue";
+            this.LifeTimeValue.Size = new System.Drawing.Size(134, 31);
+            this.LifeTimeValue.TabIndex = 31;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(18, 598);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 25);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "Armour:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(19, 668);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(137, 25);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Healing Powers:";
+            // 
+            // ArmourValue
+            // 
+            this.ArmourValue.Location = new System.Drawing.Point(178, 592);
+            this.ArmourValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ArmourValue.Name = "ArmourValue";
+            this.ArmourValue.Size = new System.Drawing.Size(134, 31);
+            this.ArmourValue.TabIndex = 28;
+            // 
+            // HealingPowersValue
+            // 
+            this.HealingPowersValue.Location = new System.Drawing.Point(178, 668);
+            this.HealingPowersValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.HealingPowersValue.Name = "HealingPowersValue";
+            this.HealingPowersValue.Size = new System.Drawing.Size(134, 31);
+            this.HealingPowersValue.TabIndex = 27;
             // 
             // CreateCardPage
             // 
@@ -293,24 +354,30 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NameValue;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox DamageValue;
+        private System.Windows.Forms.TextBox HealthPointsValue;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton monster_rb;
+        private System.Windows.Forms.RadioButton monster_card_rb;
         private System.Windows.Forms.RadioButton spell_card_rb;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox attack_exp;
+        private System.Windows.Forms.TextBox ManaCostValue;
+        private System.Windows.Forms.TextBox AttackValue;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox HealValue;
+        private System.Windows.Forms.TextBox DefendValue;
         private System.Windows.Forms.Button previous_bt;
         private System.Windows.Forms.Button next_bt;
         private System.Windows.Forms.Panel panel1;
+        private Label label11;
+        private Label label7;
+        private TextBox ArmourValue;
+        private TextBox HealingPowersValue;
+        private Label label12;
+        private TextBox LifeTimeValue;
     }
 }

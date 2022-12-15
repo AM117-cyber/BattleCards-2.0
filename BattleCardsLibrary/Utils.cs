@@ -19,19 +19,21 @@ public enum Operators
         Different,
 
     }
-public enum BasicCardProperties
- {
-    ManaCost,
-    Type,
-    Name,
-    TargetTypes,
-    DamagePoints,
-    Armour,
-    HealingPowers,
-    Attack,
-    Heal,
-    Deffend
- }
+    public enum AllCardProperties
+    {
+        Attack,
+        Heal,
+        Defend,
+        Type,
+        Name,
+        ManaCost,
+        Damage,
+        Armour,
+        HealingPowers,
+        HealthPoints,
+        LifeTime,
+
+    }
 
     public enum Phase
     {
@@ -39,7 +41,17 @@ public enum BasicCardProperties
         BattlePhase
     }
     
-    
+    public enum ActionsByPlayer
+    {
+        DrawFromDeck,
+        InvokeCard,
+        Attack,
+        Heal,
+        TurnIsOver,
+        DirectAttack,
+        None
+
+    }
  
 
 

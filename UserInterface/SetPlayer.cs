@@ -1,8 +1,11 @@
 ﻿
+using BattleCards;
+
 namespace WindowsFormsApp1
 {
     public partial class SetPlayer : Form
     {
+        private UIPlayer firstPlayer = null;
         private Form previousForm { get; set; }
 
         public SetPlayer(Form previous)
@@ -20,9 +23,20 @@ namespace WindowsFormsApp1
 
         private void next_bt_Click(object sender, EventArgs e)
         {
-            var boardForm = new Board(previousForm);
-            boardForm.Show();
-            Hide();
+            PlayerType playerType = human_rb.Checked ? PlayerType.Human : easy_rb.Checked ? PlayerType.RandomAI : PlayerType.GreedyAI;
+            if (firstPlayer != null)
+            {
+                //start new game
+                new Game(firstPlayer, new UIPlayer(name_textBox.Text, playerType));
+                var boardForm = new Board(previousForm);
+                boardForm.Show();
+                Hide();
+                return;
+            }
+            
+            firstPlayer = new UIPlayer(name_textBox.Text,playerType);
+            
+            
 
         }
 
@@ -32,5 +46,6 @@ namespace WindowsFormsApp1
            Hide();
         }
 
+        
     }
 }

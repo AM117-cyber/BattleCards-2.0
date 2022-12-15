@@ -1,4 +1,4 @@
-﻿using BattleCards.Cards;
+﻿/*using BattleCards.Cards;
 
 namespace BattleCards;
 public class Board
@@ -23,3 +23,4 @@ public class Board
 
 }
 
+*/
