@@ -1,4 +1,6 @@
 ﻿
+using System.Runtime.CompilerServices;
+
 namespace WindowsFormsApp1
 {
     public partial class ErrorCreatingCard : Form
@@ -7,6 +9,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+        
 
     }
 }

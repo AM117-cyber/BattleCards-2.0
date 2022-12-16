@@ -31,7 +31,7 @@ public abstract class Player
         this.CardsOnBoard = new List<Card>();
     }
 
-    public abstract void Play();
+    
     public void Shuffle ()
     {
         Random r = new Random();
@@ -66,6 +66,23 @@ public abstract class Player
            }
         }
     }
+    public void UpdateSpellsMana()
+    {
+        foreach (var card in this.CardsOnBoard)
+        {
+            if (card.Type == CardType.Spell)
+            {
+                if((card as SpellCard).LifeTime <= 1)
+                {
+                    CardsOnBoard.Remove(card);
+                }
+                else
+                {
+                    (card as SpellCard).LifeTime--;
+                }
+            }
+        }
+    }
     public void RemoveCard(List<Card> HandOrDeck, Card cardToRemove)
     {
         HandOrDeck.Remove(cardToRemove);
@@ -91,29 +108,6 @@ public class HumanPlayer : Player
             //decirle a game que juegue
         }
     }
-    public override void Play()//everytime you call the method phase will be mainphase
-    {
-        bool answerFromInterface = false;
-        bool phaseIsOver = false;
-        ActionsByPlayer action = ActionsByPlayer.None;
-        Card card1 = null;
-        Card card2 = null;
-        Phase currentPhase = Phase.MainPhase;
-        while (!answerFromInterface || !phaseIsOver)
-        {
-            if (answerFromInterface)
-            {
-                Game.CardActionReceiver(action, card1, card2,0);
-                answerFromInterface = false;
-                if (currentPhase == Phase.BattlePhase && Game.CurrentPhase == Phase.MainPhase)
-                {
-                    phaseIsOver = true;
-                    return;
-                }
-                currentPhase = Game.CurrentPhase;
-            }
-        }
-    }
 
 }
 public class AIPlayer : Player
@@ -124,9 +118,15 @@ public class AIPlayer : Player
         Type = PlayerType.GreedyAI;
     }
 
-    public override void Play()
+    public void Play()//pasa por todas las jugadas validas y envia la mejor
     {
+        if (Game.CurrentPhase == Phase.MainPhase)
+        {
+            if (this.Hand.Count < 5 && this.Mana >= 1)
+            {
 
+            }
+        }
     }
     public override void ExecuteAction(Game game, int actionExecuterIndex = -1, int actionReceiverIndex = -1, ActionType actionType = ActionType.None)
     {

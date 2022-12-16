@@ -69,7 +69,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
         {
             while (CurrentPlayer == player.Number)//
             {
-                player.Play();
+                //player.Play();
             }
             
         }
@@ -90,7 +90,8 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
                 return;
             }
             GetCurrentPlayer().Mana = 20;
-
+            //reducing LifeTime of spells
+            GetCurrentPlayer().UpdateSpellsMana();
             
         }
     }
@@ -131,14 +132,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
                 
                 break;
             case ActionsByPlayer.TurnIsOver:
-                if (CurrentPhase == Phase.MainPhase)
-                {
-                    CurrentPhase = Phase.BattlePhase;
-                }
-                else
-                {
-                    CurrentPhase = Phase.MainPhase;
-                }
+                CheckAndChangePhaseAndCurrentPlayer();
                 break;
             case ActionsByPlayer.Attack:
                 //fase debe ser batalla, cartas no pueden ser nulas,la carta debe pertenecer al jugador cuyo turno se juega y la victima debe ser un monstruo. 
@@ -177,6 +171,10 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
                 }
                 
                 break;
+            case ActionsByPlayer.None:
+                CheckAndChangePhaseAndCurrentPlayer();
+                break;
+
             default:
                 break;
         }
@@ -186,7 +184,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
 
     public void Turn1(Player player)
     {
-        player.Play();//show dialog saying player.Name + "'s turn"
+       // player.Play();//show dialog saying player.Name + "'s turn"
 
         // List<SpellCard> SpellsOnBoard = GetSpellCardsOnBoard(board);
         // foreach (var card in SpellsOnBoard)

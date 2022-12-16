@@ -23,6 +23,11 @@ namespace WindowsFormsApp1
 
         private void next_bt_Click(object sender, EventArgs e)
         {
+            if (!human_rb.Checked && !virtual_player_rb.Checked)
+            {
+                return;
+
+            }
             PlayerType playerType = human_rb.Checked ? PlayerType.Human : easy_rb.Checked ? PlayerType.RandomAI : PlayerType.GreedyAI;
             if (firstPlayer != null)
             {

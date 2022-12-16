@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception)
             {
-                var errorForm = new ErrorCreatingCard();
+                var errorForm = new ErrorCreatingCard(error);
                 errorForm.ShowDialog();
             }
             
