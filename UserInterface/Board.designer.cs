@@ -182,7 +182,6 @@
             this.hp_P2_H2 = new System.Windows.Forms.Label();
             this.label74 = new System.Windows.Forms.Label();
             this.name_P2_H2 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
             this.damage_P2_H2 = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.type_P2_H2 = new System.Windows.Forms.Label();
@@ -193,7 +192,6 @@
             this.hp_P2_H1 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.name_P2_H1 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
             this.damage_P2_H1 = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
             this.type_P2_H1 = new System.Windows.Forms.Label();
@@ -237,7 +235,6 @@
             this.hp_P1_H2 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.name_P1_H2 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.damage_P1_H2 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.type_P1_H2 = new System.Windows.Forms.Label();
@@ -248,7 +245,6 @@
             this.hp_P1_H1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.name_P1_H1 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.damage_P1_H1 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.type_P1_H1 = new System.Windows.Forms.Label();
@@ -1841,7 +1837,6 @@
             this.card_P2_H2.Controls.Add(this.hp_P2_H2);
             this.card_P2_H2.Controls.Add(this.label74);
             this.card_P2_H2.Controls.Add(this.name_P2_H2);
-            this.card_P2_H2.Controls.Add(this.label76);
             this.card_P2_H2.Controls.Add(this.damage_P2_H2);
             this.card_P2_H2.Controls.Add(this.label78);
             this.card_P2_H2.Controls.Add(this.type_P2_H2);
@@ -1889,20 +1884,10 @@
             // 
             // name_P2_H2
             // 
-            this.name_P2_H2.Location = new System.Drawing.Point(90, 21);
+            this.name_P2_H2.Location = new System.Drawing.Point(-1, 10);
             this.name_P2_H2.Name = "name_P2_H2";
-            this.name_P2_H2.Size = new System.Drawing.Size(44, 25);
+            this.name_P2_H2.Size = new System.Drawing.Size(140, 25);
             this.name_P2_H2.TabIndex = 6;
-            // 
-            // label76
-            // 
-            this.label76.Location = new System.Drawing.Point(3, 21);
-            this.label76.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(82, 25);
-            this.label76.TabIndex = 5;
-            this.label76.Text = "Name:";
-            this.label76.UseMnemonic = false;
             // 
             // damage_P2_H2
             // 
@@ -1946,7 +1931,6 @@
             this.card_P2_H1.Controls.Add(this.hp_P2_H1);
             this.card_P2_H1.Controls.Add(this.label64);
             this.card_P2_H1.Controls.Add(this.name_P2_H1);
-            this.card_P2_H1.Controls.Add(this.label66);
             this.card_P2_H1.Controls.Add(this.damage_P2_H1);
             this.card_P2_H1.Controls.Add(this.label68);
             this.card_P2_H1.Controls.Add(this.type_P2_H1);
@@ -1970,44 +1954,34 @@
             this.label62.Location = new System.Drawing.Point(3, 174);
             this.label62.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(82, 25);
+            this.label62.Size = new System.Drawing.Size(64, 25);
             this.label62.TabIndex = 9;
             this.label62.Text = "Cost:";
             this.label62.UseMnemonic = false;
             // 
             // hp_P2_H1
             // 
-            this.hp_P2_H1.Location = new System.Drawing.Point(90, 132);
+            this.hp_P2_H1.Location = new System.Drawing.Point(103, 132);
             this.hp_P2_H1.Name = "hp_P2_H1";
-            this.hp_P2_H1.Size = new System.Drawing.Size(44, 25);
+            this.hp_P2_H1.Size = new System.Drawing.Size(40, 25);
             this.hp_P2_H1.TabIndex = 8;
             // 
             // label64
             // 
-            this.label64.Location = new System.Drawing.Point(3, 132);
+            this.label64.Location = new System.Drawing.Point(-1, 132);
             this.label64.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(82, 25);
+            this.label64.Size = new System.Drawing.Size(117, 25);
             this.label64.TabIndex = 7;
-            this.label64.Text = "HP:";
+            this.label64.Text = "HP/LifeTime:";
             this.label64.UseMnemonic = false;
             // 
             // name_P2_H1
             // 
-            this.name_P2_H1.Location = new System.Drawing.Point(90, 21);
+            this.name_P2_H1.Location = new System.Drawing.Point(3, 10);
             this.name_P2_H1.Name = "name_P2_H1";
-            this.name_P2_H1.Size = new System.Drawing.Size(44, 25);
+            this.name_P2_H1.Size = new System.Drawing.Size(136, 25);
             this.name_P2_H1.TabIndex = 6;
-            // 
-            // label66
-            // 
-            this.label66.Location = new System.Drawing.Point(3, 21);
-            this.label66.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(82, 25);
-            this.label66.TabIndex = 5;
-            this.label66.Text = "Name:";
-            this.label66.UseMnemonic = false;
             // 
             // damage_P2_H1
             // 
@@ -2018,19 +1992,19 @@
             // 
             // label68
             // 
-            this.label68.Location = new System.Drawing.Point(3, 94);
+            this.label68.Location = new System.Drawing.Point(-1, 93);
             this.label68.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(82, 25);
+            this.label68.Size = new System.Drawing.Size(86, 25);
             this.label68.TabIndex = 3;
             this.label68.Text = "Damage:";
             this.label68.UseMnemonic = false;
             // 
             // type_P2_H1
             // 
-            this.type_P2_H1.Location = new System.Drawing.Point(90, 58);
+            this.type_P2_H1.Location = new System.Drawing.Point(59, 58);
             this.type_P2_H1.Name = "type_P2_H1";
-            this.type_P2_H1.Size = new System.Drawing.Size(44, 25);
+            this.type_P2_H1.Size = new System.Drawing.Size(75, 25);
             this.type_P2_H1.TabIndex = 2;
             // 
             // label70
@@ -2038,7 +2012,7 @@
             this.label70.Location = new System.Drawing.Point(3, 58);
             this.label70.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(82, 25);
+            this.label70.Size = new System.Drawing.Size(64, 25);
             this.label70.TabIndex = 0;
             this.label70.Text = "Type:";
             this.label70.UseMnemonic = false;
@@ -2366,7 +2340,6 @@
             this.card_P1_H2.Controls.Add(this.hp_P1_H2);
             this.card_P1_H2.Controls.Add(this.label24);
             this.card_P1_H2.Controls.Add(this.name_P1_H2);
-            this.card_P1_H2.Controls.Add(this.label26);
             this.card_P1_H2.Controls.Add(this.damage_P1_H2);
             this.card_P1_H2.Controls.Add(this.label28);
             this.card_P1_H2.Controls.Add(this.type_P1_H2);
@@ -2414,20 +2387,10 @@
             // 
             // name_P1_H2
             // 
-            this.name_P1_H2.Location = new System.Drawing.Point(90, 21);
+            this.name_P1_H2.Location = new System.Drawing.Point(3, 21);
             this.name_P1_H2.Name = "name_P1_H2";
-            this.name_P1_H2.Size = new System.Drawing.Size(44, 25);
+            this.name_P1_H2.Size = new System.Drawing.Size(136, 25);
             this.name_P1_H2.TabIndex = 6;
-            // 
-            // label26
-            // 
-            this.label26.Location = new System.Drawing.Point(3, 21);
-            this.label26.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(82, 25);
-            this.label26.TabIndex = 5;
-            this.label26.Text = "Name:";
-            this.label26.UseMnemonic = false;
             // 
             // damage_P1_H2
             // 
@@ -2471,7 +2434,6 @@
             this.card_P1_H1.Controls.Add(this.hp_P1_H1);
             this.card_P1_H1.Controls.Add(this.label14);
             this.card_P1_H1.Controls.Add(this.name_P1_H1);
-            this.card_P1_H1.Controls.Add(this.label16);
             this.card_P1_H1.Controls.Add(this.damage_P1_H1);
             this.card_P1_H1.Controls.Add(this.label18);
             this.card_P1_H1.Controls.Add(this.type_P1_H1);
@@ -2519,20 +2481,10 @@
             // 
             // name_P1_H1
             // 
-            this.name_P1_H1.Location = new System.Drawing.Point(90, 21);
+            this.name_P1_H1.Location = new System.Drawing.Point(-1, 21);
             this.name_P1_H1.Name = "name_P1_H1";
-            this.name_P1_H1.Size = new System.Drawing.Size(44, 25);
+            this.name_P1_H1.Size = new System.Drawing.Size(140, 25);
             this.name_P1_H1.TabIndex = 6;
-            // 
-            // label16
-            // 
-            this.label16.Location = new System.Drawing.Point(3, 21);
-            this.label16.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(82, 25);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "Name:";
-            this.label16.UseMnemonic = false;
             // 
             // damage_P1_H1
             // 
@@ -2883,7 +2835,6 @@
         private System.Windows.Forms.Label hp_P2_H2;
         private System.Windows.Forms.Label label74;
         private System.Windows.Forms.Label name_P2_H2;
-        private System.Windows.Forms.Label label76;
         private System.Windows.Forms.Label damage_P2_H2;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.Label type_P2_H2;
@@ -2894,7 +2845,6 @@
         private System.Windows.Forms.Label hp_P2_H1;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label name_P2_H1;
-        private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label damage_P2_H1;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label type_P2_H1;
@@ -2938,7 +2888,6 @@
         private System.Windows.Forms.Label hp_P1_H2;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label name_P1_H2;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label damage_P1_H2;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label type_P1_H2;
@@ -2949,7 +2898,6 @@
         private System.Windows.Forms.Label hp_P1_H1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label name_P1_H1;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label damage_P1_H1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label type_P1_H1;

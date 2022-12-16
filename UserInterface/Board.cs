@@ -184,8 +184,8 @@ namespace WindowsFormsApp1
                 return;
             }
             Game.CheckAndChangePhaseAndCurrentPlayer();
-            UpdatePlayerLabels("mana_of_Player" + Game.CurrentPlayer); 
-            
+            UpdatePlayerLabels("mana_of_Player" + Game.CurrentPlayer);
+            UpdateBoard(Game.CurrentPlayer);
         }
 
         public void UpdateBoard(int player)
@@ -313,6 +313,8 @@ namespace WindowsFormsApp1
             {
                 return;
             }
+            ActionsByPlayer action = AIPlay();
+            Game.CardActionReceiver(action, null, null, Game.CurrentPlayer);
             // if ((Game.CurrentPlayer == 1? Player2.Type : Player1.Type )== PlayerType.Human)
             //{
             //    return;
