@@ -51,29 +51,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
 
        
     }
-    public static void Turn(Player player)
-    {
-        if (player.Type == PlayerType.Human)
-        {
-            while (CurrentPlayer == player.Number)
-            {
-
-            }
-            if (GameIsOver())
-            {
-                EndGame = true;
-            }
-            return;
-        }
-        else
-        {
-            while (CurrentPlayer == player.Number)//
-            {
-                player.Play();
-            }
-            
-        }
-    }
+  
     public static void CheckAndChangePhaseAndCurrentPlayer()
     {
         if (CurrentPhase == Phase.MainPhase)
@@ -81,7 +59,10 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
             CurrentPhase = Phase.BattlePhase;
         }
         else
-        {
+        { 
+            //reducing LifeTime of spells
+            GetCurrentPlayer().UpdateSpellsMana();
+
             CurrentPhase = Phase.MainPhase;
             ChangePlayer();
             if ((GetCurrentPlayer().Mana + 5) < 20)
@@ -90,9 +71,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
                 return;
             }
             GetCurrentPlayer().Mana = 20;
-            //reducing LifeTime of spells
-            GetCurrentPlayer().UpdateSpellsMana();
-            
+           
         }
     }
     public static void ChangePlayer()
@@ -139,10 +118,6 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
                 if (CurrentPhase == Phase.BattlePhase && card1 != null && card2 != null && card2.Type == CardType.Monster && card1.Owner.Number == CurrentPlayer)//la interfaz es quien comprueba que sea humano
                 {
                     Attack(card1, card2 as MonsterCard, card1.Attack.Evaluate(card1, card2));
-                    if (GameIsOver())
-                    {
-                        EndGame = true;
-                    }
                 }
                 break;
             case ActionsByPlayer.Heal:
@@ -163,10 +138,6 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
                     {
                         Player1.Health -= NoMonstersOnBoard(Player1) ? card1.Damage : 0;
                     }
-                    if (GameIsOver())
-                    {
-                        EndGame = true;
-                    }
 
                 }
                 
@@ -183,19 +154,20 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
 
     public static bool GameIsOver()
     {
-            if (Player1.Health <= 0)
-            {
-                Console.WriteLine(Player2.Name + "has won.Congratulations!!!");
-                return true;
-            }
-            if (Player2.Health <= 0)
-            {
-                Console.WriteLine(Player1.Name + "has won.Congratulations!!!");
-                return true;
-            }
-            return false;
-  
+        if (Player1.Health <= 0)
+        {
+            throw new Exception(Player2.Name + " has won. Congratulations!!!");
+            return true;
+        }
+        if (Player2.Health <= 0)
+        {
+            throw new Exception(Player1.Name + "has won.Congratulations!!!");
+            return true;
+        }
+        return false;
+
     }
+   
 
     public static UIPlayer GetFirstPlayerByDice(UIPlayer player1, UIPlayer player2)
     {

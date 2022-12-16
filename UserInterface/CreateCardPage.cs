@@ -23,9 +23,11 @@ namespace WindowsFormsApp1
                 previousForm.Show();
                 Hide();
             }
-            catch (Exception)
+            catch (Exception except)
             {
-                var errorForm = new ErrorCreatingCard();
+               
+                var errorForm = new ErrorCreatingCard(except.Message == "Index was outside the bounds of the array."? "Non valid card" :except.Message);
+                
                 errorForm.ShowDialog();
             }
         }
@@ -52,8 +54,10 @@ namespace WindowsFormsApp1
             if (!monster_card_rb.Checked && !spell_card_rb.Checked)
             {
                 //show error because you need to choose at least one card type.
-                var errorForm = new ErrorCreatingCard();
+                var errorForm = new ErrorCreatingCard("You must select a valid card type.");
                 errorForm.ShowDialog();
+                
+                errorForm.Hide();
             }
             else
             {

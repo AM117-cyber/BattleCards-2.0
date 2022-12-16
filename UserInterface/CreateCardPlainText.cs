@@ -30,9 +30,9 @@ namespace WindowsFormsApp1
                 previousForm.Show();
                 Hide();
             }
-            catch (Exception)
+            catch (Exception except)
             {
-                var errorForm = new ErrorCreatingCard();
+                var errorForm = new ErrorCreatingCard(except.Message == "Index was outside the bounds of the array." ? "Non valid card" : except.Message);
                 errorForm.ShowDialog();
             }
             

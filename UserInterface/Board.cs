@@ -4,6 +4,7 @@ using BattleCards.Cards;
 using BattleCards.ExecuteActions;
 using System.Windows.Forms;
 using System.Configuration;
+using HelloWorld;
 
 namespace WindowsFormsApp1
 {
@@ -77,10 +78,11 @@ namespace WindowsFormsApp1
             {
                 isAttacking = false;
                 Game.CardActionReceiver(ActionsByPlayer.Attack, currentCard, targetCard,0);
-                UpdateBoard(1);
-                UpdateBoard(2);
                 UpdatePlayerLabels(hp_of_Player1.Name);
                 UpdatePlayerLabels(hp_of_Player2.Name);
+                UpdateBoard(1);
+                UpdateBoard(2);
+                
                 
                 return;
             }
@@ -183,11 +185,43 @@ namespace WindowsFormsApp1
             {
                 return;
             }
-            Game.CheckAndChangePhaseAndCurrentPlayer();
+            Game.CardActionReceiver(ActionsByPlayer.TurnIsOver,null,null,0);
             UpdatePlayerLabels("mana_of_Player" + Game.CurrentPlayer);
-            UpdateBoard(Game.CurrentPlayer);
+            UpdateLifeTime(Game.GetCurrentPlayer());
+            
         }
 
+        public void UpdateLifeTime(Player player)
+        {
+            IEnumerable<Panel> CardsOnPanel = this.panel1.Controls.OfType<Panel>();
+            for (int i = 0; i < player.CardsOnBoard.Count; i++)
+            {
+                if (player.CardsOnBoard[i].Type == CardType.Spell)
+                {
+                    string name = "card_P" + player.CardsOnBoard[i].Owner.Number + "_C" + i;
+                    foreach (var panel in CardsOnPanel)
+                    {
+                        if (panel.Name == name) //hp_P2_C1
+                        {
+                            SetLifeTimeToCardLabel(panel, player.CardsOnBoard[i], "hp_P" + player.Number + "_C" + i);
+                            continue;
+                        }
+                    }
+                }
+            }
+        }
+        public void SetLifeTimeToCardLabel(Panel panel, Card card, string propertyName)
+        {
+            IEnumerable<Label> CardPropertiesAsLabels = panel.Controls.OfType<Label>();
+            foreach (var item in CardPropertiesAsLabels)
+            {
+                if (item.Name == propertyName)
+                {
+                    item.Text = (card as SpellCard).LifeTime.ToString();
+                }
+            }
+
+        }
         public void UpdateBoard(int player)
         {
             UpdateListOfCards('C', player);
@@ -274,25 +308,28 @@ namespace WindowsFormsApp1
         }
         private void UpdatePlayerLabels(string nameOfLabelToUpdate)
         {
+            try
+            {
+                Game.GameIsOver();
+            }
+            catch (Exception exception)
+            {
+                var FinalMessage = new GameIsOver(exception.Message);
+                FinalMessage.ShowDialog();
+                Hide();
+            }
             if (nameOfLabelToUpdate == hp_of_Player1.Name)
             {
                 hp_of_Player1.Text = Game.Player1.Health.ToString();
-                if (Game.EndGame)
-                {
-                    Hide();
-                }
+                
                 return;
                 
             }
             if (nameOfLabelToUpdate == hp_of_Player2.Name)
             {
                 hp_of_Player2.Text = Game.Player2.Health.ToString();
-                if (Game.EndGame)
-                {
-                    Hide();
-                }
                 return;
-                
+
             }
             if (nameOfLabelToUpdate == mana_of_Player1.Name)
             {
@@ -313,8 +350,6 @@ namespace WindowsFormsApp1
             {
                 return;
             }
-            ActionsByPlayer action = AIPlay();
-            Game.CardActionReceiver(action, null, null, Game.CurrentPlayer);
             // if ((Game.CurrentPlayer == 1? Player2.Type : Player1.Type )== PlayerType.Human)
             //{
             //    return;

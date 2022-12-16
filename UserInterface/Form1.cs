@@ -1,10 +1,11 @@
 namespace HelloWorld
 {
-    public partial class Form1 : Form
+    public partial class GameIsOver : Form
     {
-        public Form1()
+        public GameIsOver(string message)
         {
             InitializeComponent();
+            label1.Text = message;
         }
 
     }

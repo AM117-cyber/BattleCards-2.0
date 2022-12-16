@@ -1,6 +1,6 @@
 ﻿namespace HelloWorld
 {
-    partial class Form1
+    partial class GameIsOver
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,44 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(179, 128);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 31);
-            this.textBox1.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(395, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(58, 129);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(90, 25);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "linkLabel1";
-            // 
-            // Form1
+            // GameIsOver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.textBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(922, 244);
+            this.Controls.Add(this.label1);
+            this.Name = "GameIsOver";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "GameIsOver";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private TextBox textBox1;
-        private LinkLabel linkLabel1;
+        private Label label1;
     }
 }

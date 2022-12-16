@@ -42,6 +42,7 @@ namespace BattleCardsLibrary.AI
                         return elegida;
                     }
                 }
+            return null;
 
             }
 

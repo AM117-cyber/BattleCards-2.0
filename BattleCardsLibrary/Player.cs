@@ -20,7 +20,7 @@ public abstract class Player
         this.Number = number;
         this.Name = name;
         this.Health = 1000;
-        this.Mana = 21;
+        this.Mana = 25;
         this.Deck = deck;
         foreach (var card in Deck)
         {
