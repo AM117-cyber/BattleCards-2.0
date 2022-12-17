@@ -5,6 +5,7 @@ using BattleCards;
 
 namespace BattleCards.Cards;
 
+
 public class CreateCard
 {
     public static Card CardCreator(string[] text)//text viene de aplicarle Split('') a string inicial
@@ -121,16 +122,16 @@ public class CreateCard
     }*/
 }
 
-public abstract class Expression
+public interface IEvaluate
 {
-    public abstract double Evaluate(Card onCard, Card enemyCard);
+    public double Evaluate(Card onCard, Card enemyCard);
 }
 
-public class TernaryExpression : Expression
+public class TernaryExpression : IEvaluate
 {
-    public Expression Condition { get; set; }
-    public Expression IfTrue { get; set; }
-    public Expression Else { get; set; }
+    public IEvaluate Condition { get; set; }
+    public IEvaluate IfTrue { get; set; }
+    public IEvaluate Else { get; set; }
 
     public TernaryExpression(string ternaryExpression, CardType type)
     {
@@ -141,7 +142,7 @@ public class TernaryExpression : Expression
     }
 
 
-    public override double Evaluate(Card onCard, Card enemyCard)
+    public double Evaluate(Card onCard, Card enemyCard)
     {
         if (Condition.Evaluate(onCard, enemyCard) == 1)
         {
@@ -154,7 +155,7 @@ public class TernaryExpression : Expression
 public class Interpreter
 {
 
-    public static Expression BuildExpression(string expressionToBuild, CardType typeOfCard)
+    public static IEvaluate BuildExpression(string expressionToBuild, CardType typeOfCard)
     {
         string[] leftAndRight = new string[3];
         string @operator = string.Empty;
@@ -217,7 +218,7 @@ public class Interpreter
                 throw new Exception("The expression typed isn't correct.");
         }
     }
-    public static Expression BuildConditionalExpression(string expressionToBuild, CardType typeOfCard)
+    public static IEvaluate BuildConditionalExpression(string expressionToBuild, CardType typeOfCard)
     {
         string[] leftAndRight = new string[3];
         string @operator = string.Empty;
@@ -414,14 +415,10 @@ public class Interpreter
     }
 }
 
-public interface IEvaluate
+public abstract class BinaryExpression : IEvaluate
 {
-
-}
-public abstract class BinaryExpression : Expression
-{
-    public Expression Left { get; set; } // el operador no hace falta porque cuando se construye ya debe saber quien es
-    public Expression Right { get; set; }
+    public IEvaluate Left { get; set; } // el operador no hace falta porque cuando se construye ya debe saber quien es
+    public IEvaluate Right { get; set; }
 
     public BinaryExpression(string left, string right, CardType type)
     {
@@ -429,7 +426,7 @@ public abstract class BinaryExpression : Expression
         Right = Interpreter.BuildExpression(right, type);
     }
 
-    public override double Evaluate(Card onCard, Card enemyCard)//
+    public double Evaluate(Card onCard, Card enemyCard)//
     {
         double leftValue = Left.Evaluate(onCard, enemyCard);
         double rightValue = Right.Evaluate(onCard, enemyCard);
@@ -440,16 +437,16 @@ public abstract class BinaryExpression : Expression
     public abstract double Evaluate(double leftValue, double rightValue);//
 }
 
-public class AndExpression : Expression
+public class AndExpression : IEvaluate
 {
-    public Expression Left { get; set; }
-    public Expression Right { get; set; }
+    public IEvaluate Left { get; set; }
+    public IEvaluate Right { get; set; }
     public AndExpression(string left, string right, CardType type)
     {
         Left = Interpreter.BuildConditionalExpression(left, type);
         Right = Interpreter.BuildConditionalExpression(right, type);
     }
-    public override double Evaluate(Card onCard, Card enemyCard)
+    public double Evaluate(Card onCard, Card enemyCard)
     {
 
         double leftValue = Left.Evaluate(onCard, enemyCard);
@@ -462,16 +459,16 @@ public class AndExpression : Expression
         return (leftValue == 1 && rightValue == 1) ? 1 : 0;
     }
 }
-public class OrExpression : Expression
+public class OrExpression : IEvaluate
 {
-    public Expression Left { get; set; }
-    public Expression Right { get; set; }
+    public IEvaluate Left { get; set; }
+    public IEvaluate Right { get; set; }
     public OrExpression(string left, string right, CardType type)
     {
         Left = Interpreter.BuildConditionalExpression(left, type);
         Right = Interpreter.BuildConditionalExpression(right, type);
     }
-    public override double Evaluate(Card onCard, Card enemyCard)//
+    public double Evaluate(Card onCard, Card enemyCard)//
     {
         double leftValue = Left.Evaluate(onCard, enemyCard);
         double rightValue = Right.Evaluate(onCard, enemyCard);
@@ -485,7 +482,7 @@ public class OrExpression : Expression
 }
 public class LowerThanOperatorExpression : BinaryExpression
 {
-    public LowerThanOperatorExpression(string left, string right, CardType type ) : base(left, right, type)
+    public LowerThanOperatorExpression(string left, string right, CardType type) : base(left, right, type)
     {
 
     }
@@ -534,17 +531,17 @@ public class DifferentOperatorExpression : BinaryExpression
     }
 }
 
-public class TrueExpression : Expression
+public class TrueExpression : IEvaluate
 {
-    public override double Evaluate(Card onCard, Card enemyCard)
+    public double Evaluate(Card onCard, Card enemyCard)
     {
         return 1;
     }
 }
 
-public class FalseExpression : Expression
+public class FalseExpression : IEvaluate
 {
-    public override double Evaluate(Card onCard, Card enemyCard)
+    public double Evaluate(Card onCard, Card enemyCard)
     {
         return 0;
     }
@@ -569,7 +566,7 @@ public class Substract : BinaryExpression
     }
     public override double Evaluate(double leftValue, double rightValue)
     {
-        return leftValue>rightValue?leftValue - rightValue: 0;
+        return leftValue > rightValue ? leftValue - rightValue : 0;
     }
 }
 
@@ -629,7 +626,7 @@ public class Root : BinaryExpression
     }
 }
 
-public class OnCard : Expression
+public class OnCard : IEvaluate
 {
     public string Property { get; set; }
     public OnCard(string property, CardType type)
@@ -640,7 +637,7 @@ public class OnCard : Expression
         }
         Property = property;
     }
-    public override double Evaluate(Card onCard, Card enemyCard)
+    public double Evaluate(Card onCard, Card enemyCard)
     {
         switch (Property)
         {
@@ -662,7 +659,7 @@ public class OnCard : Expression
     }
 }
 
-public class EnemyCard : Expression
+public class EnemyCard : IEvaluate
 {
     public string Property { get; set; }
     public EnemyCard(string property)
@@ -673,7 +670,7 @@ public class EnemyCard : Expression
         }
         Property = property;
     }
-    public override double Evaluate(Card onCard, Card enemyCard)
+    public double Evaluate(Card onCard, Card enemyCard)
     {
         switch (Property)
         {
@@ -693,7 +690,7 @@ public class EnemyCard : Expression
     }
 }
 
-public class OnPlayer : Expression
+public class OnPlayer : IEvaluate
 {
     public string Property { get; set; }
 
@@ -702,7 +699,7 @@ public class OnPlayer : Expression
         Property = property;
     }
 
-    public override double Evaluate(Card onCard, Card enemyCard)
+    public double Evaluate(Card onCard, Card enemyCard)
     {
         switch (Property)
         {
@@ -717,7 +714,7 @@ public class OnPlayer : Expression
         }
     }
 }
-public class EnemyPlayer : Expression
+public class EnemyPlayer : IEvaluate
 {
     public string Property { get; set; }
 
@@ -726,7 +723,7 @@ public class EnemyPlayer : Expression
         Property = property;
     }
 
-    public override double Evaluate(Card onCard, Card enemyCard)
+    public double Evaluate(Card onCard, Card enemyCard)
     {
         switch (Property)
         {
@@ -742,7 +739,7 @@ public class EnemyPlayer : Expression
     }
 }
 
-public class Constant : Expression
+public class Constant : IEvaluate
 {
     public double Value;
 
@@ -750,7 +747,7 @@ public class Constant : Expression
     {
         Value = value; //puede ser Double.Parse(value).
     }
-    public override double Evaluate(Card onCard, Card enemyCard)
+    public double Evaluate(Card onCard, Card enemyCard)
     {
         return Value;
     }

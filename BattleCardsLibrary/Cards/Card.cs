@@ -10,15 +10,15 @@ public abstract class Card
     static Dictionary<AllCardProperties, AllCardProperties> ExtraPropertiesDefaultValue = SetValues();
     public double ManaCost { get; set; }
     public CardType Type { get; set; }
-    public  Player Owner { get; set; }
+    public Player Owner { get; set; }
     public string Name { get; set; }
     public double Damage { get; private set; }
     public double Armour { get; private set; }
     public double HealingPowers { get; private set; }
-    public Expression Attack { get; set; }   //lo que se guarda aqui es una TernaryExpression que cuando se evalua devuelve double
-    public Expression Heal { get; set; }  //heal se pueden hacer separadas despues en dependencia de la prop, improve health seria heal por ejemplo
+    public IEvaluate Attack { get; set; }   //lo que se guarda aqui es una TernaryExpression que cuando se evalua devuelve double
+    public IEvaluate Heal { get; set; }  //heal se pueden hacer separadas despues en dependencia de la prop, improve health seria heal por ejemplo
     //public string Deffend { get; set;}  // protected de algun tipo? no quiero que salga entre opciones de carta para jugador podria hacerse con if !=
-    public Expression Defend { get; set; }
+    public IEvaluate Defend { get; set; }
 
     public Card(Dictionary<AllCardProperties, string> CardProperties)
     {
@@ -46,14 +46,14 @@ public abstract class Card
         return value;
     }
 
-    public Expression GetExpressionOrDefaultValueAsConstant(AllCardProperties property, Dictionary<AllCardProperties, string> CardProperties)
+    public IEvaluate GetExpressionOrDefaultValueAsConstant(AllCardProperties property, Dictionary<AllCardProperties, string> CardProperties)
     {
         if (!CardProperties.ContainsKey(property))
         {
             double defaultValue = Double.Parse(CardProperties[ExtraPropertiesDefaultValue[property]]);
             return new Constant(defaultValue);
         }
-        return Interpreter.BuildExpression(CardProperties[property],this.Type);
+        return Interpreter.BuildExpression(CardProperties[property], this.Type);
         //return new TernaryExpression(CardProperties[property]);
     }
     public static Dictionary<AllCardProperties, AllCardProperties> SetValues()

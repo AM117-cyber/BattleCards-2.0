@@ -2,6 +2,11 @@
 using System.Runtime.CompilerServices;
 using static Utils.Utils;
 namespace BattleCards;
+
+public interface IVirtualPlay
+{
+    public void Play();
+}
 public abstract class Player
 {
     public PlayerType Type { get; set; }
@@ -14,7 +19,7 @@ public abstract class Player
     public List<Card> Deck { get; set; }
     public List<Card> Hand { get; set; }
 
-    public Player(string name, List<Card> deck,int number)
+    public Player(string name, List<Card> deck, int number)
     {
         this.Type = PlayerType.Human;
         this.Number = number;
@@ -31,8 +36,8 @@ public abstract class Player
         this.CardsOnBoard = new List<Card>();
     }
 
-    
-    public void Shuffle ()
+
+    public void Shuffle()
     {
         Random r = new Random();
         for (int n = Deck.Count - 1; n > 0; n--)
@@ -56,14 +61,14 @@ public abstract class Player
     }
     public void Draw(int cant)
     {
-        if (this.Mana > 1 && (this.Hand == null ||this.Hand.Count<5))//can turn into a method that checks for every action whether or not it is valid
+        if (this.Mana > 1 && (this.Hand == null || this.Hand.Count < 5))//can turn into a method that checks for every action whether or not it is valid
         {
             for (int i = 0; i < cant; i++)
-           {
-            Hand.Add(Deck[i]);
-            Deck.Remove(Deck[i]);
-            this.Mana -= 1;
-           }
+            {
+                Hand.Add(Deck[i]);
+                Deck.Remove(Deck[i]);
+                this.Mana -= 1;
+            }
         }
     }
     public void UpdateSpellsMana()
@@ -72,7 +77,7 @@ public abstract class Player
         {
             if (card.Type == CardType.Spell)
             {
-                if((card as SpellCard).LifeTime <= 1)
+                if ((card as SpellCard).LifeTime <= 1)
                 {
                     CardsOnBoard.Remove(card);
                 }
@@ -87,7 +92,7 @@ public abstract class Player
     {
         HandOrDeck.Remove(cardToRemove);
     }
-   
+
     public virtual void ExecuteAction(Game game, int actionExecuterIndex = -1, int actionReceiverIndex = -1, ActionType actionType = ActionType.None)
     {
 
@@ -96,7 +101,7 @@ public abstract class Player
 
 public class HumanPlayer : Player
 {
-    public HumanPlayer(string name, List<Card> deck, int n) :base(name,deck,n) 
+    public HumanPlayer(string name, List<Card> deck, int n) : base(name, deck, n)
     {
         Type = PlayerType.Human;
     }
@@ -110,10 +115,10 @@ public class HumanPlayer : Player
     }
 
 }
-public class AIPlayer : Player
+public class AIPlayer : Player, IVirtualPlay
 {
-    
-    public AIPlayer(string name, List<Card> deck, int n) : base(name, deck,n)
+
+    public AIPlayer(string name, List<Card> deck, int n) : base(name, deck, n)
     {
         Type = PlayerType.GreedyAI;
     }
@@ -121,11 +126,15 @@ public class AIPlayer : Player
     public void Play()//pasa por todas las jugadas validas y envia la mejor
     {
         if (Game.CurrentPhase == Phase.MainPhase)
-        {
+        {//acciones de MainPhase
             if (this.Hand.Count < 5 && this.Mana >= 1)
             {
 
             }
+        }
+        if (Game.CurrentPhase == Phase.BattlePhase)
+        {
+            //acciones  de BattlePhase
         }
     }
     public override void ExecuteAction(Game game, int actionExecuterIndex = -1, int actionReceiverIndex = -1, ActionType actionType = ActionType.None)

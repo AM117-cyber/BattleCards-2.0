@@ -161,7 +161,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
         }
         if (Player2.Health <= 0)
         {
-            throw new Exception(Player1.Name + "has won.Congratulations!!!");
+            throw new Exception(Player1.Name + " has won.Congratulations!!!");
             return true;
         }
         return false;
