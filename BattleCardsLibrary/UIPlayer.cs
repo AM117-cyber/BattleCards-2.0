@@ -1,4 +1,5 @@
-﻿namespace BattleCards
+﻿using static Utils.Utils;
+namespace BattleCards
 {
     public class UIPlayer
     {

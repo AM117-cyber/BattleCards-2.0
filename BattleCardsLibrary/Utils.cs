@@ -4,14 +4,14 @@ namespace Utils;
 
 public class Utils
 {
-public enum CardType
-{
-    Spell,
-    Monster,
-    Tool
-}
-    
-public enum Operators
+    public enum CardType
+    {
+        Spell,
+        Monster,
+        Tool
+    }
+
+    public enum Operators
     {
         LowerThan,
         HigherThan,
@@ -35,12 +35,18 @@ public enum Operators
 
     }
 
+    public enum PlayerType
+    {
+        Human,
+        RandomAI,
+        GreedyAI
+    }
     public enum Phase
     {
         MainPhase,
         BattlePhase
     }
-    
+
     public enum ActionsByPlayer
     {
         DrawFromDeck,
@@ -52,7 +58,7 @@ public enum Operators
         None
 
     }
- 
+
 
 
 }

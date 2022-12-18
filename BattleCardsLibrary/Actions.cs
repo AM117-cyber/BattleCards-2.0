@@ -8,9 +8,9 @@ public static class ExecuteAction
 {
     public static void Attack(Card onCard, Card enemyCard, double damage)//comprobar si oncard.Owner = currentPlayer
     {
-        if (onCard == null || enemyCard == null || enemyCard.Type != CardType.Monster) return;
-       
-            double DefenseValue = Defend(enemyCard as MonsterCard, onCard);
+        if (onCard == null || enemyCard == null || onCard.Used || enemyCard.Type != CardType.Monster) return;
+
+        double DefenseValue = Defend(enemyCard as MonsterCard, onCard);
         damage -= DefenseValue;
         if (damage < 0)
         {
@@ -32,7 +32,7 @@ public static class ExecuteAction
             }
             (enemyCard as MonsterCard).OnGameHealth -= damage;
         }
-
+        onCard.Used = true;
 
     }
 
@@ -43,23 +43,25 @@ public static class ExecuteAction
     }
     public static void Heal(Card onCard, Card enemyCard, double healing)
     {
-        if (onCard == null || enemyCard == null || enemyCard.Type != CardType.Monster) return;
-        (enemyCard as MonsterCard).OnGameHealth = ((enemyCard as MonsterCard).OnGameHealth += healing) < (enemyCard as MonsterCard).HealthPoints ? (enemyCard as MonsterCard).OnGameHealth += healing : (enemyCard as MonsterCard).HealthPoints;
+        if (onCard == null || enemyCard == null || onCard.Used || enemyCard.Type != CardType.Monster) return;
+        (enemyCard as MonsterCard).OnGameHealth = ((enemyCard as MonsterCard).OnGameHealth + healing) < (enemyCard as MonsterCard).HealthPoints ? (enemyCard as MonsterCard).OnGameHealth + healing : (enemyCard as MonsterCard).HealthPoints;
+        onCard.Used = true;
     }
-    public static void DirectAttack(Card attackingCard)
+    public static void DirectAttack(Card onCard)
     {
-        if (attackingCard == null)//esto va en Game || attackingCard.Owner != CurrentPlayer
+        if (onCard == null || onCard.Used)//esto va en Game || attackingCard.Owner != CurrentPlayer
         {
             return;
         }
         if (Game.CurrentPlayer == 1)
         {
-            Game.Player2.Health -= NoMonstersOnBoard(Game.Player2) ? attackingCard.Damage : 0;
+            Game.Player2.Health -= NoMonstersOnBoard(Game.Player2) ? onCard.Damage : 0;
         }
         else
         {
-            Game.Player1.Health -= NoMonstersOnBoard(Game.Player1) ? attackingCard.Damage : 0;
+            Game.Player1.Health -= NoMonstersOnBoard(Game.Player1) ? onCard.Damage : 0;
         }
+        onCard.Used = true;
     }
     public static bool NoMonstersOnBoard(Player player)
     {

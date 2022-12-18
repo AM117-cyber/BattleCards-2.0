@@ -1,4 +1,4 @@
-﻿
+﻿using static Utils.Utils;
 using BattleCards;
 
 namespace WindowsFormsApp1
@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
 
         private void next_bt_Click(object sender, EventArgs e)
         {
-            if (!human_rb.Checked && !virtual_player_rb.Checked)
+            if (!human_rb.Checked && !easy_rb.Checked && !medium_rb.Checked)
             {
                 return;
 

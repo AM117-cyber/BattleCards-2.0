@@ -1,4 +1,4 @@
-﻿namespace HelloWorld
+﻿namespace WindowsFormsApp1
 {
     partial class GameIsOver
     {

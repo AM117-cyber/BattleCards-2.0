@@ -1,4 +1,5 @@
 ﻿using BattleCards.Cards;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using static Utils.Utils;
 namespace BattleCards;
@@ -36,7 +37,13 @@ public abstract class Player
         this.CardsOnBoard = new List<Card>();
     }
 
-
+    public void MarkCardsAsUnused()
+    {
+        foreach (var card in this.CardsOnBoard)
+        {
+            card.Used = false;
+        }
+    }
     public void Shuffle()
     {
         Random r = new Random();
@@ -73,30 +80,32 @@ public abstract class Player
     }
     public void UpdateSpellsMana()
     {
+        List<SpellCard> spellCards = GetSpellCardsOnBoard();
+        foreach (var card in spellCards)
+        {
+            if (card.LifeTime <= 1)
+            {
+                CardsOnBoard.Remove(card);
+                continue;
+            }
+            card.LifeTime--;
+        }
+    }
+
+    public List<SpellCard> GetSpellCardsOnBoard()
+    {
+        List<SpellCard> answer = new List<SpellCard>();
         foreach (var card in this.CardsOnBoard)
         {
             if (card.Type == CardType.Spell)
             {
-                if ((card as SpellCard).LifeTime <= 1)
-                {
-                    CardsOnBoard.Remove(card);
-                }
-                else
-                {
-                    (card as SpellCard).LifeTime--;
-                }
+               answer.Add((SpellCard)card);
             }
         }
-    }
-    public void RemoveCard(List<Card> HandOrDeck, Card cardToRemove)
-    {
-        HandOrDeck.Remove(cardToRemove);
+        return answer;
     }
 
-    public virtual void ExecuteAction(Game game, int actionExecuterIndex = -1, int actionReceiverIndex = -1, ActionType actionType = ActionType.None)
-    {
 
-    }
 }
 
 public class HumanPlayer : Player
@@ -106,13 +115,7 @@ public class HumanPlayer : Player
         Type = PlayerType.Human;
     }
 
-    public override void ExecuteAction(Game game, int actionExecuterIndex = -1, int actionReceiverIndex = -1, ActionType actionType = ActionType.None)
-    {
-        if (actionType != ActionType.None)
-        {
-            //decirle a game que juegue
-        }
-    }
+
 
 }
 public class AIPlayer : Player, IVirtualPlay
@@ -137,8 +140,5 @@ public class AIPlayer : Player, IVirtualPlay
             //acciones  de BattlePhase
         }
     }
-    public override void ExecuteAction(Game game, int actionExecuterIndex = -1, int actionReceiverIndex = -1, ActionType actionType = ActionType.None)
-    {
-        // decirle a game que juegue
-    }
+
 }

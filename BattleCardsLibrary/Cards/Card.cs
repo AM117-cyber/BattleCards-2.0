@@ -11,6 +11,7 @@ public abstract class Card
     public double ManaCost { get; set; }
     public CardType Type { get; set; }
     public Player Owner { get; set; }
+    public bool Used { get; set; }
     public string Name { get; set; }
     public double Damage { get; private set; }
     public double Armour { get; private set; }
@@ -22,9 +23,10 @@ public abstract class Card
 
     public Card(Dictionary<AllCardProperties, string> CardProperties)
     {
-        Type = CardProperties[AllCardProperties.Type] == "Monster" ? CardType.Monster : CardType.Spell;
+        this.Type = CardProperties[AllCardProperties.Type] == "Monster" ? CardType.Monster : CardType.Spell;
         this.Name = CardProperties[AllCardProperties.Name];
-        Owner = null;
+        this.Owner = null;
+        this.Used = false;
         this.ManaCost = CheckIfValueIsNumber(AllCardProperties.ManaCost, CardProperties);
         this.Damage = CheckIfValueIsNumber(AllCardProperties.Damage, CardProperties);
         this.Armour = CheckIfValueIsNumber(AllCardProperties.Armour, CardProperties);

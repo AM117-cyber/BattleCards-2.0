@@ -4,13 +4,13 @@ using BattleCards.Cards;
 using BattleCards.ExecuteActions;
 using System.Windows.Forms;
 using System.Configuration;
-using HelloWorld;
+using WindowsFormsApp1;
 
 namespace WindowsFormsApp1
 {
     public partial class Board : Form
     {
-        private Card currentCard = null;
+        private Card CurrentCard = null;
         public bool isAttacking = false;
         public bool isHealing = false;
         private Form startForm { get; set; }
@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
             {
                 return;
             }
-            Game.CardActionReceiver(ActionsByPlayer.DrawFromDeck, currentCard, currentCard,1);
+            Game.CardActionReceiver(ActionsByPlayer.DrawFromDeck, CurrentCard, CurrentCard,1);
             UpdatePlayerLabels("mana_of_Player1");
             UpdateHand(1);
         }
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
             {
                 return;
             }
-            Game.CardActionReceiver(ActionsByPlayer.DrawFromDeck, currentCard, currentCard,2);
+            Game.CardActionReceiver(ActionsByPlayer.DrawFromDeck, CurrentCard, CurrentCard,2);
             UpdatePlayerLabels("mana_of_Player2");
             UpdateHand(2);
         }
@@ -77,7 +77,7 @@ namespace WindowsFormsApp1
             if (isAttacking)
             {
                 isAttacking = false;
-                Game.CardActionReceiver(ActionsByPlayer.Attack, currentCard, targetCard,0);
+                Game.CardActionReceiver(ActionsByPlayer.Attack, CurrentCard, targetCard,0);
                 UpdatePlayerLabels(hp_of_Player1.Name);
                 UpdatePlayerLabels(hp_of_Player2.Name);
                 UpdateBoard(1);
@@ -89,7 +89,7 @@ namespace WindowsFormsApp1
             if (isHealing)
             {
                 isHealing = false;
-                Game.CardActionReceiver(ActionsByPlayer.Heal, currentCard, targetCard,0);
+                Game.CardActionReceiver(ActionsByPlayer.Heal, CurrentCard, targetCard,0);
                 UpdateBoard(1);
                 UpdateBoard(2);
                 UpdatePlayerLabels(hp_of_Player1.Name);
@@ -97,7 +97,7 @@ namespace WindowsFormsApp1
                 
                 return;
             }
-            currentCard = targetCard;
+            CurrentCard = targetCard;
         }
 
         private Card GetCard(object sender)
@@ -144,7 +144,7 @@ namespace WindowsFormsApp1
             {
                 return;
             }
-            Game.CardActionReceiver(ActionsByPlayer.InvokeCard, currentCard, currentCard,0);
+            Game.CardActionReceiver(ActionsByPlayer.InvokeCard, CurrentCard, CurrentCard,0);
             if (Game.CurrentPlayer == 1)
             {
                 UpdatePlayerLabels(mana_of_Player1.Name);
@@ -158,7 +158,7 @@ namespace WindowsFormsApp1
                 UpdateBoard(2);
                 UpdateHand(2);
             }
-            
+            CurrentCard = null;
             
         }
 
@@ -169,7 +169,7 @@ namespace WindowsFormsApp1
             {
                 return;
             }
-            Game.CardActionReceiver(ActionsByPlayer.DirectAttack, currentCard, currentCard,0);
+            Game.CardActionReceiver(ActionsByPlayer.DirectAttack, CurrentCard, CurrentCard,0);
             if (Game.CurrentPlayer == 1)
             {
                 UpdatePlayerLabels(hp_of_Player2.Name);
@@ -186,8 +186,13 @@ namespace WindowsFormsApp1
                 return;
             }
             Game.CardActionReceiver(ActionsByPlayer.TurnIsOver,null,null,0);
-            UpdatePlayerLabels("mana_of_Player" + Game.CurrentPlayer);
-            UpdateLifeTime(Game.GetCurrentPlayer());
+            if (Game.CurrentPhase == Phase.MainPhase)
+            {
+                UpdatePlayerLabels("mana_of_Player" + Game.CurrentPlayer);
+                UpdateLifeTime(Game.GetCurrentPlayer());
+                UpdateBoard(Game.CurrentPlayer);
+            }
+            
             
         }
 
@@ -198,12 +203,12 @@ namespace WindowsFormsApp1
             {
                 if (player.CardsOnBoard[i].Type == CardType.Spell)
                 {
-                    string name = "card_P" + player.CardsOnBoard[i].Owner.Number + "_C" + i;
+                    string name = "card_P" + player.CardsOnBoard[i].Owner.Number + "_C" + (i+1);
                     foreach (var panel in CardsOnPanel)
                     {
                         if (panel.Name == name) //hp_P2_C1
                         {
-                            SetLifeTimeToCardLabel(panel, player.CardsOnBoard[i], "hp_P" + player.Number + "_C" + i);
+                            SetLifeTimeToCardLabel(panel, player.CardsOnBoard[i], "hp_P" + player.Number + "_C" + (i+1));
                             continue;
                         }
                     }
@@ -308,18 +313,20 @@ namespace WindowsFormsApp1
         }
         private void UpdatePlayerLabels(string nameOfLabelToUpdate)
         {
-            try
-            {
-                Game.GameIsOver();
-            }
-            catch (Exception exception)
-            {
-                var FinalMessage = new GameIsOver(exception.Message);
-                FinalMessage.ShowDialog();
-                Hide();
-            }
+            
             if (nameOfLabelToUpdate == hp_of_Player1.Name)
             {
+                try
+                {
+                    Game.GameIsOver();
+                }
+                catch (Exception exception)
+                {
+                    var FinalMessage = new GameIsOver(exception.Message);
+                    FinalMessage.ShowDialog();
+                    Hide();
+                    startForm.Close();
+                }
                 hp_of_Player1.Text = Game.Player1.Health.ToString();
                 
                 return;
@@ -327,6 +334,18 @@ namespace WindowsFormsApp1
             }
             if (nameOfLabelToUpdate == hp_of_Player2.Name)
             {
+                try
+                {
+                    Game.GameIsOver();
+                }
+                catch (Exception exception)
+                {
+                    var FinalMessage = new GameIsOver(exception.Message);
+                    FinalMessage.ShowDialog();
+                    Hide();
+                    startForm.Close();
+                }
+
                 hp_of_Player2.Text = Game.Player2.Health.ToString();
                 return;
 
