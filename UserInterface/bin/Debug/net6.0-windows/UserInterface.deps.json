@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "UserInterface/1.0.0": {
+        "dependencies": {
+          "BattleCardsLibrary": "1.0.0"
+        },
+        "runtime": {
+          "UserInterface.dll": {}
+        }
+      },
+      "BattleCardsLibrary/1.0.0": {
+        "runtime": {
+          "BattleCardsLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UserInterface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BattleCardsLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

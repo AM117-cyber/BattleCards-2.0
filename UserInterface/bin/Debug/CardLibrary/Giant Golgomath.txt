@@ -1,0 +1,8 @@
+Type: Monster
+Armour: 50
+Defend: IfElse(<(OnCard(HealthPoints), (30)),Substract(OnCard(Armour),(30)),OnCard(Armour))
+Attack: IfElse(<(OnCard(HealthPoints), (30)),Add(OnCard(Damage),(30)),OnCard(Damage))
+ManaCost: 12
+HealthPoints: 100
+Damage: 200
+Name: Giant Golgomath

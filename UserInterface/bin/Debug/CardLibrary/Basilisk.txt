@@ -1,0 +1,6 @@
+Type: Monster
+Armour: 18
+ManaCost: 17
+HealthPoints: 100
+Damage: 300
+Name: Basilisk
