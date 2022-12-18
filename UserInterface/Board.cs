@@ -42,6 +42,14 @@ namespace WindowsFormsApp1
             }
             isAttacking = true;
         }
+        private void heal_button_Click(object sender, EventArgs e)
+        {
+            if (!(Game.GetCurrentPlayer().Type == PlayerType.Human))
+            {
+                return;
+            }
+            isHealing = true;
+        }
 
         private void deck1_Click(object sender, EventArgs e)
         {
@@ -92,8 +100,6 @@ namespace WindowsFormsApp1
                 Game.CardActionReceiver(ActionsByPlayer.Heal, CurrentCard, targetCard,0);
                 UpdateBoard(1);
                 UpdateBoard(2);
-                UpdatePlayerLabels(hp_of_Player1.Name);
-                UpdatePlayerLabels(hp_of_Player2.Name);
                 
                 return;
             }
@@ -394,59 +400,62 @@ namespace WindowsFormsApp1
             UpdateHand(1);
             UpdateHand(2);
         }
+
+
+
         /* private void deck1_Click(object sender, EventArgs e)
-             {
-                 if (Game.CurrentPlayer == Game.Player1 && Game.CurrentPhase == Phase.MainPhase)
-                 {
-                     Game.Player1.Draw(1);
-                 }
-             }
+    {
+        if (Game.CurrentPlayer == Game.Player1 && Game.CurrentPhase == Phase.MainPhase)
+        {
+            Game.Player1.Draw(1);
+        }
+    }
 
-             private void deck2_Click(object sender, EventArgs e)
-             {
-                 if (Game.CurrentPlayer == Game.Player2 && Game.CurrentPhase == Phase.MainPhase)
-                 {
-                     Game.Player2.Draw(1);
-                 }
-             }
-             private void ProcessCardClick(object sender, EventArgs e)
-             {
-                 Card targetCard = GetCard(sender);
-                 if (isAttacking)
-                 {
-                     ExecuteAction.Attack(currentCard, targetCard, currentCard.Attack.Evaluate(currentCard, targetCard));
-                 }
-                 if (isHealing)
-                 {
-                     ExecuteAction.Heal(currentCard, targetCard, currentCard.Heal.Evaluate(currentCard, targetCard));
-                 }
+    private void deck2_Click(object sender, EventArgs e)
+    {
+        if (Game.CurrentPlayer == Game.Player2 && Game.CurrentPhase == Phase.MainPhase)
+        {
+            Game.Player2.Draw(1);
+        }
+    }
+    private void ProcessCardClick(object sender, EventArgs e)
+    {
+        Card targetCard = GetCard(sender);
+        if (isAttacking)
+        {
+            ExecuteAction.Attack(currentCard, targetCard, currentCard.Attack.Evaluate(currentCard, targetCard));
+        }
+        if (isHealing)
+        {
+            ExecuteAction.Heal(currentCard, targetCard, currentCard.Heal.Evaluate(currentCard, targetCard));
+        }
 
 
-             }
-             private Card GetCard(object sender)
-             {
-                 //Game.CurrentPlayer hacer switch con sender.Name y el numero en el nombre indica la posicion en la lista Hand o Board del jugador, tomando que sea es la que se guarda en currentCard.
-             }
+    }
+    private Card GetCard(object sender)
+    {
+        //Game.CurrentPlayer hacer switch con sender.Name y el numero en el nombre indica la posicion en la lista Hand o Board del jugador, tomando que sea es la que se guarda en currentCard.
+    }
 
-             private void direct_attack_button_Click(object sender, EventArgs e)//mandar acciones a Game y procesar cada una
-             {
-                 if (currentCard.Owner == Game.CurrentPlayer)
-                 {
-                     ExecuteAction.DirectAttack(currentCard);
-                 }
-             }
+    private void direct_attack_button_Click(object sender, EventArgs e)//mandar acciones a Game y procesar cada una
+    {
+        if (currentCard.Owner == Game.CurrentPlayer)
+        {
+            ExecuteAction.DirectAttack(currentCard);
+        }
+    }
 
-             private void invoke_button_Click(object sender, EventArgs e)
-             {
-                 if (currentCard != null && currentCard.Owner == Game.CurrentPlayer && currentCard.ManaCost <= currentCard.Owner.Mana)
-                 {
-                     currentCard.Owner.InvokeCard(currentCard);
-                 }
-             }
+    private void invoke_button_Click(object sender, EventArgs e)
+    {
+        if (currentCard != null && currentCard.Owner == Game.CurrentPlayer && currentCard.ManaCost <= currentCard.Owner.Mana)
+        {
+            currentCard.Owner.InvokeCard(currentCard);
+        }
+    }
 
-             private void end_turn_button_Click(object sender, EventArgs e)
-             {
-                 Game.CheckAndChangePhaseAndCurrentPlayer();
-             }*/
+    private void end_turn_button_Click(object sender, EventArgs e)
+    {
+        Game.CheckAndChangePhaseAndCurrentPlayer();
+    }*/
     }
 }

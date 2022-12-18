@@ -26,7 +26,7 @@ public abstract class Player
         this.Number = number;
         this.Name = name;
         this.Health = 1000;
-        this.Mana = 25;
+        this.Mana = 20;
         this.Deck = deck;
         foreach (var card in Deck)
         {
@@ -72,8 +72,8 @@ public abstract class Player
         {
             for (int i = 0; i < cant; i++)
             {
-                Hand.Add(Deck[i]);
-                Deck.Remove(Deck[i]);
+                Hand.Add(Deck[0]);
+                Deck.Remove(Deck[0]);
                 this.Mana -= 1;
             }
         }

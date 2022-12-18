@@ -39,9 +39,9 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
 
         //Initialize the game. First each player shuffles their deck and then draws 5 cards
 
-        //change!!!!!
-        Player1.Draw(1);
-        Player2.Draw(1);
+       
+        Player1.Draw(5);
+        Player2.Draw(5);
         InterfaceUpdated = true;
         //Here starts the game
 
@@ -183,11 +183,11 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
     {
         if (player.PlayerType == PlayerType.Human)
         {
-            return new HumanPlayer(player.Name, GenerateRandomDeck(AllCardsCreated, 2), number);//50
+            return new HumanPlayer(player.Name, GenerateRandomDeck(AllCardsCreated, 7), number);//50
         }
         else
         {
-            return new AIPlayer(player.Name, GenerateRandomDeck(AllCardsCreated, 2), number);
+            return new AIPlayer(player.Name, GenerateRandomDeck(AllCardsCreated, 7), number);
         }
     }
     public static List<Card> GetAllCardsList()
@@ -213,7 +213,6 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
     public static List<Card> GenerateRandomDeck(List<Card> AllCardsCreated, int total)
     {
         List<Card> deck = new List<Card>();
-        bool[] mask = new bool[AllCardsCreated.Count];
         Random r = new Random();
         int current = 0;
 
@@ -221,10 +220,8 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
         {
 
             int k = r.Next(AllCardsCreated.Count);
-            if (mask[k]) continue;
             deck.Add(AllCardsCreated[k]);
             AllCardsCreated.Remove(AllCardsCreated[k]);
-            mask[k] = true;
             current++;
         }
 

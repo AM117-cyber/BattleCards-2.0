@@ -450,6 +450,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Heal";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.heal_button_Click);
             // 
             // attack_button
             // 
@@ -502,9 +503,9 @@
             // 
             // hp_P1_C5
             // 
-            this.hp_P1_C5.Location = new System.Drawing.Point(105, 132);
+            this.hp_P1_C5.Location = new System.Drawing.Point(76, 132);
             this.hp_P1_C5.Name = "hp_P1_C5";
-            this.hp_P1_C5.Size = new System.Drawing.Size(38, 25);
+            this.hp_P1_C5.Size = new System.Drawing.Size(67, 25);
             this.hp_P1_C5.TabIndex = 8;
             this.hp_P1_C5.Visible = false;
             // 
@@ -513,9 +514,9 @@
             this.label154.Location = new System.Drawing.Point(3, 132);
             this.label154.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label154.Name = "label154";
-            this.label154.Size = new System.Drawing.Size(114, 25);
+            this.label154.Size = new System.Drawing.Size(69, 25);
             this.label154.TabIndex = 7;
-            this.label154.Text = "HP/LifeTime:";
+            this.label154.Text = "HP/LT:";
             this.label154.UseMnemonic = false;
             this.label154.Visible = false;
             // 
@@ -605,9 +606,9 @@
             // 
             // hp_P1_C4
             // 
-            this.hp_P1_C4.Location = new System.Drawing.Point(105, 132);
+            this.hp_P1_C4.Location = new System.Drawing.Point(72, 132);
             this.hp_P1_C4.Name = "hp_P1_C4";
-            this.hp_P1_C4.Size = new System.Drawing.Size(38, 25);
+            this.hp_P1_C4.Size = new System.Drawing.Size(71, 25);
             this.hp_P1_C4.TabIndex = 8;
             this.hp_P1_C4.Visible = false;
             // 
@@ -616,9 +617,9 @@
             this.label164.Location = new System.Drawing.Point(3, 132);
             this.label164.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label164.Name = "label164";
-            this.label164.Size = new System.Drawing.Size(111, 25);
+            this.label164.Size = new System.Drawing.Size(65, 25);
             this.label164.TabIndex = 7;
-            this.label164.Text = "HP/LifeTime:";
+            this.label164.Text = "HP/LT:";
             this.label164.UseMnemonic = false;
             this.label164.Visible = false;
             // 
@@ -708,9 +709,9 @@
             // 
             // hp_P1_C3
             // 
-            this.hp_P1_C3.Location = new System.Drawing.Point(106, 132);
+            this.hp_P1_C3.Location = new System.Drawing.Point(78, 132);
             this.hp_P1_C3.Name = "hp_P1_C3";
-            this.hp_P1_C3.Size = new System.Drawing.Size(37, 25);
+            this.hp_P1_C3.Size = new System.Drawing.Size(65, 25);
             this.hp_P1_C3.TabIndex = 8;
             this.hp_P1_C3.Visible = false;
             // 
@@ -719,9 +720,9 @@
             this.label174.Location = new System.Drawing.Point(3, 132);
             this.label174.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label174.Name = "label174";
-            this.label174.Size = new System.Drawing.Size(112, 25);
+            this.label174.Size = new System.Drawing.Size(71, 25);
             this.label174.TabIndex = 7;
-            this.label174.Text = "HP/LifeTime:";
+            this.label174.Text = "HP/LT:";
             this.label174.UseMnemonic = false;
             this.label174.Visible = false;
             // 
@@ -812,9 +813,9 @@
             // 
             // hp_P1_C2
             // 
-            this.hp_P1_C2.Location = new System.Drawing.Point(107, 133);
+            this.hp_P1_C2.Location = new System.Drawing.Point(79, 133);
             this.hp_P1_C2.Name = "hp_P1_C2";
-            this.hp_P1_C2.Size = new System.Drawing.Size(36, 24);
+            this.hp_P1_C2.Size = new System.Drawing.Size(64, 24);
             this.hp_P1_C2.TabIndex = 8;
             this.hp_P1_C2.Visible = false;
             // 
@@ -823,9 +824,9 @@
             this.label184.Location = new System.Drawing.Point(3, 132);
             this.label184.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label184.Name = "label184";
-            this.label184.Size = new System.Drawing.Size(119, 25);
+            this.label184.Size = new System.Drawing.Size(72, 25);
             this.label184.TabIndex = 7;
-            this.label184.Text = "HP/LifeTime:";
+            this.label184.Text = "HP/LT:";
             this.label184.UseMnemonic = false;
             this.label184.Visible = false;
             // 
@@ -915,9 +916,9 @@
             // 
             // hp_P1_C1
             // 
-            this.hp_P1_C1.Location = new System.Drawing.Point(106, 132);
+            this.hp_P1_C1.Location = new System.Drawing.Point(77, 132);
             this.hp_P1_C1.Name = "hp_P1_C1";
-            this.hp_P1_C1.Size = new System.Drawing.Size(37, 25);
+            this.hp_P1_C1.Size = new System.Drawing.Size(66, 25);
             this.hp_P1_C1.TabIndex = 8;
             this.hp_P1_C1.Visible = false;
             // 
@@ -926,9 +927,9 @@
             this.label194.Location = new System.Drawing.Point(3, 132);
             this.label194.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label194.Name = "label194";
-            this.label194.Size = new System.Drawing.Size(113, 25);
+            this.label194.Size = new System.Drawing.Size(62, 25);
             this.label194.TabIndex = 7;
-            this.label194.Text = "HP/LifeTime:";
+            this.label194.Text = "HP/LT:";
             this.label194.UseMnemonic = false;
             this.label194.Visible = false;
             // 
@@ -1018,9 +1019,9 @@
             // 
             // hp_P2_C5
             // 
-            this.hp_P2_C5.Location = new System.Drawing.Point(105, 132);
+            this.hp_P2_C5.Location = new System.Drawing.Point(76, 132);
             this.hp_P2_C5.Name = "hp_P2_C5";
-            this.hp_P2_C5.Size = new System.Drawing.Size(38, 25);
+            this.hp_P2_C5.Size = new System.Drawing.Size(67, 25);
             this.hp_P2_C5.TabIndex = 8;
             this.hp_P2_C5.Visible = false;
             // 
@@ -1029,9 +1030,9 @@
             this.label144.Location = new System.Drawing.Point(3, 132);
             this.label144.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label144.Name = "label144";
-            this.label144.Size = new System.Drawing.Size(114, 25);
+            this.label144.Size = new System.Drawing.Size(69, 25);
             this.label144.TabIndex = 7;
-            this.label144.Text = "HP/LifeTime:";
+            this.label144.Text = "HP/LT:";
             this.label144.UseMnemonic = false;
             this.label144.Visible = false;
             // 
@@ -1121,9 +1122,9 @@
             // 
             // hp_P2_C4
             // 
-            this.hp_P2_C4.Location = new System.Drawing.Point(105, 132);
+            this.hp_P2_C4.Location = new System.Drawing.Point(72, 132);
             this.hp_P2_C4.Name = "hp_P2_C4";
-            this.hp_P2_C4.Size = new System.Drawing.Size(38, 25);
+            this.hp_P2_C4.Size = new System.Drawing.Size(71, 25);
             this.hp_P2_C4.TabIndex = 8;
             this.hp_P2_C4.Visible = false;
             // 
@@ -1132,9 +1133,9 @@
             this.label134.Location = new System.Drawing.Point(3, 132);
             this.label134.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label134.Name = "label134";
-            this.label134.Size = new System.Drawing.Size(111, 25);
+            this.label134.Size = new System.Drawing.Size(65, 25);
             this.label134.TabIndex = 7;
-            this.label134.Text = "HP/LifeTime:";
+            this.label134.Text = "HP/LT:";
             this.label134.UseMnemonic = false;
             this.label134.Visible = false;
             // 
@@ -1224,9 +1225,9 @@
             // 
             // hp_P2_C3
             // 
-            this.hp_P2_C3.Location = new System.Drawing.Point(106, 132);
+            this.hp_P2_C3.Location = new System.Drawing.Point(78, 132);
             this.hp_P2_C3.Name = "hp_P2_C3";
-            this.hp_P2_C3.Size = new System.Drawing.Size(37, 25);
+            this.hp_P2_C3.Size = new System.Drawing.Size(65, 25);
             this.hp_P2_C3.TabIndex = 8;
             this.hp_P2_C3.Visible = false;
             // 
@@ -1235,9 +1236,9 @@
             this.label124.Location = new System.Drawing.Point(3, 132);
             this.label124.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label124.Name = "label124";
-            this.label124.Size = new System.Drawing.Size(112, 25);
+            this.label124.Size = new System.Drawing.Size(71, 25);
             this.label124.TabIndex = 7;
-            this.label124.Text = "HP/LifeTime:";
+            this.label124.Text = "HP/LT:";
             this.label124.UseMnemonic = false;
             this.label124.Visible = false;
             // 
@@ -1327,9 +1328,9 @@
             // 
             // hp_P2_C2
             // 
-            this.hp_P2_C2.Location = new System.Drawing.Point(109, 132);
+            this.hp_P2_C2.Location = new System.Drawing.Point(79, 132);
             this.hp_P2_C2.Name = "hp_P2_C2";
-            this.hp_P2_C2.Size = new System.Drawing.Size(34, 25);
+            this.hp_P2_C2.Size = new System.Drawing.Size(64, 25);
             this.hp_P2_C2.TabIndex = 8;
             this.hp_P2_C2.Visible = false;
             // 
@@ -1338,9 +1339,9 @@
             this.label114.Location = new System.Drawing.Point(3, 132);
             this.label114.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(119, 25);
+            this.label114.Size = new System.Drawing.Size(72, 25);
             this.label114.TabIndex = 7;
-            this.label114.Text = "HP/LifeTime:";
+            this.label114.Text = "HP/LT:";
             this.label114.UseMnemonic = false;
             this.label114.Visible = false;
             // 
@@ -1428,9 +1429,9 @@
             // 
             // hp_P2_H5
             // 
-            this.hp_P2_H5.Location = new System.Drawing.Point(106, 132);
+            this.hp_P2_H5.Location = new System.Drawing.Point(78, 132);
             this.hp_P2_H5.Name = "hp_P2_H5";
-            this.hp_P2_H5.Size = new System.Drawing.Size(37, 25);
+            this.hp_P2_H5.Size = new System.Drawing.Size(65, 25);
             this.hp_P2_H5.TabIndex = 8;
             // 
             // label104
@@ -1438,9 +1439,9 @@
             this.label104.Location = new System.Drawing.Point(3, 132);
             this.label104.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(112, 25);
+            this.label104.Size = new System.Drawing.Size(82, 25);
             this.label104.TabIndex = 7;
-            this.label104.Text = "HP/LifeTime:";
+            this.label104.Text = "HP/LT:";
             this.label104.UseMnemonic = false;
             // 
             // name_P2_H5
@@ -1522,9 +1523,9 @@
             // 
             // hp_P2_H4
             // 
-            this.hp_P2_H4.Location = new System.Drawing.Point(109, 132);
+            this.hp_P2_H4.Location = new System.Drawing.Point(79, 132);
             this.hp_P2_H4.Name = "hp_P2_H4";
-            this.hp_P2_H4.Size = new System.Drawing.Size(34, 25);
+            this.hp_P2_H4.Size = new System.Drawing.Size(64, 25);
             this.hp_P2_H4.TabIndex = 8;
             // 
             // label94
@@ -1532,9 +1533,9 @@
             this.label94.Location = new System.Drawing.Point(3, 132);
             this.label94.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(119, 25);
+            this.label94.Size = new System.Drawing.Size(72, 25);
             this.label94.TabIndex = 7;
-            this.label94.Text = "HP/LifeTime:";
+            this.label94.Text = "HP/LT:";
             this.label94.UseMnemonic = false;
             // 
             // name_P2_H4
@@ -1616,9 +1617,9 @@
             // 
             // hp_P2_H3
             // 
-            this.hp_P2_H3.Location = new System.Drawing.Point(106, 132);
+            this.hp_P2_H3.Location = new System.Drawing.Point(69, 132);
             this.hp_P2_H3.Name = "hp_P2_H3";
-            this.hp_P2_H3.Size = new System.Drawing.Size(37, 25);
+            this.hp_P2_H3.Size = new System.Drawing.Size(74, 25);
             this.hp_P2_H3.TabIndex = 8;
             // 
             // label84
@@ -1626,9 +1627,9 @@
             this.label84.Location = new System.Drawing.Point(3, 132);
             this.label84.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(113, 25);
+            this.label84.Size = new System.Drawing.Size(62, 25);
             this.label84.TabIndex = 7;
-            this.label84.Text = "HP/LifeTime:";
+            this.label84.Text = "HP/LT:";
             this.label84.UseMnemonic = false;
             // 
             // name_P2_H3
@@ -1710,19 +1711,19 @@
             // 
             // hp_P2_H2
             // 
-            this.hp_P2_H2.Location = new System.Drawing.Point(106, 132);
+            this.hp_P2_H2.Location = new System.Drawing.Point(83, 132);
             this.hp_P2_H2.Name = "hp_P2_H2";
-            this.hp_P2_H2.Size = new System.Drawing.Size(37, 25);
+            this.hp_P2_H2.Size = new System.Drawing.Size(60, 25);
             this.hp_P2_H2.TabIndex = 8;
             // 
             // label74
             // 
-            this.label74.Location = new System.Drawing.Point(3, 132);
+            this.label74.Location = new System.Drawing.Point(-1, 132);
             this.label74.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(111, 25);
+            this.label74.Size = new System.Drawing.Size(86, 25);
             this.label74.TabIndex = 7;
-            this.label74.Text = "HP/LifeTime:";
+            this.label74.Text = "HP/LT:";
             this.label74.UseMnemonic = false;
             // 
             // name_P2_H2
@@ -1804,19 +1805,19 @@
             // 
             // hp_P2_H1
             // 
-            this.hp_P2_H1.Location = new System.Drawing.Point(105, 132);
+            this.hp_P2_H1.Location = new System.Drawing.Point(89, 132);
             this.hp_P2_H1.Name = "hp_P2_H1";
-            this.hp_P2_H1.Size = new System.Drawing.Size(38, 25);
+            this.hp_P2_H1.Size = new System.Drawing.Size(54, 25);
             this.hp_P2_H1.TabIndex = 8;
             // 
             // label64
             // 
-            this.label64.Location = new System.Drawing.Point(3, 132);
+            this.label64.Location = new System.Drawing.Point(-1, 132);
             this.label64.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(117, 25);
+            this.label64.Size = new System.Drawing.Size(86, 25);
             this.label64.TabIndex = 7;
-            this.label64.Text = "HP/LifeTime:";
+            this.label64.Text = "HP/LT:";
             this.label64.UseMnemonic = false;
             // 
             // name_P2_H1
@@ -1898,9 +1899,9 @@
             // 
             // hp_P1_H5
             // 
-            this.hp_P1_H5.Location = new System.Drawing.Point(106, 132);
+            this.hp_P1_H5.Location = new System.Drawing.Point(78, 132);
             this.hp_P1_H5.Name = "hp_P1_H5";
-            this.hp_P1_H5.Size = new System.Drawing.Size(37, 25);
+            this.hp_P1_H5.Size = new System.Drawing.Size(65, 25);
             this.hp_P1_H5.TabIndex = 8;
             // 
             // label54
@@ -1908,9 +1909,9 @@
             this.label54.Location = new System.Drawing.Point(3, 132);
             this.label54.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(112, 25);
+            this.label54.Size = new System.Drawing.Size(71, 25);
             this.label54.TabIndex = 7;
-            this.label54.Text = "HP/LifeTime:";
+            this.label54.Text = "HP/LT:";
             this.label54.UseMnemonic = false;
             // 
             // name_P1_H5
@@ -1992,9 +1993,9 @@
             // 
             // hp_P1_H4
             // 
-            this.hp_P1_H4.Location = new System.Drawing.Point(107, 132);
+            this.hp_P1_H4.Location = new System.Drawing.Point(79, 132);
             this.hp_P1_H4.Name = "hp_P1_H4";
-            this.hp_P1_H4.Size = new System.Drawing.Size(36, 25);
+            this.hp_P1_H4.Size = new System.Drawing.Size(64, 25);
             this.hp_P1_H4.TabIndex = 8;
             // 
             // label44
@@ -2002,9 +2003,9 @@
             this.label44.Location = new System.Drawing.Point(3, 132);
             this.label44.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(119, 25);
+            this.label44.Size = new System.Drawing.Size(72, 25);
             this.label44.TabIndex = 7;
-            this.label44.Text = "HP/LifeTime:";
+            this.label44.Text = "HP/LT:";
             this.label44.UseMnemonic = false;
             // 
             // name_P1_H4
@@ -2086,9 +2087,9 @@
             // 
             // hp_P1_H3
             // 
-            this.hp_P1_H3.Location = new System.Drawing.Point(106, 132);
+            this.hp_P1_H3.Location = new System.Drawing.Point(77, 132);
             this.hp_P1_H3.Name = "hp_P1_H3";
-            this.hp_P1_H3.Size = new System.Drawing.Size(37, 25);
+            this.hp_P1_H3.Size = new System.Drawing.Size(66, 25);
             this.hp_P1_H3.TabIndex = 8;
             // 
             // label34
@@ -2096,9 +2097,9 @@
             this.label34.Location = new System.Drawing.Point(3, 132);
             this.label34.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(113, 25);
+            this.label34.Size = new System.Drawing.Size(70, 25);
             this.label34.TabIndex = 7;
-            this.label34.Text = "HP/LifeTime:";
+            this.label34.Text = "HP/LT:";
             this.label34.UseMnemonic = false;
             // 
             // name_P1_H3
@@ -2180,9 +2181,9 @@
             // 
             // hp_P1_H2
             // 
-            this.hp_P1_H2.Location = new System.Drawing.Point(106, 132);
+            this.hp_P1_H2.Location = new System.Drawing.Point(83, 132);
             this.hp_P1_H2.Name = "hp_P1_H2";
-            this.hp_P1_H2.Size = new System.Drawing.Size(37, 25);
+            this.hp_P1_H2.Size = new System.Drawing.Size(60, 25);
             this.hp_P1_H2.TabIndex = 8;
             // 
             // label24
@@ -2190,9 +2191,9 @@
             this.label24.Location = new System.Drawing.Point(3, 132);
             this.label24.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(121, 25);
+            this.label24.Size = new System.Drawing.Size(65, 25);
             this.label24.TabIndex = 7;
-            this.label24.Text = "HP/LifeTime:";
+            this.label24.Text = "HP/LT:";
             this.label24.UseMnemonic = false;
             // 
             // name_P1_H2
@@ -2274,9 +2275,9 @@
             // 
             // hp_P1_H1
             // 
-            this.hp_P1_H1.Location = new System.Drawing.Point(105, 132);
+            this.hp_P1_H1.Location = new System.Drawing.Point(80, 132);
             this.hp_P1_H1.Name = "hp_P1_H1";
-            this.hp_P1_H1.Size = new System.Drawing.Size(38, 25);
+            this.hp_P1_H1.Size = new System.Drawing.Size(63, 25);
             this.hp_P1_H1.TabIndex = 8;
             // 
             // label14
@@ -2284,9 +2285,9 @@
             this.label14.Location = new System.Drawing.Point(3, 132);
             this.label14.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(117, 25);
+            this.label14.Size = new System.Drawing.Size(73, 25);
             this.label14.TabIndex = 7;
-            this.label14.Text = "HP/LifeTime:";
+            this.label14.Text = "HP/LT:";
             this.label14.UseMnemonic = false;
             // 
             // name_P1_H1
@@ -2370,9 +2371,9 @@
             // 
             // hp_P2_C1
             // 
-            this.hp_P2_C1.Location = new System.Drawing.Point(106, 132);
+            this.hp_P2_C1.Location = new System.Drawing.Point(77, 132);
             this.hp_P2_C1.Name = "hp_P2_C1";
-            this.hp_P2_C1.Size = new System.Drawing.Size(33, 25);
+            this.hp_P2_C1.Size = new System.Drawing.Size(62, 25);
             this.hp_P2_C1.TabIndex = 8;
             this.hp_P2_C1.Visible = false;
             // 
@@ -2381,9 +2382,9 @@
             this.label8.Location = new System.Drawing.Point(3, 132);
             this.label8.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 25);
+            this.label8.Size = new System.Drawing.Size(70, 25);
             this.label8.TabIndex = 7;
-            this.label8.Text = "HP/LifeTime:";
+            this.label8.Text = "HP/LT:";
             this.label8.UseMnemonic = false;
             this.label8.Visible = false;
             // 
