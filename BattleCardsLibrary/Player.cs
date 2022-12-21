@@ -7,6 +7,9 @@ namespace BattleCards;
 public interface IVirtualPlay
 {
     public void Play();
+    public List<MonsterCard> GetMonsterCardsOnBoard(List<Card> enemysCards);
+    public (MonsterCard, bool) YouNeedAHealerCard();
+
 }
 public abstract class Player
 {
@@ -99,7 +102,7 @@ public abstract class Player
         {
             if (card.Type == CardType.Spell)
             {
-               answer.Add((SpellCard)card);
+                answer.Add((SpellCard)card);
             }
         }
         return answer;
@@ -120,7 +123,10 @@ public class HumanPlayer : Player
 }
 public class AIPlayer : Player, IVirtualPlay
 {
-
+    private Player player;
+    private Card cardToInvokeAndActivate = null;
+    private MonsterCard targetCard = null;
+    private ActionsByPlayer effect = ActionsByPlayer.TurnIsOver;
     public AIPlayer(string name, List<Card> deck, int n) : base(name, deck, n)
     {
         Type = PlayerType.GreedyAI;
@@ -128,17 +134,135 @@ public class AIPlayer : Player, IVirtualPlay
 
     public void Play()//pasa por todas las jugadas validas y envia la mejor
     {
+        if (player == null)
+        {
+            player = Game.GetCurrentPlayer();
+        }
+
         if (Game.CurrentPhase == Phase.MainPhase)
-        {//acciones de MainPhase
+        {//MainPhase actions
+
+            //first you invoke
+            if (player.Hand.Count != 0)
+            {
+                (cardToInvokeAndActivate, targetCard, effect) = GetCardToInvoke();
+                Game.CardActionReceiver(ActionsByPlayer.InvokeCard, cardToInvokeAndActivate, null, 1);
+            }
+
+            //then you draw from deck if you can
             if (this.Hand.Count < 5 && this.Mana >= 1)
             {
-
+                Game.CardActionReceiver(ActionsByPlayer.DrawFromDeck, null, null, player.Number);
             }
+            Game.CardActionReceiver(ActionsByPlayer.TurnIsOver, null, null, 1);
+            return;
         }
         if (Game.CurrentPhase == Phase.BattlePhase)
         {
-            //acciones  de BattlePhase
+            //BattlePhase actions
+            if (effect != ActionsByPlayer.TurnIsOver)
+            {
+                Game.CardActionReceiver(effect, cardToInvokeAndActivate, targetCard, 1);
+                effect = ActionsByPlayer.TurnIsOver;
+                cardToInvokeAndActivate = null;
+                targetCard = null;
+                return;
+            }
+
+            List<MonsterCard> enemyPlayersMonsters = GetMonsterCardsOnBoard(this.Number == 1 ? Game.Player2.CardsOnBoard : Game.Player1.CardsOnBoard);
+            for (int i = 0; i < this.CardsOnBoard.Count; i++)
+            {
+                if (i < enemyPlayersMonsters.Count)
+                {
+                    Game.CardActionReceiver(ActionsByPlayer.Attack, this.CardsOnBoard[i], enemyPlayersMonsters[i], 1);
+
+                }
+                else
+                {
+                    Game.CardActionReceiver(ActionsByPlayer.DirectAttack, this.CardsOnBoard[i], null, 1);
+                }
+
+            }
+            Game.CardActionReceiver(ActionsByPlayer.TurnIsOver, null, null, 1);
         }
     }
 
+    public (Card, MonsterCard, ActionsByPlayer) GetCardToInvoke()
+    {
+        Card cardToInvoke = null;
+        double valueOfEffect = 0;
+        (MonsterCard card, bool IsTrue) needAHealerCard = YouNeedAHealerCard();
+        if (needAHealerCard.IsTrue)
+        {
+            foreach (Card card in this.CardsOnBoard)
+            {
+                if (card.ManaCost <= this.Mana)
+                {
+                    double actualHealing = card.Heal.Evaluate(card, needAHealerCard.card);
+                    if (actualHealing > valueOfEffect)
+                    {
+                        valueOfEffect = actualHealing;
+                        cardToInvoke = card;
+                    }
+                }
+            }
+            if (valueOfEffect != 0)
+            {
+                return (cardToInvoke, needAHealerCard.card, ActionsByPlayer.Heal);
+            }//if you get here you coudn't invoke a spellcard
+        }
+        MonsterCard victimCard = null;
+        List<MonsterCard> monstersOnEnemysSide = GetMonsterCardsOnBoard(this.Number == 1 ? Game.Player2.CardsOnBoard : Game.Player1.CardsOnBoard);
+        foreach (Card myCard in this.Hand)
+        {
+            if (myCard.ManaCost <= this.Mana && (myCard.Damage != 0 || myCard.Attack.Evaluate(myCard,myCard) != 0))
+            {//Card is invokable
+                foreach (MonsterCard enemyCard in monstersOnEnemysSide)
+                {
+                    double actualAttacking = myCard.Attack.Evaluate(myCard, enemyCard);
+                    if (actualAttacking > valueOfEffect)
+                    {
+                        valueOfEffect = actualAttacking;
+                        cardToInvoke = myCard;
+                        victimCard = enemyCard;
+                    }
+                }
+                if (monstersOnEnemysSide.Count == 0)
+                {
+                    return (myCard, null, ActionsByPlayer.DirectAttack);
+                }
+
+            }
+        }
+        return (cardToInvoke, victimCard, ActionsByPlayer.Attack);
+
+
+
+    }
+
+    public List<MonsterCard> GetMonsterCardsOnBoard(List<Card> enemysCards)
+    {
+        List<MonsterCard> answer = new List<MonsterCard>();
+        foreach (var card in enemysCards)
+        {
+            if (card.Type == CardType.Monster)
+            {
+                answer.Add((MonsterCard)card);
+            }
+        }
+        return answer;
+    }
+
+    public (MonsterCard, bool) YouNeedAHealerCard()
+    {
+        List<MonsterCard> myMonsters = GetMonsterCardsOnBoard(this.CardsOnBoard);
+        foreach (MonsterCard monster in myMonsters)
+        {
+            if (monster.OnGameHealth < monster.HealthPoints)
+            {
+                return (monster, true);
+            }
+        }
+        return (null, false);
+    }
 }

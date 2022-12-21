@@ -5,6 +5,7 @@ using BattleCards.ExecuteActions;
 using System.Windows.Forms;
 using System.Configuration;
 using WindowsFormsApp1;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
@@ -19,7 +20,9 @@ namespace WindowsFormsApp1
             InitializeComponent();
             startForm = previous;
             UpdateGameForVirtualTurn();
-            
+            UpdateHand(1);
+            UpdateHand(2);
+
         }
   
         /*public string SetLabelText
@@ -195,6 +198,7 @@ namespace WindowsFormsApp1
             if (Game.CurrentPhase == Phase.MainPhase)
             {
                 UpdatePlayerLabels("mana_of_Player" + Game.CurrentPlayer);
+                current_player_label.Text = Game.GetCurrentPlayer().Name;     //$"\"{Game.GetCurrentPlayer().Name}\"";
                 UpdateLifeTime(Game.GetCurrentPlayer());
                 UpdateBoard(Game.CurrentPlayer);
             }
@@ -379,9 +383,9 @@ namespace WindowsFormsApp1
             //{
             //    return;
             //}
-            
 
-            //llama al virtual a jugar
+
+            (Game.GetCurrentPlayer() as AIPlayer).Play();
             UpdateGameForVirtualTurn();
             Game.InterfaceUpdated = true;
        
@@ -395,11 +399,17 @@ namespace WindowsFormsApp1
             {
                 UpdatePlayerLabels(label);
             }
+
+            current_player_label.Text = Game.GetCurrentPlayer().Name;
             UpdateBoard(1);
             UpdateBoard(2);
-            UpdateHand(1);
-            UpdateHand(2);
+            if (Game.CurrentPhase == Phase.BattlePhase)
+            {
+                UpdateHand(Game.CurrentPlayer);
+            }
+
         }
+
 
 
 

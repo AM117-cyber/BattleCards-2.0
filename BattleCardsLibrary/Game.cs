@@ -27,15 +27,16 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
         {
             Player1 = CreateAPlayerInstance(player1, 1);//player1 starts the game
             Player2 = CreateAPlayerInstance(player2, 2);
-            CurrentPlayer = 1;
+           
         }
         else
         {
             Player1 = CreateAPlayerInstance(player2, 1);//player2 starts the game
             Player2 = CreateAPlayerInstance(player1, 2);
-            CurrentPlayer = 2;
+            
         }
 
+        CurrentPlayer = 1;
 
         //Initialize the game. First each player shuffles their deck and then draws 5 cards
 
@@ -87,14 +88,16 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
     }
     public static void CardActionReceiver(ActionsByPlayer action, Card card1, Card card2, int numberOfDeck)
     {
+        
         //solo puede hacer draw el currentplayer si es humano
         switch (action)
         {
             case ActionsByPlayer.DrawFromDeck:
                 //solo puedes sacar si es tu turno
+                Player player = GetCurrentPlayer();
                 if (CurrentPhase == Phase.MainPhase && numberOfDeck == CurrentPlayer)
                 {
-                    if (GetCurrentPlayer().Mana >= 1 && GetCurrentPlayer().Hand.Count < 5 && GetCurrentPlayer().Deck.Count >= 1) GetCurrentPlayer().Draw(1);
+                    if (player.Mana >= 1 && player.Hand.Count < 5 && player.Deck.Count >= 1) player.Draw(1);
                     return;
                 }
 

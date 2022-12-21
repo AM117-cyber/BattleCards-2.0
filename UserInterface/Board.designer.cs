@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.current_player_label = new System.Windows.Forms.Label();
+            this.turn_of = new System.Windows.Forms.Label();
             this.virtual_player_play_button = new System.Windows.Forms.Button();
             this.mana_of_Player2 = new System.Windows.Forms.Label();
             this.hp_of_Player2 = new System.Windows.Forms.Label();
@@ -273,6 +275,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.current_player_label);
+            this.panel1.Controls.Add(this.turn_of);
             this.panel1.Controls.Add(this.virtual_player_play_button);
             this.panel1.Controls.Add(this.mana_of_Player2);
             this.panel1.Controls.Add(this.hp_of_Player2);
@@ -310,6 +314,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1540, 1091);
             this.panel1.TabIndex = 0;
+            // 
+            // current_player_label
+            // 
+            this.current_player_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.current_player_label.ForeColor = System.Drawing.Color.Blue;
+            this.current_player_label.Location = new System.Drawing.Point(117, 584);
+            this.current_player_label.Name = "current_player_label";
+            this.current_player_label.Size = new System.Drawing.Size(148, 36);
+            this.current_player_label.TabIndex = 27;
+            this.current_player_label.Text = "CurrentPlayer";
+            // 
+            // turn_of
+            // 
+            this.turn_of.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.turn_of.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.turn_of.Location = new System.Drawing.Point(26, 584);
+            this.turn_of.Name = "turn_of";
+            this.turn_of.Size = new System.Drawing.Size(104, 36);
+            this.turn_of.TabIndex = 28;
+            this.turn_of.Text = "Turn of:";
             // 
             // virtual_player_play_button
             // 
@@ -2713,6 +2737,8 @@
         private Button invoke_button;
         private Button direct_attack_button;
         private Button virtual_player_play_button;
+        private Label turn_of;
+        private Label current_player_label;
     }
 }
 
