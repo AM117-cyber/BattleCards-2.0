@@ -1,7 +1,7 @@
 ﻿using BattleCardsLibrary;
-using BattleCardsLibrary.Cards.CardDeveloper;
+using CardDeveloper1;
 using BattleCardsLibrary.Utils;
-using BattleCardsLibrary.Exceptions;
+using CardDeveloper1.Exceptions;
 using UserInterface;
 
 namespace WindowsFormsApp1
@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
              
             if (validationResponse.ValidationResult == ValidationResult.Ok)
             {
-                SaveCard(cardValidator.CardDefinition, cardValidator.Card.Name);
+                CardSaver.Instance.SaveCard(cardValidator.CardDefinition, cardValidator.Card.Name);
                 previousForm.Show();
                 Hide();
             }
@@ -51,8 +51,8 @@ namespace WindowsFormsApp1
                 List<string> textToProcess = new List<string>();// monster_card_rb   spell_card_rb
                 if (!Monster && !Spell)
                 {
-                    //show error because you need to choose at least one card type.
-                    throw new InvalidCardTypeException("You must select a valid card type.");
+                    //show error because you need to choose at least oneICardtype.
+                    throw new InvalidCardTypeException("You must select a validICardtype.");
                 }
                 else
                 {
@@ -87,21 +87,6 @@ namespace WindowsFormsApp1
         }
 
 
-        private void SaveCard(string[] cardDefinition, string nameOfCard)//poner junto a CardCreator
-        {
-            string title = nameOfCard;
-            string path = @"..\CardLibrary\" + title + ".txt";//D:\BattleCards\BattleCardsLibrary
-            string contentOfTxT = string.Empty;
-            for (int i = 0; i < cardDefinition.Length; i++)
-            {
-                if (cardDefinition[i] == null)
-                {
-                    continue;
-                }
-                contentOfTxT += cardDefinition[i++] + ": " + cardDefinition[i] + "\r\n";
-            }
-            File.WriteAllText(path, contentOfTxT.TrimEnd());
-        }
         private void previous_bt_Click(object sender, EventArgs e)
         {
             previousForm.Show();

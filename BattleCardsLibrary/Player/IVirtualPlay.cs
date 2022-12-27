@@ -1,4 +1,4 @@
-﻿using BattleCardsLibrary.Cards;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +10,8 @@ namespace BattleCardsLibrary.PlayerNamespace
     public interface IVirtualPlay
     {
         public void Play();
-        public List<MonsterCard> GetMonsterCardsOnBoard(List<Card> enemysCards);
-        public (MonsterCard, bool) YouNeedAHealerCard();
+        public List<IMonsterCard> GetMonsterCardsOnBoard(List<ICard> enemysCards);
+        public (IMonsterCard, bool) YouNeedAHealerCard();
 
     }
 }

@@ -1,14 +1,14 @@
-﻿using BattleCardsLibrary.Cards;
+﻿
 
 namespace BattleCardsLibrary
 {
     public class ActionReceiver
     {
-        public Card ExecuterCard { get; private set; }
-        public Card TargetCard { get; private set; }
+        public ICard ExecuterCard { get; private set; }
+        public ICard TargetCard { get; private set; }
         public ActionType ActionType { get; private set; }
 
-        public ActionReceiver(Card executerCard, Card targetCard, ActionType actionType)
+        public ActionReceiver(ICard executerCard, ICard targetCard, ActionType actionType)
         {
             ExecuterCard = executerCard;
             TargetCard = targetCard;

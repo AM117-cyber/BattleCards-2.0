@@ -22,3 +22,15 @@ D:\BattleCards\BattleCardsLibrary\bin\Debug\net6.0\BattleCardsLibrary.deps.json
 D:\BattleCards\BattleCardsLibrary\bin\Debug\net6.0\BattleCardsLibrary.dll
 D:\BattleCards\BattleCardsLibrary\bin\Debug\net6.0\BattleCardsLibrary.pdb
 D:\BattleCards\BattleCardsLibrary\obj\Debug\net6.0\ref\BattleCardsLibrary.dll
+D:\test\BattleCards\BattleCardsLibrary\obj\Debug\net6.0\BattleCardsLibrary.csproj.AssemblyReference.cache
+D:\test\BattleCards\BattleCardsLibrary\obj\Debug\net6.0\BattleCardsLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\test\BattleCards\BattleCardsLibrary\obj\Debug\net6.0\BattleCardsLibrary.AssemblyInfoInputs.cache
+D:\test\BattleCards\BattleCardsLibrary\obj\Debug\net6.0\BattleCardsLibrary.AssemblyInfo.cs
+D:\test\BattleCards\BattleCardsLibrary\obj\Debug\net6.0\BattleCardsLibrary.csproj.CoreCompileInputs.cache
+D:\test\BattleCards\BattleCardsLibrary\obj\Debug\net6.0\BattleCardsLibrary.dll
+D:\test\BattleCards\BattleCardsLibrary\obj\Debug\net6.0\refint\BattleCardsLibrary.dll
+D:\test\BattleCards\BattleCardsLibrary\obj\Debug\net6.0\BattleCardsLibrary.pdb
+D:\test\BattleCards\BattleCardsLibrary\bin\Debug\net6.0\BattleCardsLibrary.deps.json
+D:\test\BattleCards\BattleCardsLibrary\bin\Debug\net6.0\BattleCardsLibrary.dll
+D:\test\BattleCards\BattleCardsLibrary\bin\Debug\net6.0\BattleCardsLibrary.pdb
+D:\test\BattleCards\BattleCardsLibrary\obj\Debug\net6.0\ref\BattleCardsLibrary.dll

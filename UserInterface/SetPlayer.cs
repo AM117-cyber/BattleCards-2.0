@@ -1,6 +1,7 @@
 ﻿using BattleCardsLibrary.Utils;
 using BattleCardsLibrary;
 using BattleCardsLibrary.PlayerNamespace;
+using CardDeveloper1;
 
 namespace WindowsFormsApp1
 {
@@ -33,7 +34,7 @@ namespace WindowsFormsApp1
             if (firstPlayer != null)
             {
                 //start new game
-                new Game(firstPlayer, new UIPlayer(name_textBox.Text, playerType));
+                new Game(firstPlayer, new UIPlayer(name_textBox.Text, playerType), CardCreator.GetAllCardsList());
                 var boardForm = new Board(previousForm);
                 boardForm.Show();
                 Hide();

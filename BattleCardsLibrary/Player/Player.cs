@@ -1,5 +1,4 @@
 ﻿using BattleCardsLibrary;
-using BattleCardsLibrary.Cards;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using BattleCardsLibrary.Utils;
@@ -12,14 +11,14 @@ public abstract class Player
     public PlayerType Type { get; set; }
     public double Health { get; set; }
     //public List<Card> Graveyard { get; set; }
-    public List<Card> CardsOnBoard { get; set; }
+    public List<ICard> CardsOnBoard { get; set; }
     public double Mana { get; set; }
     public string Name { get; set; }
     public int Number { get; set; }
-    public List<Card> Deck { get; set; }
-    public List<Card> Hand { get; set; }
+    public List<ICard> Deck { get; set; }
+    public List<ICard> Hand { get; set; }
 
-    public Player(string name, List<Card> deck, int number)
+    public Player(string name, List<ICard> deck, int number)
     {
         Type = PlayerType.Human;
         Number = number;
@@ -32,8 +31,8 @@ public abstract class Player
             card.Owner = this;
         }
         Shuffle();
-        Hand = new List<Card>();
-        CardsOnBoard = new List<Card>();
+        Hand = new List<ICard>();
+        CardsOnBoard = new List<ICard>();
     }
 
     public void MarkCardsAsUnused()
@@ -49,13 +48,13 @@ public abstract class Player
         for (int n = Deck.Count - 1; n > 0; n--)
         {
             int k = r.Next(n + 1);
-            Card temp = Deck[n];
+            ICard temp = Deck[n];
             Deck[n] = Deck[k];
             Deck[k] = temp;
         }
     }
 
-    public void InvokeCard(Card card1)
+    public void InvokeCard(ICard card1)
     {
         if (Mana >= card1.ManaCost && CardsOnBoard.Count < 5)
         {
@@ -81,7 +80,7 @@ public abstract class Player
     }
     public void UpdateSpellsMana()
     {
-        List<SpellCard> spellCards = GetSpellCardsOnBoard();
+        List<ISpellCard> spellCards = GetSpellCardsOnBoard();
         foreach (var card in spellCards)
         {
             if (card.LifeTime <= 1)
@@ -93,14 +92,14 @@ public abstract class Player
         }
     }
 
-    public List<SpellCard> GetSpellCardsOnBoard()
+    public List<ISpellCard> GetSpellCardsOnBoard()
     {
-        List<SpellCard> answer = new List<SpellCard>();
+        List<ISpellCard> answer = new List<ISpellCard>();
         foreach (var card in CardsOnBoard)
         {
             if (card.Type == CardType.Spell)
             {
-                answer.Add((SpellCard)card);
+                answer.Add((ISpellCard)card);
             }
         }
         return answer;

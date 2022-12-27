@@ -60,7 +60,7 @@
             this.card_friendly_ui_bt.Name = "card_friendly_ui_bt";
             this.card_friendly_ui_bt.Size = new System.Drawing.Size(251, 56);
             this.card_friendly_ui_bt.TabIndex = 2;
-            this.card_friendly_ui_bt.Text = "Create Card (Friendly UI)";
+            this.card_friendly_ui_bt.Text = "CreateICard(Friendly UI)";
             this.card_friendly_ui_bt.UseVisualStyleBackColor = true;
             this.card_friendly_ui_bt.Click += new System.EventHandler(this.card_friendly_ui_bt_Click);
             // 
@@ -70,7 +70,7 @@
             this.cad_plain_text_bt.Name = "cad_plain_text_bt";
             this.cad_plain_text_bt.Size = new System.Drawing.Size(251, 56);
             this.cad_plain_text_bt.TabIndex = 3;
-            this.cad_plain_text_bt.Text = "Create Card (Plain text)";
+            this.cad_plain_text_bt.Text = "CreateICard(Plain text)";
             this.cad_plain_text_bt.UseVisualStyleBackColor = true;
             this.cad_plain_text_bt.Click += new System.EventHandler(this.cad_plain_text_bt_Click);
             // 

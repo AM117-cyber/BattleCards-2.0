@@ -1,13 +1,13 @@
 ﻿using BattleCardsLibrary.Utils;
 using BattleCardsLibrary;
-using BattleCardsLibrary.Cards;
+using CardDeveloper1.Cards;
 using BattleCardsLibrary.PlayerNamespace;
 
 namespace WindowsFormsApp1
 {
     public partial class Board : Form
     {
-        private Card CurrentCard = null;
+        private ICard CurrentCard = null;
         public bool isAttacking = false;
         public bool isHealing = false;
         private ToolTip toolTip = new ToolTip();
@@ -93,7 +93,7 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            Card targetCard = GetCard(sender);
+           ICard targetCard = GetCard(sender);
 
             if (isAttacking)
             {
@@ -141,7 +141,7 @@ namespace WindowsFormsApp1
         //                            buttonStyle);
         //}
 
-        private Card GetCard(object sender)
+        private ICard GetCard(object sender)
         {
             if (!(sender as Panel).Controls[1].Visible)
             {
@@ -166,7 +166,7 @@ namespace WindowsFormsApp1
             return Game.Player2.Hand.Count > index ? Game.Player2.Hand[index] : null;
         }
             //Game.CurrentPlayer hacer switch con sender.Name y el numero en el nombre indica la posicion en la lista Hand o Board del jugador, tomando que sea es la que se guarda en currentCard.
-  /*  private Card RetrieveCard(Player player, string cardPlacement)
+  /*  privateICardRetrieveCard(Player player, string cardPlacement)
     {
         char placement = cardPlacement[0];
         int index = Int32.Parse(cardPlacement.Remove(0, 1)) - 1;
@@ -257,7 +257,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
-        public void SetLifeTimeToCardLabel(Panel panel, Card card, string propertyName)
+        public void SetLifeTimeToCardLabel(Panel panel, ICard card, string propertyName)
         {
             IEnumerable<Label> CardPropertiesAsLabels = panel.Controls.OfType<Label>();
             foreach (var item in CardPropertiesAsLabels)
@@ -275,7 +275,7 @@ namespace WindowsFormsApp1
         }
         public void UpdateListOfCards(char boardOrHand, int player)
         {
-            List<Card> listOfCards = new List<Card>();
+            List<ICard> listOfCards = new List<ICard>();
             string nameOfCardPanel = string.Empty;
             List <Panel> CardsOnPanel = this.panel1.Controls.OfType<Panel>().ToList();
             foreach (var panel in CardsOnPanel)
@@ -304,7 +304,7 @@ namespace WindowsFormsApp1
             for (int i = 0; i < cardCount; i++)
             {
                 //if panel.name matches nameOfCardPanel then you iterate through the labels 
-                //inside such panel and send enumerable of labels and card to set value of each label as value of card property 
+                //inside such panel and send enumerable of labels andICardto set value of each label as value ofICardproperty 
                 foreach (var panel in CardsOnPanel)
                 {
                     if (panel.Name == nameOfCardPanel+(i+1))
@@ -322,7 +322,7 @@ namespace WindowsFormsApp1
         {
             UpdateListOfCards('H', player);
         }
-        public void SetValueToEachLabelInPanel(Panel panel, Card card)
+        public void SetValueToEachLabelInPanel(Panel panel, ICard card)
         {
             IEnumerable<Label> CardPropertiesAsLabels = panel.Controls.OfType<Label>();
             Dictionary<string, string> propertyRelator = SetDictionary(card);
@@ -342,7 +342,7 @@ namespace WindowsFormsApp1
 
             toolTip.SetToolTip(panel, card.Description);
         }
-        private Dictionary<string, string> SetDictionary(Card card)
+        private Dictionary<string, string> SetDictionary(ICard card)
         {
             Dictionary<string, string> answer = new Dictionary<string, string>();
             answer["name"] = card.Name; 
@@ -480,7 +480,7 @@ namespace WindowsFormsApp1
     }
     private void ProcessCardClick(object sender, EventArgs e)
     {
-        Card targetCard = GetCard(sender);
+       ICardtargetCard = GetCard(sender);
         if (isAttacking)
         {
             ExecuteAction.Attack(currentCard, targetCard, currentCard.Attack.Evaluate(currentCard, targetCard));
@@ -492,7 +492,7 @@ namespace WindowsFormsApp1
 
 
     }
-    private Card GetCard(object sender)
+    privateICardGetCard(object sender)
     {
         //Game.CurrentPlayer hacer switch con sender.Name y el numero en el nombre indica la posicion en la lista Hand o Board del jugador, tomando que sea es la que se guarda en currentCard.
     }

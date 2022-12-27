@@ -1,29 +1,29 @@
-using BattleCardsLibrary.Cards;
+
 using BattleCardsLibrary.Utils;
 using static BattleCardsLibrary.ExecuteActions.ExecuteAction;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Security.Principal;
-using BattleCardsLibrary.Cards.CardDeveloper;
 using BattleCardsLibrary.PlayerNamespace;
 
 namespace BattleCardsLibrary;
 public class Game //Asumir que la informacion me va a entrar po alguna via, tu solo vas a trabajar con ella.Olvidate de por donde entre.
 {
     public static bool InterfaceUpdated { get; set; }
-    public static List<Card> AllCardsCreated = GetAllCardsList();
-    public List<Card> Board { get; set; }
+    public static List<ICard> AllCardsCreated { get; private set; }
+    public List<ICard> Board { get; set; }
     public static bool EndGame = false;
     public static int CurrentPlayer { get; set; }//it is declared when Game State is first updated
     public static Player Player1 { get; set; }
     public static Player Player2 { get; set; }
     public static Phase CurrentPhase { get; private set; }
-    //when you create a card first input is type and second is name
+    //when you create aICardfirst input is type and second is name
 
-    public Game(UIPlayer player1, UIPlayer player2)
+    public Game(UIPlayer player1, UIPlayer player2,List<ICard> allCardsCreated)
     {
-
+        AllCardsCreated = allCardsCreated;
+        CurrentPlayer = 1;
         if (GetFirstPlayerByDice(player1, player2) == player1)
         {
             Player1 = CreateAPlayerInstance(player1, 1);//player1 starts the game
@@ -36,8 +36,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
             Player2 = CreateAPlayerInstance(player1, 2);
             
         }
-
-        CurrentPlayer = 1;
+        
 
         //Initialize the game. First each player shuffles their deck and then draws 5 cards
 
@@ -87,7 +86,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
         }
         return Player2;
     }
-    public static void CardActionReceiver(ActionsByPlayer action, Card card1, Card card2, int numberOfDeck)
+    public static void CardActionReceiver(ActionsByPlayer action, ICard card1, ICard card2, int numberOfDeck)
     {
         
         //solo puede hacer draw el currentplayer si es humano
@@ -119,13 +118,13 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
                 //fase debe ser batalla, cartas no pueden ser nulas,la carta debe pertenecer al jugador cuyo turno se juega y la victima debe ser un monstruo. 
                 if (CurrentPhase == Phase.BattlePhase && card1 != null && card2 != null && card2.Type == CardType.Monster && card1.Owner.Number == CurrentPlayer)//la interfaz es quien comprueba que sea humano
                 {
-                    Attack(card1, card2 as MonsterCard, card1.Attack.Evaluate(card1, card2 as MonsterCard));
+                    Attack(card1, card2 as IMonsterCard, card1.Attack.Evaluate(card1, card2 as IMonsterCard));
                 }
                 break;
             case ActionsByPlayer.Heal:
                 if (CurrentPhase == Phase.BattlePhase && card1 != null && card2 != null && card2.Type == CardType.Monster && card1.Owner.Number == CurrentPlayer)
                 {
-                    Heal(card1, card2 as MonsterCard, card1.Heal.Evaluate(card1, card2 as MonsterCard));
+                    Heal(card1, card2 as IMonsterCard, card1.Heal.Evaluate(card1, card2 as IMonsterCard));
                 }
                 break;
             case ActionsByPlayer.DirectAttack:
@@ -194,29 +193,11 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
             return new AIPlayer(player.Name, GenerateRandomDeck(AllCardsCreated, 7), number);
         }
     }
-    public static List<Card> GetAllCardsList()
-    {
-        List<Card> answer = new List<Card>();
-        string[] path = Directory.GetFiles(@"..\CardLibrary");
-        CardCreator cardCreator = CardCreator.Instance;
-        foreach (var indivpath in path)
-        {
-            string[] text = File.ReadAllText(indivpath).Split("\r\n");
-            string processedTextAsString = string.Empty;
-            foreach (var item in text)
-            {
-                processedTextAsString += ": " + item;
-            }
-            string[] textToCreateCard = processedTextAsString.Remove(0, 2).Split(": ");
-            answer.Add(cardCreator.CreateCard(textToCreateCard));
+    
 
-        }
-        return answer;
-    }
-
-    public static List<Card> GenerateRandomDeck(List<Card> AllCardsCreated, int total)
+    public static List<ICard> GenerateRandomDeck(List<ICard> AllCardsCreated, int total)
     {
-        List<Card> deck = new List<Card>();
+        List<ICard> deck = new List<ICard>();
         Random r = new Random();
         int current = 0;
 
@@ -279,7 +260,7 @@ public static List<string> GetNames(List<string> names)
 }
 
 
-   public static void Summon(Player player, Card card, int pos)
+   public static void Summon(Player player,ICardcard, int pos)
 {
     if (player.Mana < card.ManaCost) throw new Exception("No tienes suficiente mana.");
     player.Hand.Remove(card);
@@ -339,7 +320,7 @@ public static List<string> GetNames(List<string> names)
          switch (answer)
          {
              case "s":
-                 Console.WriteLine("Select a card to Summon by typing the position of the card.");
+                 Console.WriteLine("Select aICardto Summon by typing the position of the card.");
                  int cardS = int.Parse(Console.ReadLine());
                  Console.WriteLine("Select a position to Summon.");
                  int pos = int.Parse(Console.ReadLine());
@@ -347,7 +328,7 @@ public static List<string> GetNames(List<string> names)
                  break;
 
              case "a":
-                 Console.WriteLine("Select a card to Activate");
+                 Console.WriteLine("Select aICardto Activate");
                  int cardA = int.Parse(Console.ReadLine());
                  if (player.board.MonsterZone[cardA] == null) throw new Exception("No hay ninguna carta en esa posicion");
                  Activate(player.board.MonsterZone[cardA], player);
@@ -381,9 +362,9 @@ public static List<string> GetNames(List<string> names)
          switch (answer)
          {
              case "a":
-                 Console.WriteLine("Choose a card to attack");
+                 Console.WriteLine("Choose aICardto attack");
                  int onCard = int.Parse(Console.ReadLine());
-                 if (attackMask[onCard]) throw new Exception("This card already attacked");
+                 if (attackMask[onCard]) throw new Exception("ThisICardalready attacked");
                  Console.WriteLine("Choose your target");
                  int target = int.Parse(Console.ReadLine());
                  if (player2.board.MonsterZone == null) throw new Exception("No hay ninguna carta en esta posicion");

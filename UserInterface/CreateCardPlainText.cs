@@ -1,5 +1,5 @@
 ﻿using BattleCardsLibrary;
-using BattleCardsLibrary.Cards.CardDeveloper;
+using CardDeveloper1;
 using BattleCardsLibrary.Utils;
 using UserInterface;
 
@@ -23,17 +23,10 @@ namespace WindowsFormsApp1
 
             if (validationResponse.ValidationResult == ValidationResult.Ok)
             {
-                SaveCard(cardValidator.CardDefinition, cardValidator.Card.Name);
+                CardSaver.Instance.SaveCard(cardValidator.CardDefinition, cardValidator.Card.Name);
                 previousForm.Show();
                 Hide();
             }
-
-            //if (message != string.Empty)
-            //{
-            //    var errorForm = new ErrorCreatingCard(message);
-            //    //var errorForm = new ErrorCreatingCard(except.Message == "Index was outside the bounds of the array." ? "Non valid card" : except.Message);
-            //    errorForm.ShowDialog();
-            //}
 
         }
 
@@ -54,29 +47,6 @@ namespace WindowsFormsApp1
                 string[] cardDefinition = textAsString.Remove(0, 2).Split(": ");
                 return cardDefinition;
             }
-        }
-
-private void SaveCard(string[] cardDefinition, string nameOfCard)
-        {
-            string title = nameOfCard;
-            string path = @"..\CardLibrary\" + title + ".txt";//D:\BattleCards\BattleCardsLibrary
-            string contentOfTxT = GetCardDescription(cardDefinition);
-             File.WriteAllText(path, contentOfTxT.TrimEnd());
-            //File.WriteAllText(path, this.card_exp.Text);
-        }
-
-        public string GetCardDescription(string[] cardDefinition)
-        {
-            string contentOfTxT = string.Empty;
-            for (int i = 0; i < cardDefinition.Length; i++)
-            {
-                if (cardDefinition[i] == null)
-                {
-                    continue;
-                }
-                contentOfTxT += cardDefinition[i++] + ": " + cardDefinition[i] + "\r\n";
-            }
-            return contentOfTxT;
         }
         
 

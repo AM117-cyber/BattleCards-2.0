@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oTN8To2oK9z2+BBwO8k1fXrk46VPrmQ4hDNxZQEDQAI8jKehmcxrW0FeIhhlHEnDVX/0/44QVMOn6OpLCLodow==",
+  "dgSpecHash": "U1msK5MMLdgdXjQB8QXcfpRqsRYGacJS09j10sw1EwKdBKOpuRW7ta2GFpkXLTk+rVIuGa50YUuWLoc+sDMOvA==",
   "success": true,
-  "projectFilePath": "D:\\BattleCards\\UserInterface\\UserInterface.csproj",
+  "projectFilePath": "D:\\test\\BattleCards\\UserInterface\\UserInterface.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
