@@ -180,7 +180,7 @@ En caso de seleccionar un jugador virtual se muestran aparecen dos opciones que 
 
 1-	Botón que indica al jugador virtual que haga una jugada, la cual puede consistir en invocar una carta y/o sacar una del deck, atacar o curar con la carta invocada en el turno, atacar o curar con las cartas restantes en su lado del tablero.
 
-2-	Punto en que se debe hacer click en una carta para seleccionarla, es el mismo para todas, ya sea que estén en el tablero o en la mano.
+2- Si se pasa el mouse por encima de una carta sale la descripción de esta, que consiste en el contenido del txt en que está guardada.
 
 
 Reglas del juego:
