@@ -155,7 +155,7 @@ Expresiones ternarias(con tres elementos):
 
 IfElse(): Expresión que evalúa su primer elemento(expresión booleana) y devuelve el valor de su segundo elemento si el elemento 1 es verdadero y el valor del tercer elemento si el primero es falso. Por lo tanto esta es una expresión numérica, cuyo primer elemento es una expresión booleana, pero el segundo y el tercero son expresiones numéricas, pudiendo ser estos también expresiones ternarias.
 
-![alt text](https://github.com/AM117-cyber/BattleCards-2.0/blob/main/Images/5.png?raw=true)
+![alt text](https://github.com/AM117-cyber/BattleCards-2.0/blob/main/Images/5.1.png?raw=true)
  
 Ejemplo de definición de carta:
 
