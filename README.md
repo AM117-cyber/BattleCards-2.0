@@ -80,6 +80,7 @@ Heal(representa la cantidad de puntos de vida que una carta es capaz de incremen
 Defend(representa la defensa de la carta).
 
 Estas tres últimas propiedades pueden expresarse con un valor o a través de expresiones para condicionar su valor al estado del juego.
+Defend, Armour y HealthPoints solo son para cartas Monster.Si en una expresion se hace referencia a HealthPoints o Armour de carta Spell entonces se considera como 0.
 
 
 Expresiones:
@@ -126,7 +127,7 @@ Los distintos operadores son:
 
 <(verdadero si elemento 1 es menor que elemento 2),
 
->(verdadero si elemento 1 es mayor que elemento 2),
+ >(verdadero si elemento 1 es mayor que elemento 2),
 
 =(verdadero si elemento 1 es igual que elemento 2),
 
@@ -176,14 +177,29 @@ En caso de seleccionar un jugador virtual se muestran aparecen dos opciones que 
  ![alt text](https://github.com/AM117-cyber/BattleCards-2.0/blob/main/Images/8.png?raw=true)
 
 
+
 1-	Botón que indica al jugador virtual que haga una jugada, la cual puede consistir en invocar una carta y/o sacar una del deck, atacar o curar con la carta invocada en el turno, atacar o curar con las cartas restantes en su lado del tablero.
+
 2-	Punto en que se debe hacer click en una carta para seleccionarla, es el mismo para todas, ya sea que estén en el tablero o en la mano.
+
+
 Reglas del juego:
+
+
 Cuando inicia un juego cada jugador tiene 5 cartas en su mano y un deck con otras cartas.El jugador que juega en el primer turno inicia el juego con 15 puntos de Mana, mientras que el otro tiene desde el principio 20 puntos.Ambos jugadores inician con 1000 puntos de vida.Los valores de estas propiedades aparecen a los lados del nombre del jugador al cual pertenecen.
+
+
 Fases:
+
+
 Hay dos fases: Main Phase y Battle Phase.
-Cuando un turno comienza el jugador está en la Main Phase, en la cual las acciones disponibles son invocar cartas desde tu mano al tablero o sacar cartas del deck. Sacar una carta del deck tiene un costo de 1 punto de Mana e invocar una carta consume la cantidad de puntos que indica la propiedad Cost de dicha carta. Para sacar una carta del deck un jugador debe hacer click en su deck, mientras que para invocar se hace click en la carta que se desea invocar y luego se presiona el botón Invoke.
+
+Cuando un turno comienza el jugador está en la Main Phase, en la cual las acciones disponibles son invocar cartas desde tu mano al tablero o sacar cartas del deck. 
+
+Sacar una carta del deck tiene un costo de 1 punto de Mana e invocar una carta consume la cantidad de puntos que indica la propiedad Cost de dicha carta. Para sacar una carta del deck un jugador debe hacer click en su deck, mientras que para invocar se hace click en la carta que se desea invocar y luego se presiona el botón Invoke.
+
 Solo se pueden incorporar cartas a la mano y al tablero mientras haya espacio, por lo que no es posible tener más de 5 cartas en la mano ni en el tablero.
+
 Para salir de Main Phase se hace click en el botón End Turn del panel de botones, lo que da comienzo a la Battle Phase. En esta fase el jugador puede atacar o curar a otra carta que se encuentre en el tablero, para lo cual selecciona la carta con la que quiere realizar la operación, luego hace click en el botón Heal o Attack del panel de botones y finalmente en la carta que debe recibir la acción. En caso de que el otro jugador no tenga cartas de tipo Monster en el tablero, se puede hacer un ataque directo, para lo cual se selecciona la carta con la cual se desea atacar y luego el botón Direct Attack.Esta operación descontará la cantidad de puntos de la propiedad Damage de esa carta a la vida del jugador enemigo. Para salir de la Battle Phase se presiona nuevamente el botón End Turn, iniciando entonces la Main Phase del otro jugador. Al final de cada turno el Mana del jugador sube 5 puntos, pero no alcanza valores superiores a 20.
  
 
