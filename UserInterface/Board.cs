@@ -350,6 +350,7 @@ namespace WindowsFormsApp1
             answer["damage"] = card.Damage.ToString();
             answer["hp"] = card.Type == CardType.Monster ? (card as MonsterCard).OnGameHealth.ToString() : (card as SpellCard).LifeTime.ToString();
             answer["cost"] = card.ManaCost.ToString();
+            answer["healing"] = card.HealingPowers.ToString();
             return answer;
         }
         public void SetAsFalseVisibilityOfUnusedPanels(int panelsUsed, string nameOfCardPanel, List<Panel> CardsOnPanel)
@@ -459,6 +460,9 @@ namespace WindowsFormsApp1
             }
 
         }
+
+
+
 
 
 

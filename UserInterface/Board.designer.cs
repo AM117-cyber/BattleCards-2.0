@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.Player1_name_label = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.Player2_name_label = new System.Windows.Forms.Label();
             this.current_player_label = new System.Windows.Forms.Label();
             this.turn_of = new System.Windows.Forms.Label();
@@ -179,6 +180,7 @@
             this.type_P2_H2 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
             this.card_P2_H1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.cost_P2_H1 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.hp_P2_H1 = new System.Windows.Forms.Label();
@@ -240,7 +242,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.card_P2_C1 = new System.Windows.Forms.Panel();
             this.cost_P2_C1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.hp_P2_C1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.name_P2_C1 = new System.Windows.Forms.Label();
@@ -251,6 +252,49 @@
             this.deck_player2 = new System.Windows.Forms.Panel();
             this.deck_player1 = new System.Windows.Forms.Panel();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.healing_P2_H1 = new System.Windows.Forms.Label();
+            this.healing_P2_H2 = new System.Windows.Forms.Label();
+            this.healing_P2_H3 = new System.Windows.Forms.Label();
+            this.healing_P2_H4 = new System.Windows.Forms.Label();
+            this.healing_P2_H5 = new System.Windows.Forms.Label();
+            this.healing_P2_C1 = new System.Windows.Forms.Label();
+            this.healing_P2_C2 = new System.Windows.Forms.Label();
+            this.healing_P2_C3 = new System.Windows.Forms.Label();
+            this.healing_P2_C4 = new System.Windows.Forms.Label();
+            this.healing_P2_C5 = new System.Windows.Forms.Label();
+            this.healing_P1_C1 = new System.Windows.Forms.Label();
+            this.healing_P1_C2 = new System.Windows.Forms.Label();
+            this.healing_P1_C3 = new System.Windows.Forms.Label();
+            this.healing_P1_C4 = new System.Windows.Forms.Label();
+            this.healing_P1_C5 = new System.Windows.Forms.Label();
+            this.healing_P1_H5 = new System.Windows.Forms.Label();
+            this.healing_P1_H4 = new System.Windows.Forms.Label();
+            this.healing_P1_H3 = new System.Windows.Forms.Label();
+            this.healing_P1_H2 = new System.Windows.Forms.Label();
+            this.healing_P1_H1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel24.SuspendLayout();
             this.card_P1_C5.SuspendLayout();
@@ -329,6 +373,17 @@
             this.Player1_name_label.Size = new System.Drawing.Size(76, 30);
             this.Player1_name_label.TabIndex = 30;
             this.Player1_name_label.Text = "label3";
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(3, 191);
+            this.label10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 25);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Cost:";
+            this.label10.UseMnemonic = false;
+            this.label10.Visible = false;
             // 
             // Player2_name_label
             // 
@@ -516,6 +571,8 @@
             // card_P1_C5
             // 
             this.card_P1_C5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_C5.Controls.Add(this.healing_P1_C5);
+            this.card_P1_C5.Controls.Add(this.label25);
             this.card_P1_C5.Controls.Add(this.cost_P1_C5);
             this.card_P1_C5.Controls.Add(this.label152);
             this.card_P1_C5.Controls.Add(this.hp_P1_C5);
@@ -534,7 +591,7 @@
             // 
             // cost_P1_C5
             // 
-            this.cost_P1_C5.Location = new System.Drawing.Point(90, 174);
+            this.cost_P1_C5.Location = new System.Drawing.Point(90, 191);
             this.cost_P1_C5.Name = "cost_P1_C5";
             this.cost_P1_C5.Size = new System.Drawing.Size(44, 25);
             this.cost_P1_C5.TabIndex = 10;
@@ -542,7 +599,7 @@
             // 
             // label152
             // 
-            this.label152.Location = new System.Drawing.Point(3, 174);
+            this.label152.Location = new System.Drawing.Point(1, 191);
             this.label152.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label152.Name = "label152";
             this.label152.Size = new System.Drawing.Size(82, 25);
@@ -553,7 +610,7 @@
             // 
             // hp_P1_C5
             // 
-            this.hp_P1_C5.Location = new System.Drawing.Point(76, 132);
+            this.hp_P1_C5.Location = new System.Drawing.Point(76, 154);
             this.hp_P1_C5.Name = "hp_P1_C5";
             this.hp_P1_C5.Size = new System.Drawing.Size(67, 25);
             this.hp_P1_C5.TabIndex = 8;
@@ -561,7 +618,7 @@
             // 
             // label154
             // 
-            this.label154.Location = new System.Drawing.Point(3, 132);
+            this.label154.Location = new System.Drawing.Point(3, 154);
             this.label154.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label154.Name = "label154";
             this.label154.Size = new System.Drawing.Size(69, 25);
@@ -580,7 +637,7 @@
             // 
             // damage_P1_C5
             // 
-            this.damage_P1_C5.Location = new System.Drawing.Point(90, 94);
+            this.damage_P1_C5.Location = new System.Drawing.Point(89, 118);
             this.damage_P1_C5.Name = "damage_P1_C5";
             this.damage_P1_C5.Size = new System.Drawing.Size(44, 25);
             this.damage_P1_C5.TabIndex = 4;
@@ -588,7 +645,7 @@
             // 
             // label158
             // 
-            this.label158.Location = new System.Drawing.Point(3, 94);
+            this.label158.Location = new System.Drawing.Point(3, 118);
             this.label158.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label158.Name = "label158";
             this.label158.Size = new System.Drawing.Size(82, 25);
@@ -619,6 +676,8 @@
             // card_P1_C4
             // 
             this.card_P1_C4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_C4.Controls.Add(this.healing_P1_C4);
+            this.card_P1_C4.Controls.Add(this.label23);
             this.card_P1_C4.Controls.Add(this.cost_P1_C4);
             this.card_P1_C4.Controls.Add(this.label162);
             this.card_P1_C4.Controls.Add(this.hp_P1_C4);
@@ -637,7 +696,7 @@
             // 
             // cost_P1_C4
             // 
-            this.cost_P1_C4.Location = new System.Drawing.Point(90, 174);
+            this.cost_P1_C4.Location = new System.Drawing.Point(87, 192);
             this.cost_P1_C4.Name = "cost_P1_C4";
             this.cost_P1_C4.Size = new System.Drawing.Size(44, 25);
             this.cost_P1_C4.TabIndex = 10;
@@ -645,7 +704,7 @@
             // 
             // label162
             // 
-            this.label162.Location = new System.Drawing.Point(3, 174);
+            this.label162.Location = new System.Drawing.Point(3, 191);
             this.label162.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label162.Name = "label162";
             this.label162.Size = new System.Drawing.Size(82, 25);
@@ -656,7 +715,7 @@
             // 
             // hp_P1_C4
             // 
-            this.hp_P1_C4.Location = new System.Drawing.Point(72, 132);
+            this.hp_P1_C4.Location = new System.Drawing.Point(72, 154);
             this.hp_P1_C4.Name = "hp_P1_C4";
             this.hp_P1_C4.Size = new System.Drawing.Size(71, 25);
             this.hp_P1_C4.TabIndex = 8;
@@ -664,7 +723,7 @@
             // 
             // label164
             // 
-            this.label164.Location = new System.Drawing.Point(3, 132);
+            this.label164.Location = new System.Drawing.Point(-1, 154);
             this.label164.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label164.Name = "label164";
             this.label164.Size = new System.Drawing.Size(65, 25);
@@ -683,7 +742,7 @@
             // 
             // damage_P1_C4
             // 
-            this.damage_P1_C4.Location = new System.Drawing.Point(90, 94);
+            this.damage_P1_C4.Location = new System.Drawing.Point(90, 118);
             this.damage_P1_C4.Name = "damage_P1_C4";
             this.damage_P1_C4.Size = new System.Drawing.Size(44, 25);
             this.damage_P1_C4.TabIndex = 4;
@@ -691,7 +750,7 @@
             // 
             // label168
             // 
-            this.label168.Location = new System.Drawing.Point(3, 94);
+            this.label168.Location = new System.Drawing.Point(3, 118);
             this.label168.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label168.Name = "label168";
             this.label168.Size = new System.Drawing.Size(82, 25);
@@ -722,6 +781,8 @@
             // card_P1_C3
             // 
             this.card_P1_C3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_C3.Controls.Add(this.healing_P1_C3);
+            this.card_P1_C3.Controls.Add(this.label21);
             this.card_P1_C3.Controls.Add(this.cost_P1_C3);
             this.card_P1_C3.Controls.Add(this.label172);
             this.card_P1_C3.Controls.Add(this.hp_P1_C3);
@@ -740,7 +801,7 @@
             // 
             // cost_P1_C3
             // 
-            this.cost_P1_C3.Location = new System.Drawing.Point(90, 174);
+            this.cost_P1_C3.Location = new System.Drawing.Point(89, 191);
             this.cost_P1_C3.Name = "cost_P1_C3";
             this.cost_P1_C3.Size = new System.Drawing.Size(44, 25);
             this.cost_P1_C3.TabIndex = 10;
@@ -748,7 +809,7 @@
             // 
             // label172
             // 
-            this.label172.Location = new System.Drawing.Point(3, 174);
+            this.label172.Location = new System.Drawing.Point(3, 191);
             this.label172.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label172.Name = "label172";
             this.label172.Size = new System.Drawing.Size(82, 25);
@@ -759,7 +820,7 @@
             // 
             // hp_P1_C3
             // 
-            this.hp_P1_C3.Location = new System.Drawing.Point(78, 132);
+            this.hp_P1_C3.Location = new System.Drawing.Point(78, 154);
             this.hp_P1_C3.Name = "hp_P1_C3";
             this.hp_P1_C3.Size = new System.Drawing.Size(65, 25);
             this.hp_P1_C3.TabIndex = 8;
@@ -767,7 +828,7 @@
             // 
             // label174
             // 
-            this.label174.Location = new System.Drawing.Point(3, 132);
+            this.label174.Location = new System.Drawing.Point(1, 154);
             this.label174.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label174.Name = "label174";
             this.label174.Size = new System.Drawing.Size(71, 25);
@@ -786,7 +847,7 @@
             // 
             // damage_P1_C3
             // 
-            this.damage_P1_C3.Location = new System.Drawing.Point(90, 94);
+            this.damage_P1_C3.Location = new System.Drawing.Point(89, 118);
             this.damage_P1_C3.Name = "damage_P1_C3";
             this.damage_P1_C3.Size = new System.Drawing.Size(44, 25);
             this.damage_P1_C3.TabIndex = 4;
@@ -794,7 +855,7 @@
             // 
             // label178
             // 
-            this.label178.Location = new System.Drawing.Point(3, 94);
+            this.label178.Location = new System.Drawing.Point(3, 118);
             this.label178.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label178.Name = "label178";
             this.label178.Size = new System.Drawing.Size(82, 25);
@@ -826,6 +887,8 @@
             // 
             this.card_P1_C2.AccessibleDescription = "";
             this.card_P1_C2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_C2.Controls.Add(this.healing_P1_C2);
+            this.card_P1_C2.Controls.Add(this.label19);
             this.card_P1_C2.Controls.Add(this.cost_P1_C2);
             this.card_P1_C2.Controls.Add(this.label182);
             this.card_P1_C2.Controls.Add(this.hp_P1_C2);
@@ -844,7 +907,7 @@
             // 
             // cost_P1_C2
             // 
-            this.cost_P1_C2.Location = new System.Drawing.Point(90, 174);
+            this.cost_P1_C2.Location = new System.Drawing.Point(90, 191);
             this.cost_P1_C2.Name = "cost_P1_C2";
             this.cost_P1_C2.Size = new System.Drawing.Size(44, 25);
             this.cost_P1_C2.TabIndex = 10;
@@ -852,7 +915,7 @@
             // 
             // label182
             // 
-            this.label182.Location = new System.Drawing.Point(3, 174);
+            this.label182.Location = new System.Drawing.Point(3, 191);
             this.label182.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label182.Name = "label182";
             this.label182.Size = new System.Drawing.Size(82, 25);
@@ -863,7 +926,7 @@
             // 
             // hp_P1_C2
             // 
-            this.hp_P1_C2.Location = new System.Drawing.Point(79, 133);
+            this.hp_P1_C2.Location = new System.Drawing.Point(79, 154);
             this.hp_P1_C2.Name = "hp_P1_C2";
             this.hp_P1_C2.Size = new System.Drawing.Size(64, 24);
             this.hp_P1_C2.TabIndex = 8;
@@ -871,7 +934,7 @@
             // 
             // label184
             // 
-            this.label184.Location = new System.Drawing.Point(3, 132);
+            this.label184.Location = new System.Drawing.Point(4, 154);
             this.label184.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label184.Name = "label184";
             this.label184.Size = new System.Drawing.Size(72, 25);
@@ -890,7 +953,7 @@
             // 
             // damage_P1_C2
             // 
-            this.damage_P1_C2.Location = new System.Drawing.Point(90, 94);
+            this.damage_P1_C2.Location = new System.Drawing.Point(90, 118);
             this.damage_P1_C2.Name = "damage_P1_C2";
             this.damage_P1_C2.Size = new System.Drawing.Size(44, 25);
             this.damage_P1_C2.TabIndex = 4;
@@ -898,7 +961,7 @@
             // 
             // label188
             // 
-            this.label188.Location = new System.Drawing.Point(3, 94);
+            this.label188.Location = new System.Drawing.Point(4, 118);
             this.label188.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label188.Name = "label188";
             this.label188.Size = new System.Drawing.Size(82, 25);
@@ -929,6 +992,8 @@
             // card_P1_C1
             // 
             this.card_P1_C1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_C1.Controls.Add(this.healing_P1_C1);
+            this.card_P1_C1.Controls.Add(this.label17);
             this.card_P1_C1.Controls.Add(this.cost_P1_C1);
             this.card_P1_C1.Controls.Add(this.label192);
             this.card_P1_C1.Controls.Add(this.hp_P1_C1);
@@ -947,7 +1012,7 @@
             // 
             // cost_P1_C1
             // 
-            this.cost_P1_C1.Location = new System.Drawing.Point(90, 174);
+            this.cost_P1_C1.Location = new System.Drawing.Point(90, 192);
             this.cost_P1_C1.Name = "cost_P1_C1";
             this.cost_P1_C1.Size = new System.Drawing.Size(44, 25);
             this.cost_P1_C1.TabIndex = 10;
@@ -955,7 +1020,7 @@
             // 
             // label192
             // 
-            this.label192.Location = new System.Drawing.Point(3, 174);
+            this.label192.Location = new System.Drawing.Point(3, 191);
             this.label192.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label192.Name = "label192";
             this.label192.Size = new System.Drawing.Size(82, 25);
@@ -966,7 +1031,7 @@
             // 
             // hp_P1_C1
             // 
-            this.hp_P1_C1.Location = new System.Drawing.Point(77, 132);
+            this.hp_P1_C1.Location = new System.Drawing.Point(77, 153);
             this.hp_P1_C1.Name = "hp_P1_C1";
             this.hp_P1_C1.Size = new System.Drawing.Size(66, 25);
             this.hp_P1_C1.TabIndex = 8;
@@ -974,7 +1039,7 @@
             // 
             // label194
             // 
-            this.label194.Location = new System.Drawing.Point(3, 132);
+            this.label194.Location = new System.Drawing.Point(3, 153);
             this.label194.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label194.Name = "label194";
             this.label194.Size = new System.Drawing.Size(62, 25);
@@ -993,7 +1058,7 @@
             // 
             // damage_P1_C1
             // 
-            this.damage_P1_C1.Location = new System.Drawing.Point(90, 94);
+            this.damage_P1_C1.Location = new System.Drawing.Point(89, 128);
             this.damage_P1_C1.Name = "damage_P1_C1";
             this.damage_P1_C1.Size = new System.Drawing.Size(44, 25);
             this.damage_P1_C1.TabIndex = 4;
@@ -1001,7 +1066,7 @@
             // 
             // label198
             // 
-            this.label198.Location = new System.Drawing.Point(3, 94);
+            this.label198.Location = new System.Drawing.Point(4, 118);
             this.label198.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label198.Name = "label198";
             this.label198.Size = new System.Drawing.Size(82, 25);
@@ -1032,12 +1097,18 @@
             // card_P2_C5
             // 
             this.card_P2_C5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_C5.Controls.Add(this.healing_P2_C5);
+            this.card_P2_C5.Controls.Add(this.label26);
             this.card_P2_C5.Controls.Add(this.cost_P2_C5);
             this.card_P2_C5.Controls.Add(this.label142);
+            this.card_P2_C5.Controls.Add(this.label7);
             this.card_P2_C5.Controls.Add(this.hp_P2_C5);
+            this.card_P2_C5.Controls.Add(this.label6);
             this.card_P2_C5.Controls.Add(this.label144);
             this.card_P2_C5.Controls.Add(this.name_P2_C5);
+            this.card_P2_C5.Controls.Add(this.label5);
             this.card_P2_C5.Controls.Add(this.damage_P2_C5);
+            this.card_P2_C5.Controls.Add(this.label3);
             this.card_P2_C5.Controls.Add(this.label148);
             this.card_P2_C5.Controls.Add(this.type_P2_C5);
             this.card_P2_C5.Controls.Add(this.label150);
@@ -1050,7 +1121,7 @@
             // 
             // cost_P2_C5
             // 
-            this.cost_P2_C5.Location = new System.Drawing.Point(90, 174);
+            this.cost_P2_C5.Location = new System.Drawing.Point(90, 191);
             this.cost_P2_C5.Name = "cost_P2_C5";
             this.cost_P2_C5.Size = new System.Drawing.Size(44, 25);
             this.cost_P2_C5.TabIndex = 10;
@@ -1058,7 +1129,7 @@
             // 
             // label142
             // 
-            this.label142.Location = new System.Drawing.Point(3, 174);
+            this.label142.Location = new System.Drawing.Point(3, 191);
             this.label142.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label142.Name = "label142";
             this.label142.Size = new System.Drawing.Size(82, 25);
@@ -1069,7 +1140,7 @@
             // 
             // hp_P2_C5
             // 
-            this.hp_P2_C5.Location = new System.Drawing.Point(76, 132);
+            this.hp_P2_C5.Location = new System.Drawing.Point(74, 153);
             this.hp_P2_C5.Name = "hp_P2_C5";
             this.hp_P2_C5.Size = new System.Drawing.Size(67, 25);
             this.hp_P2_C5.TabIndex = 8;
@@ -1077,7 +1148,7 @@
             // 
             // label144
             // 
-            this.label144.Location = new System.Drawing.Point(3, 132);
+            this.label144.Location = new System.Drawing.Point(3, 153);
             this.label144.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label144.Name = "label144";
             this.label144.Size = new System.Drawing.Size(69, 25);
@@ -1096,7 +1167,7 @@
             // 
             // damage_P2_C5
             // 
-            this.damage_P2_C5.Location = new System.Drawing.Point(90, 94);
+            this.damage_P2_C5.Location = new System.Drawing.Point(90, 119);
             this.damage_P2_C5.Name = "damage_P2_C5";
             this.damage_P2_C5.Size = new System.Drawing.Size(44, 25);
             this.damage_P2_C5.TabIndex = 4;
@@ -1104,7 +1175,7 @@
             // 
             // label148
             // 
-            this.label148.Location = new System.Drawing.Point(3, 94);
+            this.label148.Location = new System.Drawing.Point(4, 119);
             this.label148.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label148.Name = "label148";
             this.label148.Size = new System.Drawing.Size(82, 25);
@@ -1135,6 +1206,8 @@
             // card_P2_C4
             // 
             this.card_P2_C4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_C4.Controls.Add(this.healing_P2_C4);
+            this.card_P2_C4.Controls.Add(this.label27);
             this.card_P2_C4.Controls.Add(this.cost_P2_C4);
             this.card_P2_C4.Controls.Add(this.label132);
             this.card_P2_C4.Controls.Add(this.hp_P2_C4);
@@ -1153,7 +1226,7 @@
             // 
             // cost_P2_C4
             // 
-            this.cost_P2_C4.Location = new System.Drawing.Point(90, 174);
+            this.cost_P2_C4.Location = new System.Drawing.Point(87, 191);
             this.cost_P2_C4.Name = "cost_P2_C4";
             this.cost_P2_C4.Size = new System.Drawing.Size(44, 25);
             this.cost_P2_C4.TabIndex = 10;
@@ -1161,7 +1234,7 @@
             // 
             // label132
             // 
-            this.label132.Location = new System.Drawing.Point(3, 174);
+            this.label132.Location = new System.Drawing.Point(1, 192);
             this.label132.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label132.Name = "label132";
             this.label132.Size = new System.Drawing.Size(82, 25);
@@ -1172,7 +1245,7 @@
             // 
             // hp_P2_C4
             // 
-            this.hp_P2_C4.Location = new System.Drawing.Point(72, 132);
+            this.hp_P2_C4.Location = new System.Drawing.Point(72, 153);
             this.hp_P2_C4.Name = "hp_P2_C4";
             this.hp_P2_C4.Size = new System.Drawing.Size(71, 25);
             this.hp_P2_C4.TabIndex = 8;
@@ -1180,7 +1253,7 @@
             // 
             // label134
             // 
-            this.label134.Location = new System.Drawing.Point(3, 132);
+            this.label134.Location = new System.Drawing.Point(1, 153);
             this.label134.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label134.Name = "label134";
             this.label134.Size = new System.Drawing.Size(65, 25);
@@ -1199,7 +1272,7 @@
             // 
             // damage_P2_C4
             // 
-            this.damage_P2_C4.Location = new System.Drawing.Point(90, 94);
+            this.damage_P2_C4.Location = new System.Drawing.Point(89, 119);
             this.damage_P2_C4.Name = "damage_P2_C4";
             this.damage_P2_C4.Size = new System.Drawing.Size(44, 25);
             this.damage_P2_C4.TabIndex = 4;
@@ -1207,7 +1280,7 @@
             // 
             // label138
             // 
-            this.label138.Location = new System.Drawing.Point(3, 94);
+            this.label138.Location = new System.Drawing.Point(1, 119);
             this.label138.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label138.Name = "label138";
             this.label138.Size = new System.Drawing.Size(82, 25);
@@ -1238,6 +1311,8 @@
             // card_P2_C3
             // 
             this.card_P2_C3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_C3.Controls.Add(this.healing_P2_C3);
+            this.card_P2_C3.Controls.Add(this.label29);
             this.card_P2_C3.Controls.Add(this.cost_P2_C3);
             this.card_P2_C3.Controls.Add(this.label122);
             this.card_P2_C3.Controls.Add(this.hp_P2_C3);
@@ -1256,7 +1331,7 @@
             // 
             // cost_P2_C3
             // 
-            this.cost_P2_C3.Location = new System.Drawing.Point(90, 174);
+            this.cost_P2_C3.Location = new System.Drawing.Point(90, 191);
             this.cost_P2_C3.Name = "cost_P2_C3";
             this.cost_P2_C3.Size = new System.Drawing.Size(44, 25);
             this.cost_P2_C3.TabIndex = 10;
@@ -1264,7 +1339,7 @@
             // 
             // label122
             // 
-            this.label122.Location = new System.Drawing.Point(3, 174);
+            this.label122.Location = new System.Drawing.Point(3, 191);
             this.label122.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label122.Name = "label122";
             this.label122.Size = new System.Drawing.Size(82, 25);
@@ -1275,7 +1350,7 @@
             // 
             // hp_P2_C3
             // 
-            this.hp_P2_C3.Location = new System.Drawing.Point(78, 132);
+            this.hp_P2_C3.Location = new System.Drawing.Point(78, 153);
             this.hp_P2_C3.Name = "hp_P2_C3";
             this.hp_P2_C3.Size = new System.Drawing.Size(65, 25);
             this.hp_P2_C3.TabIndex = 8;
@@ -1283,7 +1358,7 @@
             // 
             // label124
             // 
-            this.label124.Location = new System.Drawing.Point(3, 132);
+            this.label124.Location = new System.Drawing.Point(3, 153);
             this.label124.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label124.Name = "label124";
             this.label124.Size = new System.Drawing.Size(71, 25);
@@ -1302,7 +1377,7 @@
             // 
             // damage_P2_C3
             // 
-            this.damage_P2_C3.Location = new System.Drawing.Point(90, 94);
+            this.damage_P2_C3.Location = new System.Drawing.Point(90, 119);
             this.damage_P2_C3.Name = "damage_P2_C3";
             this.damage_P2_C3.Size = new System.Drawing.Size(44, 25);
             this.damage_P2_C3.TabIndex = 4;
@@ -1310,7 +1385,7 @@
             // 
             // label128
             // 
-            this.label128.Location = new System.Drawing.Point(3, 94);
+            this.label128.Location = new System.Drawing.Point(1, 119);
             this.label128.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label128.Name = "label128";
             this.label128.Size = new System.Drawing.Size(82, 25);
@@ -1341,6 +1416,8 @@
             // card_P2_C2
             // 
             this.card_P2_C2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_C2.Controls.Add(this.healing_P2_C2);
+            this.card_P2_C2.Controls.Add(this.label31);
             this.card_P2_C2.Controls.Add(this.cost_P2_C2);
             this.card_P2_C2.Controls.Add(this.label112);
             this.card_P2_C2.Controls.Add(this.hp_P2_C2);
@@ -1359,7 +1436,7 @@
             // 
             // cost_P2_C2
             // 
-            this.cost_P2_C2.Location = new System.Drawing.Point(90, 174);
+            this.cost_P2_C2.Location = new System.Drawing.Point(90, 192);
             this.cost_P2_C2.Name = "cost_P2_C2";
             this.cost_P2_C2.Size = new System.Drawing.Size(44, 25);
             this.cost_P2_C2.TabIndex = 10;
@@ -1367,7 +1444,7 @@
             // 
             // label112
             // 
-            this.label112.Location = new System.Drawing.Point(3, 174);
+            this.label112.Location = new System.Drawing.Point(4, 191);
             this.label112.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label112.Name = "label112";
             this.label112.Size = new System.Drawing.Size(82, 25);
@@ -1378,7 +1455,7 @@
             // 
             // hp_P2_C2
             // 
-            this.hp_P2_C2.Location = new System.Drawing.Point(79, 132);
+            this.hp_P2_C2.Location = new System.Drawing.Point(79, 153);
             this.hp_P2_C2.Name = "hp_P2_C2";
             this.hp_P2_C2.Size = new System.Drawing.Size(64, 25);
             this.hp_P2_C2.TabIndex = 8;
@@ -1386,7 +1463,7 @@
             // 
             // label114
             // 
-            this.label114.Location = new System.Drawing.Point(3, 132);
+            this.label114.Location = new System.Drawing.Point(4, 153);
             this.label114.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label114.Name = "label114";
             this.label114.Size = new System.Drawing.Size(72, 25);
@@ -1405,7 +1482,7 @@
             // 
             // damage_P2_C2
             // 
-            this.damage_P2_C2.Location = new System.Drawing.Point(90, 94);
+            this.damage_P2_C2.Location = new System.Drawing.Point(90, 128);
             this.damage_P2_C2.Name = "damage_P2_C2";
             this.damage_P2_C2.Size = new System.Drawing.Size(44, 25);
             this.damage_P2_C2.TabIndex = 4;
@@ -1413,7 +1490,7 @@
             // 
             // label118
             // 
-            this.label118.Location = new System.Drawing.Point(3, 94);
+            this.label118.Location = new System.Drawing.Point(1, 119);
             this.label118.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label118.Name = "label118";
             this.label118.Size = new System.Drawing.Size(82, 25);
@@ -1444,6 +1521,8 @@
             // card_P2_H5
             // 
             this.card_P2_H5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_H5.Controls.Add(this.healing_P2_H5);
+            this.card_P2_H5.Controls.Add(this.label39);
             this.card_P2_H5.Controls.Add(this.cost_P2_H5);
             this.card_P2_H5.Controls.Add(this.label102);
             this.card_P2_H5.Controls.Add(this.hp_P2_H5);
@@ -1463,7 +1542,7 @@
             // cost_P2_H5
             // 
             this.cost_P2_H5.BackColor = System.Drawing.Color.Transparent;
-            this.cost_P2_H5.Location = new System.Drawing.Point(90, 174);
+            this.cost_P2_H5.Location = new System.Drawing.Point(90, 191);
             this.cost_P2_H5.Name = "cost_P2_H5";
             this.cost_P2_H5.Size = new System.Drawing.Size(44, 25);
             this.cost_P2_H5.TabIndex = 10;
@@ -1471,7 +1550,7 @@
             // label102
             // 
             this.label102.BackColor = System.Drawing.Color.Transparent;
-            this.label102.Location = new System.Drawing.Point(3, 174);
+            this.label102.Location = new System.Drawing.Point(1, 191);
             this.label102.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label102.Name = "label102";
             this.label102.Size = new System.Drawing.Size(82, 25);
@@ -1482,7 +1561,7 @@
             // hp_P2_H5
             // 
             this.hp_P2_H5.BackColor = System.Drawing.Color.Transparent;
-            this.hp_P2_H5.Location = new System.Drawing.Point(78, 132);
+            this.hp_P2_H5.Location = new System.Drawing.Point(78, 157);
             this.hp_P2_H5.Name = "hp_P2_H5";
             this.hp_P2_H5.Size = new System.Drawing.Size(65, 25);
             this.hp_P2_H5.TabIndex = 8;
@@ -1490,7 +1569,7 @@
             // label104
             // 
             this.label104.BackColor = System.Drawing.Color.Transparent;
-            this.label104.Location = new System.Drawing.Point(3, 132);
+            this.label104.Location = new System.Drawing.Point(3, 157);
             this.label104.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label104.Name = "label104";
             this.label104.Size = new System.Drawing.Size(82, 25);
@@ -1511,7 +1590,7 @@
             // damage_P2_H5
             // 
             this.damage_P2_H5.BackColor = System.Drawing.Color.Transparent;
-            this.damage_P2_H5.Location = new System.Drawing.Point(90, 94);
+            this.damage_P2_H5.Location = new System.Drawing.Point(87, 126);
             this.damage_P2_H5.Name = "damage_P2_H5";
             this.damage_P2_H5.Size = new System.Drawing.Size(44, 25);
             this.damage_P2_H5.TabIndex = 4;
@@ -1519,7 +1598,7 @@
             // label108
             // 
             this.label108.BackColor = System.Drawing.Color.Transparent;
-            this.label108.Location = new System.Drawing.Point(3, 94);
+            this.label108.Location = new System.Drawing.Point(1, 126);
             this.label108.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label108.Name = "label108";
             this.label108.Size = new System.Drawing.Size(82, 25);
@@ -1549,6 +1628,8 @@
             // card_P2_H4
             // 
             this.card_P2_H4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_H4.Controls.Add(this.healing_P2_H4);
+            this.card_P2_H4.Controls.Add(this.label37);
             this.card_P2_H4.Controls.Add(this.cost_P2_H4);
             this.card_P2_H4.Controls.Add(this.label92);
             this.card_P2_H4.Controls.Add(this.hp_P2_H4);
@@ -1567,14 +1648,14 @@
             // 
             // cost_P2_H4
             // 
-            this.cost_P2_H4.Location = new System.Drawing.Point(90, 174);
+            this.cost_P2_H4.Location = new System.Drawing.Point(90, 191);
             this.cost_P2_H4.Name = "cost_P2_H4";
             this.cost_P2_H4.Size = new System.Drawing.Size(44, 25);
             this.cost_P2_H4.TabIndex = 10;
             // 
             // label92
             // 
-            this.label92.Location = new System.Drawing.Point(3, 174);
+            this.label92.Location = new System.Drawing.Point(1, 191);
             this.label92.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(82, 25);
@@ -1584,14 +1665,14 @@
             // 
             // hp_P2_H4
             // 
-            this.hp_P2_H4.Location = new System.Drawing.Point(79, 132);
+            this.hp_P2_H4.Location = new System.Drawing.Point(79, 157);
             this.hp_P2_H4.Name = "hp_P2_H4";
             this.hp_P2_H4.Size = new System.Drawing.Size(64, 25);
             this.hp_P2_H4.TabIndex = 8;
             // 
             // label94
             // 
-            this.label94.Location = new System.Drawing.Point(3, 132);
+            this.label94.Location = new System.Drawing.Point(3, 157);
             this.label94.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(72, 25);
@@ -1608,14 +1689,14 @@
             // 
             // damage_P2_H4
             // 
-            this.damage_P2_H4.Location = new System.Drawing.Point(90, 94);
+            this.damage_P2_H4.Location = new System.Drawing.Point(90, 126);
             this.damage_P2_H4.Name = "damage_P2_H4";
             this.damage_P2_H4.Size = new System.Drawing.Size(44, 25);
             this.damage_P2_H4.TabIndex = 4;
             // 
             // label98
             // 
-            this.label98.Location = new System.Drawing.Point(3, 94);
+            this.label98.Location = new System.Drawing.Point(4, 126);
             this.label98.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label98.Name = "label98";
             this.label98.Size = new System.Drawing.Size(82, 25);
@@ -1643,6 +1724,8 @@
             // card_P2_H3
             // 
             this.card_P2_H3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_H3.Controls.Add(this.healing_P2_H3);
+            this.card_P2_H3.Controls.Add(this.label36);
             this.card_P2_H3.Controls.Add(this.cost_P2_H3);
             this.card_P2_H3.Controls.Add(this.label82);
             this.card_P2_H3.Controls.Add(this.hp_P2_H3);
@@ -1661,14 +1744,14 @@
             // 
             // cost_P2_H3
             // 
-            this.cost_P2_H3.Location = new System.Drawing.Point(90, 174);
+            this.cost_P2_H3.Location = new System.Drawing.Point(90, 192);
             this.cost_P2_H3.Name = "cost_P2_H3";
             this.cost_P2_H3.Size = new System.Drawing.Size(44, 25);
             this.cost_P2_H3.TabIndex = 10;
             // 
             // label82
             // 
-            this.label82.Location = new System.Drawing.Point(3, 174);
+            this.label82.Location = new System.Drawing.Point(4, 191);
             this.label82.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(82, 25);
@@ -1678,14 +1761,14 @@
             // 
             // hp_P2_H3
             // 
-            this.hp_P2_H3.Location = new System.Drawing.Point(69, 132);
+            this.hp_P2_H3.Location = new System.Drawing.Point(60, 157);
             this.hp_P2_H3.Name = "hp_P2_H3";
             this.hp_P2_H3.Size = new System.Drawing.Size(74, 25);
             this.hp_P2_H3.TabIndex = 8;
             // 
             // label84
             // 
-            this.label84.Location = new System.Drawing.Point(3, 132);
+            this.label84.Location = new System.Drawing.Point(4, 157);
             this.label84.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(62, 25);
@@ -1702,14 +1785,14 @@
             // 
             // damage_P2_H3
             // 
-            this.damage_P2_H3.Location = new System.Drawing.Point(90, 94);
+            this.damage_P2_H3.Location = new System.Drawing.Point(90, 126);
             this.damage_P2_H3.Name = "damage_P2_H3";
             this.damage_P2_H3.Size = new System.Drawing.Size(44, 25);
             this.damage_P2_H3.TabIndex = 4;
             // 
             // label88
             // 
-            this.label88.Location = new System.Drawing.Point(3, 94);
+            this.label88.Location = new System.Drawing.Point(4, 126);
             this.label88.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(82, 25);
@@ -1737,6 +1820,8 @@
             // card_P2_H2
             // 
             this.card_P2_H2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_H2.Controls.Add(this.healing_P2_H2);
+            this.card_P2_H2.Controls.Add(this.label35);
             this.card_P2_H2.Controls.Add(this.cost_P2_H2);
             this.card_P2_H2.Controls.Add(this.label72);
             this.card_P2_H2.Controls.Add(this.hp_P2_H2);
@@ -1755,14 +1840,14 @@
             // 
             // cost_P2_H2
             // 
-            this.cost_P2_H2.Location = new System.Drawing.Point(90, 174);
+            this.cost_P2_H2.Location = new System.Drawing.Point(90, 191);
             this.cost_P2_H2.Name = "cost_P2_H2";
             this.cost_P2_H2.Size = new System.Drawing.Size(44, 25);
             this.cost_P2_H2.TabIndex = 10;
             // 
             // label72
             // 
-            this.label72.Location = new System.Drawing.Point(3, 174);
+            this.label72.Location = new System.Drawing.Point(3, 191);
             this.label72.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(82, 25);
@@ -1772,14 +1857,14 @@
             // 
             // hp_P2_H2
             // 
-            this.hp_P2_H2.Location = new System.Drawing.Point(83, 132);
+            this.hp_P2_H2.Location = new System.Drawing.Point(83, 157);
             this.hp_P2_H2.Name = "hp_P2_H2";
             this.hp_P2_H2.Size = new System.Drawing.Size(60, 25);
             this.hp_P2_H2.TabIndex = 8;
             // 
             // label74
             // 
-            this.label74.Location = new System.Drawing.Point(-1, 132);
+            this.label74.Location = new System.Drawing.Point(1, 157);
             this.label74.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(86, 25);
@@ -1796,14 +1881,14 @@
             // 
             // damage_P2_H2
             // 
-            this.damage_P2_H2.Location = new System.Drawing.Point(90, 94);
+            this.damage_P2_H2.Location = new System.Drawing.Point(90, 126);
             this.damage_P2_H2.Name = "damage_P2_H2";
             this.damage_P2_H2.Size = new System.Drawing.Size(44, 25);
             this.damage_P2_H2.TabIndex = 4;
             // 
             // label78
             // 
-            this.label78.Location = new System.Drawing.Point(3, 94);
+            this.label78.Location = new System.Drawing.Point(3, 126);
             this.label78.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(82, 25);
@@ -1831,6 +1916,8 @@
             // card_P2_H1
             // 
             this.card_P2_H1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_H1.Controls.Add(this.healing_P2_H1);
+            this.card_P2_H1.Controls.Add(this.label2);
             this.card_P2_H1.Controls.Add(this.cost_P2_H1);
             this.card_P2_H1.Controls.Add(this.label62);
             this.card_P2_H1.Controls.Add(this.hp_P2_H1);
@@ -1847,16 +1934,25 @@
             this.card_P2_H1.TabIndex = 11;
             this.card_P2_H1.Click += new System.EventHandler(this.ProcessCardClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 25);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Healing";
+            // 
             // cost_P2_H1
             // 
-            this.cost_P2_H1.Location = new System.Drawing.Point(90, 174);
+            this.cost_P2_H1.Location = new System.Drawing.Point(90, 192);
             this.cost_P2_H1.Name = "cost_P2_H1";
             this.cost_P2_H1.Size = new System.Drawing.Size(44, 25);
             this.cost_P2_H1.TabIndex = 10;
             // 
             // label62
             // 
-            this.label62.Location = new System.Drawing.Point(3, 174);
+            this.label62.Location = new System.Drawing.Point(3, 191);
             this.label62.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(82, 25);
@@ -1866,14 +1962,14 @@
             // 
             // hp_P2_H1
             // 
-            this.hp_P2_H1.Location = new System.Drawing.Point(89, 132);
+            this.hp_P2_H1.Location = new System.Drawing.Point(89, 157);
             this.hp_P2_H1.Name = "hp_P2_H1";
             this.hp_P2_H1.Size = new System.Drawing.Size(54, 25);
             this.hp_P2_H1.TabIndex = 8;
             // 
             // label64
             // 
-            this.label64.Location = new System.Drawing.Point(-1, 132);
+            this.label64.Location = new System.Drawing.Point(4, 157);
             this.label64.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(86, 25);
@@ -1890,31 +1986,31 @@
             // 
             // damage_P2_H1
             // 
-            this.damage_P2_H1.Location = new System.Drawing.Point(90, 94);
+            this.damage_P2_H1.Location = new System.Drawing.Point(90, 126);
             this.damage_P2_H1.Name = "damage_P2_H1";
             this.damage_P2_H1.Size = new System.Drawing.Size(44, 25);
             this.damage_P2_H1.TabIndex = 4;
             // 
             // label68
             // 
-            this.label68.Location = new System.Drawing.Point(3, 94);
+            this.label68.Location = new System.Drawing.Point(4, 126);
             this.label68.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(82, 25);
+            this.label68.Size = new System.Drawing.Size(86, 31);
             this.label68.TabIndex = 3;
             this.label68.Text = "Damage:";
             this.label68.UseMnemonic = false;
             // 
             // type_P2_H1
             // 
-            this.type_P2_H1.Location = new System.Drawing.Point(53, 58);
+            this.type_P2_H1.Location = new System.Drawing.Point(58, 58);
             this.type_P2_H1.Name = "type_P2_H1";
             this.type_P2_H1.Size = new System.Drawing.Size(81, 25);
             this.type_P2_H1.TabIndex = 2;
             // 
             // label70
             // 
-            this.label70.Location = new System.Drawing.Point(3, 58);
+            this.label70.Location = new System.Drawing.Point(4, 57);
             this.label70.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(82, 25);
@@ -1925,6 +2021,8 @@
             // card_P1_H5
             // 
             this.card_P1_H5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_H5.Controls.Add(this.healing_P1_H5);
+            this.card_P1_H5.Controls.Add(this.label16);
             this.card_P1_H5.Controls.Add(this.cost_P1_H5);
             this.card_P1_H5.Controls.Add(this.label52);
             this.card_P1_H5.Controls.Add(this.hp_P1_H5);
@@ -1943,14 +2041,14 @@
             // 
             // cost_P1_H5
             // 
-            this.cost_P1_H5.Location = new System.Drawing.Point(90, 174);
+            this.cost_P1_H5.Location = new System.Drawing.Point(90, 191);
             this.cost_P1_H5.Name = "cost_P1_H5";
             this.cost_P1_H5.Size = new System.Drawing.Size(44, 25);
             this.cost_P1_H5.TabIndex = 10;
             // 
             // label52
             // 
-            this.label52.Location = new System.Drawing.Point(3, 174);
+            this.label52.Location = new System.Drawing.Point(3, 191);
             this.label52.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(82, 25);
@@ -1960,14 +2058,14 @@
             // 
             // hp_P1_H5
             // 
-            this.hp_P1_H5.Location = new System.Drawing.Point(78, 132);
+            this.hp_P1_H5.Location = new System.Drawing.Point(78, 153);
             this.hp_P1_H5.Name = "hp_P1_H5";
             this.hp_P1_H5.Size = new System.Drawing.Size(65, 25);
             this.hp_P1_H5.TabIndex = 8;
             // 
             // label54
             // 
-            this.label54.Location = new System.Drawing.Point(3, 132);
+            this.label54.Location = new System.Drawing.Point(3, 153);
             this.label54.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(71, 25);
@@ -1984,14 +2082,14 @@
             // 
             // damage_P1_H5
             // 
-            this.damage_P1_H5.Location = new System.Drawing.Point(90, 94);
+            this.damage_P1_H5.Location = new System.Drawing.Point(89, 119);
             this.damage_P1_H5.Name = "damage_P1_H5";
             this.damage_P1_H5.Size = new System.Drawing.Size(44, 25);
             this.damage_P1_H5.TabIndex = 4;
             // 
             // label58
             // 
-            this.label58.Location = new System.Drawing.Point(3, 94);
+            this.label58.Location = new System.Drawing.Point(3, 119);
             this.label58.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(82, 25);
@@ -2019,6 +2117,8 @@
             // card_P1_H4
             // 
             this.card_P1_H4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_H4.Controls.Add(this.healing_P1_H4);
+            this.card_P1_H4.Controls.Add(this.label15);
             this.card_P1_H4.Controls.Add(this.cost_P1_H4);
             this.card_P1_H4.Controls.Add(this.label42);
             this.card_P1_H4.Controls.Add(this.hp_P1_H4);
@@ -2037,14 +2137,14 @@
             // 
             // cost_P1_H4
             // 
-            this.cost_P1_H4.Location = new System.Drawing.Point(90, 174);
+            this.cost_P1_H4.Location = new System.Drawing.Point(90, 191);
             this.cost_P1_H4.Name = "cost_P1_H4";
             this.cost_P1_H4.Size = new System.Drawing.Size(44, 25);
             this.cost_P1_H4.TabIndex = 10;
             // 
             // label42
             // 
-            this.label42.Location = new System.Drawing.Point(3, 174);
+            this.label42.Location = new System.Drawing.Point(3, 191);
             this.label42.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(82, 25);
@@ -2054,14 +2154,14 @@
             // 
             // hp_P1_H4
             // 
-            this.hp_P1_H4.Location = new System.Drawing.Point(79, 132);
+            this.hp_P1_H4.Location = new System.Drawing.Point(75, 153);
             this.hp_P1_H4.Name = "hp_P1_H4";
             this.hp_P1_H4.Size = new System.Drawing.Size(64, 25);
             this.hp_P1_H4.TabIndex = 8;
             // 
             // label44
             // 
-            this.label44.Location = new System.Drawing.Point(3, 132);
+            this.label44.Location = new System.Drawing.Point(4, 153);
             this.label44.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(72, 25);
@@ -2078,14 +2178,14 @@
             // 
             // damage_P1_H4
             // 
-            this.damage_P1_H4.Location = new System.Drawing.Point(90, 94);
+            this.damage_P1_H4.Location = new System.Drawing.Point(90, 119);
             this.damage_P1_H4.Name = "damage_P1_H4";
             this.damage_P1_H4.Size = new System.Drawing.Size(44, 25);
             this.damage_P1_H4.TabIndex = 4;
             // 
             // label48
             // 
-            this.label48.Location = new System.Drawing.Point(3, 94);
+            this.label48.Location = new System.Drawing.Point(3, 119);
             this.label48.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(82, 25);
@@ -2113,6 +2213,8 @@
             // card_P1_H3
             // 
             this.card_P1_H3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_H3.Controls.Add(this.healing_P1_H3);
+            this.card_P1_H3.Controls.Add(this.label13);
             this.card_P1_H3.Controls.Add(this.cost_P1_H3);
             this.card_P1_H3.Controls.Add(this.label32);
             this.card_P1_H3.Controls.Add(this.hp_P1_H3);
@@ -2131,14 +2233,14 @@
             // 
             // cost_P1_H3
             // 
-            this.cost_P1_H3.Location = new System.Drawing.Point(90, 174);
+            this.cost_P1_H3.Location = new System.Drawing.Point(90, 192);
             this.cost_P1_H3.Name = "cost_P1_H3";
             this.cost_P1_H3.Size = new System.Drawing.Size(44, 25);
             this.cost_P1_H3.TabIndex = 10;
             // 
             // label32
             // 
-            this.label32.Location = new System.Drawing.Point(3, 174);
+            this.label32.Location = new System.Drawing.Point(4, 192);
             this.label32.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(82, 25);
@@ -2148,14 +2250,14 @@
             // 
             // hp_P1_H3
             // 
-            this.hp_P1_H3.Location = new System.Drawing.Point(77, 132);
+            this.hp_P1_H3.Location = new System.Drawing.Point(73, 153);
             this.hp_P1_H3.Name = "hp_P1_H3";
             this.hp_P1_H3.Size = new System.Drawing.Size(66, 25);
             this.hp_P1_H3.TabIndex = 8;
             // 
             // label34
             // 
-            this.label34.Location = new System.Drawing.Point(3, 132);
+            this.label34.Location = new System.Drawing.Point(4, 153);
             this.label34.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(70, 25);
@@ -2172,14 +2274,14 @@
             // 
             // damage_P1_H3
             // 
-            this.damage_P1_H3.Location = new System.Drawing.Point(90, 94);
+            this.damage_P1_H3.Location = new System.Drawing.Point(89, 119);
             this.damage_P1_H3.Name = "damage_P1_H3";
             this.damage_P1_H3.Size = new System.Drawing.Size(44, 25);
             this.damage_P1_H3.TabIndex = 4;
             // 
             // label38
             // 
-            this.label38.Location = new System.Drawing.Point(3, 94);
+            this.label38.Location = new System.Drawing.Point(3, 119);
             this.label38.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(82, 25);
@@ -2207,6 +2309,8 @@
             // card_P1_H2
             // 
             this.card_P1_H2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_H2.Controls.Add(this.healing_P1_H2);
+            this.card_P1_H2.Controls.Add(this.label11);
             this.card_P1_H2.Controls.Add(this.cost_P1_H2);
             this.card_P1_H2.Controls.Add(this.label22);
             this.card_P1_H2.Controls.Add(this.hp_P1_H2);
@@ -2225,14 +2329,14 @@
             // 
             // cost_P1_H2
             // 
-            this.cost_P1_H2.Location = new System.Drawing.Point(90, 174);
+            this.cost_P1_H2.Location = new System.Drawing.Point(90, 192);
             this.cost_P1_H2.Name = "cost_P1_H2";
             this.cost_P1_H2.Size = new System.Drawing.Size(44, 25);
             this.cost_P1_H2.TabIndex = 10;
             // 
             // label22
             // 
-            this.label22.Location = new System.Drawing.Point(3, 174);
+            this.label22.Location = new System.Drawing.Point(3, 191);
             this.label22.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(82, 25);
@@ -2242,14 +2346,14 @@
             // 
             // hp_P1_H2
             // 
-            this.hp_P1_H2.Location = new System.Drawing.Point(83, 132);
+            this.hp_P1_H2.Location = new System.Drawing.Point(83, 153);
             this.hp_P1_H2.Name = "hp_P1_H2";
             this.hp_P1_H2.Size = new System.Drawing.Size(60, 25);
             this.hp_P1_H2.TabIndex = 8;
             // 
             // label24
             // 
-            this.label24.Location = new System.Drawing.Point(3, 132);
+            this.label24.Location = new System.Drawing.Point(3, 153);
             this.label24.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(65, 25);
@@ -2266,14 +2370,14 @@
             // 
             // damage_P1_H2
             // 
-            this.damage_P1_H2.Location = new System.Drawing.Point(90, 94);
+            this.damage_P1_H2.Location = new System.Drawing.Point(90, 119);
             this.damage_P1_H2.Name = "damage_P1_H2";
             this.damage_P1_H2.Size = new System.Drawing.Size(44, 25);
             this.damage_P1_H2.TabIndex = 4;
             // 
             // label28
             // 
-            this.label28.Location = new System.Drawing.Point(3, 94);
+            this.label28.Location = new System.Drawing.Point(3, 119);
             this.label28.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(82, 25);
@@ -2301,6 +2405,8 @@
             // card_P1_H1
             // 
             this.card_P1_H1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P1_H1.Controls.Add(this.healing_P1_H1);
+            this.card_P1_H1.Controls.Add(this.label9);
             this.card_P1_H1.Controls.Add(this.cost_P1_H1);
             this.card_P1_H1.Controls.Add(this.label12);
             this.card_P1_H1.Controls.Add(this.hp_P1_H1);
@@ -2319,14 +2425,14 @@
             // 
             // cost_P1_H1
             // 
-            this.cost_P1_H1.Location = new System.Drawing.Point(90, 174);
+            this.cost_P1_H1.Location = new System.Drawing.Point(90, 192);
             this.cost_P1_H1.Name = "cost_P1_H1";
             this.cost_P1_H1.Size = new System.Drawing.Size(44, 25);
             this.cost_P1_H1.TabIndex = 10;
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(3, 174);
+            this.label12.Location = new System.Drawing.Point(4, 191);
             this.label12.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 25);
@@ -2336,14 +2442,14 @@
             // 
             // hp_P1_H1
             // 
-            this.hp_P1_H1.Location = new System.Drawing.Point(80, 132);
+            this.hp_P1_H1.Location = new System.Drawing.Point(80, 153);
             this.hp_P1_H1.Name = "hp_P1_H1";
             this.hp_P1_H1.Size = new System.Drawing.Size(63, 25);
             this.hp_P1_H1.TabIndex = 8;
             // 
             // label14
             // 
-            this.label14.Location = new System.Drawing.Point(3, 132);
+            this.label14.Location = new System.Drawing.Point(4, 153);
             this.label14.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(73, 25);
@@ -2360,14 +2466,14 @@
             // 
             // damage_P1_H1
             // 
-            this.damage_P1_H1.Location = new System.Drawing.Point(90, 94);
+            this.damage_P1_H1.Location = new System.Drawing.Point(90, 119);
             this.damage_P1_H1.Name = "damage_P1_H1";
             this.damage_P1_H1.Size = new System.Drawing.Size(44, 25);
             this.damage_P1_H1.TabIndex = 4;
             // 
             // label18
             // 
-            this.label18.Location = new System.Drawing.Point(3, 94);
+            this.label18.Location = new System.Drawing.Point(4, 119);
             this.label18.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(82, 25);
@@ -2395,6 +2501,8 @@
             // card_P2_C1
             // 
             this.card_P2_C1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card_P2_C1.Controls.Add(this.healing_P2_C1);
+            this.card_P2_C1.Controls.Add(this.label33);
             this.card_P2_C1.Controls.Add(this.cost_P2_C1);
             this.card_P2_C1.Controls.Add(this.label10);
             this.card_P2_C1.Controls.Add(this.hp_P2_C1);
@@ -2413,26 +2521,15 @@
             // 
             // cost_P2_C1
             // 
-            this.cost_P2_C1.Location = new System.Drawing.Point(90, 174);
+            this.cost_P2_C1.Location = new System.Drawing.Point(90, 191);
             this.cost_P2_C1.Name = "cost_P2_C1";
             this.cost_P2_C1.Size = new System.Drawing.Size(44, 25);
             this.cost_P2_C1.TabIndex = 10;
             this.cost_P2_C1.Visible = false;
             // 
-            // label10
-            // 
-            this.label10.Location = new System.Drawing.Point(3, 174);
-            this.label10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 25);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Cost:";
-            this.label10.UseMnemonic = false;
-            this.label10.Visible = false;
-            // 
             // hp_P2_C1
             // 
-            this.hp_P2_C1.Location = new System.Drawing.Point(77, 132);
+            this.hp_P2_C1.Location = new System.Drawing.Point(77, 166);
             this.hp_P2_C1.Name = "hp_P2_C1";
             this.hp_P2_C1.Size = new System.Drawing.Size(62, 25);
             this.hp_P2_C1.TabIndex = 8;
@@ -2440,7 +2537,7 @@
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(3, 132);
+            this.label8.Location = new System.Drawing.Point(3, 153);
             this.label8.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 25);
@@ -2459,7 +2556,7 @@
             // 
             // damage_P2_C1
             // 
-            this.damage_P2_C1.Location = new System.Drawing.Point(90, 94);
+            this.damage_P2_C1.Location = new System.Drawing.Point(89, 132);
             this.damage_P2_C1.Name = "damage_P2_C1";
             this.damage_P2_C1.Size = new System.Drawing.Size(44, 25);
             this.damage_P2_C1.TabIndex = 4;
@@ -2467,7 +2564,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(3, 94);
+            this.label4.Location = new System.Drawing.Point(3, 119);
             this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 25);
@@ -2515,12 +2612,361 @@
             this.deck_player1.TabIndex = 0;
             this.deck_player1.Click += new System.EventHandler(this.deck1_Click);
             // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(-486, 107);
+            this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Damage:";
+            this.label3.UseMnemonic = false;
+            this.label3.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(-399, 107);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 25);
+            this.label5.TabIndex = 4;
+            this.label5.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(-486, 145);
+            this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 25);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "HP/LT:";
+            this.label6.UseMnemonic = false;
+            this.label6.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(-410, 145);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 25);
+            this.label7.TabIndex = 8;
+            this.label7.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 94);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 25);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Healing";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 94);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 25);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Healing";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(5, 94);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 25);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Healing";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(7, 94);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(72, 25);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Healing";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(5, 94);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(72, 25);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "Healing";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(5, 93);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(72, 25);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "Healing";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(7, 93);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(72, 25);
+            this.label19.TabIndex = 12;
+            this.label19.Text = "Healing";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(5, 93);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(72, 25);
+            this.label21.TabIndex = 12;
+            this.label21.Text = "Healing";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(3, 93);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(72, 25);
+            this.label23.TabIndex = 12;
+            this.label23.Text = "Healing";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(4, 93);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(72, 25);
+            this.label25.TabIndex = 12;
+            this.label25.Text = "Healing";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(4, 94);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(72, 25);
+            this.label26.TabIndex = 12;
+            this.label26.Text = "Healing";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(3, 94);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(72, 25);
+            this.label27.TabIndex = 12;
+            this.label27.Text = "Healing";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(5, 94);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(72, 25);
+            this.label29.TabIndex = 12;
+            this.label29.Text = "Healing";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(6, 94);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(72, 25);
+            this.label31.TabIndex = 12;
+            this.label31.Text = "Healing";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(5, 94);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(72, 25);
+            this.label33.TabIndex = 12;
+            this.label33.Text = "Healing";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(3, 96);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(72, 25);
+            this.label35.TabIndex = 12;
+            this.label35.Text = "Healing";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(5, 96);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(72, 25);
+            this.label36.TabIndex = 12;
+            this.label36.Text = "Healing";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(7, 93);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(72, 25);
+            this.label37.TabIndex = 12;
+            this.label37.Text = "Healing";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(3, 96);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(72, 25);
+            this.label39.TabIndex = 12;
+            this.label39.Text = "Healing";
+            // 
+            // healing_P2_H1
+            // 
+            this.healing_P2_H1.Location = new System.Drawing.Point(82, 91);
+            this.healing_P2_H1.Name = "healing_P2_H1";
+            this.healing_P2_H1.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_H1.TabIndex = 12;
+            // 
+            // healing_P2_H2
+            // 
+            this.healing_P2_H2.Location = new System.Drawing.Point(77, 96);
+            this.healing_P2_H2.Name = "healing_P2_H2";
+            this.healing_P2_H2.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_H2.TabIndex = 13;
+            // 
+            // healing_P2_H3
+            // 
+            this.healing_P2_H3.Location = new System.Drawing.Point(76, 96);
+            this.healing_P2_H3.Name = "healing_P2_H3";
+            this.healing_P2_H3.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_H3.TabIndex = 14;
+            // 
+            // healing_P2_H4
+            // 
+            this.healing_P2_H4.Location = new System.Drawing.Point(77, 93);
+            this.healing_P2_H4.Name = "healing_P2_H4";
+            this.healing_P2_H4.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_H4.TabIndex = 14;
+            // 
+            // healing_P2_H5
+            // 
+            this.healing_P2_H5.Location = new System.Drawing.Point(78, 93);
+            this.healing_P2_H5.Name = "healing_P2_H5";
+            this.healing_P2_H5.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_H5.TabIndex = 14;
+            // 
+            // healing_P2_C1
+            // 
+            this.healing_P2_C1.Location = new System.Drawing.Point(76, 94);
+            this.healing_P2_C1.Name = "healing_P2_C1";
+            this.healing_P2_C1.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_C1.TabIndex = 14;
+            // 
+            // healing_P2_C2
+            // 
+            this.healing_P2_C2.Location = new System.Drawing.Point(79, 94);
+            this.healing_P2_C2.Name = "healing_P2_C2";
+            this.healing_P2_C2.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_C2.TabIndex = 14;
+            // 
+            // healing_P2_C3
+            // 
+            this.healing_P2_C3.Location = new System.Drawing.Point(74, 94);
+            this.healing_P2_C3.Name = "healing_P2_C3";
+            this.healing_P2_C3.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_C3.TabIndex = 14;
+            // 
+            // healing_P2_C4
+            // 
+            this.healing_P2_C4.Location = new System.Drawing.Point(81, 94);
+            this.healing_P2_C4.Name = "healing_P2_C4";
+            this.healing_P2_C4.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_C4.TabIndex = 14;
+            // 
+            // healing_P2_C5
+            // 
+            this.healing_P2_C5.Location = new System.Drawing.Point(76, 94);
+            this.healing_P2_C5.Name = "healing_P2_C5";
+            this.healing_P2_C5.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_C5.TabIndex = 14;
+            // 
+            // healing_P1_C1
+            // 
+            this.healing_P1_C1.Location = new System.Drawing.Point(77, 93);
+            this.healing_P1_C1.Name = "healing_P1_C1";
+            this.healing_P1_C1.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_C1.TabIndex = 14;
+            // 
+            // healing_P1_C2
+            // 
+            this.healing_P1_C2.Location = new System.Drawing.Point(85, 93);
+            this.healing_P1_C2.Name = "healing_P1_C2";
+            this.healing_P1_C2.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_C2.TabIndex = 14;
+            // 
+            // healing_P1_C3
+            // 
+            this.healing_P1_C3.Location = new System.Drawing.Point(82, 93);
+            this.healing_P1_C3.Name = "healing_P1_C3";
+            this.healing_P1_C3.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_C3.TabIndex = 14;
+            // 
+            // healing_P1_C4
+            // 
+            this.healing_P1_C4.Location = new System.Drawing.Point(74, 93);
+            this.healing_P1_C4.Name = "healing_P1_C4";
+            this.healing_P1_C4.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_C4.TabIndex = 14;
+            // 
+            // healing_P1_C5
+            // 
+            this.healing_P1_C5.Location = new System.Drawing.Point(74, 93);
+            this.healing_P1_C5.Name = "healing_P1_C5";
+            this.healing_P1_C5.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_C5.TabIndex = 14;
+            // 
+            // healing_P1_H5
+            // 
+            this.healing_P1_H5.Location = new System.Drawing.Point(78, 89);
+            this.healing_P1_H5.Name = "healing_P1_H5";
+            this.healing_P1_H5.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_H5.TabIndex = 15;
+            // 
+            // healing_P1_H4
+            // 
+            this.healing_P1_H4.Location = new System.Drawing.Point(75, 94);
+            this.healing_P1_H4.Name = "healing_P1_H4";
+            this.healing_P1_H4.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_H4.TabIndex = 15;
+            // 
+            // healing_P1_H3
+            // 
+            this.healing_P1_H3.Location = new System.Drawing.Point(77, 94);
+            this.healing_P1_H3.Name = "healing_P1_H3";
+            this.healing_P1_H3.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_H3.TabIndex = 15;
+            // 
+            // healing_P1_H2
+            // 
+            this.healing_P1_H2.Location = new System.Drawing.Point(77, 93);
+            this.healing_P1_H2.Name = "healing_P1_H2";
+            this.healing_P1_H2.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_H2.TabIndex = 15;
+            // 
+            // healing_P1_H1
+            // 
+            this.healing_P1_H1.Location = new System.Drawing.Point(77, 94);
+            this.healing_P1_H1.Name = "healing_P1_H1";
+            this.healing_P1_H1.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_H1.TabIndex = 15;
+            // 
             // Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1590, 1050);
+            this.ClientSize = new System.Drawing.Size(1584, 1050);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Board";
@@ -2530,25 +2976,45 @@
             this.panel1.PerformLayout();
             this.panel24.ResumeLayout(false);
             this.card_P1_C5.ResumeLayout(false);
+            this.card_P1_C5.PerformLayout();
             this.card_P1_C4.ResumeLayout(false);
+            this.card_P1_C4.PerformLayout();
             this.card_P1_C3.ResumeLayout(false);
+            this.card_P1_C3.PerformLayout();
             this.card_P1_C2.ResumeLayout(false);
+            this.card_P1_C2.PerformLayout();
             this.card_P1_C1.ResumeLayout(false);
+            this.card_P1_C1.PerformLayout();
             this.card_P2_C5.ResumeLayout(false);
+            this.card_P2_C5.PerformLayout();
             this.card_P2_C4.ResumeLayout(false);
+            this.card_P2_C4.PerformLayout();
             this.card_P2_C3.ResumeLayout(false);
+            this.card_P2_C3.PerformLayout();
             this.card_P2_C2.ResumeLayout(false);
+            this.card_P2_C2.PerformLayout();
             this.card_P2_H5.ResumeLayout(false);
+            this.card_P2_H5.PerformLayout();
             this.card_P2_H4.ResumeLayout(false);
+            this.card_P2_H4.PerformLayout();
             this.card_P2_H3.ResumeLayout(false);
+            this.card_P2_H3.PerformLayout();
             this.card_P2_H2.ResumeLayout(false);
+            this.card_P2_H2.PerformLayout();
             this.card_P2_H1.ResumeLayout(false);
+            this.card_P2_H1.PerformLayout();
             this.card_P1_H5.ResumeLayout(false);
+            this.card_P1_H5.PerformLayout();
             this.card_P1_H4.ResumeLayout(false);
+            this.card_P1_H4.PerformLayout();
             this.card_P1_H3.ResumeLayout(false);
+            this.card_P1_H3.PerformLayout();
             this.card_P1_H2.ResumeLayout(false);
+            this.card_P1_H2.PerformLayout();
             this.card_P1_H1.ResumeLayout(false);
+            this.card_P1_H1.PerformLayout();
             this.card_P2_C1.ResumeLayout(false);
+            this.card_P2_C1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2778,6 +3244,50 @@
         private Label current_player_label;
         private Label Player1_name_label;
         private Label Player2_name_label;
+        private Label label2;
+        private Label healing_P1_C5;
+        private Label label25;
+        private Label healing_P1_C4;
+        private Label label23;
+        private Label healing_P1_C3;
+        private Label label21;
+        private Label healing_P1_C2;
+        private Label label19;
+        private Label healing_P1_C1;
+        private Label label17;
+        private Label healing_P2_C5;
+        private Label label26;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Label label3;
+        private Label healing_P2_C4;
+        private Label label27;
+        private Label healing_P2_C3;
+        private Label label29;
+        private Label healing_P2_C2;
+        private Label label31;
+        private Label healing_P2_H5;
+        private Label label39;
+        private Label healing_P2_H4;
+        private Label label37;
+        private Label healing_P2_H3;
+        private Label label36;
+        private Label healing_P2_H2;
+        private Label label35;
+        private Label healing_P2_H1;
+        private Label healing_P1_H5;
+        private Label label16;
+        private Label healing_P1_H4;
+        private Label label15;
+        private Label healing_P1_H3;
+        private Label label13;
+        private Label healing_P1_H2;
+        private Label label11;
+        private Label healing_P1_H1;
+        private Label label9;
+        private Label healing_P2_C1;
+        private Label label33;
     }
 }
 
