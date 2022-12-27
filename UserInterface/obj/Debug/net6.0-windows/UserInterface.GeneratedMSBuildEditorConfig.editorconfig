@@ -13,4 +13,4 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = UserInterface
-build_property.ProjectDir = D:\test\BattleCards\UserInterface\
+build_property.ProjectDir = D:\BattleCards\UserInterface\

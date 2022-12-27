@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
         }
         private void next_bt_Click(object sender, EventArgs e)
         {
-            ICardValidator cardValidator = new CardValidator(new DataProcessor(this.card_exp.Text.Split("\r\n")), CardCreator.Instance);
+            ICardValidator cardValidator = new CardValidator(new DataProcessorForPlainText(this.card_exp.Text.Split("\r\n")), CardCreator.Instance);
 
             ValidationResponse validationResponse = cardValidator.ValidateCard();
 
@@ -23,17 +23,17 @@ namespace WindowsFormsApp1
 
             if (validationResponse.ValidationResult == ValidationResult.Ok)
             {
-                CardSaver.Instance.SaveCard(cardValidator.CardDefinition, cardValidator.Card.Name);
+                CardSaver.Instance.SaveCard(cardValidator.Card.Description, cardValidator.Card.Name);
                 previousForm.Show();
                 Hide();
             }
 
         }
 
-        public class DataProcessor : ICardCreatorSource
+        public class DataProcessorForPlainText : ICardCreatorSource
         {
             private string[] Text;
-            public DataProcessor(string[] text)
+            public DataProcessorForPlainText(string[] text)
             {
                 this.Text = text;
             }

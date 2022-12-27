@@ -20,27 +20,28 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
     public static Phase CurrentPhase { get; private set; }
     //when you create aICardfirst input is type and second is name
 
-    public Game(UIPlayer player1, UIPlayer player2,List<ICard> allCardsCreated)
+    public Game(UIPlayer player1, UIPlayer player2, List<ICard> allCardsCreated)
     {
         AllCardsCreated = allCardsCreated;
+        int amountOfCardsInDeck = AllCardsCreated.Count / 2;
         CurrentPlayer = 1;
-        if (GetFirstPlayerByDice(player1, player2) == player1)
+        if (GetFirstPlayerByDiceThrowing(player1, player2) == player1)
         {
-            Player1 = CreateAPlayerInstance(player1, 1);//player1 starts the game
-            Player2 = CreateAPlayerInstance(player2, 2);
-           
+            Player1 = CreateAPlayerInstance(player1, 1, amountOfCardsInDeck);//player1 starts the game
+            Player2 = CreateAPlayerInstance(player2, 2, amountOfCardsInDeck);
+
         }
         else
         {
-            Player1 = CreateAPlayerInstance(player2, 1);//player2 starts the game
-            Player2 = CreateAPlayerInstance(player1, 2);
-            
+            Player1 = CreateAPlayerInstance(player2, 1, amountOfCardsInDeck);//player2 starts the game
+            Player2 = CreateAPlayerInstance(player1, 2, amountOfCardsInDeck);
+
         }
-        
+
 
         //Initialize the game. First each player shuffles their deck and then draws 5 cards
 
-       
+
         Player1.Draw(5);
         Player2.Draw(5);
         InterfaceUpdated = true;
@@ -66,10 +67,10 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
             //reducing LifeTime of spells
             current.MarkCardsAsUnused();
             CurrentPhase = Phase.MainPhase;
-            current.Mana = (current.Mana + 5) < 20? current.Mana + 5: current.Mana = 20;
+            current.Mana = (current.Mana + 5) < 20 ? current.Mana + 5 : current.Mana = 20;
             ChangePlayer();
             GetCurrentPlayer().UpdateSpellsMana();
-            
+
 
         }
     }
@@ -88,7 +89,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
     }
     public static void CardActionReceiver(ActionsByPlayer action, ICard card1, ICard card2, int numberOfDeck)
     {
-        
+
         //solo puede hacer draw el currentplayer si es humano
         switch (action)
         {
@@ -160,7 +161,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
     }
 
 
-    public static UIPlayer GetFirstPlayerByDice(UIPlayer player1, UIPlayer player2)
+    public static UIPlayer GetFirstPlayerByDiceThrowing(UIPlayer player1, UIPlayer player2)
     {
 
         bool playersAreSet = false;
@@ -182,26 +183,28 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
         return player1;
     }
 
-    public Player CreateAPlayerInstance(UIPlayer player, int number)
+    public Player CreateAPlayerInstance(UIPlayer player, int number, int amountOfCardsInDeck)
     {
+
         if (player.PlayerType == PlayerType.Human)
         {
-            return new HumanPlayer(player.Name, GenerateRandomDeck(AllCardsCreated, 7), number);//50
+            return new HumanPlayer(player.Name, GenerateRandomDeck(AllCardsCreated, amountOfCardsInDeck), number);//50
         }
         else
         {
-            return new AIPlayer(player.Name, GenerateRandomDeck(AllCardsCreated, 7), number);
+            return new AIPlayer(player.Name, GenerateRandomDeck(AllCardsCreated, amountOfCardsInDeck), number);
         }
     }
-    
+
 
     public static List<ICard> GenerateRandomDeck(List<ICard> AllCardsCreated, int total)
     {
+        
         List<ICard> deck = new List<ICard>();
         Random r = new Random();
         int current = 0;
 
-        while (current < total)
+        while (current < (total<20?total:20))
         {
 
             int k = r.Next(AllCardsCreated.Count);

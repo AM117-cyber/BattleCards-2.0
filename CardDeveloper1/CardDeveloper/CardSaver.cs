@@ -21,12 +21,11 @@ public class CardSaver:ICardSaver
             return cardSaver;
         }
     }
-    public void SaveCard(string[] CardDefinition, string CardName)
+    public void SaveCard(string CardDefinition, string CardName)
     {
         string title = CardName;
         string path = @"..\CardLibrary\" + title + ".txt";//D:\BattleCards\BattleCardsLibrary
-        string contentOfTxT = ICard.GetCardDescription(CardDefinition);
-        File.WriteAllText(path, contentOfTxT.TrimEnd());
+        File.WriteAllText(path, CardDefinition.TrimEnd());
         //File.WriteAllText(path, this.card_exp.Text);
     }
 }

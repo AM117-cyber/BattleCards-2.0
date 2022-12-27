@@ -30,7 +30,6 @@ public abstract class Card: ICard
         
         this.Type = CardProperties[AllCardProperties.Type] == "Monster" ? CardType.Monster : CardType.Spell;
         this.Name = CardProperties[AllCardProperties.Name];
-        this.Description = GetCardDescription(description);
         this.Owner = null;
         this.Used = false;
         this.ManaCost = CheckIfValueIsNumber(AllCardProperties.ManaCost, CardProperties);
@@ -41,6 +40,7 @@ public abstract class Card: ICard
         this.Armour = CheckIfValueIsNumber(AllCardProperties.Armour, CardProperties);
         this.Attack = GetExpressionOrDefaultValueAsConstant(AllCardProperties.Attack, CardProperties);//no se puede generalizar?
         this.Heal = GetExpressionOrDefaultValueAsConstant(AllCardProperties.Heal, CardProperties);
+        this.Description = GetCardDescription(description);
         //llega la expresion sin () en extremos, despues de Trim
 
     }

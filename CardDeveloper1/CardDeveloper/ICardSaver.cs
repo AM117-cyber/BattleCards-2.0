@@ -8,7 +8,7 @@ namespace CardDeveloper1
 {
     public interface ICardSaver
     {
-        public void SaveCard(string[] cardDefinition, string cardName)
+        public void SaveCard(string cardDefinition, string cardName)
         {
 
         }

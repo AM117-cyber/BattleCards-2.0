@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uzVm/Q4E53GkiOb13Z6VyZYdRLAiFRVEsBMRLgOevr6UrU3ZZ4bf2pXTR/BOcx5rIcf+lhDOjQHh+NNvnOkgCg==",
+  "dgSpecHash": "grjHi6BBt5vfadhbf42TF+YqP0FPwebPksaKl5xKNqnRZgBnQu2Ce050Woy3x75HUNDSkCWnLSW3pyDBLTbHLQ==",
   "success": true,
-  "projectFilePath": "D:\\test\\BattleCards\\BattleCardsLibrary\\BattleCardsLibrary.csproj",
+  "projectFilePath": "D:\\BattleCards\\BattleCardsLibrary\\BattleCardsLibrary.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,4 +1,4 @@
-﻿namespace BattleCardsLibrary
+﻿namespace BattleCardsLibrary.Utils
 {
     public enum ActionType
     {

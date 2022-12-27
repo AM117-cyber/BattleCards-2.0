@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
         private void next_bt_Click(object sender, EventArgs e)
         {
             //Gather all data and call method to evaluate expression
-            ICardCreatorSource cardSource = new DataProcessor(this.panel1.Controls.OfType<TextBox>(), monster_card_rb.Checked, spell_card_rb.Checked);
+            ICardCreatorSource cardSource = new DataProcessorForFriendlyUI(this.panel1.Controls.OfType<TextBox>(), monster_card_rb.Checked, spell_card_rb.Checked);
             ICardValidator cardValidator = new CardValidator(cardSource, CardCreator.Instance);
 
             ValidationResponse validationResponse = cardValidator.ValidateCard();
@@ -28,18 +28,18 @@ namespace WindowsFormsApp1
              
             if (validationResponse.ValidationResult == ValidationResult.Ok)
             {
-                CardSaver.Instance.SaveCard(cardValidator.CardDefinition, cardValidator.Card.Name);
+                CardSaver.Instance.SaveCard(cardValidator.Card.Description, cardValidator.Card.Name);
                 previousForm.Show();
                 Hide();
             }
 
         }
-        public class DataProcessor : ICardCreatorSource
+        public class DataProcessorForFriendlyUI : ICardCreatorSource
         {
             public IEnumerable<TextBox> Textboxes;
             public bool Monster;
             public bool Spell;
-            public DataProcessor(IEnumerable<TextBox> textboxes, bool monster, bool spell)
+            public DataProcessorForFriendlyUI(IEnumerable<TextBox> textboxes, bool monster, bool spell)
             {
                 this.Spell = spell;
                 this.Monster = monster;

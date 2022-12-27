@@ -51,11 +51,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\test\\BattleCards\\UserInterface\\UserInterface.csproj",
+      "projectUniqueName": "D:\\BattleCards\\UserInterface\\UserInterface.csproj",
       "projectName": "UserInterface",
-      "projectPath": "D:\\test\\BattleCards\\UserInterface\\UserInterface.csproj",
+      "projectPath": "D:\\BattleCards\\UserInterface\\UserInterface.csproj",
       "packagesPath": "C:\\Users\\Melissa\\.nuget\\packages\\",
-      "outputPath": "D:\\test\\BattleCards\\UserInterface\\obj\\",
+      "outputPath": "D:\\BattleCards\\UserInterface\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Melissa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -72,11 +72,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\test\\BattleCards\\BattleCardsLibrary\\BattleCardsLibrary.csproj": {
-              "projectPath": "D:\\test\\BattleCards\\BattleCardsLibrary\\BattleCardsLibrary.csproj"
+            "D:\\BattleCards\\BattleCardsLibrary\\BattleCardsLibrary.csproj": {
+              "projectPath": "D:\\BattleCards\\BattleCardsLibrary\\BattleCardsLibrary.csproj"
             },
-            "D:\\test\\BattleCards\\CardDeveloper1\\CardDeveloper1.csproj": {
-              "projectPath": "D:\\test\\BattleCards\\CardDeveloper1\\CardDeveloper1.csproj"
+            "D:\\BattleCards\\CardDeveloper1\\CardDeveloper1.csproj": {
+              "projectPath": "D:\\BattleCards\\CardDeveloper1\\CardDeveloper1.csproj"
             }
           }
         }
