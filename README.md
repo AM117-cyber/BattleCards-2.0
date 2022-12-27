@@ -1,12 +1,21 @@
 # BattleCards-2.0
 Para abrir el juego el usuario debe seguir los siguientes pasos:
+
 Entrar en la carpeta del juego.
+
 Carpeta con el nombre UserInterface.
+
 Carpeta con el nombre bin.
+
 Carpeta con el nombre Debug.
+
 Carpeta con el nombre net6.0-windows. Verá una ventana como la que se muestra abajo.
  
+!!
+ 
 Haga doble click en UserInterface.exe para que se abra una ventana como esta:
+
+ !!
  
 En la ventana se muestran tres botones.Seleccionando el primero se comienza una partida, mientras que el segundo y el tercero te llevan a otra ventana para la creación de cartas.La diferencia es que el segundo botón abre una ventana que ya tiene las propiedades que el diseño del juego permite crear al usuario, junto con un espacio para escribir el valor de cada una.
  
