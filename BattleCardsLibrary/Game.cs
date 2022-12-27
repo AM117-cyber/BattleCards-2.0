@@ -1,13 +1,14 @@
-using BattleCards.Cards;
 using BattleCardsLibrary.Cards;
-using static Utils.Utils;
-using static BattleCards.ExecuteActions.ExecuteAction;
+using BattleCardsLibrary.Utils;
+using static BattleCardsLibrary.ExecuteActions.ExecuteAction;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Security.Principal;
+using BattleCardsLibrary.Cards.CardDeveloper;
+using BattleCardsLibrary.PlayerNamespace;
 
-namespace BattleCards;
+namespace BattleCardsLibrary;
 public class Game //Asumir que la informacion me va a entrar po alguna via, tu solo vas a trabajar con ella.Olvidate de por donde entre.
 {
     public static bool InterfaceUpdated { get; set; }
@@ -118,17 +119,17 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
                 //fase debe ser batalla, cartas no pueden ser nulas,la carta debe pertenecer al jugador cuyo turno se juega y la victima debe ser un monstruo. 
                 if (CurrentPhase == Phase.BattlePhase && card1 != null && card2 != null && card2.Type == CardType.Monster && card1.Owner.Number == CurrentPlayer)//la interfaz es quien comprueba que sea humano
                 {
-                    Attack(card1, card2 as MonsterCard, card1.Attack.Evaluate(card1, card2));
+                    Attack(card1, card2 as MonsterCard, card1.Attack.Evaluate(card1, card2 as MonsterCard));
                 }
                 break;
             case ActionsByPlayer.Heal:
                 if (CurrentPhase == Phase.BattlePhase && card1 != null && card2 != null && card2.Type == CardType.Monster && card1.Owner.Number == CurrentPlayer)
                 {
-                    Heal(card1, card2 as MonsterCard, card1.Heal.Evaluate(card1, card2));
+                    Heal(card1, card2 as MonsterCard, card1.Heal.Evaluate(card1, card2 as MonsterCard));
                 }
                 break;
             case ActionsByPlayer.DirectAttack:
-                if (CurrentPhase == Phase.BattlePhase && card1.Owner.Number == CurrentPlayer)
+                if (CurrentPhase == Phase.BattlePhase && card1 != null && card1.Owner.Number == CurrentPlayer)
                 {
                     DirectAttack(card1);
 
@@ -197,7 +198,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
     {
         List<Card> answer = new List<Card>();
         string[] path = Directory.GetFiles(@"..\CardLibrary");
-        CardCreator cardCreator = new CardCreator();
+        CardCreator cardCreator = CardCreator.Instance;
         foreach (var indivpath in path)
         {
             string[] text = File.ReadAllText(indivpath).Split("\r\n");

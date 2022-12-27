@@ -35,16 +35,17 @@
             // 
             // card_exp
             // 
-            this.card_exp.Location = new System.Drawing.Point(33, 36);
+            this.card_exp.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.card_exp.Location = new System.Drawing.Point(38, 36);
             this.card_exp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.card_exp.Multiline = true;
             this.card_exp.Name = "card_exp";
-            this.card_exp.Size = new System.Drawing.Size(812, 465);
+            this.card_exp.Size = new System.Drawing.Size(1005, 573);
             this.card_exp.TabIndex = 0;
             // 
             // next_bt
             // 
-            this.next_bt.Location = new System.Drawing.Point(741, 536);
+            this.next_bt.Location = new System.Drawing.Point(953, 643);
             this.next_bt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.next_bt.Name = "next_bt";
             this.next_bt.Size = new System.Drawing.Size(104, 58);
@@ -55,7 +56,7 @@
             // 
             // previous_bt
             // 
-            this.previous_bt.Location = new System.Drawing.Point(33, 536);
+            this.previous_bt.Location = new System.Drawing.Point(23, 643);
             this.previous_bt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.previous_bt.Name = "previous_bt";
             this.previous_bt.Size = new System.Drawing.Size(104, 58);
@@ -68,7 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 609);
+            this.ClientSize = new System.Drawing.Size(1082, 729);
             this.Controls.Add(this.previous_bt);
             this.Controls.Add(this.next_bt);
             this.Controls.Add(this.card_exp);

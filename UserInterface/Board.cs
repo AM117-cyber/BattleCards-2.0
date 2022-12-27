@@ -1,11 +1,7 @@
-﻿using static Utils.Utils;
-using BattleCards;
-using BattleCards.Cards;
-using BattleCards.ExecuteActions;
-using System.Windows.Forms;
-using System.Configuration;
-using WindowsFormsApp1;
-using System.IO;
+﻿using BattleCardsLibrary.Utils;
+using BattleCardsLibrary;
+using BattleCardsLibrary.Cards;
+using BattleCardsLibrary.PlayerNamespace;
 
 namespace WindowsFormsApp1
 {
@@ -14,12 +10,15 @@ namespace WindowsFormsApp1
         private Card CurrentCard = null;
         public bool isAttacking = false;
         public bool isHealing = false;
+        private ToolTip toolTip = new ToolTip();
         private Form startForm { get; set; }
         public Board(Form previous)
         {
             InitializeComponent();
             startForm = previous;
             UpdateGameForVirtualTurn();
+            Player1_name_label.Text = Game.Player1.Name;
+            Player2_name_label.Text = Game.Player2.Name;
             UpdateHand(1);
             UpdateHand(2);
 
@@ -79,12 +78,23 @@ namespace WindowsFormsApp1
         }
         private void ProcessCardClick(object sender, EventArgs e)
         {
+            if (sender is not Panel)
+            {
+                sender = ((Control)sender).Parent;
+            }
+            var panel = ((Panel)sender);
+            //panel.BorderStyle = BorderStyle.FixedSingle;
+            //panel.Paint += Panel_Paint;
+            //panel.Invalidate();
+
             //si el turno no es de un jugador humano el click no es valido
             if (!(Game.GetCurrentPlayer().Type == PlayerType.Human))
             {
                 return;
             }
+
             Card targetCard = GetCard(sender);
+
             if (isAttacking)
             {
                 isAttacking = false;
@@ -108,6 +118,28 @@ namespace WindowsFormsApp1
             }
             CurrentCard = targetCard;
         }
+
+        //private void Panel_Paint(object? sender, PaintEventArgs e)
+        //{
+        //    Color color = Color.DarkBlue;
+        //    ButtonBorderStyle buttonStyle = ButtonBorderStyle.Solid;
+        //    int thickness = 4;
+
+        //    ControlPaint.DrawBorder(e.Graphics,
+        //                            ((Panel)sender).ClientRectangle,
+        //                            color,
+        //                            thickness,
+        //                            buttonStyle,
+        //                            color,
+        //                            thickness,
+        //                            buttonStyle,
+        //                            color,
+        //                            thickness,
+        //                            buttonStyle,
+        //                            color,
+        //                            thickness,
+        //                            buttonStyle);
+        //}
 
         private Card GetCard(object sender)
         {
@@ -246,6 +278,17 @@ namespace WindowsFormsApp1
             List<Card> listOfCards = new List<Card>();
             string nameOfCardPanel = string.Empty;
             List <Panel> CardsOnPanel = this.panel1.Controls.OfType<Panel>().ToList();
+            foreach (var panel in CardsOnPanel)
+            {
+                foreach (Control child in panel.Controls)
+                {
+                    if (child is not Button)
+                    {
+                        child.Click -= ProcessCardClick;
+                        child.Click += ProcessCardClick;
+                    }
+                }
+            }
             if (player == 1)
             {
                listOfCards = boardOrHand == 'C' ? Game.Player1.CardsOnBoard : Game.Player1.Hand;
@@ -283,6 +326,7 @@ namespace WindowsFormsApp1
         {
             IEnumerable<Label> CardPropertiesAsLabels = panel.Controls.OfType<Label>();
             Dictionary<string, string> propertyRelator = SetDictionary(card);
+            
             foreach (var label in CardPropertiesAsLabels)
             {
                 if (label.Name[0] != 'l')
@@ -292,7 +336,11 @@ namespace WindowsFormsApp1
                 }
                 label.Visible = true;
                 
+                toolTip.SetToolTip(label, card.Description);    
             }
+
+
+            toolTip.SetToolTip(panel, card.Description);
         }
         private Dictionary<string, string> SetDictionary(Card card)
         {
@@ -316,7 +364,9 @@ namespace WindowsFormsApp1
                         foreach (var label in CardPropertiesAsLabels)
                         {
                             label.Visible = false;
+                            toolTip.SetToolTip(label, null);
                         }
+                        toolTip.SetToolTip(panel, null);
                     }
                 }
             }

@@ -1,16 +1,11 @@
-using static Utils.Utils;
-namespace BattleCards.Cards;
+using BattleCardsLibrary.Utils;
+namespace BattleCardsLibrary.Cards;
 public class SpellCard : Card
 {
     public int LifeTime { get; set; }
 
-    public SpellCard(Dictionary<AllCardProperties, string> CardProperties) : base(CardProperties)
+    public SpellCard(Dictionary<AllCardProperties, string> CardProperties, string[] description) : base(CardProperties, description)
     {
-        int value;
-        if (!Int32.TryParse(CardProperties[AllCardProperties.LifeTime], out value))
-        {
-            throw new Exception("The value corresponding to lifetime property isn't a number.");
-        }
-        LifeTime = value;
+        this.LifeTime = (Int32)CheckIfValueIsNumber(AllCardProperties.LifeTime, CardProperties);
     }
 }

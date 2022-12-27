@@ -1,6 +1,6 @@
-﻿using BattleCards.Cards;
+﻿using BattleCardsLibrary.Cards;
 
-namespace BattleCards
+namespace BattleCardsLibrary
 {
     public class ActionReceiver
     {

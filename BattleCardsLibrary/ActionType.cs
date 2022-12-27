@@ -1,4 +1,4 @@
-﻿namespace BattleCards
+﻿namespace BattleCardsLibrary
 {
     public enum ActionType
     {

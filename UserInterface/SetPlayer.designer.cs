@@ -67,6 +67,7 @@
             this.name_textBox.Name = "name_textBox";
             this.name_textBox.Size = new System.Drawing.Size(133, 31);
             this.name_textBox.TabIndex = 2;
+            this.name_textBox.Text = "Player1";
             // 
             // label3
             // 
@@ -80,6 +81,7 @@
             // human_rb
             // 
             this.human_rb.AutoSize = true;
+            this.human_rb.Checked = true;
             this.human_rb.Location = new System.Drawing.Point(367, 261);
             this.human_rb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.human_rb.Name = "human_rb";
@@ -97,7 +99,6 @@
             this.virtual_player_rb.Name = "virtual_player_rb";
             this.virtual_player_rb.Size = new System.Drawing.Size(139, 29);
             this.virtual_player_rb.TabIndex = 5;
-            this.virtual_player_rb.TabStop = true;
             this.virtual_player_rb.Text = "Virtual Player";
             this.virtual_player_rb.UseVisualStyleBackColor = true;
             this.virtual_player_rb.CheckedChanged += new System.EventHandler(this.virtual_player_rb_CheckedChanged);
@@ -120,7 +121,6 @@
             this.medium_rb.Name = "medium_rb";
             this.medium_rb.Size = new System.Drawing.Size(103, 29);
             this.medium_rb.TabIndex = 8;
-            this.medium_rb.TabStop = true;
             this.medium_rb.Text = "Medium";
             this.medium_rb.UseVisualStyleBackColor = true;
             this.medium_rb.Visible = false;
@@ -133,7 +133,6 @@
             this.easy_rb.Name = "easy_rb";
             this.easy_rb.Size = new System.Drawing.Size(72, 29);
             this.easy_rb.TabIndex = 7;
-            this.easy_rb.TabStop = true;
             this.easy_rb.Text = "Easy";
             this.easy_rb.UseVisualStyleBackColor = true;
             this.easy_rb.Visible = false;

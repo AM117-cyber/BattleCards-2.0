@@ -1,6 +1,5 @@
 Type: Spell
 LifeTime: 1
-Armour: 0
 ManaCost: 5
 Damage: 50
 Name: Bombardo

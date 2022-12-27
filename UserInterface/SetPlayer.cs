@@ -1,5 +1,6 @@
-﻿using static Utils.Utils;
-using BattleCards;
+﻿using BattleCardsLibrary.Utils;
+using BattleCardsLibrary;
+using BattleCardsLibrary.PlayerNamespace;
 
 namespace WindowsFormsApp1
 {
@@ -40,7 +41,8 @@ namespace WindowsFormsApp1
             }
 
             firstPlayer = new UIPlayer(name_textBox.Text, playerType);
-            
+            label1.Text = "Player 2";
+            name_textBox.Text = "Player2";
         }
 
         private void previous_bt_Click(object sender, EventArgs e)

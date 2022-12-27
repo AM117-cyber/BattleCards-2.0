@@ -1,5 +1,5 @@
-﻿using static Utils.Utils;
-namespace BattleCards
+﻿using BattleCardsLibrary.Utils;
+namespace BattleCardsLibrary.PlayerNamespace
 {
     public class UIPlayer
     {

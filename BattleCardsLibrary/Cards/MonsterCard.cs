@@ -1,21 +1,17 @@
 using static System.Net.Mime.MediaTypeNames;
-using static Utils.Utils;
-namespace BattleCards.Cards;
+using BattleCardsLibrary.Utils;
+using BattleCardsLibrary.Cards.CardEvaluator;
+
+namespace BattleCardsLibrary.Cards;
 public class MonsterCard : Card
 {
-    public double HealthPoints { get; private set; }
-    public double OnGameHealth { get; set; }
+    
+    public IEvaluate Defend { get; set; }
 
-    public MonsterCard(Dictionary<AllCardProperties, string> CardProperties) : base(CardProperties)
+    public MonsterCard(Dictionary<AllCardProperties, string> CardProperties, string[] description) : base(CardProperties,description)
     {
-        int value;
-        if (!Int32.TryParse(CardProperties[AllCardProperties.HealthPoints], out value))
-        {
-            throw new Exception("The value corresponding to healthpoints property isn't a number.");
-        }
-
-        HealthPoints = value;
-        OnGameHealth = HealthPoints;
+        
+        this.Defend = GetExpressionOrDefaultValueAsConstant(AllCardProperties.Defend, CardProperties);
     }
 
 }

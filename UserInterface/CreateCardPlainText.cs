@@ -1,6 +1,7 @@
-﻿using BattleCards.Cards;
-using BattleCardsLibrary.Cards;
-using System.IO;
+﻿using BattleCardsLibrary;
+using BattleCardsLibrary.Cards.CardDeveloper;
+using BattleCardsLibrary.Utils;
+using UserInterface;
 
 namespace WindowsFormsApp1
 {
@@ -14,13 +15,25 @@ namespace WindowsFormsApp1
         }
         private void next_bt_Click(object sender, EventArgs e)
         {
-            ICardValidator cardValidator = new CardValidatorForPlainText(new DataProcessor(this.card_exp.Text.Split("\r\n")), new CardCreator());
-            if (cardValidator.CheckIfCardIsValid())
+            ICardValidator cardValidator = new CardValidator(new DataProcessor(this.card_exp.Text.Split("\r\n")), CardCreator.Instance);
+
+            ValidationResponse validationResponse = cardValidator.ValidateCard();
+
+            Helper.ShowMessage(validationResponse);
+
+            if (validationResponse.ValidationResult == ValidationResult.Ok)
             {
                 SaveCard(cardValidator.CardDefinition, cardValidator.Card.Name);
                 previousForm.Show();
                 Hide();
             }
+
+            //if (message != string.Empty)
+            //{
+            //    var errorForm = new ErrorCreatingCard(message);
+            //    //var errorForm = new ErrorCreatingCard(except.Message == "Index was outside the bounds of the array." ? "Non valid card" : except.Message);
+            //    errorForm.ShowDialog();
+            //}
 
         }
 
@@ -43,43 +56,17 @@ namespace WindowsFormsApp1
             }
         }
 
-        public class CardValidatorForPlainText : ICardValidator
-        {
-            public string[] CardDefinition { get; set; }
-            public Card Card { get; set; }
-
-            public ICardCreatorSource Source { get; }
-
-            public ICardCreator CardCreator { get; }
-
-            public CardValidatorForPlainText(ICardCreatorSource source, ICardCreator cardCreator)
-            {
-                this.Source = source;
-                this.CardCreator = cardCreator;
-
-            }
-            public bool CheckIfCardIsValid()
-            {
-                try
-                {
-                    this.CardDefinition = Source.GetCardDefinition();
-                    this.Card = CardCreator.CreateCard(CardDefinition);//
-                }
-                catch (Exception except)
-                {
-
-                    var errorForm = new ErrorCreatingCard(except.Message == "Index was outside the bounds of the array." ? "Non valid card" : except.Message);
-
-                    errorForm.ShowDialog();
-                    return false;
-                }
-                return true;
-            }
-        }
-        private void SaveCard(string[] cardDefinition, string nameOfCard)
+private void SaveCard(string[] cardDefinition, string nameOfCard)
         {
             string title = nameOfCard;
             string path = @"..\CardLibrary\" + title + ".txt";//D:\BattleCards\BattleCardsLibrary
+            string contentOfTxT = GetCardDescription(cardDefinition);
+             File.WriteAllText(path, contentOfTxT.TrimEnd());
+            //File.WriteAllText(path, this.card_exp.Text);
+        }
+
+        public string GetCardDescription(string[] cardDefinition)
+        {
             string contentOfTxT = string.Empty;
             for (int i = 0; i < cardDefinition.Length; i++)
             {
@@ -89,9 +76,9 @@ namespace WindowsFormsApp1
                 }
                 contentOfTxT += cardDefinition[i++] + ": " + cardDefinition[i] + "\r\n";
             }
-            // File.WriteAllText(path, contentOfTxT.TrimEnd());
-            File.WriteAllText(path, this.card_exp.Text);
+            return contentOfTxT;
         }
+        
 
         private void previous_bt_Click(object sender, EventArgs e)
         {

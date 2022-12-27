@@ -1,10 +1,8 @@
-﻿using BattleCards;
-using BattleCards.Cards;
-using BattleCardsLibrary.Cards;
-using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using System.Runtime.CompilerServices;
-using System.Text;
+﻿using BattleCardsLibrary;
+using BattleCardsLibrary.Cards.CardDeveloper;
+using BattleCardsLibrary.Utils;
+using BattleCardsLibrary.Exceptions;
+using UserInterface;
 
 namespace WindowsFormsApp1
 {
@@ -21,8 +19,14 @@ namespace WindowsFormsApp1
         private void next_bt_Click(object sender, EventArgs e)
         {
             //Gather all data and call method to evaluate expression
-            ICardValidator cardValidator = new CardValidatorForUIFriendly(new DataProcessor(this.panel1.Controls.OfType<TextBox>(), monster_card_rb.Checked, spell_card_rb.Checked), new CardCreator());
-            if (cardValidator.CheckIfCardIsValid())
+            ICardCreatorSource cardSource = new DataProcessor(this.panel1.Controls.OfType<TextBox>(), monster_card_rb.Checked, spell_card_rb.Checked);
+            ICardValidator cardValidator = new CardValidator(cardSource, CardCreator.Instance);
+
+            ValidationResponse validationResponse = cardValidator.ValidateCard();
+
+            Helper.ShowMessage(validationResponse);
+             
+            if (validationResponse.ValidationResult == ValidationResult.Ok)
             {
                 SaveCard(cardValidator.CardDefinition, cardValidator.Card.Name);
                 previousForm.Show();
@@ -48,7 +52,7 @@ namespace WindowsFormsApp1
                 if (!Monster && !Spell)
                 {
                     //show error because you need to choose at least one card type.
-                    throw new Exception("You must select a valid card type.");
+                    throw new InvalidCardTypeException("You must select a valid card type.");
                 }
                 else
                 {
@@ -81,41 +85,7 @@ namespace WindowsFormsApp1
             return sb.ToString();*/
 
         }
-        public class CardValidatorForUIFriendly : ICardValidator
-        {
-            public string[] CardDefinition { get; set; }
-            public Card Card { get; set; }
 
-            public ICardCreatorSource Source { get; }
-
-            public ICardCreator CardCreator { get; }
-
-            public CardValidatorForUIFriendly(ICardCreatorSource source, ICardCreator cardCreator)
-            {
-                this.Source = source;
-                this.CardCreator = cardCreator;
-
-            }
-            public bool CheckIfCardIsValid()
-            {
-                try
-                {
-                    this.CardDefinition = Source.GetCardDefinition();
-                    this.Card = CardCreator.CreateCard(CardDefinition);//
-                }
-                catch (Exception except)
-                {
-
-                    var errorForm = new ErrorCreatingCard(except.Message == "Index was outside the bounds of the array." ? "Non valid card" : except.Message);
-
-                    errorForm.ShowDialog();
-                    return false;
-                }
-                return true;
-            }
-
-
-        }
 
         private void SaveCard(string[] cardDefinition, string nameOfCard)//poner junto a CardCreator
         {

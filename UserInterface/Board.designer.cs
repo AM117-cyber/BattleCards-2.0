@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Player1_name_label = new System.Windows.Forms.Label();
+            this.Player2_name_label = new System.Windows.Forms.Label();
             this.current_player_label = new System.Windows.Forms.Label();
             this.turn_of = new System.Windows.Forms.Label();
             this.virtual_player_play_button = new System.Windows.Forms.Button();
@@ -275,6 +277,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Player1_name_label);
+            this.panel1.Controls.Add(this.Player2_name_label);
             this.panel1.Controls.Add(this.current_player_label);
             this.panel1.Controls.Add(this.turn_of);
             this.panel1.Controls.Add(this.virtual_player_play_button);
@@ -315,11 +319,33 @@
             this.panel1.Size = new System.Drawing.Size(1540, 1091);
             this.panel1.TabIndex = 0;
             // 
+            // Player1_name_label
+            // 
+            this.Player1_name_label.AutoSize = true;
+            this.Player1_name_label.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Player1_name_label.ForeColor = System.Drawing.Color.DarkViolet;
+            this.Player1_name_label.Location = new System.Drawing.Point(1047, 935);
+            this.Player1_name_label.Name = "Player1_name_label";
+            this.Player1_name_label.Size = new System.Drawing.Size(76, 30);
+            this.Player1_name_label.TabIndex = 30;
+            this.Player1_name_label.Text = "label3";
+            // 
+            // Player2_name_label
+            // 
+            this.Player2_name_label.AutoSize = true;
+            this.Player2_name_label.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Player2_name_label.ForeColor = System.Drawing.Color.Red;
+            this.Player2_name_label.Location = new System.Drawing.Point(1068, 20);
+            this.Player2_name_label.Name = "Player2_name_label";
+            this.Player2_name_label.Size = new System.Drawing.Size(76, 30);
+            this.Player2_name_label.TabIndex = 29;
+            this.Player2_name_label.Text = "label2";
+            // 
             // current_player_label
             // 
             this.current_player_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.current_player_label.ForeColor = System.Drawing.Color.Blue;
-            this.current_player_label.Location = new System.Drawing.Point(117, 584);
+            this.current_player_label.Location = new System.Drawing.Point(141, 584);
             this.current_player_label.Name = "current_player_label";
             this.current_player_label.Size = new System.Drawing.Size(148, 36);
             this.current_player_label.TabIndex = 27;
@@ -329,7 +355,7 @@
             // 
             this.turn_of.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.turn_of.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.turn_of.Location = new System.Drawing.Point(26, 584);
+            this.turn_of.Location = new System.Drawing.Point(54, 584);
             this.turn_of.Name = "turn_of";
             this.turn_of.Size = new System.Drawing.Size(104, 36);
             this.turn_of.TabIndex = 28;
@@ -1436,6 +1462,7 @@
             // 
             // cost_P2_H5
             // 
+            this.cost_P2_H5.BackColor = System.Drawing.Color.Transparent;
             this.cost_P2_H5.Location = new System.Drawing.Point(90, 174);
             this.cost_P2_H5.Name = "cost_P2_H5";
             this.cost_P2_H5.Size = new System.Drawing.Size(44, 25);
@@ -1443,6 +1470,7 @@
             // 
             // label102
             // 
+            this.label102.BackColor = System.Drawing.Color.Transparent;
             this.label102.Location = new System.Drawing.Point(3, 174);
             this.label102.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label102.Name = "label102";
@@ -1453,6 +1481,7 @@
             // 
             // hp_P2_H5
             // 
+            this.hp_P2_H5.BackColor = System.Drawing.Color.Transparent;
             this.hp_P2_H5.Location = new System.Drawing.Point(78, 132);
             this.hp_P2_H5.Name = "hp_P2_H5";
             this.hp_P2_H5.Size = new System.Drawing.Size(65, 25);
@@ -1460,6 +1489,7 @@
             // 
             // label104
             // 
+            this.label104.BackColor = System.Drawing.Color.Transparent;
             this.label104.Location = new System.Drawing.Point(3, 132);
             this.label104.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label104.Name = "label104";
@@ -1470,13 +1500,17 @@
             // 
             // name_P2_H5
             // 
+            this.name_P2_H5.BackColor = System.Drawing.Color.Transparent;
             this.name_P2_H5.Location = new System.Drawing.Point(-1, 21);
+            this.name_P2_H5.Margin = new System.Windows.Forms.Padding(0);
             this.name_P2_H5.Name = "name_P2_H5";
             this.name_P2_H5.Size = new System.Drawing.Size(144, 25);
             this.name_P2_H5.TabIndex = 6;
+            this.name_P2_H5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // damage_P2_H5
             // 
+            this.damage_P2_H5.BackColor = System.Drawing.Color.Transparent;
             this.damage_P2_H5.Location = new System.Drawing.Point(90, 94);
             this.damage_P2_H5.Name = "damage_P2_H5";
             this.damage_P2_H5.Size = new System.Drawing.Size(44, 25);
@@ -1484,6 +1518,7 @@
             // 
             // label108
             // 
+            this.label108.BackColor = System.Drawing.Color.Transparent;
             this.label108.Location = new System.Drawing.Point(3, 94);
             this.label108.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label108.Name = "label108";
@@ -1494,6 +1529,7 @@
             // 
             // type_P2_H5
             // 
+            this.type_P2_H5.BackColor = System.Drawing.Color.Transparent;
             this.type_P2_H5.Location = new System.Drawing.Point(51, 58);
             this.type_P2_H5.Name = "type_P2_H5";
             this.type_P2_H5.Size = new System.Drawing.Size(83, 25);
@@ -1501,6 +1537,7 @@
             // 
             // label110
             // 
+            this.label110.BackColor = System.Drawing.Color.Transparent;
             this.label110.Location = new System.Drawing.Point(3, 58);
             this.label110.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label110.Name = "label110";
@@ -2739,6 +2776,8 @@
         private Button virtual_player_play_button;
         private Label turn_of;
         private Label current_player_label;
+        private Label Player1_name_label;
+        private Label Player2_name_label;
     }
 }
 

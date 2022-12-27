@@ -1,7 +1,8 @@
-using BattleCards.Cards;
-using static Utils.Utils;
+using BattleCardsLibrary.Cards;
+using BattleCardsLibrary.PlayerNamespace;
+using BattleCardsLibrary.Utils;
 
-namespace BattleCards.ExecuteActions;
+namespace BattleCardsLibrary.ExecuteActions;
 
 //se evalua la expresion y se le pasa evaluada(como double) al metodo de la accion
 public static class ExecuteAction
@@ -10,8 +11,8 @@ public static class ExecuteAction
     {
         if (onCard == null || enemyCard == null || onCard.Used || enemyCard.Type != CardType.Monster) return;
 
-        double DefenseValue = Defend(enemyCard as MonsterCard, onCard);
-        damage -= DefenseValue;
+        double defenseValue = Defend(enemyCard as MonsterCard, onCard);
+        damage -= defenseValue;
         if (damage < 0)
         {
             if (onCard.Type == CardType.Monster)
@@ -36,7 +37,7 @@ public static class ExecuteAction
 
     }
 
-    public static double Defend(Card onCard, Card enemyCard)//devuelve el numero que se le va a restar al damage
+    public static double Defend(MonsterCard onCard, Card enemyCard)//devuelve el numero que se le va a restar al damage
     {
         double deffense = onCard.Defend.Evaluate(onCard, enemyCard);
         return deffense;

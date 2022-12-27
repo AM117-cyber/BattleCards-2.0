@@ -43,7 +43,6 @@ C:\Users\Melissa\Desktop\BattleCards\UserInterface\obj\Debug\net6.0-windows\Wind
 C:\Users\Melissa\Desktop\BattleCards\UserInterface\obj\Debug\net6.0-windows\WindowsFormsApp1.CreateCardPage.resources
 C:\Users\Melissa\Desktop\BattleCards\UserInterface\obj\Debug\net6.0-windows\WindowsFormsApp1.CreateCardPlainText.resources
 C:\Users\Melissa\Desktop\BattleCards\UserInterface\obj\Debug\net6.0-windows\WindowsFormsApp1.ErrorCreatingCard.resources
-C:\Users\Melissa\Desktop\BattleCards\UserInterface\obj\Debug\net6.0-windows\HelloWorld.Form1.resources
 C:\Users\Melissa\Desktop\BattleCards\UserInterface\obj\Debug\net6.0-windows\WindowsFormsApp1.SetPlayer.resources
 C:\Users\Melissa\Desktop\BattleCards\UserInterface\obj\Debug\net6.0-windows\WindowsFormsApp1.StartPage.resources
 C:\Users\Melissa\Desktop\BattleCards\UserInterface\obj\Debug\net6.0-windows\UserInterface.csproj.GenerateResource.cache
@@ -75,3 +74,4 @@ D:\BattleCards\UserInterface\obj\Debug\net6.0-windows\UserInterface.csproj.CopyC
 D:\BattleCards\UserInterface\obj\Debug\net6.0-windows\UserInterface.genruntimeconfig.cache
 D:\BattleCards\UserInterface\obj\Debug\net6.0-windows\ref\UserInterface.dll
 D:\BattleCards\UserInterface\obj\Debug\net6.0-windows\WindowsFormsApp1.GameIsOver.resources
+C:\Users\Melissa\Desktop\BattleCards\UserInterface\obj\Debug\net6.0-windows\WindowsFormsApp1.GameIsOver.resources
