@@ -6,7 +6,7 @@ namespace BattleCardsLibrary.PlayerNamespace;
 public class Player
 {
     
-    public double Health { get; protected set; }
+    public double Health { get; set; }
     //public List<Card> Graveyard { get; set; }
     public List<ICard> CardsOnBoard { get; }
     public double Mana { get; set; }
@@ -31,18 +31,23 @@ public class Player
         Hand = new List<ICard>();
         CardsOnBoard = new List<ICard>();
     }
-
-    public void SetHealth(double value)
+    
+    public void FinishTurn()
     {
-        if (value < 0)
+        this.MarkCardsAsUnused();
+        this.Mana = (this.Mana + 5) < 20 ? this.Mana + 5 : this.Mana = 20;
+    }
+    
+    public bool NoMonstersOnBoard()
+    {
+        foreach (var card in this.CardsOnBoard)
         {
-            this.Health = 0;
+            if (card.Type == CardType.Monster)
+            {
+                return false;
+            }
         }
-        else
-        {
-            this.Health = value;
-        }
-
+        return true;
     }
     public void MarkCardsAsUnused()
     {
@@ -114,7 +119,10 @@ public class Player
         return answer;
     }
 
-
+    internal void StartTurn()
+    {
+        this.UpdateSpellsMana();
+    }
 }
 
 

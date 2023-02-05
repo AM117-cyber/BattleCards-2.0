@@ -217,7 +217,7 @@ namespace WindowsFormsApp1
             Player player = game.CurrentPlayer;
 
             game.CardActionReceiver(PlayerAction.DirectAttack, CurrentCard, CurrentCard,0);
-            UpdatePlayerLabels((player.Number == 1)? hp_of_Player1.Name : (hp_of_Player2.Name));
+            UpdatePlayerLabels((player.Number == 1)? hp_of_Player2.Name : (hp_of_Player1.Name));
             /* if (Game.CurrentPlayer == 1)
              {
                  UpdatePlayerLabels(hp_of_Player2.Name);

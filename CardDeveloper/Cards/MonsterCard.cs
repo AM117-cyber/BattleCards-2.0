@@ -32,30 +32,32 @@ public class MonsterCard : Card, IMonsterCard
         }
         return false;
     }
-    public void DefendFrom(ICard attackingCard, double attack)//solo los monstruos pueden ser atacados y por ende, solo ellos pueden defenderse
+    
+    public void ReceiveHealing(double healingPoints)
     {
+        this.CurrentHealth += healingPoints;
+    }
+    public double DefendFrom(ICard attackingCard, double attack)//solo los monstruos pueden ser atacados y por ende, solo ellos pueden defenderse
+    {
+        
         double defense = this.Defend.Evaluate(this, attackingCard);
         attack -= defense;
         if (attack < 0)
         {
-            if (attackingCard.Type == CardType.Monster)
-            {
-                (attackingCard as IMonsterCard).SetOnGameHealth(0);
-                attackingCard.Owner.CardsOnBoard.Remove(attackingCard);
-            }
+            return attack;
         }
         else
         {
             if (this.CurrentHealth <= attack)
             {
                 double damageForPlayer = attack - this.CurrentHealth;
-                this.Owner.SetHealth(this.Owner.Health - damageForPlayer);
+                this.Owner.Health -= damageForPlayer;
                 this.CurrentHealth = 0;
                 this.Owner.CardsOnBoard.Remove(this);
-                return;
+                
             }
             this.CurrentHealth -= attack;
         }
-       
+        return 0;
     }
 }
