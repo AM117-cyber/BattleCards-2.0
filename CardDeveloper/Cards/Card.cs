@@ -9,7 +9,7 @@ public abstract class Card : ICard
 {
     public string Description { get; }
 
-    static readonly Dictionary<AllCardProperties, AllCardProperties> ExtraPropertiesDefaultValue = SetValues();
+    readonly Dictionary<AllCardProperties, AllCardProperties> ExtraPropertiesDefaultValue = SetValues();
     public double ManaCost { get; }
     public CardType Type { get; }
     public Player? Owner { get; set; }

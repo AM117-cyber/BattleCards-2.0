@@ -10,7 +10,7 @@ namespace CardDeveloper;
 //la funcion del source es darle informacion alICardcreator
 public class CardCreator : ICardCreator
 {
-    private static CardCreator? cardCreator;
+    /*private static CardCreator? cardCreator;
 
     private CardCreator(){ }
 
@@ -20,6 +20,10 @@ public class CardCreator : ICardCreator
             cardCreator ??= new CardCreator();
             return cardCreator;
         }
+    }*/
+    public CardCreator()
+    {
+
     }
 
 
@@ -84,7 +88,7 @@ public class CardCreator : ICardCreator
                 return new SpellCard(CardProperties, CardDefinition);//because if theICardtype weren't valid an exception would have been thrown at the top.
         }
     }
-    private static Dictionary<AllCardProperties, string> SetDefaultValuesInSpecificDict(string cardType)
+    private Dictionary<AllCardProperties, string> SetDefaultValuesInSpecificDict(string cardType)
     {
         Dictionary<AllCardProperties, string> dictToReturn = new Dictionary<AllCardProperties, string>();
         dictToReturn[AllCardProperties.Type] = cardType;
@@ -99,11 +103,11 @@ public class CardCreator : ICardCreator
     }
 
 
-    public static List<ICard> GetAllCardsList()
+    public List<ICard> GetAllCardsList()
     {
 
         List<ICard> answer = new List<ICard>();
-        string[] path = Directory.GetFiles(@"..\CardLibrary");
+        string[] path = Directory.GetFiles(@"..\..\..\..\CardLibrary");
         foreach (var indivpath in path)
         {
             string[] text = File.ReadAllText(indivpath).Split("\r\n");
@@ -113,7 +117,7 @@ public class CardCreator : ICardCreator
                 processedTextAsString += ": " + item;
             }
             string[] textToCreateCard = processedTextAsString.Remove(0, 2).Split(": ");
-            answer.Add(CardCreator.Instance.CreateCard(textToCreateCard));
+            answer.Add(this.CreateCard(textToCreateCard));
 
         }
         return answer;

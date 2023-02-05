@@ -8,8 +8,8 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
 {
     private int currentTurn = 0;
     //public static bool InterfaceUpdated { get; set; }
-    public static List<ICard> AllCardsCreated { get; private set; }
-    public static bool EndGame = false;
+    public List<ICard> CardsCreated { get; private set; }
+    public bool GameOver = false;
     public Player CurrentPlayer => currentTurn % 2 == 0 ? Player1 : Player2;//it is declared when Game State is first updated
     public Player Player1 { get; set; }
     public Player Player2 { get; set; }
@@ -18,8 +18,8 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
 
     public Game(UIPlayer uiPlayer1, UIPlayer uiPlayer2, List<ICard> allCardsCreated)
     {
-        AllCardsCreated = allCardsCreated;
-        int amountOfCardsInDeck = AllCardsCreated.Count / 2;
+        CardsCreated = allCardsCreated;
+        int amountOfCardsInDeck = CardsCreated.Count / 2;
         if (GetFirstPlayerByDiceThrowing(uiPlayer1, uiPlayer2) == uiPlayer1)
         {
             Player1 = CreateAPlayerInstance(uiPlayer1, 1, amountOfCardsInDeck);//player1 starts the game
@@ -193,11 +193,11 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
 
         if (player.PlayerType == PlayerType.Human)
         {
-            return new Player(player.Name, GenerateRandomDeck(AllCardsCreated, amountOfCardsInDeck), number);//50
+            return new Player(player.Name, GenerateRandomDeck(CardsCreated, amountOfCardsInDeck), number);//50
         }
         else
         {
-            return new AIPlayerMedium(player.Name, GenerateRandomDeck(AllCardsCreated, amountOfCardsInDeck), number, this);
+            return new AIPlayerMedium(player.Name, GenerateRandomDeck(CardsCreated, amountOfCardsInDeck), number, this);
         }
     }
 

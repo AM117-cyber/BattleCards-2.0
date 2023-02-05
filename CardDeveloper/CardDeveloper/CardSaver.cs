@@ -9,7 +9,8 @@ namespace CardDeveloper;
 
 public class CardSaver:ICardSaver
 {
-    private static CardSaver cardSaver;
+    string Path = @"..\..\..\..\CardLibrary\";
+    /*private static CardSaver cardSaver;
 
     private CardSaver() { }
 
@@ -20,12 +21,15 @@ public class CardSaver:ICardSaver
             cardSaver ??= new CardSaver();
             return cardSaver;
         }
-    }
-    public void SaveCard(string CardDefinition, string CardName)
+    }*/
+    public CardSaver()
     {
-        string title = CardName;
-        string path = @"..\CardLibrary\" + title + ".txt";//D:\BattleCards\BattleCardsLibrary
-        File.WriteAllText(path, CardDefinition.TrimEnd());
+
+    }
+    public void SaveCard(string CardDefinition, string NameForTitle)
+    {
+        string pathToSaveCard = this.Path + NameForTitle + ".txt";//D:\BattleCards\BattleCardsLibrary
+        File.WriteAllText(pathToSaveCard, CardDefinition.TrimEnd());
         //File.WriteAllText(path, this.card_exp.Text);
     }
 }
