@@ -35,7 +35,8 @@ namespace WindowsFormsApp1
             {
                 //start new game
                 UIPlayer secondPlayer = new UIPlayer(name_textBox.Text, playerType);
-                var game = new Game(firstPlayer, secondPlayer, CardCreator.GetAllCardsList());
+                CardCreator cardCreator = new CardCreator();    
+                var game = new Game(firstPlayer, secondPlayer, cardCreator.GetAllCardsList());
                 var boardForm = new Board(previousForm, game);
                 boardForm.Show();
                 Hide();

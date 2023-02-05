@@ -1,5 +1,6 @@
 ﻿using BattleCardsLibrary;
 using BattleCardsLibrary.Utils;
+using CardDeveloper.Utils;
 
 namespace CardDeveloper.CardEvaluator
 {

@@ -1,0 +1,4 @@
+Type: Spell
+Attack: Add(OnCard(Damage), EnemyCard(Armour))
+Damage: 35
+Name: meme

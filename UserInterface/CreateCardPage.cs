@@ -20,7 +20,8 @@ namespace WindowsFormsApp1
         {
             //Gather all data and call method to evaluate expression
             ICardCreatorSource cardSource = new DataProcessorForFriendlyUI(this.panel1.Controls.OfType<TextBox>(), monster_card_rb.Checked, spell_card_rb.Checked);
-            ICardValidator cardValidator = new CardValidator(cardSource, CardCreator.Instance);
+            ICardCreator cardCreator = new CardCreator();
+            ICardValidator cardValidator = new CardValidator(cardSource, cardCreator);
 
             ValidationResponse validationResponse = cardValidator.ValidateCard();
 
@@ -28,7 +29,7 @@ namespace WindowsFormsApp1
              
             if (validationResponse.ValidationResult == ValidationResult.Ok)
             {
-                CardSaver.Instance.SaveCard(cardValidator.Card.Description, cardValidator.Card.Name);
+                new CardSaver().SaveCard(cardValidator.Card.Description, cardValidator.Card.Name);
                 previousForm.Show();
                 Hide();
             }

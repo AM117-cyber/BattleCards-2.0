@@ -7,7 +7,6 @@ namespace BattleCardsLibrary
     {
         public string Description { get; }
         public double ManaCost { get; }
-        public CardType Type { get; }
         public Player? Owner { get; set; }
         public bool Used { get;}
         public string Name { get; }
@@ -20,6 +19,6 @@ namespace BattleCardsLibrary
         public void AttackCard(IMonsterCard enemyCard);
         public void HealCard(IMonsterCard cardToHeal);
         public void DirectAttack(Player playerToAttack);
-        public void SetUsed(bool used);
+        public void MarkAsUnused();
     }
 }

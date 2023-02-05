@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleCardsLibrary.Utils
+namespace CardDeveloper.Utils
 {
-    public enum SpellCardValidProperties
+    public enum MonsterCardValidProperties
     {
         Damage,
-        LifeTime,
+        HealthPoints,
         ManaCost,
+        Armour,
         HealingPowers,
     }
 }

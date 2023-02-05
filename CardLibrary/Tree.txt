@@ -1,0 +1,4 @@
+Type: Monster
+Attack: OnCard(Damage)
+Damage: 4
+Name: Tree

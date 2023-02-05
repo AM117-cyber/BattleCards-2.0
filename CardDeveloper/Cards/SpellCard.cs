@@ -1,5 +1,7 @@
 using BattleCardsLibrary.Utils;
 using BattleCardsLibrary;
+using CardDeveloper.Utils;
+
 namespace CardDeveloper.Cards;
 public class SpellCard : Card, ISpellCard
 {
@@ -9,9 +11,9 @@ public class SpellCard : Card, ISpellCard
     {
         this.LifeTime = (int)CheckIfValueIsNumber(AllCardProperties.LifeTime, CardProperties);
     }
-    public void SetLifeTime(int lifeTime)
+    public void UpdateLifeTimeForTurn()
     {
-        this.LifeTime = lifeTime;
+        this.LifeTime --;
     }
    
 }

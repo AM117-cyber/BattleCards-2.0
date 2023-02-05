@@ -9,6 +9,6 @@ namespace BattleCardsLibrary
     public interface ISpellCard: ICard
     {
         public int LifeTime { get; }
-        public void SetLifeTime(int lifeTime);
+        public void UpdateLifeTimeForTurn();
     }
 }

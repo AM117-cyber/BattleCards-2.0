@@ -2,6 +2,7 @@
 using BattleCardsLibrary;
 using CardDeveloper.Cards;
 using BattleCardsLibrary.PlayerNamespace;
+using CardDeveloper.Utils;
 
 namespace WindowsFormsApp1
 {
@@ -250,7 +251,7 @@ namespace WindowsFormsApp1
             IEnumerable<Panel> CardsOnPanel = this.panel1.Controls.OfType<Panel>();
             for (int i = 0; i < player.CardsOnBoard.Count; i++)
             {
-                if (player.CardsOnBoard[i].Type == CardType.Spell)
+                if (player.CardsOnBoard[i] is ISpellCard)
                 {
                     string name = "card_P" + player.CardsOnBoard[i].Owner.Number + "_C" + (i+1);
                     foreach (var panel in CardsOnPanel)
@@ -353,9 +354,9 @@ namespace WindowsFormsApp1
         {
             Dictionary<string, string> answer = new Dictionary<string, string>();
             answer["name"] = card.Name; 
-            answer["type"] = card.Type.ToString();
+            answer["type"] = card is IMonsterCard?CardType.Monster.ToString(): CardType.Spell.ToString();
             answer["damage"] = card.Damage.ToString();
-            answer["hp"] = card.Type == CardType.Monster ? (card as MonsterCard).CurrentHealth.ToString() : (card as SpellCard).LifeTime.ToString();
+            answer["hp"] = card is IMonsterCard? (card as IMonsterCard).CurrentHealth.ToString() : (card as ISpellCard).LifeTime.ToString();
             answer["cost"] = card.ManaCost.ToString();
             answer["healing"] = card.HealingPowers.ToString();
             return answer;

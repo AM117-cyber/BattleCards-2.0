@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleCardsLibrary.Utils
+namespace CardDeveloper.Utils
 {
     public enum PlayerValidProperties
     {

@@ -42,7 +42,7 @@ public class Player
     {
         foreach (var card in this.CardsOnBoard)
         {
-            if (card.Type == CardType.Monster)
+            if (card is IMonsterCard)
             {
                 return false;
             }
@@ -53,7 +53,7 @@ public class Player
     {
         foreach (var card in CardsOnBoard)
         {
-            card.SetUsed(false);
+            card.MarkAsUnused();
         }
     }
     public void Shuffle()
@@ -92,7 +92,7 @@ public class Player
             }
         }
     }
-    public void UpdateSpellsMana()
+    public void UpdateSpellsLifeTime()
     {
         List<ISpellCard> spellCards = GetSpellCardsOnBoard();
         foreach (var card in spellCards)
@@ -102,7 +102,7 @@ public class Player
                 CardsOnBoard.Remove(card);
                 continue;
             }
-            card.SetLifeTime(card.LifeTime-1);
+            card.UpdateLifeTimeForTurn();
         }
     }
 
@@ -111,7 +111,7 @@ public class Player
         List<ISpellCard> answer = new List<ISpellCard>();
         foreach (var card in CardsOnBoard)
         {
-            if (card.Type == CardType.Spell)
+            if (card is ISpellCard)
             {
                 answer.Add((ISpellCard)card);
             }
@@ -121,7 +121,7 @@ public class Player
 
     internal void StartTurn()
     {
-        this.UpdateSpellsMana();
+        this.UpdateSpellsLifeTime();
     }
 }
 

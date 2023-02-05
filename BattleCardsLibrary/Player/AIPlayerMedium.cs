@@ -137,7 +137,7 @@ namespace BattleCardsLibrary.PlayerNamespace
             List<IMonsterCard> answer = new List<IMonsterCard>();
             foreach (var card in enemysCards)
             {
-                if (card.Type == CardType.Monster)
+                if (card is IMonsterCard)
                 {
                     answer.Add((IMonsterCard)card);
                 }

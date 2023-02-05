@@ -1,4 +1,4 @@
-﻿namespace BattleCardsLibrary.Utils
+﻿namespace CardDeveloper.Utils
 {
     public enum AllCardProperties
     {

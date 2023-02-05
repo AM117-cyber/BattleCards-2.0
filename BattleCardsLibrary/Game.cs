@@ -4,17 +4,17 @@ using BattleCardsLibrary.Utils;
 
 
 namespace BattleCardsLibrary;
-public class Game //Asumir que la informacion me va a entrar po alguna via, tu solo vas a trabajar con ella.Olvidate de por donde entre.
+public class Game 
 {
     private int currentTurn = 0;
     //public static bool InterfaceUpdated { get; set; }
-    public List<ICard> CardsCreated { get; private set; }
+    public List<ICard> CardsCreated { get; }
     public bool GameOver = false;
     public Player CurrentPlayer => currentTurn % 2 == 0 ? Player1 : Player2;//it is declared when Game State is first updated
-    public Player Player1 { get; set; }
-    public Player Player2 { get; set; }
+    public Player Player1 { get; }
+    public Player Player2 { get; }
     public Phase CurrentPhase { get; private set; }
-    //when you create a Card,first input is type and second is name
+    
 
     public Game(UIPlayer uiPlayer1, UIPlayer uiPlayer2, List<ICard> allCardsCreated)
     {
@@ -40,23 +40,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
         CurrentPhase = Phase.MainPhase;
     }
 
-    public void CheckAndChangePhaseAndCurrentPlayer()
-    {
-        if (CurrentPhase == Phase.MainPhase)
-        {
-            CurrentPhase = Phase.BattlePhase;
-        }
-        else
-        {
-            CurrentPlayer.FinishTurn();
-            ChangeTurn();
-            CurrentPlayer.StartTurn();
-        }
-    }
-    public void ChangeTurn()
-    {
-        currentTurn++;
-    }
+  
 
     public void CardActionReceiver(PlayerAction action, ICard onCard, ICard enemyCard, int playerNumber)
     {
@@ -114,6 +98,24 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
         }
 
     }
+    private void CheckAndChangePhaseAndCurrentPlayer()
+    {
+        if (CurrentPhase == Phase.MainPhase)
+        {
+            CurrentPhase = Phase.BattlePhase;
+        }
+        else
+        {
+            CurrentPlayer.FinishTurn();
+            ChangeTurn();
+            CurrentPlayer.StartTurn();
+        }
+    }
+    private void ChangeTurn()
+    {
+        currentTurn++;
+        CurrentPhase = Phase.MainPhase;
+    }
 
     private bool CanAttackDirectly(ICard onCard)
     {
@@ -122,12 +124,12 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
 
     private bool CanHeal(ICard onCard, ICard enemyCard)
     {
-        return CurrentPhase == Phase.BattlePhase && onCard != null && enemyCard != null && enemyCard.Type == CardType.Monster && onCard.Owner == CurrentPlayer;
+        return CurrentPhase == Phase.BattlePhase && onCard != null && enemyCard != null && enemyCard is IMonsterCard && onCard.Owner == CurrentPlayer;
     }
 
-    private bool CanAttack(ICard card1, ICard card2)
+    private bool CanAttack(ICard card1, ICard enemyCard)
     {
-        return CurrentPhase == Phase.BattlePhase && card1 != null && card2 != null && card2.Type == CardType.Monster && card1.Owner == CurrentPlayer;
+        return CurrentPhase == Phase.BattlePhase && card1 != null && enemyCard != null && enemyCard is IMonsterCard && card1.Owner == CurrentPlayer;
     }
 
     private bool CanInvoke(ICard card)
@@ -163,7 +165,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
     }
 
 
-    public static UIPlayer GetFirstPlayerByDiceThrowing(UIPlayer player1, UIPlayer player2)
+    public UIPlayer GetFirstPlayerByDiceThrowing(UIPlayer player1, UIPlayer player2)
     {
 
         bool playersAreSet = false;
@@ -199,7 +201,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
     }
 
 
-    public static List<ICard> GenerateRandomDeck(List<ICard> AllCardsCreated, int total)
+    public List<ICard> GenerateRandomDeck(List<ICard> AllCardsCreated, int total)
     {
 
         List<ICard> deck = new List<ICard>();

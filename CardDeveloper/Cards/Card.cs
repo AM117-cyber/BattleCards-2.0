@@ -3,6 +3,7 @@ using BattleCardsLibrary.PlayerNamespace;
 using BattleCardsLibrary.Utils;
 using CardDeveloper.CardEvaluator;
 using CardDeveloper.Exceptions;
+using CardDeveloper.Utils;
 
 namespace CardDeveloper.Cards;
 public abstract class Card : ICard
@@ -54,6 +55,7 @@ public abstract class Card : ICard
             double health = (this as IMonsterCard).CurrentHealth + defenseResidue;
             if (health <= 0)
             {
+                
                 (this as MonsterCard).CurrentHealth = 0;
                 this.Owner.CardsOnBoard.Remove(this);
             }
@@ -63,14 +65,18 @@ public abstract class Card : ICard
             }
 
         }
-        this.SetUsed(true); 
+        this.Used = true; 
     }
     
+    public void MarkAsUnused()
+    {
+        this.Used = false;
+    }
     public void DirectAttack(Player playerToAttack)
     {
         if (this.Used || !playerToAttack.NoMonstersOnBoard()) return;
         playerToAttack.Health -= this.Damage;
-        this.SetUsed(true);
+        this.Used = true;
     }
     
     public void HealCard(IMonsterCard cardToHeal)
@@ -78,11 +84,7 @@ public abstract class Card : ICard
         if (this.Used) return;
         double healingPoints = this.Heal.Evaluate(this, cardToHeal);
         cardToHeal.ReceiveHealing(healingPoints);
-        this.SetUsed(true);
-    }
-    public void SetUsed(bool used)
-    {
-        this.Used = used;
+        this.Used= true;
     }
 
     protected static double CheckIfValueIsNumber(AllCardProperties property, Dictionary<AllCardProperties, string> CardProperties)

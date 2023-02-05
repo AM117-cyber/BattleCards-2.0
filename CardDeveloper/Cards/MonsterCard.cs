@@ -1,5 +1,6 @@
 using BattleCardsLibrary;
 using BattleCardsLibrary.Utils;
+using CardDeveloper.Utils;
 
 namespace CardDeveloper.Cards;
 public class MonsterCard : Card, IMonsterCard
@@ -12,18 +13,6 @@ public class MonsterCard : Card, IMonsterCard
         this.Defend = GetExpressionOrDefaultValueAsConstant(AllCardProperties.Defend, CardProperties);
     }
 
-
-    public void SetOnGameHealth(double health)
-    {
-        if (health < this.MaxHealth)
-        {
-            this.CurrentHealth = health;
-        }
-        else
-        {
-            this.CurrentHealth = this.MaxHealth;
-        }
-    }
     public bool NeedsHealing()
     {
         if (this.CurrentHealth < this.MaxHealth)
@@ -35,7 +24,8 @@ public class MonsterCard : Card, IMonsterCard
     
     public void ReceiveHealing(double healingPoints)
     {
-        this.CurrentHealth += healingPoints;
+        double totalHealth = this.CurrentHealth + healingPoints;
+        this.CurrentHealth = totalHealth < this.MaxHealth? totalHealth : this.MaxHealth;    
     }
     public double DefendFrom(ICard attackingCard, double attack)//solo los monstruos pueden ser atacados y por ende, solo ellos pueden defenderse
     {
