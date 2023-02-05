@@ -1,5 +1,0 @@
-Type: Monster
-ManaCost: 10
-HealthPoints: 200
-Damage: 200
-Name: Thunderbird

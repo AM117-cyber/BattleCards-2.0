@@ -1,5 +1,0 @@
-Type: Spell
-LifeTime: 3
-ManaCost: 7
-Damage: 40
-Name: Conjunctivitis curse

@@ -1,8 +1,0 @@
-Type: Monster
-Armour: 80
-HealingPowers: 50
-Heal: IfElse(<(OnPlayer(Health),(500)),Multiply(OnCard(HealingPowers),(5)),OnCard(HealingPowers))
-ManaCost: 10
-HealthPoints: 200
-Damage: 100
-Name: Phoenix

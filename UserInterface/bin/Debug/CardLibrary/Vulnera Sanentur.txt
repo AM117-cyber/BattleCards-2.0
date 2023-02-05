@@ -1,5 +1,0 @@
-Type: Spell
-LifeTime: 5
-Heal: EnemyCard(HealthPoints)
-ManaCost: 10
-Name: Vulnera Sanentur

@@ -1,7 +1,0 @@
-Type: Monster
-Armour: 5
-HealingPowers: 10
-ManaCost: 4
-HealthPoints: 80
-Damage: 10
-Name: Thestral

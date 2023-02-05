@@ -1,5 +1,0 @@
-Type: Spell
-LifeTime: 1
-ManaCost: 5
-Damage: 50
-Name: Bombardo

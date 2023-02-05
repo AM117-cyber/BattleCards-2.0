@@ -1,5 +1,0 @@
-Type: Spell
-LifeTime: 1
-ManaCost: 4
-Damage: 10
-Name: Confundo

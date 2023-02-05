@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattleCardsLibrary", "Battl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserInterface", "UserInterface\UserInterface.csproj", "{C7ABBFFB-E602-4588-846E-A1D9FB75ACA0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardDeveloper", "CardDeveloper1\CardDeveloper.csproj", "{A4A13291-3627-4146-9AEC-200163E09426}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardDeveloper", "CardDeveloper\CardDeveloper.csproj", "{A4A13291-3627-4146-9AEC-200163E09426}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

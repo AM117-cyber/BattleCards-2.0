@@ -1,6 +1,0 @@
-Type: Spell
-LifeTime: 2
-HealingPowers: 0
-Attack: Add(EnemyCard(Damage), EnemyCard(Armour))
-ManaCost: 6
-Name: Foe Glass
