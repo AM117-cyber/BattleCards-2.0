@@ -1,6 +1,6 @@
 ﻿using BattleCardsLibrary.Utils;
 
-namespace CardDeveloper1
+namespace CardDeveloper
 {
     public class ValidationResponse
     {

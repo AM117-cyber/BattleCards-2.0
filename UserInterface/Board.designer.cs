@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.Player1_name_label = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.Player2_name_label = new System.Windows.Forms.Label();
             this.current_player_label = new System.Windows.Forms.Label();
             this.turn_of = new System.Windows.Forms.Label();
@@ -50,6 +49,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.attack_button = new System.Windows.Forms.Button();
             this.card_P1_C5 = new System.Windows.Forms.Panel();
+            this.healing_P1_C5 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.cost_P1_C5 = new System.Windows.Forms.Label();
             this.label152 = new System.Windows.Forms.Label();
             this.hp_P1_C5 = new System.Windows.Forms.Label();
@@ -60,6 +61,8 @@
             this.type_P1_C5 = new System.Windows.Forms.Label();
             this.label160 = new System.Windows.Forms.Label();
             this.card_P1_C4 = new System.Windows.Forms.Panel();
+            this.healing_P1_C4 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.cost_P1_C4 = new System.Windows.Forms.Label();
             this.label162 = new System.Windows.Forms.Label();
             this.hp_P1_C4 = new System.Windows.Forms.Label();
@@ -70,6 +73,8 @@
             this.type_P1_C4 = new System.Windows.Forms.Label();
             this.label170 = new System.Windows.Forms.Label();
             this.card_P1_C3 = new System.Windows.Forms.Panel();
+            this.healing_P1_C3 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.cost_P1_C3 = new System.Windows.Forms.Label();
             this.label172 = new System.Windows.Forms.Label();
             this.hp_P1_C3 = new System.Windows.Forms.Label();
@@ -80,6 +85,8 @@
             this.type_P1_C3 = new System.Windows.Forms.Label();
             this.label180 = new System.Windows.Forms.Label();
             this.card_P1_C2 = new System.Windows.Forms.Panel();
+            this.healing_P1_C2 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.cost_P1_C2 = new System.Windows.Forms.Label();
             this.label182 = new System.Windows.Forms.Label();
             this.hp_P1_C2 = new System.Windows.Forms.Label();
@@ -90,6 +97,8 @@
             this.type_P1_C2 = new System.Windows.Forms.Label();
             this.label190 = new System.Windows.Forms.Label();
             this.card_P1_C1 = new System.Windows.Forms.Panel();
+            this.healing_P1_C1 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.cost_P1_C1 = new System.Windows.Forms.Label();
             this.label192 = new System.Windows.Forms.Label();
             this.hp_P1_C1 = new System.Windows.Forms.Label();
@@ -100,16 +109,24 @@
             this.type_P1_C1 = new System.Windows.Forms.Label();
             this.label200 = new System.Windows.Forms.Label();
             this.card_P2_C5 = new System.Windows.Forms.Panel();
+            this.healing_P2_C5 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.cost_P2_C5 = new System.Windows.Forms.Label();
             this.label142 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.hp_P2_C5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label144 = new System.Windows.Forms.Label();
             this.name_P2_C5 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.damage_P2_C5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label148 = new System.Windows.Forms.Label();
             this.type_P2_C5 = new System.Windows.Forms.Label();
             this.label150 = new System.Windows.Forms.Label();
             this.card_P2_C4 = new System.Windows.Forms.Panel();
+            this.healing_P2_C4 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.cost_P2_C4 = new System.Windows.Forms.Label();
             this.label132 = new System.Windows.Forms.Label();
             this.hp_P2_C4 = new System.Windows.Forms.Label();
@@ -120,6 +137,8 @@
             this.type_P2_C4 = new System.Windows.Forms.Label();
             this.label140 = new System.Windows.Forms.Label();
             this.card_P2_C3 = new System.Windows.Forms.Panel();
+            this.healing_P2_C3 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.cost_P2_C3 = new System.Windows.Forms.Label();
             this.label122 = new System.Windows.Forms.Label();
             this.hp_P2_C3 = new System.Windows.Forms.Label();
@@ -130,6 +149,8 @@
             this.type_P2_C3 = new System.Windows.Forms.Label();
             this.label130 = new System.Windows.Forms.Label();
             this.card_P2_C2 = new System.Windows.Forms.Panel();
+            this.healing_P2_C2 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.cost_P2_C2 = new System.Windows.Forms.Label();
             this.label112 = new System.Windows.Forms.Label();
             this.hp_P2_C2 = new System.Windows.Forms.Label();
@@ -140,6 +161,8 @@
             this.type_P2_C2 = new System.Windows.Forms.Label();
             this.label120 = new System.Windows.Forms.Label();
             this.card_P2_H5 = new System.Windows.Forms.Panel();
+            this.healing_P2_H5 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
             this.cost_P2_H5 = new System.Windows.Forms.Label();
             this.label102 = new System.Windows.Forms.Label();
             this.hp_P2_H5 = new System.Windows.Forms.Label();
@@ -150,6 +173,8 @@
             this.type_P2_H5 = new System.Windows.Forms.Label();
             this.label110 = new System.Windows.Forms.Label();
             this.card_P2_H4 = new System.Windows.Forms.Panel();
+            this.healing_P2_H4 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
             this.cost_P2_H4 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
             this.hp_P2_H4 = new System.Windows.Forms.Label();
@@ -160,6 +185,8 @@
             this.type_P2_H4 = new System.Windows.Forms.Label();
             this.label100 = new System.Windows.Forms.Label();
             this.card_P2_H3 = new System.Windows.Forms.Panel();
+            this.healing_P2_H3 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.cost_P2_H3 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
             this.hp_P2_H3 = new System.Windows.Forms.Label();
@@ -170,6 +197,8 @@
             this.type_P2_H3 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
             this.card_P2_H2 = new System.Windows.Forms.Panel();
+            this.healing_P2_H2 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
             this.cost_P2_H2 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
             this.hp_P2_H2 = new System.Windows.Forms.Label();
@@ -180,6 +209,7 @@
             this.type_P2_H2 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
             this.card_P2_H1 = new System.Windows.Forms.Panel();
+            this.healing_P2_H1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cost_P2_H1 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
@@ -191,6 +221,8 @@
             this.type_P2_H1 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.card_P1_H5 = new System.Windows.Forms.Panel();
+            this.healing_P1_H5 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.cost_P1_H5 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.hp_P1_H5 = new System.Windows.Forms.Label();
@@ -201,6 +233,8 @@
             this.type_P1_H5 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.card_P1_H4 = new System.Windows.Forms.Panel();
+            this.healing_P1_H4 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.cost_P1_H4 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.hp_P1_H4 = new System.Windows.Forms.Label();
@@ -211,6 +245,8 @@
             this.type_P1_H4 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.card_P1_H3 = new System.Windows.Forms.Panel();
+            this.healing_P1_H3 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.cost_P1_H3 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.hp_P1_H3 = new System.Windows.Forms.Label();
@@ -221,6 +257,8 @@
             this.type_P1_H3 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.card_P1_H2 = new System.Windows.Forms.Panel();
+            this.healing_P1_H2 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.cost_P1_H2 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.hp_P1_H2 = new System.Windows.Forms.Label();
@@ -231,6 +269,8 @@
             this.type_P1_H2 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.card_P1_H1 = new System.Windows.Forms.Panel();
+            this.healing_P1_H1 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.cost_P1_H1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.hp_P1_H1 = new System.Windows.Forms.Label();
@@ -241,7 +281,10 @@
             this.type_P1_H1 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.card_P2_C1 = new System.Windows.Forms.Panel();
+            this.healing_P2_C1 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.cost_P2_C1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.hp_P2_C1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.name_P2_C1 = new System.Windows.Forms.Label();
@@ -252,49 +295,6 @@
             this.deck_player2 = new System.Windows.Forms.Panel();
             this.deck_player1 = new System.Windows.Forms.Panel();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.healing_P2_H1 = new System.Windows.Forms.Label();
-            this.healing_P2_H2 = new System.Windows.Forms.Label();
-            this.healing_P2_H3 = new System.Windows.Forms.Label();
-            this.healing_P2_H4 = new System.Windows.Forms.Label();
-            this.healing_P2_H5 = new System.Windows.Forms.Label();
-            this.healing_P2_C1 = new System.Windows.Forms.Label();
-            this.healing_P2_C2 = new System.Windows.Forms.Label();
-            this.healing_P2_C3 = new System.Windows.Forms.Label();
-            this.healing_P2_C4 = new System.Windows.Forms.Label();
-            this.healing_P2_C5 = new System.Windows.Forms.Label();
-            this.healing_P1_C1 = new System.Windows.Forms.Label();
-            this.healing_P1_C2 = new System.Windows.Forms.Label();
-            this.healing_P1_C3 = new System.Windows.Forms.Label();
-            this.healing_P1_C4 = new System.Windows.Forms.Label();
-            this.healing_P1_C5 = new System.Windows.Forms.Label();
-            this.healing_P1_H5 = new System.Windows.Forms.Label();
-            this.healing_P1_H4 = new System.Windows.Forms.Label();
-            this.healing_P1_H3 = new System.Windows.Forms.Label();
-            this.healing_P1_H2 = new System.Windows.Forms.Label();
-            this.healing_P1_H1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel24.SuspendLayout();
             this.card_P1_C5.SuspendLayout();
@@ -373,17 +373,6 @@
             this.Player1_name_label.Size = new System.Drawing.Size(76, 30);
             this.Player1_name_label.TabIndex = 30;
             this.Player1_name_label.Text = "label3";
-            // 
-            // label10
-            // 
-            this.label10.Location = new System.Drawing.Point(3, 191);
-            this.label10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 25);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Cost:";
-            this.label10.UseMnemonic = false;
-            this.label10.Visible = false;
             // 
             // Player2_name_label
             // 
@@ -589,6 +578,22 @@
             this.card_P1_C5.TabIndex = 13;
             this.card_P1_C5.Click += new System.EventHandler(this.ProcessCardClick);
             // 
+            // healing_P1_C5
+            // 
+            this.healing_P1_C5.Location = new System.Drawing.Point(74, 93);
+            this.healing_P1_C5.Name = "healing_P1_C5";
+            this.healing_P1_C5.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_C5.TabIndex = 14;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(4, 93);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(72, 25);
+            this.label25.TabIndex = 12;
+            this.label25.Text = "Healing";
+            // 
             // cost_P1_C5
             // 
             this.cost_P1_C5.Location = new System.Drawing.Point(90, 191);
@@ -645,7 +650,7 @@
             // 
             // label158
             // 
-            this.label158.Location = new System.Drawing.Point(3, 118);
+            this.label158.Location = new System.Drawing.Point(3, 123);
             this.label158.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label158.Name = "label158";
             this.label158.Size = new System.Drawing.Size(82, 25);
@@ -693,6 +698,22 @@
             this.card_P1_C4.Size = new System.Drawing.Size(144, 218);
             this.card_P1_C4.TabIndex = 14;
             this.card_P1_C4.Click += new System.EventHandler(this.ProcessCardClick);
+            // 
+            // healing_P1_C4
+            // 
+            this.healing_P1_C4.Location = new System.Drawing.Point(74, 93);
+            this.healing_P1_C4.Name = "healing_P1_C4";
+            this.healing_P1_C4.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_C4.TabIndex = 14;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(3, 93);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(72, 25);
+            this.label23.TabIndex = 12;
+            this.label23.Text = "Healing";
             // 
             // cost_P1_C4
             // 
@@ -750,7 +771,7 @@
             // 
             // label168
             // 
-            this.label168.Location = new System.Drawing.Point(3, 118);
+            this.label168.Location = new System.Drawing.Point(3, 123);
             this.label168.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label168.Name = "label168";
             this.label168.Size = new System.Drawing.Size(82, 25);
@@ -798,6 +819,22 @@
             this.card_P1_C3.Size = new System.Drawing.Size(144, 218);
             this.card_P1_C3.TabIndex = 15;
             this.card_P1_C3.Click += new System.EventHandler(this.ProcessCardClick);
+            // 
+            // healing_P1_C3
+            // 
+            this.healing_P1_C3.Location = new System.Drawing.Point(82, 93);
+            this.healing_P1_C3.Name = "healing_P1_C3";
+            this.healing_P1_C3.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_C3.TabIndex = 14;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(4, 93);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(72, 25);
+            this.label21.TabIndex = 12;
+            this.label21.Text = "Healing";
             // 
             // cost_P1_C3
             // 
@@ -855,7 +892,7 @@
             // 
             // label178
             // 
-            this.label178.Location = new System.Drawing.Point(3, 118);
+            this.label178.Location = new System.Drawing.Point(3, 123);
             this.label178.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label178.Name = "label178";
             this.label178.Size = new System.Drawing.Size(82, 25);
@@ -904,6 +941,22 @@
             this.card_P1_C2.Size = new System.Drawing.Size(144, 218);
             this.card_P1_C2.TabIndex = 16;
             this.card_P1_C2.Click += new System.EventHandler(this.ProcessCardClick);
+            // 
+            // healing_P1_C2
+            // 
+            this.healing_P1_C2.Location = new System.Drawing.Point(79, 93);
+            this.healing_P1_C2.Name = "healing_P1_C2";
+            this.healing_P1_C2.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_C2.TabIndex = 14;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(4, 93);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(72, 25);
+            this.label19.TabIndex = 12;
+            this.label19.Text = "Healing";
             // 
             // cost_P1_C2
             // 
@@ -961,7 +1014,7 @@
             // 
             // label188
             // 
-            this.label188.Location = new System.Drawing.Point(4, 118);
+            this.label188.Location = new System.Drawing.Point(4, 123);
             this.label188.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label188.Name = "label188";
             this.label188.Size = new System.Drawing.Size(82, 25);
@@ -1009,6 +1062,22 @@
             this.card_P1_C1.Size = new System.Drawing.Size(144, 218);
             this.card_P1_C1.TabIndex = 12;
             this.card_P1_C1.Click += new System.EventHandler(this.ProcessCardClick);
+            // 
+            // healing_P1_C1
+            // 
+            this.healing_P1_C1.Location = new System.Drawing.Point(77, 93);
+            this.healing_P1_C1.Name = "healing_P1_C1";
+            this.healing_P1_C1.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_C1.TabIndex = 14;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(2, 93);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(72, 25);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "Healing";
             // 
             // cost_P1_C1
             // 
@@ -1058,7 +1127,7 @@
             // 
             // damage_P1_C1
             // 
-            this.damage_P1_C1.Location = new System.Drawing.Point(89, 128);
+            this.damage_P1_C1.Location = new System.Drawing.Point(90, 118);
             this.damage_P1_C1.Name = "damage_P1_C1";
             this.damage_P1_C1.Size = new System.Drawing.Size(44, 25);
             this.damage_P1_C1.TabIndex = 4;
@@ -1066,7 +1135,7 @@
             // 
             // label198
             // 
-            this.label198.Location = new System.Drawing.Point(4, 118);
+            this.label198.Location = new System.Drawing.Point(1, 123);
             this.label198.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label198.Name = "label198";
             this.label198.Size = new System.Drawing.Size(82, 25);
@@ -1119,6 +1188,22 @@
             this.card_P2_C5.TabIndex = 11;
             this.card_P2_C5.Click += new System.EventHandler(this.ProcessCardClick);
             // 
+            // healing_P2_C5
+            // 
+            this.healing_P2_C5.Location = new System.Drawing.Point(76, 94);
+            this.healing_P2_C5.Name = "healing_P2_C5";
+            this.healing_P2_C5.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_C5.TabIndex = 14;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(1, 94);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(72, 25);
+            this.label26.TabIndex = 12;
+            this.label26.Text = "Healing";
+            // 
             // cost_P2_C5
             // 
             this.cost_P2_C5.Location = new System.Drawing.Point(90, 191);
@@ -1138,6 +1223,14 @@
             this.label142.UseMnemonic = false;
             this.label142.Visible = false;
             // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(-410, 145);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 25);
+            this.label7.TabIndex = 8;
+            this.label7.Visible = false;
+            // 
             // hp_P2_C5
             // 
             this.hp_P2_C5.Location = new System.Drawing.Point(74, 153);
@@ -1145,6 +1238,17 @@
             this.hp_P2_C5.Size = new System.Drawing.Size(67, 25);
             this.hp_P2_C5.TabIndex = 8;
             this.hp_P2_C5.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(-486, 145);
+            this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 25);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "HP/LT:";
+            this.label6.UseMnemonic = false;
+            this.label6.Visible = false;
             // 
             // label144
             // 
@@ -1165,6 +1269,14 @@
             this.name_P2_C5.TabIndex = 6;
             this.name_P2_C5.Visible = false;
             // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(-399, 107);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 25);
+            this.label5.TabIndex = 4;
+            this.label5.Visible = false;
+            // 
             // damage_P2_C5
             // 
             this.damage_P2_C5.Location = new System.Drawing.Point(90, 119);
@@ -1173,9 +1285,20 @@
             this.damage_P2_C5.TabIndex = 4;
             this.damage_P2_C5.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(-486, 107);
+            this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Damage:";
+            this.label3.UseMnemonic = false;
+            this.label3.Visible = false;
+            // 
             // label148
             // 
-            this.label148.Location = new System.Drawing.Point(4, 119);
+            this.label148.Location = new System.Drawing.Point(-1, 124);
             this.label148.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label148.Name = "label148";
             this.label148.Size = new System.Drawing.Size(82, 25);
@@ -1223,6 +1346,22 @@
             this.card_P2_C4.Size = new System.Drawing.Size(144, 218);
             this.card_P2_C4.TabIndex = 11;
             this.card_P2_C4.Click += new System.EventHandler(this.ProcessCardClick);
+            // 
+            // healing_P2_C4
+            // 
+            this.healing_P2_C4.Location = new System.Drawing.Point(81, 94);
+            this.healing_P2_C4.Name = "healing_P2_C4";
+            this.healing_P2_C4.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_C4.TabIndex = 14;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(1, 94);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(72, 25);
+            this.label27.TabIndex = 12;
+            this.label27.Text = "Healing";
             // 
             // cost_P2_C4
             // 
@@ -1280,7 +1419,7 @@
             // 
             // label138
             // 
-            this.label138.Location = new System.Drawing.Point(1, 119);
+            this.label138.Location = new System.Drawing.Point(1, 124);
             this.label138.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label138.Name = "label138";
             this.label138.Size = new System.Drawing.Size(82, 25);
@@ -1328,6 +1467,22 @@
             this.card_P2_C3.Size = new System.Drawing.Size(144, 218);
             this.card_P2_C3.TabIndex = 11;
             this.card_P2_C3.Click += new System.EventHandler(this.ProcessCardClick);
+            // 
+            // healing_P2_C3
+            // 
+            this.healing_P2_C3.Location = new System.Drawing.Point(74, 94);
+            this.healing_P2_C3.Name = "healing_P2_C3";
+            this.healing_P2_C3.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_C3.TabIndex = 14;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(3, 94);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(72, 25);
+            this.label29.TabIndex = 12;
+            this.label29.Text = "Healing";
             // 
             // cost_P2_C3
             // 
@@ -1385,7 +1540,7 @@
             // 
             // label128
             // 
-            this.label128.Location = new System.Drawing.Point(1, 119);
+            this.label128.Location = new System.Drawing.Point(1, 124);
             this.label128.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label128.Name = "label128";
             this.label128.Size = new System.Drawing.Size(82, 25);
@@ -1433,6 +1588,22 @@
             this.card_P2_C2.Size = new System.Drawing.Size(144, 218);
             this.card_P2_C2.TabIndex = 11;
             this.card_P2_C2.Click += new System.EventHandler(this.ProcessCardClick);
+            // 
+            // healing_P2_C2
+            // 
+            this.healing_P2_C2.Location = new System.Drawing.Point(79, 94);
+            this.healing_P2_C2.Name = "healing_P2_C2";
+            this.healing_P2_C2.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_C2.TabIndex = 14;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(1, 94);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(72, 25);
+            this.label31.TabIndex = 12;
+            this.label31.Text = "Healing";
             // 
             // cost_P2_C2
             // 
@@ -1482,7 +1653,7 @@
             // 
             // damage_P2_C2
             // 
-            this.damage_P2_C2.Location = new System.Drawing.Point(90, 128);
+            this.damage_P2_C2.Location = new System.Drawing.Point(90, 119);
             this.damage_P2_C2.Name = "damage_P2_C2";
             this.damage_P2_C2.Size = new System.Drawing.Size(44, 25);
             this.damage_P2_C2.TabIndex = 4;
@@ -1490,7 +1661,7 @@
             // 
             // label118
             // 
-            this.label118.Location = new System.Drawing.Point(1, 119);
+            this.label118.Location = new System.Drawing.Point(1, 124);
             this.label118.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label118.Name = "label118";
             this.label118.Size = new System.Drawing.Size(82, 25);
@@ -1538,6 +1709,22 @@
             this.card_P2_H5.Size = new System.Drawing.Size(144, 218);
             this.card_P2_H5.TabIndex = 11;
             this.card_P2_H5.Click += new System.EventHandler(this.ProcessCardClick);
+            // 
+            // healing_P2_H5
+            // 
+            this.healing_P2_H5.Location = new System.Drawing.Point(78, 93);
+            this.healing_P2_H5.Name = "healing_P2_H5";
+            this.healing_P2_H5.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_H5.TabIndex = 14;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(4, 91);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(72, 25);
+            this.label39.TabIndex = 12;
+            this.label39.Text = "Healing";
             // 
             // cost_P2_H5
             // 
@@ -1646,6 +1833,22 @@
             this.card_P2_H4.TabIndex = 11;
             this.card_P2_H4.Click += new System.EventHandler(this.ProcessCardClick);
             // 
+            // healing_P2_H4
+            // 
+            this.healing_P2_H4.Location = new System.Drawing.Point(77, 93);
+            this.healing_P2_H4.Name = "healing_P2_H4";
+            this.healing_P2_H4.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_H4.TabIndex = 14;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(4, 91);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(72, 25);
+            this.label37.TabIndex = 12;
+            this.label37.Text = "Healing";
+            // 
             // cost_P2_H4
             // 
             this.cost_P2_H4.Location = new System.Drawing.Point(90, 191);
@@ -1696,7 +1899,7 @@
             // 
             // label98
             // 
-            this.label98.Location = new System.Drawing.Point(4, 126);
+            this.label98.Location = new System.Drawing.Point(3, 126);
             this.label98.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label98.Name = "label98";
             this.label98.Size = new System.Drawing.Size(82, 25);
@@ -1741,6 +1944,22 @@
             this.card_P2_H3.Size = new System.Drawing.Size(144, 218);
             this.card_P2_H3.TabIndex = 11;
             this.card_P2_H3.Click += new System.EventHandler(this.ProcessCardClick);
+            // 
+            // healing_P2_H3
+            // 
+            this.healing_P2_H3.Location = new System.Drawing.Point(76, 96);
+            this.healing_P2_H3.Name = "healing_P2_H3";
+            this.healing_P2_H3.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_H3.TabIndex = 14;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(4, 91);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(72, 25);
+            this.label36.TabIndex = 12;
+            this.label36.Text = "Healing";
             // 
             // cost_P2_H3
             // 
@@ -1838,6 +2057,22 @@
             this.card_P2_H2.TabIndex = 11;
             this.card_P2_H2.Click += new System.EventHandler(this.ProcessCardClick);
             // 
+            // healing_P2_H2
+            // 
+            this.healing_P2_H2.Location = new System.Drawing.Point(77, 96);
+            this.healing_P2_H2.Name = "healing_P2_H2";
+            this.healing_P2_H2.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_H2.TabIndex = 13;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(3, 93);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(72, 25);
+            this.label35.TabIndex = 12;
+            this.label35.Text = "Healing";
+            // 
             // cost_P2_H2
             // 
             this.cost_P2_H2.Location = new System.Drawing.Point(90, 191);
@@ -1934,10 +2169,17 @@
             this.card_P2_H1.TabIndex = 11;
             this.card_P2_H1.Click += new System.EventHandler(this.ProcessCardClick);
             // 
+            // healing_P2_H1
+            // 
+            this.healing_P2_H1.Location = new System.Drawing.Point(82, 91);
+            this.healing_P2_H1.Name = "healing_P2_H1";
+            this.healing_P2_H1.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_H1.TabIndex = 12;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 91);
+            this.label2.Location = new System.Drawing.Point(4, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 25);
             this.label2.TabIndex = 11;
@@ -2039,6 +2281,22 @@
             this.card_P1_H5.TabIndex = 11;
             this.card_P1_H5.Click += new System.EventHandler(this.ProcessCardClick);
             // 
+            // healing_P1_H5
+            // 
+            this.healing_P1_H5.Location = new System.Drawing.Point(78, 89);
+            this.healing_P1_H5.Name = "healing_P1_H5";
+            this.healing_P1_H5.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_H5.TabIndex = 15;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(3, 94);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(72, 25);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "Healing";
+            // 
             // cost_P1_H5
             // 
             this.cost_P1_H5.Location = new System.Drawing.Point(90, 191);
@@ -2089,7 +2347,7 @@
             // 
             // label58
             // 
-            this.label58.Location = new System.Drawing.Point(3, 119);
+            this.label58.Location = new System.Drawing.Point(3, 124);
             this.label58.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(82, 25);
@@ -2134,6 +2392,22 @@
             this.card_P1_H4.Size = new System.Drawing.Size(144, 218);
             this.card_P1_H4.TabIndex = 11;
             this.card_P1_H4.Click += new System.EventHandler(this.ProcessCardClick);
+            // 
+            // healing_P1_H4
+            // 
+            this.healing_P1_H4.Location = new System.Drawing.Point(75, 94);
+            this.healing_P1_H4.Name = "healing_P1_H4";
+            this.healing_P1_H4.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_H4.TabIndex = 15;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(4, 93);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(72, 25);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Healing";
             // 
             // cost_P1_H4
             // 
@@ -2185,7 +2459,7 @@
             // 
             // label48
             // 
-            this.label48.Location = new System.Drawing.Point(3, 119);
+            this.label48.Location = new System.Drawing.Point(4, 124);
             this.label48.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(82, 25);
@@ -2230,6 +2504,22 @@
             this.card_P1_H3.Size = new System.Drawing.Size(144, 218);
             this.card_P1_H3.TabIndex = 11;
             this.card_P1_H3.Click += new System.EventHandler(this.ProcessCardClick);
+            // 
+            // healing_P1_H3
+            // 
+            this.healing_P1_H3.Location = new System.Drawing.Point(77, 94);
+            this.healing_P1_H3.Name = "healing_P1_H3";
+            this.healing_P1_H3.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_H3.TabIndex = 15;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(4, 93);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 25);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Healing";
             // 
             // cost_P1_H3
             // 
@@ -2281,7 +2571,7 @@
             // 
             // label38
             // 
-            this.label38.Location = new System.Drawing.Point(3, 119);
+            this.label38.Location = new System.Drawing.Point(4, 124);
             this.label38.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(82, 25);
@@ -2326,6 +2616,22 @@
             this.card_P1_H2.Size = new System.Drawing.Size(144, 218);
             this.card_P1_H2.TabIndex = 11;
             this.card_P1_H2.Click += new System.EventHandler(this.ProcessCardClick);
+            // 
+            // healing_P1_H2
+            // 
+            this.healing_P1_H2.Location = new System.Drawing.Point(77, 93);
+            this.healing_P1_H2.Name = "healing_P1_H2";
+            this.healing_P1_H2.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_H2.TabIndex = 15;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 94);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 25);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Healing";
             // 
             // cost_P1_H2
             // 
@@ -2377,7 +2683,7 @@
             // 
             // label28
             // 
-            this.label28.Location = new System.Drawing.Point(3, 119);
+            this.label28.Location = new System.Drawing.Point(3, 124);
             this.label28.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(82, 25);
@@ -2422,6 +2728,22 @@
             this.card_P1_H1.Size = new System.Drawing.Size(144, 218);
             this.card_P1_H1.TabIndex = 11;
             this.card_P1_H1.Click += new System.EventHandler(this.ProcessCardClick);
+            // 
+            // healing_P1_H1
+            // 
+            this.healing_P1_H1.Location = new System.Drawing.Point(77, 94);
+            this.healing_P1_H1.Name = "healing_P1_H1";
+            this.healing_P1_H1.Size = new System.Drawing.Size(57, 30);
+            this.healing_P1_H1.TabIndex = 15;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 94);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 25);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Healing";
             // 
             // cost_P1_H1
             // 
@@ -2473,7 +2795,7 @@
             // 
             // label18
             // 
-            this.label18.Location = new System.Drawing.Point(4, 119);
+            this.label18.Location = new System.Drawing.Point(4, 124);
             this.label18.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(82, 25);
@@ -2519,6 +2841,22 @@
             this.card_P2_C1.TabIndex = 1;
             this.card_P2_C1.Click += new System.EventHandler(this.ProcessCardClick);
             // 
+            // healing_P2_C1
+            // 
+            this.healing_P2_C1.Location = new System.Drawing.Point(76, 94);
+            this.healing_P2_C1.Name = "healing_P2_C1";
+            this.healing_P2_C1.Size = new System.Drawing.Size(57, 30);
+            this.healing_P2_C1.TabIndex = 14;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(3, 94);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(72, 25);
+            this.label33.TabIndex = 12;
+            this.label33.Text = "Healing";
+            // 
             // cost_P2_C1
             // 
             this.cost_P2_C1.Location = new System.Drawing.Point(90, 191);
@@ -2526,6 +2864,17 @@
             this.cost_P2_C1.Size = new System.Drawing.Size(44, 25);
             this.cost_P2_C1.TabIndex = 10;
             this.cost_P2_C1.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(3, 191);
+            this.label10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 25);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Cost:";
+            this.label10.UseMnemonic = false;
+            this.label10.Visible = false;
             // 
             // hp_P2_C1
             // 
@@ -2556,7 +2905,7 @@
             // 
             // damage_P2_C1
             // 
-            this.damage_P2_C1.Location = new System.Drawing.Point(89, 132);
+            this.damage_P2_C1.Location = new System.Drawing.Point(89, 119);
             this.damage_P2_C1.Name = "damage_P2_C1";
             this.damage_P2_C1.Size = new System.Drawing.Size(44, 25);
             this.damage_P2_C1.TabIndex = 4;
@@ -2564,7 +2913,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(3, 119);
+            this.label4.Location = new System.Drawing.Point(1, 124);
             this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 25);
@@ -2611,355 +2960,6 @@
             this.deck_player1.Size = new System.Drawing.Size(138, 218);
             this.deck_player1.TabIndex = 0;
             this.deck_player1.Click += new System.EventHandler(this.deck1_Click);
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(-486, 107);
-            this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Damage:";
-            this.label3.UseMnemonic = false;
-            this.label3.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(-399, 107);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 25);
-            this.label5.TabIndex = 4;
-            this.label5.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(-486, 145);
-            this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 25);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "HP/LT:";
-            this.label6.UseMnemonic = false;
-            this.label6.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.Location = new System.Drawing.Point(-410, 145);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 25);
-            this.label7.TabIndex = 8;
-            this.label7.Visible = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(4, 94);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 25);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Healing";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 94);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 25);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Healing";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(5, 94);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(72, 25);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "Healing";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(7, 94);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(72, 25);
-            this.label15.TabIndex = 12;
-            this.label15.Text = "Healing";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(5, 94);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 25);
-            this.label16.TabIndex = 12;
-            this.label16.Text = "Healing";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(5, 93);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 25);
-            this.label17.TabIndex = 12;
-            this.label17.Text = "Healing";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(7, 93);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(72, 25);
-            this.label19.TabIndex = 12;
-            this.label19.Text = "Healing";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(5, 93);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(72, 25);
-            this.label21.TabIndex = 12;
-            this.label21.Text = "Healing";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(3, 93);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(72, 25);
-            this.label23.TabIndex = 12;
-            this.label23.Text = "Healing";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(4, 93);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(72, 25);
-            this.label25.TabIndex = 12;
-            this.label25.Text = "Healing";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(4, 94);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(72, 25);
-            this.label26.TabIndex = 12;
-            this.label26.Text = "Healing";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(3, 94);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(72, 25);
-            this.label27.TabIndex = 12;
-            this.label27.Text = "Healing";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(5, 94);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(72, 25);
-            this.label29.TabIndex = 12;
-            this.label29.Text = "Healing";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(6, 94);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(72, 25);
-            this.label31.TabIndex = 12;
-            this.label31.Text = "Healing";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(5, 94);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(72, 25);
-            this.label33.TabIndex = 12;
-            this.label33.Text = "Healing";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(3, 96);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(72, 25);
-            this.label35.TabIndex = 12;
-            this.label35.Text = "Healing";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(5, 96);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(72, 25);
-            this.label36.TabIndex = 12;
-            this.label36.Text = "Healing";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(7, 93);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(72, 25);
-            this.label37.TabIndex = 12;
-            this.label37.Text = "Healing";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(3, 96);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(72, 25);
-            this.label39.TabIndex = 12;
-            this.label39.Text = "Healing";
-            // 
-            // healing_P2_H1
-            // 
-            this.healing_P2_H1.Location = new System.Drawing.Point(82, 91);
-            this.healing_P2_H1.Name = "healing_P2_H1";
-            this.healing_P2_H1.Size = new System.Drawing.Size(57, 30);
-            this.healing_P2_H1.TabIndex = 12;
-            // 
-            // healing_P2_H2
-            // 
-            this.healing_P2_H2.Location = new System.Drawing.Point(77, 96);
-            this.healing_P2_H2.Name = "healing_P2_H2";
-            this.healing_P2_H2.Size = new System.Drawing.Size(57, 30);
-            this.healing_P2_H2.TabIndex = 13;
-            // 
-            // healing_P2_H3
-            // 
-            this.healing_P2_H3.Location = new System.Drawing.Point(76, 96);
-            this.healing_P2_H3.Name = "healing_P2_H3";
-            this.healing_P2_H3.Size = new System.Drawing.Size(57, 30);
-            this.healing_P2_H3.TabIndex = 14;
-            // 
-            // healing_P2_H4
-            // 
-            this.healing_P2_H4.Location = new System.Drawing.Point(77, 93);
-            this.healing_P2_H4.Name = "healing_P2_H4";
-            this.healing_P2_H4.Size = new System.Drawing.Size(57, 30);
-            this.healing_P2_H4.TabIndex = 14;
-            // 
-            // healing_P2_H5
-            // 
-            this.healing_P2_H5.Location = new System.Drawing.Point(78, 93);
-            this.healing_P2_H5.Name = "healing_P2_H5";
-            this.healing_P2_H5.Size = new System.Drawing.Size(57, 30);
-            this.healing_P2_H5.TabIndex = 14;
-            // 
-            // healing_P2_C1
-            // 
-            this.healing_P2_C1.Location = new System.Drawing.Point(76, 94);
-            this.healing_P2_C1.Name = "healing_P2_C1";
-            this.healing_P2_C1.Size = new System.Drawing.Size(57, 30);
-            this.healing_P2_C1.TabIndex = 14;
-            // 
-            // healing_P2_C2
-            // 
-            this.healing_P2_C2.Location = new System.Drawing.Point(79, 94);
-            this.healing_P2_C2.Name = "healing_P2_C2";
-            this.healing_P2_C2.Size = new System.Drawing.Size(57, 30);
-            this.healing_P2_C2.TabIndex = 14;
-            // 
-            // healing_P2_C3
-            // 
-            this.healing_P2_C3.Location = new System.Drawing.Point(74, 94);
-            this.healing_P2_C3.Name = "healing_P2_C3";
-            this.healing_P2_C3.Size = new System.Drawing.Size(57, 30);
-            this.healing_P2_C3.TabIndex = 14;
-            // 
-            // healing_P2_C4
-            // 
-            this.healing_P2_C4.Location = new System.Drawing.Point(81, 94);
-            this.healing_P2_C4.Name = "healing_P2_C4";
-            this.healing_P2_C4.Size = new System.Drawing.Size(57, 30);
-            this.healing_P2_C4.TabIndex = 14;
-            // 
-            // healing_P2_C5
-            // 
-            this.healing_P2_C5.Location = new System.Drawing.Point(76, 94);
-            this.healing_P2_C5.Name = "healing_P2_C5";
-            this.healing_P2_C5.Size = new System.Drawing.Size(57, 30);
-            this.healing_P2_C5.TabIndex = 14;
-            // 
-            // healing_P1_C1
-            // 
-            this.healing_P1_C1.Location = new System.Drawing.Point(77, 93);
-            this.healing_P1_C1.Name = "healing_P1_C1";
-            this.healing_P1_C1.Size = new System.Drawing.Size(57, 30);
-            this.healing_P1_C1.TabIndex = 14;
-            // 
-            // healing_P1_C2
-            // 
-            this.healing_P1_C2.Location = new System.Drawing.Point(85, 93);
-            this.healing_P1_C2.Name = "healing_P1_C2";
-            this.healing_P1_C2.Size = new System.Drawing.Size(57, 30);
-            this.healing_P1_C2.TabIndex = 14;
-            // 
-            // healing_P1_C3
-            // 
-            this.healing_P1_C3.Location = new System.Drawing.Point(82, 93);
-            this.healing_P1_C3.Name = "healing_P1_C3";
-            this.healing_P1_C3.Size = new System.Drawing.Size(57, 30);
-            this.healing_P1_C3.TabIndex = 14;
-            // 
-            // healing_P1_C4
-            // 
-            this.healing_P1_C4.Location = new System.Drawing.Point(74, 93);
-            this.healing_P1_C4.Name = "healing_P1_C4";
-            this.healing_P1_C4.Size = new System.Drawing.Size(57, 30);
-            this.healing_P1_C4.TabIndex = 14;
-            // 
-            // healing_P1_C5
-            // 
-            this.healing_P1_C5.Location = new System.Drawing.Point(74, 93);
-            this.healing_P1_C5.Name = "healing_P1_C5";
-            this.healing_P1_C5.Size = new System.Drawing.Size(57, 30);
-            this.healing_P1_C5.TabIndex = 14;
-            // 
-            // healing_P1_H5
-            // 
-            this.healing_P1_H5.Location = new System.Drawing.Point(78, 89);
-            this.healing_P1_H5.Name = "healing_P1_H5";
-            this.healing_P1_H5.Size = new System.Drawing.Size(57, 30);
-            this.healing_P1_H5.TabIndex = 15;
-            // 
-            // healing_P1_H4
-            // 
-            this.healing_P1_H4.Location = new System.Drawing.Point(75, 94);
-            this.healing_P1_H4.Name = "healing_P1_H4";
-            this.healing_P1_H4.Size = new System.Drawing.Size(57, 30);
-            this.healing_P1_H4.TabIndex = 15;
-            // 
-            // healing_P1_H3
-            // 
-            this.healing_P1_H3.Location = new System.Drawing.Point(77, 94);
-            this.healing_P1_H3.Name = "healing_P1_H3";
-            this.healing_P1_H3.Size = new System.Drawing.Size(57, 30);
-            this.healing_P1_H3.TabIndex = 15;
-            // 
-            // healing_P1_H2
-            // 
-            this.healing_P1_H2.Location = new System.Drawing.Point(77, 93);
-            this.healing_P1_H2.Name = "healing_P1_H2";
-            this.healing_P1_H2.Size = new System.Drawing.Size(57, 30);
-            this.healing_P1_H2.TabIndex = 15;
-            // 
-            // healing_P1_H1
-            // 
-            this.healing_P1_H1.Location = new System.Drawing.Point(77, 94);
-            this.healing_P1_H1.Name = "healing_P1_H1";
-            this.healing_P1_H1.Size = new System.Drawing.Size(57, 30);
-            this.healing_P1_H1.TabIndex = 15;
             // 
             // Board
             // 
@@ -3252,7 +3252,6 @@
         private Label healing_P1_C3;
         private Label label21;
         private Label healing_P1_C2;
-        private Label label19;
         private Label healing_P1_C1;
         private Label label17;
         private Label healing_P2_C5;
@@ -3288,6 +3287,7 @@
         private Label label9;
         private Label healing_P2_C1;
         private Label label33;
+        public Label label19;
     }
 }
 

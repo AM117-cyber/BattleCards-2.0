@@ -1,8 +1,8 @@
 ﻿using BattleCardsLibrary;
-using CardDeveloper1.Exceptions;
+using CardDeveloper.Exceptions;
 using BattleCardsLibrary.Utils;
 
-namespace CardDeveloper1;
+namespace CardDeveloper;
 
 public class CardValidator : ICardValidator
 {

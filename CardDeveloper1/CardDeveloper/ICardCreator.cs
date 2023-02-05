@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CardDeveloper1
+namespace CardDeveloper
 {
     public interface ICardCreator
     {

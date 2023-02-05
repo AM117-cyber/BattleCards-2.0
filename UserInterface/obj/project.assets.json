@@ -12,17 +12,17 @@
           "bin/placeholder/BattleCardsLibrary.dll": {}
         }
       },
-      "CardDeveloper1/1.0.0": {
+      "CardDeveloper/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "BattleCardsLibrary": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/CardDeveloper1.dll": {}
+          "bin/placeholder/CardDeveloper.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CardDeveloper1.dll": {}
+          "bin/placeholder/CardDeveloper.dll": {}
         }
       }
     }
@@ -33,16 +33,16 @@
       "path": "../BattleCardsLibrary/BattleCardsLibrary.csproj",
       "msbuildProject": "../BattleCardsLibrary/BattleCardsLibrary.csproj"
     },
-    "CardDeveloper1/1.0.0": {
+    "CardDeveloper/1.0.0": {
       "type": "project",
-      "path": "../CardDeveloper1/CardDeveloper1.csproj",
-      "msbuildProject": "../CardDeveloper1/CardDeveloper1.csproj"
+      "path": "../CardDeveloper1/CardDeveloper.csproj",
+      "msbuildProject": "../CardDeveloper1/CardDeveloper.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "BattleCardsLibrary >= 1.0.0",
-      "CardDeveloper1 >= 1.0.0"
+      "CardDeveloper >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -75,8 +75,8 @@
             "D:\\BattleCards\\BattleCardsLibrary\\BattleCardsLibrary.csproj": {
               "projectPath": "D:\\BattleCards\\BattleCardsLibrary\\BattleCardsLibrary.csproj"
             },
-            "D:\\BattleCards\\CardDeveloper1\\CardDeveloper1.csproj": {
-              "projectPath": "D:\\BattleCards\\CardDeveloper1\\CardDeveloper1.csproj"
+            "D:\\BattleCards\\CardDeveloper1\\CardDeveloper.csproj": {
+              "projectPath": "D:\\BattleCards\\CardDeveloper1\\CardDeveloper.csproj"
             }
           }
         }

@@ -59,12 +59,12 @@
         }
       }
     },
-    "D:\\BattleCards\\CardDeveloper1\\CardDeveloper1.csproj": {
+    "D:\\BattleCards\\CardDeveloper1\\CardDeveloper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BattleCards\\CardDeveloper1\\CardDeveloper1.csproj",
-        "projectName": "CardDeveloper1",
-        "projectPath": "D:\\BattleCards\\CardDeveloper1\\CardDeveloper1.csproj",
+        "projectUniqueName": "D:\\BattleCards\\CardDeveloper1\\CardDeveloper.csproj",
+        "projectName": "CardDeveloper",
+        "projectPath": "D:\\BattleCards\\CardDeveloper1\\CardDeveloper.csproj",
         "packagesPath": "C:\\Users\\Melissa\\.nuget\\packages\\",
         "outputPath": "D:\\BattleCards\\CardDeveloper1\\obj\\",
         "projectStyle": "PackageReference",
@@ -145,8 +145,8 @@
               "D:\\BattleCards\\BattleCardsLibrary\\BattleCardsLibrary.csproj": {
                 "projectPath": "D:\\BattleCards\\BattleCardsLibrary\\BattleCardsLibrary.csproj"
               },
-              "D:\\BattleCards\\CardDeveloper1\\CardDeveloper1.csproj": {
-                "projectPath": "D:\\BattleCards\\CardDeveloper1\\CardDeveloper1.csproj"
+              "D:\\BattleCards\\CardDeveloper1\\CardDeveloper.csproj": {
+                "projectPath": "D:\\BattleCards\\CardDeveloper1\\CardDeveloper.csproj"
               }
             }
           }

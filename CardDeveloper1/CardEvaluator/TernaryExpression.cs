@@ -6,13 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using BattleCardsLibrary.Utils;
 
-namespace CardDeveloper1.CardEvaluator
+namespace CardDeveloper.CardEvaluator
 {
-    public class TernaryExpression : IEvaluate
+    public class TernaryExpression : IEvaluable
     {
-        public IEvaluate Condition { get; set; }
-        public IEvaluate IfTrue { get; set; }
-        public IEvaluate Else { get; set; }
+        public IEvaluable Condition { get; set; }
+        public IEvaluable IfTrue { get; set; }
+        public IEvaluable Else { get; set; }
 
         public TernaryExpression(string ternaryExpression, CardType type)
         {

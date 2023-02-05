@@ -1,6 +1,6 @@
 ﻿using BattleCardsLibrary;
 using BattleCardsLibrary.Utils;
-using CardDeveloper1;
+using CardDeveloper;
 
 namespace UserInterface
 {

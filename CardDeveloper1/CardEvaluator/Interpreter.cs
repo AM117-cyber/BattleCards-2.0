@@ -1,25 +1,20 @@
-using static System.Net.Mime.MediaTypeNames;
-using System.Threading;
-using BattleCardsLibrary.Utils;
-using System.Linq.Expressions;
 using BattleCardsLibrary;
-using CardDeveloper1.Exceptions;
+using BattleCardsLibrary.Utils;
+using CardDeveloper.Exceptions;
 
-namespace CardDeveloper1.CardEvaluator;
+namespace CardDeveloper.CardEvaluator;
 public class Interpreter
 {
-
-    public static IEvaluate BuildExpression(string expressionToBuild, CardType typeOfCard)
+    public static IEvaluable BuildExpression(string expressionToBuild, CardType typeOfCard)
     {
-        string[] leftAndRight = new string[3];
-        string @operator = string.Empty;
+        string[] leftAndRight;
         int opBuilder = GetParenthesiStart(0, expressionToBuild) - 1;
-        @operator = GetString(expressionToBuild, 0, opBuilder);
+        string @operator = GetString(expressionToBuild, 0, opBuilder);
         expressionToBuild = expressionToBuild.Remove(expressionToBuild.Length - 1).Remove(0, opBuilder + 2);// because opBuilder goes to last char before (
         switch (@operator)
         {
             case "":
-                double constantValue = 0;
+                double constantValue;
                 if (double.TryParse(expressionToBuild.TrimStart('(').TrimEnd(')'), out constantValue))
                 {
                     return new Constant(constantValue);
@@ -32,7 +27,6 @@ public class Interpreter
             case "IfElse":
                 return new TernaryExpression(expressionToBuild, typeOfCard);
             case "Add":
-                //revisar que pasa con true al principio
                 leftAndRight = SepareTernaryExpression(expressionToBuild, 2);
                 return new Add(leftAndRight[0], leftAndRight[1], typeOfCard);
             case "Substract":
@@ -59,7 +53,7 @@ public class Interpreter
                 leftAndRight = SepareTernaryExpression(expressionToBuild, 2);
                 return new Root(leftAndRight[0], leftAndRight[1], typeOfCard);
             case "OnCard":
-                if (typeOfCard == CardType.Monster) 
+                if (typeOfCard == CardType.Monster)
                 {
                     CheckIfArgumentIsValid(expressionToBuild, Enum.GetValues(typeof(MonsterCardValidProperties)).Cast<MonsterCardValidProperties>(), @operator);
                 }
@@ -69,10 +63,10 @@ public class Interpreter
                 }
                 return new OnCard(expressionToBuild, typeOfCard);
             case "OnPlayer":
-                CheckIfArgumentIsValid(expressionToBuild, Enum.GetValues(typeof(PlayerValidProperties)).Cast<PlayerValidProperties>(),@operator);
+                CheckIfArgumentIsValid(expressionToBuild, Enum.GetValues(typeof(PlayerValidProperties)).Cast<PlayerValidProperties>(), @operator);
                 return new OnPlayer(expressionToBuild);
             case "EnemyCard":
-                CheckIfArgumentIsValid(expressionToBuild,Enum.GetValues(typeof(MonsterCardValidProperties)).Cast<MonsterCardValidProperties>(), @operator);
+                CheckIfArgumentIsValid(expressionToBuild, Enum.GetValues(typeof(MonsterCardValidProperties)).Cast<MonsterCardValidProperties>(), @operator);
                 return new EnemyCard(expressionToBuild);
             case "EnemyPlayer":
                 CheckIfArgumentIsValid(expressionToBuild, Enum.GetValues(typeof(PlayerValidProperties)).Cast<PlayerValidProperties>(), @operator);
@@ -91,13 +85,13 @@ public class Interpreter
             }
         }
         throw new InvalidPropertyException(argument + " is an invalid argument for " + typeOfExpression);
-        
+
     }
 
-    public static IEvaluate BuildConditionalExpression(string expressionToBuild, CardType typeOfCard)
+    public static IEvaluable BuildConditionalExpression(string expressionToBuild, CardType typeOfCard)
     {
         string[] leftAndRight = new string[3];
-        string @operator = string.Empty;
+        string @operator;
         if (expressionToBuild[0] == '(')
         {
             @operator = GetString(expressionToBuild, 1, GetEndOfExpression(0, expressionToBuild) - 1);

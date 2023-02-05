@@ -1,16 +1,11 @@
 ﻿using BattleCardsLibrary;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CardDeveloper1.CardEvaluator
+namespace CardDeveloper.CardEvaluator
 {
-    public abstract class BinaryExpression : IEvaluate
+    public abstract class BinaryExpression : IEvaluable
     {
-        public IEvaluate Left { get; set; } // el operador no hace falta porque cuando se construye ya debe saber quien es
-        public IEvaluate Right { get; set; }
+        public IEvaluable Left { get; set; } // el operador no hace falta porque cuando se construye ya debe saber quien es
+        public IEvaluable Right { get; set; }
 
         public double Evaluate(ICard onCard, ICard enemyCard)//
         {

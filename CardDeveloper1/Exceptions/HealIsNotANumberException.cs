@@ -1,4 +1,4 @@
-﻿namespace CardDeveloper1.Exceptions
+﻿namespace CardDeveloper.Exceptions
 {
     public class PropertyIsNotANumberException : Exception
     {

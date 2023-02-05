@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BattleCardsLibrary.Utils;
 
 namespace BattleCardsLibrary
 {
-    public interface IMonsterCard: ICard
+    public interface IMonsterCard : ICard
     {
-        public IEvaluate Defend { get; set; }
+        public IEvaluable Defend { get; }
+        public void DefendFrom(ICard attackingCard, double attack);
+        public void SetOnGameHealth(double health);
+        public bool NeedsHealing();
+
+
     }
 }

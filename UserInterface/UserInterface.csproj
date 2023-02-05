@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BattleCardsLibrary\BattleCardsLibrary.csproj" />
-    <ProjectReference Include="..\CardDeveloper1\CardDeveloper1.csproj" />
+    <ProjectReference Include="..\CardDeveloper1\CardDeveloper.csproj" />
   </ItemGroup>
 
   <ItemGroup>

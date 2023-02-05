@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using BattleCardsLibrary;
 
-namespace CardDeveloper1.CardEvaluator
+namespace CardDeveloper.CardEvaluator
 {
-    public class TrueExpression : IEvaluate
+    public class TrueExpression : IEvaluable
     {
         public double Evaluate(ICard onCard, ICard enemyCard)
         {

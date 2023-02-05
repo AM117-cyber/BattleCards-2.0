@@ -9,7 +9,7 @@
       "UserInterface/1.0.0": {
         "dependencies": {
           "BattleCardsLibrary": "1.0.0",
-          "CardDeveloper1": "1.0.0"
+          "CardDeveloper": "1.0.0"
         },
         "runtime": {
           "UserInterface.dll": {}
@@ -20,12 +20,12 @@
           "BattleCardsLibrary.dll": {}
         }
       },
-      "CardDeveloper1/1.0.0": {
+      "CardDeveloper/1.0.0": {
         "dependencies": {
           "BattleCardsLibrary": "1.0.0"
         },
         "runtime": {
-          "CardDeveloper1.dll": {}
+          "CardDeveloper.dll": {}
         }
       }
     }
@@ -41,7 +41,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "CardDeveloper1/1.0.0": {
+    "CardDeveloper/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

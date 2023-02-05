@@ -1,26 +1,23 @@
-﻿using BattleCardsLibrary;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using BattleCardsLibrary.Utils;
+﻿using BattleCardsLibrary.Utils;
 namespace BattleCardsLibrary.PlayerNamespace;
 
 
 
-public abstract class Player
+public class Player
 {
-    public PlayerType Type { get; set; }
-    public double Health { get; set; }
+    
+    public double Health { get; protected set; }
     //public List<Card> Graveyard { get; set; }
-    public List<ICard> CardsOnBoard { get; set; }
+    public List<ICard> CardsOnBoard { get; }
     public double Mana { get; set; }
-    public string Name { get; set; }
+    public string Name { get; }
     public int Number { get; set; }
-    public List<ICard> Deck { get; set; }
-    public List<ICard> Hand { get; set; }
+    public List<ICard> Deck { get;  }
+    public List<ICard> Hand { get; }
 
     public Player(string name, List<ICard> deck, int number)
     {
-        Type = PlayerType.Human;
+        
         Number = number;
         Name = name;
         Health = 1000;
@@ -35,11 +32,23 @@ public abstract class Player
         CardsOnBoard = new List<ICard>();
     }
 
+    public void SetHealth(double value)
+    {
+        if (value < 0)
+        {
+            this.Health = 0;
+        }
+        else
+        {
+            this.Health = value;
+        }
+
+    }
     public void MarkCardsAsUnused()
     {
         foreach (var card in CardsOnBoard)
         {
-            card.Used = false;
+            card.SetUsed(false);
         }
     }
     public void Shuffle()
@@ -66,7 +75,7 @@ public abstract class Player
 
         }
     }
-    public void Draw(int cant)
+    public void Draw(int cant = 1)
     {
         if (Mana >= 1 && (Hand == null || Hand.Count < 5))//can turn into a method that checks for every action whether or not it is valid
         {
@@ -88,7 +97,7 @@ public abstract class Player
                 CardsOnBoard.Remove(card);
                 continue;
             }
-            card.LifeTime--;
+            card.SetLifeTime(card.LifeTime-1);
         }
     }
 

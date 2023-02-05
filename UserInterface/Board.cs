@@ -1,6 +1,6 @@
 ﻿using BattleCardsLibrary.Utils;
 using BattleCardsLibrary;
-using CardDeveloper1.Cards;
+using CardDeveloper.Cards;
 using BattleCardsLibrary.PlayerNamespace;
 
 namespace WindowsFormsApp1
@@ -11,19 +11,23 @@ namespace WindowsFormsApp1
         public bool isAttacking = false;
         public bool isHealing = false;
         private ToolTip toolTip = new ToolTip();
+        private Game game;
+
         private Form startForm { get; set; }
-        public Board(Form previous)
+        public Board(Form previous, Game game)
         {
             InitializeComponent();
             startForm = previous;
+            this.game = game;
             UpdateGameForVirtualTurn();
-            Player1_name_label.Text = Game.Player1.Name;
-            Player2_name_label.Text = Game.Player2.Name;
+            Player1_name_label.Text = game.Player1.Name;
+            Player2_name_label.Text = game.Player2.Name;
             UpdateHand(1);
             UpdateHand(2);
 
         }
-  
+
+
         /*public string SetLabelText
         {
             get { return this.hpOfPlayer1.Text; }
@@ -38,7 +42,7 @@ namespace WindowsFormsApp1
         private void attack_button_Click(object sender, EventArgs e)
         {
             //si el turno no es de un jugador humano el click no es valido
-            if (!(Game.GetCurrentPlayer().Type == PlayerType.Human))
+            if (game.CurrentPlayer is IVirtualPlay)
             {
                 return;
             }
@@ -46,7 +50,7 @@ namespace WindowsFormsApp1
         }
         private void heal_button_Click(object sender, EventArgs e)
         {
-            if (!(Game.GetCurrentPlayer().Type == PlayerType.Human))
+            if (game.CurrentPlayer is IVirtualPlay)
             {
                 return;
             }
@@ -56,11 +60,11 @@ namespace WindowsFormsApp1
         private void deck1_Click(object sender, EventArgs e)
         {
             //si el turno no es de un jugador humano el click no es valido
-            if (!(Game.GetCurrentPlayer().Type == PlayerType.Human))
+            if (game.CurrentPlayer is IVirtualPlay)
             {
                 return;
             }
-            Game.CardActionReceiver(ActionsByPlayer.DrawFromDeck, CurrentCard, CurrentCard,1);
+            game.CardActionReceiver(PlayerAction.DrawFromDeck, CurrentCard, CurrentCard,1);
             UpdatePlayerLabels("mana_of_Player1");
             UpdateHand(1);
         }
@@ -68,11 +72,11 @@ namespace WindowsFormsApp1
         private void deck2_Click(object sender, EventArgs e)
         {
             //si el turno no es de un jugador humano el click no es valido
-            if (!(Game.GetCurrentPlayer().Type == PlayerType.Human))
+            if (game.CurrentPlayer is IVirtualPlay)
             {
                 return;
             }
-            Game.CardActionReceiver(ActionsByPlayer.DrawFromDeck, CurrentCard, CurrentCard,2);
+            game.CardActionReceiver(PlayerAction.DrawFromDeck, CurrentCard, CurrentCard,2);
             UpdatePlayerLabels("mana_of_Player2");
             UpdateHand(2);
         }
@@ -88,17 +92,17 @@ namespace WindowsFormsApp1
             //panel.Invalidate();
 
             //si el turno no es de un jugador humano el click no es valido
-            if (!(Game.GetCurrentPlayer().Type == PlayerType.Human))
+            if (game.CurrentPlayer is IVirtualPlay)
             {
                 return;
             }
 
            ICard targetCard = GetCard(sender);
 
-            if (isAttacking)
+            if (isAttacking)//enemyCard == null || onCard.Used || enemyCard.Type != CardType.Monster)
             {
                 isAttacking = false;
-                Game.CardActionReceiver(ActionsByPlayer.Attack, CurrentCard, targetCard,0);
+                game.CardActionReceiver(PlayerAction.Attack, CurrentCard, targetCard,0);
                 UpdatePlayerLabels(hp_of_Player1.Name);
                 UpdatePlayerLabels(hp_of_Player2.Name);
                 UpdateBoard(1);
@@ -110,7 +114,7 @@ namespace WindowsFormsApp1
             if (isHealing)
             {
                 isHealing = false;
-                Game.CardActionReceiver(ActionsByPlayer.Heal, CurrentCard, targetCard,0);
+                game.CardActionReceiver(PlayerAction.Heal, CurrentCard, targetCard,0);
                 UpdateBoard(1);
                 UpdateBoard(2);
                 
@@ -155,15 +159,15 @@ namespace WindowsFormsApp1
             {
                 if (placement == 'C')
                 {
-                    return Game.Player1.CardsOnBoard.Count > index ? Game.Player1.CardsOnBoard[index] : null;
+                    return game.Player1.CardsOnBoard.Count > index ? game.Player1.CardsOnBoard[index] : null;
                 }
-              return Game.Player1.Hand.Count > index ? Game.Player1.Hand[index] : null;
+              return game.Player1.Hand.Count > index ? game.Player1.Hand[index] : null;
             }
             if (placement == 'C')
             {
-                return Game.Player2.CardsOnBoard.Count > index ? Game.Player2.CardsOnBoard[index] : null;
+                return game.Player2.CardsOnBoard.Count > index ? game.Player2.CardsOnBoard[index] : null;
             }
-            return Game.Player2.Hand.Count > index ? Game.Player2.Hand[index] : null;
+            return game.Player2.Hand.Count > index ? game.Player2.Hand[index] : null;
         }
             //Game.CurrentPlayer hacer switch con sender.Name y el numero en el nombre indica la posicion en la lista Hand o Board del jugador, tomando que sea es la que se guarda en currentCard.
   /*  privateICardRetrieveCard(Player player, string cardPlacement)
@@ -181,12 +185,12 @@ namespace WindowsFormsApp1
         private void invoke_button_Click(object sender, EventArgs e)
         {
             //si el turno no es de un jugador humano el click no es valido
-            if (!(Game.GetCurrentPlayer().Type == PlayerType.Human))
+            if (game.CurrentPlayer is IVirtualPlay)
             {
                 return;
             }
-            Game.CardActionReceiver(ActionsByPlayer.InvokeCard, CurrentCard, CurrentCard,0);
-            if (Game.CurrentPlayer == 1)
+            game.CardActionReceiver(PlayerAction.InvokeCard, CurrentCard, CurrentCard,0);
+            if (game.CurrentPlayer.Number == 1)
             {
                 UpdatePlayerLabels(mana_of_Player1.Name);
                 //updateboard() and updatehand() only of currentPlayery
@@ -206,33 +210,36 @@ namespace WindowsFormsApp1
             private void direct_attack_button_Click(object sender, EventArgs e)//mandar acciones a Game y procesar cada una
         {
             //si el turno no es de un jugador humano el click no es valido
-            if (!(Game.GetCurrentPlayer().Type == PlayerType.Human))
+            if (game.CurrentPlayer is IVirtualPlay)
             {
                 return;
             }
-            Game.CardActionReceiver(ActionsByPlayer.DirectAttack, CurrentCard, CurrentCard,0);
-            if (Game.CurrentPlayer == 1)
-            {
-                UpdatePlayerLabels(hp_of_Player2.Name);
-                return;
-            }
-            UpdatePlayerLabels(hp_of_Player1.Name);
+            Player player = game.CurrentPlayer;
+
+            game.CardActionReceiver(PlayerAction.DirectAttack, CurrentCard, CurrentCard,0);
+            UpdatePlayerLabels((player.Number == 1)? hp_of_Player1.Name : (hp_of_Player2.Name));
+            /* if (Game.CurrentPlayer == 1)
+             {
+                 UpdatePlayerLabels(hp_of_Player2.Name);
+                 return;
+             }
+             UpdatePlayerLabels(hp_of_Player1.Name);*/
         }
 
         private void end_turn_button_Click(object sender, EventArgs e)
         {
             //si el turno no es de un jugador humano el click no es valido
-            if (!(Game.GetCurrentPlayer().Type == PlayerType.Human))
+            if (game.CurrentPlayer is IVirtualPlay)
             {
                 return;
             }
-            Game.CardActionReceiver(ActionsByPlayer.TurnIsOver,null,null,0);
-            if (Game.CurrentPhase == Phase.MainPhase)
+            game.CardActionReceiver(PlayerAction.TurnIsOver,null,null,0);
+            if (game.CurrentPhase == Phase.MainPhase)
             {
-                UpdatePlayerLabels("mana_of_Player" + Game.CurrentPlayer);
-                current_player_label.Text = Game.GetCurrentPlayer().Name;     //$"\"{Game.GetCurrentPlayer().Name}\"";
-                UpdateLifeTime(Game.GetCurrentPlayer());
-                UpdateBoard(Game.CurrentPlayer);
+                UpdatePlayerLabels("mana_of_Player" + game.CurrentPlayer.Number);
+                current_player_label.Text = game.CurrentPlayer.Name;     //$"\"{Game.GetCurrentPlayer().Name}\"";
+                UpdateLifeTime(game.CurrentPlayer);
+                UpdateBoard(game.CurrentPlayer.Number);
             }
             
             
@@ -291,12 +298,12 @@ namespace WindowsFormsApp1
             }
             if (player == 1)
             {
-               listOfCards = boardOrHand == 'C' ? Game.Player1.CardsOnBoard : Game.Player1.Hand;
+               listOfCards = boardOrHand == 'C' ? game.Player1.CardsOnBoard : game.Player1.Hand;
                 nameOfCardPanel = "card_" +  "P1_"  + boardOrHand;
             }
             else
             {
-                listOfCards = boardOrHand == 'C' ? Game.Player2.CardsOnBoard : Game.Player2.Hand;
+                listOfCards = boardOrHand == 'C' ? game.Player2.CardsOnBoard : game.Player2.Hand;
                nameOfCardPanel = "card_" + "P2_" + boardOrHand;
             }
 
@@ -348,7 +355,7 @@ namespace WindowsFormsApp1
             answer["name"] = card.Name; 
             answer["type"] = card.Type.ToString();
             answer["damage"] = card.Damage.ToString();
-            answer["hp"] = card.Type == CardType.Monster ? (card as MonsterCard).OnGameHealth.ToString() : (card as SpellCard).LifeTime.ToString();
+            answer["hp"] = card.Type == CardType.Monster ? (card as MonsterCard).CurrentHealth.ToString() : (card as SpellCard).LifeTime.ToString();
             answer["cost"] = card.ManaCost.ToString();
             answer["healing"] = card.HealingPowers.ToString();
             return answer;
@@ -379,7 +386,7 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    Game.GameIsOver();
+                    game.GameIsOver();
                 }
                 catch (Exception exception)
                 {
@@ -388,7 +395,7 @@ namespace WindowsFormsApp1
                     Hide();
                     startForm.Close();
                 }
-                hp_of_Player1.Text = Game.Player1.Health.ToString();
+                hp_of_Player1.Text = game.Player1.Health.ToString();
                 
                 return;
                 
@@ -397,7 +404,7 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    Game.GameIsOver();
+                    game.GameIsOver();
                 }
                 catch (Exception exception)
                 {
@@ -407,18 +414,18 @@ namespace WindowsFormsApp1
                     startForm.Close();
                 }
 
-                hp_of_Player2.Text = Game.Player2.Health.ToString();
+                hp_of_Player2.Text = game.Player2.Health.ToString();
                 return;
 
             }
             if (nameOfLabelToUpdate == mana_of_Player1.Name)
             {
-                mana_of_Player1.Text = Game.Player1.Mana.ToString();
+                mana_of_Player1.Text = game.Player1.Mana.ToString();
                 return;
             }
             if (nameOfLabelToUpdate == mana_of_Player2.Name)
             {
-                mana_of_Player2.Text = Game.Player2.Mana.ToString();
+                mana_of_Player2.Text = game.Player2.Mana.ToString();
                 return;
             }
         }
@@ -426,7 +433,7 @@ namespace WindowsFormsApp1
         private void virtual_player_play_Click(object sender, EventArgs e)
         {
             //si el turno es de un jugador humano el click no es valido porque el virtual no puede jugar hasta que llegue su turno
-            if (Game.GetCurrentPlayer().Type == PlayerType.Human)
+            if (game.CurrentPlayer is not IVirtualPlay)
             {
                 return;
             }
@@ -436,9 +443,9 @@ namespace WindowsFormsApp1
             //}
 
 
-            (Game.GetCurrentPlayer() as AIPlayer).Play();
+            (game.CurrentPlayer as AIPlayerMedium).Play();
             UpdateGameForVirtualTurn();
-            Game.InterfaceUpdated = true;
+            //Game.InterfaceUpdated = true;
        
 
         }
@@ -451,12 +458,12 @@ namespace WindowsFormsApp1
                 UpdatePlayerLabels(label);
             }
 
-            current_player_label.Text = Game.GetCurrentPlayer().Name;
+            current_player_label.Text = game.CurrentPlayer.Name;
             UpdateBoard(1);
             UpdateBoard(2);
-            if (Game.CurrentPhase == Phase.BattlePhase)
+            if (game.CurrentPhase == Phase.BattlePhase)
             {
-                UpdateHand(Game.CurrentPlayer);
+                UpdateHand(game.CurrentPlayer.Number);
             }
 
         }

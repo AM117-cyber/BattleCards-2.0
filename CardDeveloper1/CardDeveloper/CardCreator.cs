@@ -1,15 +1,16 @@
 ﻿using BattleCardsLibrary;
 using BattleCardsLibrary.Utils;
-using CardDeveloper1.Exceptions;
-using CardDeveloper1.Cards;
+using CardDeveloper.Exceptions;
+using CardDeveloper.Cards;
+using System.Text.RegularExpressions;
 
-namespace CardDeveloper1;
+namespace CardDeveloper;
 
 // cardcreator toma un string del source y crea una carta con el.
 //la funcion del source es darle informacion alICardcreator
 public class CardCreator : ICardCreator
 {
-    private static CardCreator cardCreator;
+    private static CardCreator? cardCreator;
 
     private CardCreator(){ }
 
@@ -39,10 +40,6 @@ public class CardCreator : ICardCreator
         //text[i].Remove(text[i].Length - 1, 1).Remove(0, 1);
         for (int i = 2; i < CardDefinition.Length - 1; i++)
         {
-            if (CardDefinition[i] == null)
-            {
-                continue;
-            }
             bool propertyIsValid = false;
             foreach (var property in Enum.GetValues(typeof(AllCardProperties)).Cast<AllCardProperties>())
             {
@@ -104,6 +101,7 @@ public class CardCreator : ICardCreator
 
     public static List<ICard> GetAllCardsList()
     {
+
         List<ICard> answer = new List<ICard>();
         string[] path = Directory.GetFiles(@"..\CardLibrary");
         foreach (var indivpath in path)

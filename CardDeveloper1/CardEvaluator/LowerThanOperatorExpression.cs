@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BattleCardsLibrary.Utils;
 
-namespace CardDeveloper1.CardEvaluator
+namespace CardDeveloper.CardEvaluator
 {
     public class LowerThanOperatorExpression : NonConditionalBinaryExpression
     {

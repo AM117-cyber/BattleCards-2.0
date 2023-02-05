@@ -1,15 +1,9 @@
 ﻿using BattleCardsLibrary;
-using CardDeveloper1.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BattleCardsLibrary.Utils;
 
-namespace CardDeveloper1.CardEvaluator
+namespace CardDeveloper.CardEvaluator
 {
-    public class OnCard : IEvaluate
+    public class OnCard : IEvaluable
     {
         public string Property { get; set; }
         public OnCard(string property, CardType type)
@@ -23,7 +17,7 @@ namespace CardDeveloper1.CardEvaluator
                 case "Damage":
                     return onCard.Damage;
                 case "HealthPoints":
-                    return onCard.OnGameHealth;
+                    return onCard.CurrentHealth;
                 case "ManaCost":
                     return onCard.ManaCost;
                 case "LifeTime":

@@ -103,5 +103,5 @@ D:\test\BattleCards\UserInterface\bin\Debug\net6.0-windows\CardDeveloper1.pdb
 D:\test\BattleCards\UserInterface\obj\Debug\net6.0-windows\UserInterface.csproj.CopyComplete
 D:\test\BattleCards\UserInterface\obj\Debug\net6.0-windows\UserInterface.genruntimeconfig.cache
 D:\test\BattleCards\UserInterface\obj\Debug\net6.0-windows\ref\UserInterface.dll
-D:\BattleCards\UserInterface\bin\Debug\net6.0-windows\CardDeveloper1.dll
-D:\BattleCards\UserInterface\bin\Debug\net6.0-windows\CardDeveloper1.pdb
+D:\BattleCards\UserInterface\bin\Debug\net6.0-windows\CardDeveloper.dll
+D:\BattleCards\UserInterface\bin\Debug\net6.0-windows\CardDeveloper.pdb

@@ -1,14 +1,14 @@
 ﻿using BattleCardsLibrary;
-using CardDeveloper1.Exceptions;
+using CardDeveloper.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CardDeveloper1.CardEvaluator
+namespace CardDeveloper.CardEvaluator
 {
-    public class EnemyCard : IEvaluate
+    public class EnemyCard : IEvaluable
     {
         public string Property { get; set; }
         public EnemyCard(string property)
@@ -17,12 +17,13 @@ namespace CardDeveloper1.CardEvaluator
         }
         public double Evaluate(ICard onCard, ICard enemyCard)
         {
+        
             switch (Property)
             {
                 case "Damage":
                     return enemyCard.Damage;
                 case "HealthPoints":
-                    return enemyCard.OnGameHealth;
+                    return enemyCard.CurrentHealth;
                 case "ManaCost":
                     return enemyCard.ManaCost;
                 case "Armour":

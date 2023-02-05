@@ -1,4 +1,4 @@
-﻿namespace CardDeveloper1
+﻿namespace CardDeveloper
 {
     public enum ValidationResult
     {

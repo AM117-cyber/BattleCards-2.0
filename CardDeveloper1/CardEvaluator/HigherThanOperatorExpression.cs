@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CardDeveloper1.Exceptions;
+using CardDeveloper.Exceptions;
 using System.Text;
 using System.Threading.Tasks;
 using BattleCardsLibrary.Utils;
 
-namespace CardDeveloper1.CardEvaluator
+namespace CardDeveloper.CardEvaluator
 {
     public class HigherThanOperatorExpression : NonConditionalBinaryExpression
     {

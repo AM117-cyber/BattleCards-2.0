@@ -1,5 +1,5 @@
 ﻿using BattleCardsLibrary;
-using CardDeveloper1;
+using CardDeveloper;
 using BattleCardsLibrary.Utils;
 using UserInterface;
 

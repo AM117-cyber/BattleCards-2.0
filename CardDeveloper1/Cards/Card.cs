@@ -1,33 +1,32 @@
-using BattleCardsLibrary.PlayerNamespace;
-using System.Runtime.CompilerServices;
-using CardDeveloper1.Exceptions;
 using BattleCardsLibrary;
+using BattleCardsLibrary.PlayerNamespace;
 using BattleCardsLibrary.Utils;
-using CardDeveloper1.CardEvaluator;
-using System.Text;
+using CardDeveloper.CardEvaluator;
+using CardDeveloper.Exceptions;
 
-namespace CardDeveloper1.Cards;
-public abstract class Card: ICard
+namespace CardDeveloper.Cards;
+public abstract class Card : ICard
 {
-    public string Description { get; set; } 
-    static Dictionary<AllCardProperties, AllCardProperties> ExtraPropertiesDefaultValue = SetValues();
-    public double ManaCost { get; set; }
-    public CardType Type { get; set; }
-    public Player Owner { get; set; }
-    public bool Used { get; set; }
-    public string Name { get; set; }
-    public double Damage { get;  set; }
-    public double HealingPowers { get;  set; }
-    public double HealthPoints { get;  set; }
-    public double OnGameHealth { get; set; }
-    public double Armour { get;  set; }
-    public IEvaluate Attack { get; set; }   //lo que se guarda aqui es una TernaryExpression que cuando se evalua devuelve double
-    public IEvaluate Heal { get; set; }  //heal se pueden hacer separadas despues en dependencia de la prop, improve health seria heal por ejemplo
+    public string Description { get; }
+
+    static readonly Dictionary<AllCardProperties, AllCardProperties> ExtraPropertiesDefaultValue = SetValues();
+    public double ManaCost { get; }
+    public CardType Type { get; }
+    public Player? Owner { get; set; }
+    public bool Used { get; protected set; }
+    public string Name { get;}
+    public double Damage { get;}
+    public double HealingPowers { get;}
+    public double CurrentHealth { get; protected set; }
+    public double Armour { get;}
+    public IEvaluable Attack { get;}   //lo que se guarda aqui es una TernaryExpression que cuando se evalua devuelve double
+    public IEvaluable Heal { get;}  //heal se pueden hacer separadas despues en dependencia de la prop, improve health seria heal por ejemplo
+    
+    protected double MaxHealth;
     //public string Deffend { get; set;}  // protected de algun tipo? no quiero que salga entre opciones de carta para jugador podria hacerse con if !=
 
     public Card(Dictionary<AllCardProperties, string> CardProperties, string[] description)
     {
-        
         this.Type = CardProperties[AllCardProperties.Type] == "Monster" ? CardType.Monster : CardType.Spell;
         this.Name = CardProperties[AllCardProperties.Name];
         this.Owner = null;
@@ -35,8 +34,8 @@ public abstract class Card: ICard
         this.ManaCost = CheckIfValueIsNumber(AllCardProperties.ManaCost, CardProperties);
         this.Damage = CheckIfValueIsNumber(AllCardProperties.Damage, CardProperties);
         this.HealingPowers = CheckIfValueIsNumber(AllCardProperties.HealingPowers, CardProperties);
-        this.HealthPoints = CheckIfValueIsNumber(AllCardProperties.HealthPoints, CardProperties);
-        OnGameHealth = HealthPoints;
+        this.MaxHealth = CheckIfValueIsNumber(AllCardProperties.HealthPoints, CardProperties);
+        CurrentHealth = MaxHealth;
         this.Armour = CheckIfValueIsNumber(AllCardProperties.Armour, CardProperties);
         this.Attack = GetExpressionOrDefaultValueAsConstant(AllCardProperties.Attack, CardProperties);//no se puede generalizar?
         this.Heal = GetExpressionOrDefaultValueAsConstant(AllCardProperties.Heal, CardProperties);
@@ -45,7 +44,33 @@ public abstract class Card: ICard
 
     }
 
-    public static double CheckIfValueIsNumber(AllCardProperties property, Dictionary<AllCardProperties, string> CardProperties)
+    public void AttackCard(IMonsterCard enemyCard)//toda carta puede atacar
+    {
+        if (this.Used) return;
+        double attack = this.Attack.Evaluate(this, enemyCard);
+        enemyCard.DefendFrom(this, attack);
+        this.SetUsed(true); 
+    }
+    
+    public void DirectAttack(Player playerToAttack)
+    {
+        if (this.Used) return;
+        playerToAttack.SetHealth(playerToAttack.Health - this.Damage);
+        this.SetUsed(true);
+    }
+    public void HealCard(IMonsterCard cardToHeal)
+    {
+        if (this.Used) return;
+        double healingPoints = this.Heal.Evaluate(this, cardToHeal);
+        cardToHeal.SetOnGameHealth(healingPoints);
+        this.SetUsed(true);
+    }
+    public void SetUsed(bool used)
+    {
+        this.Used = used;
+    }
+
+    protected static double CheckIfValueIsNumber(AllCardProperties property, Dictionary<AllCardProperties, string> CardProperties)
     {
         double value;
         if (!double.TryParse(CardProperties[property], out value))
@@ -55,25 +80,17 @@ public abstract class Card: ICard
         return value;
     }
 
-    public IEvaluate GetExpressionOrDefaultValueAsConstant(AllCardProperties property, Dictionary<AllCardProperties, string> CardProperties)
+    protected IEvaluable GetExpressionOrDefaultValueAsConstant(AllCardProperties property, Dictionary<AllCardProperties, string> CardProperties)
     {
         if (!CardProperties.ContainsKey(property))
         {
-            double defaultValue = Double.Parse(CardProperties[ExtraPropertiesDefaultValue[property]]);
+            double defaultValue = double.Parse(CardProperties[ExtraPropertiesDefaultValue[property]]);
             return new Constant(defaultValue);
         }
         return Interpreter.BuildExpression(CardProperties[property], this.Type);
-        //return new TernaryExpression(CardProperties[property]);
     }
-    public static Dictionary<AllCardProperties, AllCardProperties> SetValues()
-    {
-        Dictionary<AllCardProperties, AllCardProperties> dict = new Dictionary<AllCardProperties, AllCardProperties>();
-        dict[AllCardProperties.Attack] = AllCardProperties.Damage;
-        dict[AllCardProperties.Heal] = AllCardProperties.HealingPowers;
-        dict[AllCardProperties.Defend] = AllCardProperties.Armour;
-        return dict;
-    }
-    public static string GetCardDescription(string[] cardDefinition)
+    
+    private static string GetCardDescription(string[] cardDefinition)
     {
         string contentOfTxT = string.Empty;
         for (int i = 0; i < cardDefinition.Length; i++)
@@ -85,6 +102,17 @@ public abstract class Card: ICard
             contentOfTxT += cardDefinition[i++] + ": " + cardDefinition[i] + "\r\n";
         }
         return contentOfTxT;
+    }
+
+    private static Dictionary<AllCardProperties, AllCardProperties> SetValues()
+    {
+        Dictionary<AllCardProperties, AllCardProperties> dict = new()
+        {
+            [AllCardProperties.Attack] = AllCardProperties.Damage,
+            [AllCardProperties.Heal] = AllCardProperties.HealingPowers,
+            [AllCardProperties.Defend] = AllCardProperties.Armour
+        };
+        return dict;
     }
 
 }

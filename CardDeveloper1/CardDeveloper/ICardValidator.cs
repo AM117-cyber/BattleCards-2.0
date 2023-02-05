@@ -1,6 +1,6 @@
 ﻿using BattleCardsLibrary;
 
-namespace CardDeveloper1
+namespace CardDeveloper
 {
     public interface ICardValidator
     {

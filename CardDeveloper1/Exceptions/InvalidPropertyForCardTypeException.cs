@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CardDeveloper1.Exceptions
+namespace CardDeveloper.Exceptions
 {
     public class InvalidPropertyForCardTypeException : Exception
     {

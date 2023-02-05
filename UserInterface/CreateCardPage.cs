@@ -1,7 +1,7 @@
 ﻿using BattleCardsLibrary;
-using CardDeveloper1;
+using CardDeveloper;
 using BattleCardsLibrary.Utils;
-using CardDeveloper1.Exceptions;
+using CardDeveloper.Exceptions;
 using UserInterface;
 
 namespace WindowsFormsApp1
