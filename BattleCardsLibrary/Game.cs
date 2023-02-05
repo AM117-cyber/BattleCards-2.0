@@ -1,7 +1,7 @@
 
 using BattleCardsLibrary.PlayerNamespace;
 using BattleCardsLibrary.Utils;
-using static BattleCardsLibrary.ExecuteActions.ExecuteAction;
+
 
 namespace BattleCardsLibrary;
 public class Game //Asumir que la informacion me va a entrar po alguna via, tu solo vas a trabajar con ella.Olvidate de por donde entre.
@@ -48,18 +48,12 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
         }
         else
         {
-            //CurrentPlayer.FinishTurn();
-            //ChangeTurn();
-            //CurrentPlayer.StartTurn();
-            //reducing LifeTime of spells
-            CurrentPlayer.MarkCardsAsUnused();
-            CurrentPhase = Phase.MainPhase;
-            CurrentPlayer.Mana = (CurrentPlayer.Mana + 5) < 20 ? CurrentPlayer.Mana + 5 : CurrentPlayer.Mana = 20;
-            ChangePlayer();
-            CurrentPlayer.UpdateSpellsMana();
+            CurrentPlayer.FinishTurn();
+            ChangeTurn();
+            CurrentPlayer.StartTurn();
         }
     }
-    public void ChangePlayer()
+    public void ChangeTurn()
     {
         currentTurn++;
     }
@@ -79,7 +73,7 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
                 //si la fase es correcta, la carta no es null, el jugador que ejecuta la accion es el del turno que se juega, tiene al menos un espacio en su board y suficiente mana
                 if (CanInvoke(onCard))
                 {
-                    onCard.Owner.InvokeCard(onCard);
+                    this.CurrentPlayer.InvokeCard(onCard);
 
                 }
 
@@ -91,19 +85,22 @@ public class Game //Asumir que la informacion me va a entrar po alguna via, tu s
                 //fase debe ser batalla, cartas no pueden ser nulas,la carta debe pertenecer al jugador cuyo turno se juega y la victima debe ser un monstruo. 
                 if (CanAttack(onCard, enemyCard))//la interfaz es quien comprueba que sea humano
                 {
-                    Attack(onCard, enemyCard as IMonsterCard, onCard.Attack.Evaluate(onCard, enemyCard as IMonsterCard));
+                    onCard.AttackCard(enemyCard as IMonsterCard);
+                    //Attack(onCard, enemyCard as IMonsterCard, onCard.Attack.Evaluate(onCard, enemyCard as IMonsterCard));
                 }
                 break;
             case PlayerAction.Heal:
                 if (CanHeal(onCard, enemyCard))
                 {
-                    Heal(onCard, enemyCard as IMonsterCard, onCard.Heal.Evaluate(onCard, enemyCard as IMonsterCard));
+                    onCard.HealCard(enemyCard as IMonsterCard);
+                    //Heal(onCard, enemyCard as IMonsterCard, onCard.Heal.Evaluate(onCard, enemyCard as IMonsterCard));
                 }
                 break;
             case PlayerAction.DirectAttack:
                 if (CanAttackDirectly(onCard))
                 {
-                    DirectAttack(onCard);
+                    onCard.DirectAttack(CurrentPlayer == Player1? Player2 : Player1);
+                    //DirectAttack(onCard);
 
                 }
 

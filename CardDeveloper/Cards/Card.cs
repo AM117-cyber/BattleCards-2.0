@@ -48,21 +48,36 @@ public abstract class Card : ICard
     {
         if (this.Used) return;
         double attack = this.Attack.Evaluate(this, enemyCard);
-        enemyCard.DefendFrom(this, attack);
+        double defenseResidue = enemyCard.DefendFrom(this, attack);
+        if (this is IMonsterCard)
+        {
+            double health = (this as IMonsterCard).CurrentHealth + defenseResidue;
+            if (health <= 0)
+            {
+                (this as MonsterCard).CurrentHealth = 0;
+                this.Owner.CardsOnBoard.Remove(this);
+            }
+            else
+            {
+                (this as MonsterCard).CurrentHealth = health;
+            }
+
+        }
         this.SetUsed(true); 
     }
     
     public void DirectAttack(Player playerToAttack)
     {
-        if (this.Used) return;
-        playerToAttack.SetHealth(playerToAttack.Health - this.Damage);
+        if (this.Used || !playerToAttack.NoMonstersOnBoard()) return;
+        playerToAttack.Health -= this.Damage;
         this.SetUsed(true);
     }
+    
     public void HealCard(IMonsterCard cardToHeal)
     {
         if (this.Used) return;
         double healingPoints = this.Heal.Evaluate(this, cardToHeal);
-        cardToHeal.SetOnGameHealth(healingPoints);
+        cardToHeal.ReceiveHealing(healingPoints);
         this.SetUsed(true);
     }
     public void SetUsed(bool used)

@@ -1,0 +1,3 @@
+Type: Monster
+Attack: IfElse(=(OnPlayer(CardsOnBoard),(5) ) , (100), (30))
+Name: TestingCardsOnBoard

@@ -1,0 +1,6 @@
+Type: Monster
+Armour: 70
+Attack: Add((20),EnemyCard(Damage))
+ManaCost: 19
+HealthPoints: 300
+Name: Hidebehind

@@ -1,0 +1,3 @@
+Type: Monster
+Damage: 30
+Name: Guggenheim

@@ -1,0 +1,2 @@
+Type: Monster
+Name: Fox

@@ -1,0 +1,6 @@
+Type: Monster
+Armour: 60
+ManaCost: 16
+HealthPoints: 250
+Damage: 100
+Name: Hungarian HornTail

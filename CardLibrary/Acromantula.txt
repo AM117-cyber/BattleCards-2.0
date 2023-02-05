@@ -1,0 +1,7 @@
+Type: Monster
+HealingPowers: 0
+Attack: IfElse(>(EnemyCard(HealthPoints),OnCard(HealthPoints)),Multiply(Divide(OnCard(Damage),(10)),Substract(EnemyCard(HealthPoints),OnCard(HealthPoints))),Multiply(Divide(OnCard(Damage),(10)),Substract(OnCard(HealthPoints),EnemyCard(HealthPoints))))
+ManaCost: 8
+HealthPoints: 120
+Damage: 30
+Name: Acromantula
