@@ -1,0 +1,6 @@
+Type: Spell
+LifeTime: 3
+HealingPowers: 50
+ManaCost: 7
+Damage: 0
+Name: Ferula
